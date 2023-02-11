@@ -8,6 +8,9 @@ const studentSchema = new mongoose.Schema({
     lastName: {
         type: String,
     },
+    userName: {
+        type: String,
+    },
     fatherName: {
         type: String,
     },

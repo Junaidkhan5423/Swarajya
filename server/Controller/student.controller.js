@@ -3,7 +3,7 @@ const studentAdmission = async (req, res) => {
 
     try {
 
-        const { firstName, lastName, fatherName, dob, nationality, address, fatherOccupation, state, city, email, phoneNo, centerName, courseName, courseCode } = req.body
+        const { userName ,firstName, lastName, fatherName, dob, nationality, address, fatherOccupation, state, city, email, phoneNo, centerName, courseName, courseCode } = req.body
         // const Mapemail =[]
         const existingEmail = new Promise ((resolve, reject)=>{
             studentModel.findOne({email}, function (err, email) {
@@ -13,12 +13,26 @@ const studentAdmission = async (req, res) => {
                 resolve()
             })
 
-        }).then(()=>{
+        })
+        const existingUser = new Promise((resolve , reject)=>{
+            studentModel.findOne({userName},function (err, user) {
+                if(err) reject(new Error(err)) 
+                if(user) reject ({error : "this userName is already register"})
 
+
+                resolve()
+                
+            })
+
+        })
+        
+        Promise.all([existingEmail,existingUser])
+        .then(()=>{
         // console.log(Mapemail);
         const student =  new studentModel({
             firstName: firstName,
             lastName: lastName,
+            userName: userName,
             fatherName: fatherName,
             dob: dob,
             nationality: nationality,

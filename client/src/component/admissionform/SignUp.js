@@ -14,25 +14,25 @@ function SignUp() {
     //     console.log(JSON.parse(data));
     // }, [])
 
-    useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: 'https://andruxnet-world-cities-v1.p.rapidapi.com/',
-            params: { query: 'paris', searchby: 'city' },
-            headers: {
-                'X-RapidAPI-Key': '403470d12cmsh3231784fa24b81ap17abb0jsnf1a553867449',
-                'X-RapidAPI-Host': 'countries-cities.p.rapidapi.com'
-            }
-        };
+    // useEffect(() => {
+    //     const options = {
+    //         method: 'GET',
+    //         url: 'https://andruxnet-world-cities-v1.p.rapidapi.com/',
+    //         params: { query: 'paris', searchby: 'city' },
+    //         headers: {
+    //             'X-RapidAPI-Key': '403470d12cmsh3231784fa24b81ap17abb0jsnf1a553867449',
+    //             'X-RapidAPI-Host': 'countries-cities.p.rapidapi.com'
+    //         }
+    //     };
 
 
-        axios.request(options).then(function (response) {
+    //     axios.request(options).then(function (response) {
 
-        }).catch(function (error) {
-            console.error(error);
+    //     }).catch(function (error) {
+    //         console.error(error);
 
-        });
-    }, [])
+    //     });
+    // }, [])
     const validate = Yup.object({
         firstName: Yup.string()
             .max(25, 'Must be 25 characters or less')
@@ -111,7 +111,9 @@ function SignUp() {
             }}
             validationSchema={validate}
             onSubmit={values => {
-                axios.post("http://localhost:9002/admission", values)
+                axios.post("http://localhost:9002/admission", values).then((res)=>{
+                    console.log("response is comming ",res);
+                })
             }}
         >
 
@@ -125,7 +127,7 @@ function SignUp() {
                             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem' }}>
                                 <Textfield label='First Name' name='firstName' type='text' />
                                 <Textfield label='Last Name' name='lastName' type='text' />
-                                <Textfield label='UserName' name='username' type='text' />
+                                <Textfield label='User Name' name='userName' type='text' />
                                 <Textfield label='Father Name' name='fatherName' type='text' />
                                 <Textfield label='mother Name' name='motherName' type='text' />
                                 <Textfield label='Date Of Birth' name='dob' type='date' />
@@ -139,7 +141,6 @@ function SignUp() {
                                 <Textfield label='Center Name' name='centerName' type='text' disabled />
                                 <Textfield label='Course Name' name='courseName' type='text' />
                                 <Textfield label='Course Code' name='courseCode' type='number' />
-                                <Textfield label='Course Code' name='courseCode' type='file' />
                             </div>
                             <button className='btn btn-dark mt-3' type='submit'>Register</button>
                             <button className='btn btn-danger mt-3 ml-3' type='submit'>Reset</button>

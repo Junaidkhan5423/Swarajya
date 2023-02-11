@@ -11,9 +11,9 @@ import Stack from '@mui/material/Stack';
 
 
 
-export default function CouncilComposition() {
+export default function Council() {
     // const navigate = useNavigate
-    const SyllabusItem = ["COUNCIL AUTHENTICATION", "CMS & ED PRACTICE GOVERNMENT JUDGMENTS",
+    const certificates = ["COUNCIL AUTHENTICATION", "CMS & ED PRACTICE GOVERNMENT JUDGMENTS",
         "SWARAJYA AFFILIATION", "AICVPS", "AICVPS VERIFICATION"]
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -71,7 +71,7 @@ export default function CouncilComposition() {
                     ref={anchorRef}
                     onClick={handleToggle}
                 >
-                    Courses
+                    Council
                 </Button>
                 <Popper
                     open={open}
@@ -98,10 +98,10 @@ export default function CouncilComposition() {
                                         onKeyDown={handleListKeyDown}
                                     >
                                         <div style={{ height: "100%", overflow: "overlay" }}>
-                                            {SyllabusItem.map((item, index) => {
+                                            {certificates.map((item, index) => {
                                                 return (
                                                     // <a style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
-                                                    <a style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
+                                                    <a style={{ position: "relative", overflow: "visible" }}>{item}</a>
                                                 )
 
                                             })}

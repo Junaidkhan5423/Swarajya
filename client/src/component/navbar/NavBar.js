@@ -1,6 +1,6 @@
 import React from 'react'
 import CourseDropDown from './dropDown/CourseDropDown';
-import CounciL from './dropDown/CounciL';
+import Council from './dropDown/Council';
 
 
 
@@ -34,18 +34,7 @@ const NavBar = () => {
 
             <li><CourseDropDown /></li>
             
-            <li className="dropdown">
-                <a href="javascript:void(0)" className="dropbtn">Council</a>
-                <div className="dropdown-content">
-                  
-                  <CounciL />  
-                  {/* <a href="#">COUNCIL AUTHENTICATION</a>
-                    <a href="#">CMS & ED PRACTICE GOVERNMENT JUDGMENTS</a>
-                    <a href="#">SWARAJYA AFFILIATION </a>
-                    <a href="#">AICVPS</a>
-                    <a href="#">AICVPS VERIFICATION</a> */}
-                </div>
-            </li>
+            <li ><Council /></li>
             <li className="dropdown">
                 <a href="#" className="dropbtn">Students</a>
                 <div className="dropdown-content">
