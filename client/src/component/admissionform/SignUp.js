@@ -74,6 +74,8 @@ function SignUp() {
             .required('Please enter the course name'),
         courseCode: Yup.string()
             .required('Please enter the course code'),
+        userName: Yup.string()
+            .required('Please enter username'),
         // password: Yup.string()
         //     .min(6, 'Password must be at least 6 characters')
         //     .required('PassWord is required'),
@@ -92,6 +94,7 @@ function SignUp() {
             initialValues={{
                 firstName: '',
                 lastName: '',
+                userName: '',
                 fatherName: '',
                 motherName: '',
                 dob: '',
@@ -122,6 +125,7 @@ function SignUp() {
                             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem' }}>
                                 <Textfield label='First Name' name='firstName' type='text' />
                                 <Textfield label='Last Name' name='lastName' type='text' />
+                                <Textfield label='UserName' name='username' type='text' />
                                 <Textfield label='Father Name' name='fatherName' type='text' />
                                 <Textfield label='mother Name' name='motherName' type='text' />
                                 <Textfield label='Date Of Birth' name='dob' type='date' />
