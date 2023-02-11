@@ -695,6 +695,11 @@ border-bottom: 4px solid #4267B2 !important;
   margin: auto;
   height: 607px;
 }
+
+.main_contentDiv{
+  height: 10rem;
+}
+
 @media(max-width:500px) {
   * {
     /* background-color: brown; */

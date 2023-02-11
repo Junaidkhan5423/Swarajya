@@ -15,7 +15,7 @@ const NavBar = () => {
   
         </div>
         <div className="head2">
-            <img src={require("../../images/logohead.png")} className="logohead1"/>
+            <img src={require("../../images/logohead.png")} className="logohead1" alt='!'/>
             <div className="head3">
                 <h1>स्वराज्य पॅरामेडिकल इन्स्टिट्युट
                 </h1>
@@ -39,7 +39,7 @@ const NavBar = () => {
                 <a href="#" className="dropbtn">Students</a>
                 <div className="dropdown-content">
 
-                    <a href="#">STUDENT LOGIN</a>
+                    <a href="!">STUDENT LOGIN</a>
                     <a href="#">APPEAR FOR ONLINE EXAM</a>
                     <a href="#">ONLINE ENROLLMENT</a>
                     <a href="#">OFFLINE ENROLLMENT FORM</a>

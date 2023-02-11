@@ -41,10 +41,10 @@ const MainContent = () => {
   useEffect(() => {
     showSlides();
 
-    carousel()
-  }, [])
+    carousel();
+  }, []);
   return (
-    <div>
+    <div className='main_contentDiv'>
       <div className="content" style={{zIndex: "-1", position: "relative"}}>
 
 
@@ -52,19 +52,19 @@ const MainContent = () => {
 
           <div className="mySlides fade">
 
-            <img src={require('../../files/1.jpeg')} style={{ width: "100%" }} />
+            <img alt='!' src={require('../../files/1.jpeg')} style={{ width: "100%" }} />
 
           </div>
 
           <div className="mySlides fade">
 
-            <img src={require('../../files/2.jpeg')} style={{ width: "100%" }} />
+            <img alt='!' src={require('../../files/2.jpeg')} style={{ width: "100%" }} />
 
           </div>
 
           <div className="mySlides //. fade">
 
-            <img src={require('../../files/3.jpeg')} style={{ width: "100%" }} />
+            <img alt='!' src={require('../../files/3.jpeg')} style={{ width: "100%" }} />
 
           </div>
 
@@ -82,13 +82,13 @@ const MainContent = () => {
 
         <marquee className="marq" bgcolor="black" direction="left" loop="">
 
-          <a href="#">ENROLL NOW FOR DMLT</a>
-          <a href="#"> ENROLL NOW FOR CMS & ED</a>
-          <a href="#">ENROLL NOW FOR SANITARY INSPECTOR</a>
-          <a href="#">ENROLL NOW FOR X-RAY TECHNICIAN</a>
-          <a href="#">ENROLL NOW FOR DIETICIAN</a>
-          <a href="#">ENROLL NOW FOR DIPLOMA IN PHYSIOTHERAPY</a>
-          <a href="#">ENROLL NOW FOR COMMUNITY HEALTH WORKER</a>
+          <a href="!">ENROLL NOW FOR DMLT</a>
+          <a href="!"> ENROLL NOW FOR CMS & ED</a>
+          <a href="!">ENROLL NOW FOR SANITARY INSPECTOR</a>
+          <a href="!">ENROLL NOW FOR X-RAY TECHNICIAN</a>
+          <a href="!">ENROLL NOW FOR DIETICIAN</a>
+          <a href="!">ENROLL NOW FOR DIPLOMA IN PHYSIOTHERAPY</a>
+          <a href="!">ENROLL NOW FOR COMMUNITY HEALTH WORKER</a>
 
         </marquee>
 
@@ -100,16 +100,16 @@ const MainContent = () => {
               <a href="aim & objective.html">Aim & Objective</a>
               <a href="aboutUs.html">Our Scope</a>
               <a href="courses.html">Course Details</a>
-              <a href="#">E-Learning</a>
+              <a href="!">E-Learning</a>
             </div>
 
             <div className="institution">
               <h2>Institution</h2>
-              <a href="#">Apply Center</a>
-              <a href="#">Payment Details</a>
-              <a href="#">Center List</a>
-              <a href="#">Advertisement</a>
-              <a href="#">Press Release</a>
+              <a href="!">Apply Center</a>
+              <a href="!">Payment Details</a>
+              <a href="!">Center List</a>
+              <a href="!">Advertisement</a>
+              <a href="!">Press Release</a>
             </div>
 
           </div>
@@ -129,14 +129,14 @@ const MainContent = () => {
             <div className="studentsec">
               <h2>Student Section</h2>
               <Link to={"/admission"}>Student Login</Link>
-              <a>Appear For Online Exam</a>
-              <a>Online Enrollment</a>
-              <a> Offline Enrollment Form</a>
-              <a> Offline Self Affidavit Form</a>
-              <a>Internship Reference Letter</a>
-              <a>Syllabus</a>
-              <a>Prospectus</a>
-              <a>Offline Admission Form</a>
+              <a href='!'>Appear For Online Exam</a>
+              <a href='!'>Online Enrollment</a>
+              <a href='!'> Offline Enrollment Form</a>
+              <a href='!'> Offline Self Affidavit Form</a>
+              <a href='!'>Internship Reference Letter</a>
+              <a href='!'>Syllabus</a>
+              <a href='!'>Prospectus</a>
+              <a href='!'>Offline Admission Form</a>
             </div>
           </div>
         </div>
@@ -145,18 +145,18 @@ const MainContent = () => {
           <div className="nb">
             <h2>Notice Board</h2>
             <marquee width="100%" direction="up" height="230px" className="mrq2">
-              <a>Notice 1</a>
-              <a>Notice 2</a>
-              <a>Notice 3</a>
-              <a>Notice 4</a>
-              <a>Notice 5</a>
-              <a>Notice 6</a>
-              <a>Notice 7</a>
-              <a>Notice 8</a>
-              <a>Notice 9</a>
-              <a>Notice 10</a>
-              <a>Notice 11</a>
-              <a>Notice 12</a>
+              <a href='!'>Notice 1</a>
+              <a href='!'>Notice 2</a>
+              <a href='!'>Notice 3</a>
+              <a href='!'>Notice 4</a>
+              <a href='!'>Notice 5</a>
+              <a href='!'>Notice 6</a>
+              <a href='!'>Notice 7</a>
+              <a href='!'>Notice 8</a>
+              <a href='!'>Notice 9</a>
+              <a href='!'>Notice 10</a>
+              <a href='!'>Notice 11</a>
+              <a href='!'>Notice 12</a>
             </marquee>
           </div>
 
@@ -164,23 +164,23 @@ const MainContent = () => {
             <h2>Courses</h2>
 
             <div className="w3-content w3-display-container bottom-crowsel">
-              <img className="mySlidess" src={require("../../files/4.jpeg")} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/5.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/6.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/7.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/8.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/9.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/10.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/11.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/12.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/13.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/14.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/15.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/16.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/17.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/18.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/19.jpeg')} style={{ width: "100%" }} />
-              <img className="mySlidess" src={require('../../files/20.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require("../../files/4.jpeg")} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/5.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/6.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/7.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/8.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/9.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/10.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/11.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/12.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/13.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/14.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/15.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/16.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/17.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/18.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/19.jpeg')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/20.jpeg')} style={{ width: "100%" }} />
 
 
             </div>
