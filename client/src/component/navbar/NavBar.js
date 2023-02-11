@@ -30,7 +30,7 @@ const NavBar = () => {
     <nav id="navbar" style={{zIndex: "10", opacity:"1"}}>
 
         <ul>
-            <li className="active"><a href="index.html"><i className="bi bi-house-door"></i>Home</a></li>
+            <li className="active"><a href="/"><i className="bi bi-house-door"></i>Home</a></li>
 
             <li><CourseDropDown /></li>
             
