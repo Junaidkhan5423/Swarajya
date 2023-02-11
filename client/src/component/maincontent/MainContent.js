@@ -41,10 +41,10 @@ const MainContent = () => {
   useEffect(() => {
     showSlides();
 
-    carousel()
-  }, [])
+    carousel();
+  }, []);
   return (
-    <div>
+    <div className='main_contentDiv'>
       <div className="content" style={{zIndex: "-1", position: "relative"}}>
 
 
@@ -52,19 +52,19 @@ const MainContent = () => {
 
           <div className="mySlides fade">
 
-            <img src={require('../../files/1.jpeg')} style={{ width: "100%" }} />
+            <img alt='!' src={require('../../files/1.jpeg')} style={{ width: "100%" }} />
 
           </div>
 
           <div className="mySlides fade">
 
-            <img src={require('../../files/2.jpeg')} style={{ width: "100%" }} />
+            <img alt='!' src={require('../../files/2.jpeg')} style={{ width: "100%" }} />
 
           </div>
 
           <div className="mySlides //. fade">
 
-            <img src={require('../../files/3.jpeg')} style={{ width: "100%" }} />
+            <img alt='!' src={require('../../files/3.jpeg')} style={{ width: "100%" }} />
 
           </div>
 
