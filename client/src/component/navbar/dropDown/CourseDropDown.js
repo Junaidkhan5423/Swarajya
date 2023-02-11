@@ -102,7 +102,7 @@ export default function MenuListComposition() {
                                         <div style={{height: "100%",overflow: "overlay"}}>
                                         {SyllabusItem.map((item,index) => {
                                             return (
-                                              <a style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
+                                              <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
 
                                             )
 
