@@ -8,6 +8,7 @@ import MainContent from './component/maincontent/MainContent';
 import { createBrowserRouter, RouterProvider  } from 'react-router-dom';
 import SignUp from './component/admissionform/SignUp';
 import StudentFrom from './component/admissionform/StudentFrom';
+import StudentInfo from './component/studentInfo/StudentInfo';
 
 function App() {
      const router = createBrowserRouter([
@@ -19,7 +20,11 @@ function App() {
         path:"/admission",
         element:<StudentFrom/>
       }
-
+       ,
+       {
+         path: "/studentInfo",
+         element: <StudentInfo />
+       }
      ])
 
 

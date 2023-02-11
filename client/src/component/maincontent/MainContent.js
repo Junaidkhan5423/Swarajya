@@ -45,7 +45,7 @@ const MainContent = () => {
   }, []);
   return (
     <div className='main_contentDiv'>
-      <div className="content" style={{zIndex: "-1", position: "relative"}}>
+      <div className="content" style={{zIndex: "-1", position: "relative" }}>
 
 
         <div className="slideshow-container">
@@ -127,7 +127,7 @@ const MainContent = () => {
           </div>
           <div className="two">
             <div className="studentsec">
-              <h2>Student Section</h2>
+              <h2>Student</h2>
               <Link to={"/admission"}>Student Login</Link>
               <a href='!'>Appear For Online Exam</a>
               <a href='!'>Online Enrollment</a>
