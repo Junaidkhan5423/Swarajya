@@ -1,6 +1,5 @@
 import React from 'react'
 import SignUp from './SignUp'
-import SignUp1 from './SignUp1.css'
 
 
 // import './form.scss'

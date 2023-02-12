@@ -3,7 +3,7 @@ const studentAdmission = async (req, res) => {
 
     try {
 
-        const { userName ,firstName, lastName, fatherName, dob, nationality, address, fatherOccupation, state, city, email, phoneNo, centerName, courseName, courseCode } = req.body
+        const { profile,userName ,firstName, lastName, fatherName, dob, nationality, address, fatherOccupation, state, city, email, phoneNo, centerName, courseName, courseCode } = req.body
         // const Mapemail =[]
         const existingEmail = new Promise ((resolve, reject)=>{
             studentModel.findOne({email}, function (err, email) {
@@ -30,6 +30,7 @@ const studentAdmission = async (req, res) => {
         .then(()=>{
         // console.log(Mapemail);
         const student =  new studentModel({
+            profile:profile,
             firstName: firstName,
             lastName: lastName,
             userName: userName,

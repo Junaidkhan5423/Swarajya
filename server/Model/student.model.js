@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 //step 1)Students Schema ===> step 2)model
 const studentSchema = new mongoose.Schema({
-
+    profile: {
+        type: String
+    },
     firstName: {
         type: String,
     },
