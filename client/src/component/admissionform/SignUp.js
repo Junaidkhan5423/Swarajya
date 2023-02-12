@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 // import ProfilePic from '../profilePic/ProfilePic';
 import { convertIntoBase64 } from '../profilePic/convert';
+import { postStudentData } from '../services/student.service';
 
 const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"]
 //  const disabledTextbox = Yup.string().test("disabled", "This field is disabled", () => false);
@@ -117,7 +118,6 @@ function SignUp() {
     //     image: Yup.mixed().required(),
     // });
 
-    const fileRef = useRef(null)
     return (
         <Formik
             initialValues={{
@@ -143,19 +143,15 @@ function SignUp() {
             // validationSchema={validate}
             onSubmit={async values => {
                 values = await Object.assign(values, { profile: file || "" })
-                console.log(values);
-                axios.post("http://localhost:9002/admission", values).then((res) => {
-                    // console.log("response is comming ", res);
-                    console.log(res.data.message)
-                    if (res.status === 200) {
-                        toast.success(res.data.message)
-                    } else {
-                    }
-                }).catch((err) => {
-                    console.log(err.response.data.message.error);
-                    toast.error(err.message.error)
+              const data = await postStudentData(values)
+                    console.log(data);
+              if(data.status === 200){
+                toast.success("Student Registered Successfully")
+              }else{
+                toast.error(data.error.response.data.message.error)
 
-                })
+              }
+               
             }}
         >
 
