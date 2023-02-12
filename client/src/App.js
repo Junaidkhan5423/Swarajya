@@ -29,7 +29,7 @@ function App() {
 
 
   return (
-    <div style={{height:"100%",width:''}}>
+    <div style={{height:"auto",width:'',background:"#f0f8ff"}}>
     <NavBar/>
   <RouterProvider router={router}></RouterProvider>
     </div>

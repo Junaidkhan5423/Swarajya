@@ -7,6 +7,8 @@ const service = require('../Controller/student.controller')
     })
     app.post("/admission",service.studentAdmission)
     app.get("/admissionlist",service.admissionlist)
+    // app.get("/student:id",service.studentDataById)
+    app.get("/student",service.studentDataByUserName)
 }
 
 module.exports={routes}

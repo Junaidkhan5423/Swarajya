@@ -210,7 +210,7 @@ marquee a {
   max-width: 1000px;
   position: relative;
   margin: auto;
-  margin-top: 2%;
+  margin-top: -1%;
 }
 
 /* Fading animation */
@@ -697,7 +697,7 @@ border-bottom: 4px solid #4267B2 !important;
 }
 
 .main_contentDiv{
-  height: 10rem;
+  height: 0rem;
 }
 
 @media(max-width:500px) {

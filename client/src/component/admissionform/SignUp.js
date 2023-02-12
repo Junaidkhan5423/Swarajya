@@ -4,7 +4,7 @@ import Textfield from './Textfield'
 import * as Yup from 'yup';
 import { useRef } from 'react'
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+
 
 //  const disabledTextbox = Yup.string().test("disabled", "This field is disabled", () => false);
 function SignUp() {
@@ -120,9 +120,9 @@ function SignUp() {
             {formik => {
 
                 return (
-                    <div >
-                        <ToastContainer />
-                        <h3 className='mu-4 font-weight-bold .display-4' style={{ textAlign: 'center', marginBottom: '2rem' }}>Addmission Form</h3>
+                    <div>
+                        <Toaster />
+                        <h3 className='mu-4 font-weight-bold .display-4 ' style={{ textAlign: 'center', marginBottom: '2rem' }}>Addmission Form</h3>
                         <Form >
                             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem' }}>
                                 <Textfield label='First Name' name='firstName' type='text' />
@@ -151,4 +151,4 @@ function SignUp() {
     )
 }
 
-export default SignUp
+export default SignUp;
