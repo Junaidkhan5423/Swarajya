@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './StudentInfo.css'
+import { getUser } from '../services/student.service'
 function StudentInfo() {
+    const [userDetail, setUserDetail] = useState({
+        userName:"nmnm",email:"laeeq11@gmail.com"
+    })
+    const [data,setData]= useState(null)
+    const fetchData = ()=>{
+        return new Promise((resolve, reject)=>{
+            const data1 =  getUser(userDetail)
+            resolve(data1)
+        })
+        
+        }
+    useEffect(()=>{
+        // const user = getUser(userDetail)
+        fetchData().then((res)=>{
+               setData(res.data);
+        })  
+   },[])
     return (
         <>
             <div className="student-profile py-4">
@@ -10,12 +28,12 @@ function StudentInfo() {
                             <div className="card shadow-sm">
                                 <div className="card-header bg-transparent text-center">
                                     <img className="profile_img" src="https://source.unsplash.com/600x300/?student" alt="student dp" />
-                                    <h3>Mubashir Pathan</h3>
+                                    <h3>{data?.firstName || ' '} {data?.lastName || ""}</h3>
                                 </div>
                                 <div className="card-body">
-                                    <p className="mb-0"><strong className="pr-1">Student ID:</strong>321000001</p>
-                                    <p className="mb-0"><strong className="pr-1">Course:</strong>DMLT</p>
-                                    <p className="mb-0"><strong className="pr-1">Section:</strong>A</p>
+                                    <p className="mb-0"><strong className="pr-1">Student ID:</strong>{data?.userName || ""}</p>
+                                    <p className="mb-0"><strong className="pr-1">Course:</strong>{data?.courseName || " " }</p>
+                                    <p className="mb-0"><strong className="pr-1">city:</strong>{data?.city || " "}</p>
                                 </div>
                             </div>
                         </div>
