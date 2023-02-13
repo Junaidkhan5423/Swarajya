@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import './StudentInfo.css'
 import { getUser } from '../services/student.service'
-function StudentInfo() {
+import Dialog from '@mui/material/Dialog';
+
+function StudentInfo(props) {
     const [userDetail, setUserDetail] = useState({
         userName:"nmnm",email:"laeeq11@gmail.com"
     })
     const [data,setData]= useState(null)
     const fetchData = ()=>{
+        console.log(props.userDetail);
         return new Promise((resolve, reject)=>{
-            const data1 =  getUser(userDetail)
+            const data1 =  getUser(props.userDetail)
             resolve(data1)
         })
         
@@ -22,7 +25,14 @@ function StudentInfo() {
     return (
         <>
             <div className="student-profile py-4">
-                <div className="container">
+            <Dialog
+        fullScreen
+
+         open={props.open}
+        //  onClose={props.handleClose}        
+      >
+        
+        <div className="container">
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="card shadow-sm">
@@ -84,6 +94,8 @@ function StudentInfo() {
                         </div>
                     </div>
                 </div>
+      </Dialog>
+              
             </div>
         </>
     )

@@ -3,10 +3,15 @@ import { useFormik } from 'formik';
 
 import "./SingUpPage.css"
 import * as Yup from "yup";
+import StudentInfo from '../studentInfo/StudentInfo';
 
 
 function SingUpPage() {
     const  [userDetail,setUserDetail] = useState({})
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
     const schema = Yup.object().shape({
         email: Yup.string()
@@ -23,6 +28,7 @@ function SingUpPage() {
         },
         onSubmit: values => {
 setUserDetail(values)
+handleClickOpen()
         },
       });
     return (
@@ -50,6 +56,7 @@ setUserDetail(values)
     </form>
   </div>
 </div>
+{open && <StudentInfo open={open} userDetail={userDetail}/ >}
         </>
     )
 }
