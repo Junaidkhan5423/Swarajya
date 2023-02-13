@@ -79,18 +79,21 @@ const studentAdmission = async (req, res) => {
 //     studentModel.findById()
 // }
 const studentDataByUserName = (req,res)=>{
+
     const {userName ,email} =req.body
-    console.log(req.body)
+    
     const avalaibleUser = new Promise((resolve,reject)=>{
         studentModel.findOne({userName,email},function (err,user) {
             if(err) reject(err)
             if(!user) reject ({error : "user not FOUND"})
+            console.log(user);
             resolve(user)
             
         })
     })
     avalaibleUser.then((user)=>{
-        res.status(200).send({ data:user})
+        console.log(user);
+        res.status(200).send(user)
     
     }).catch((err)=>{
         res.status(500).send({ message: err })

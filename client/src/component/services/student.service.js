@@ -10,8 +10,9 @@ export const postStudentData = async(values)=>{
 }
 
 export const getUser = async(values)=>{
+    console.log(values);
     try {
-        return await axios.get("http://localhost:9002/student",values)
+        return await axios.post("http://localhost:9002/student",values)
     } catch (error) {
         return {error}
     }
