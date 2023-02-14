@@ -80,17 +80,19 @@ const studentAdmission = async (req, res) => {
 // }
 const studentDataByUserName = (req,res)=>{
 
-    const {userName ,email} =req.body
-    
-    const avalaibleUser = new Promise((resolve,reject)=>{
-        studentModel.findOne({userName,email},function (err,user) {
-            if(err) reject(err)
-            if(!user) reject ({error : "user not FOUND"})
-            console.log(user);
-            resolve(user)
-            
+    const {userName,email} =req.body
+    if(userName){
+        const avalaibleUser = new Promise((resolve,reject)=>{
+            studentModel.findOne({userName,email},function (err,user) {
+                if(err) reject(err)
+                if(user)resolve(user)
+                reject(err)
+                console.log(user);
+                
+            })
         })
-    })
+       
+    }
     avalaibleUser.then((user)=>{
         console.log(user);
         res.status(200).send(user)
@@ -99,6 +101,8 @@ const studentDataByUserName = (req,res)=>{
         res.status(500).send({ message: err })
     })
    
+    
+  
 }
 const admissionlist = async (req, res) => {
     studentModel.find((err, users) => {

@@ -4,33 +4,17 @@ import { getUser } from '../services/student.service'
 import Dialog from '@mui/material/Dialog';
 
 function StudentInfo(props) {
-    const [userDetail, setUserDetail] = useState({
-        userName:"nmnm",email:"laeeq11@gmail.com"
-    })
-    const [data,setData]= useState(null)
-    const fetchData = ()=>{
-        console.log(props.userDetail);
-        return new Promise((resolve, reject)=>{
-            const data1 =  getUser(props.userDetail)
-            resolve(data1)
-        })
-        
-        }
-    useEffect(()=>{
-        // const user = getUser(userDetail)
-        fetchData().then((res)=>{
-               setData(res.data);
-        })  
-   },[])
+   const {data , open} = props
     return (
         <>
-            <div className="student-profile py-4">
-            <Dialog
+          <Dialog
         fullScreen
-
-         open={props.open}
-        //  onClose={props.handleClose}        
-      >
+         open={open}
+         
+         
+         >
+            <div className="student-profile py-4">
+          
         
         <div className="container">
                     <div className="row">
@@ -94,9 +78,10 @@ function StudentInfo(props) {
                         </div>
                     </div>
                 </div>
-      </Dialog>
               
             </div>
+      </Dialog>
+
         </>
     )
 }

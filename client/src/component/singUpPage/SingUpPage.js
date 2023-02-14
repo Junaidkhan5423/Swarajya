@@ -4,20 +4,22 @@ import { useFormik } from 'formik';
 import "./SingUpPage.css"
 import * as Yup from "yup";
 import StudentInfo from '../studentInfo/StudentInfo';
+import { getUser } from '../services/student.service';
+
 
 
 function SingUpPage() {
-    const  [userDetail,setUserDetail] = useState({})
   const [open, setOpen] = React.useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+ 
+const [data,setData]= useState(null)
+
+
 
     const schema = Yup.object().shape({
         email: Yup.string()
             .required("Email is a required field")
             .email("Invalid email format"),
-        password: Yup.string()
+        userName: Yup.string()
             .required("Password is a required field")
             .min(8, "Password must be at least 8 characters"),
     });
@@ -26,9 +28,16 @@ function SingUpPage() {
           userName: '',
           email: '',
         },
+        // validate:schema,
         onSubmit: values => {
-setUserDetail(values)
-handleClickOpen()
+          new Promise((resolve, reject)=>{
+            const data1 =  getUser(values)
+            resolve(data1)
+        }).then((res)=>{
+          setData(res.data);
+          setOpen(true);
+
+        })
         },
       });
     return (
@@ -36,10 +45,12 @@ handleClickOpen()
           <div className="login-page">
   <div className="form">
     <form className="login-form"  onSubmit={formik.handleSubmit}>
+      
       <input
       id="useName"
       name="userName"
       type="userName" 
+      required
       placeholder='username'
          onChange={formik.handleChange}
          value={formik.values.userName}
@@ -48,6 +59,7 @@ handleClickOpen()
        id="email"
          name="email"
          type="email"
+         required
          placeholder='email'
          onChange={formik.handleChange}
          value={formik.values.email}
@@ -56,9 +68,9 @@ handleClickOpen()
     </form>
   </div>
 </div>
-{open && <StudentInfo open={open} userDetail={userDetail}/ >}
+{open && <StudentInfo open={open} data={data}/ >}
         </>
     )
-}
+    }
 
 export default SingUpPage

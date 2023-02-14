@@ -21,13 +21,7 @@ function App() {
     {
       path: "/admission",
       element: <StudentFrom />
-    }
-    ,
-    {
-      path: "/studentInfo",
-      element: <StudentInfo />
     },
-
     {
       path: "/Studentlogin",
       element: <SingUpPage/>
