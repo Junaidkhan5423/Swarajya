@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider  } from 'react-router-dom';
 import SignUp from './component/admissionform/SignUp';
 import StudentFrom from './component/admissionform/StudentFrom';
 import StudentInfo from './component/studentInfo/StudentInfo';
+import Login from './component/AdminLogin/Login'
 
 function App() {
      const router = createBrowserRouter([
@@ -24,7 +25,11 @@ function App() {
        {
          path: "/studentInfo",
          element: <StudentInfo />
-       }
+       },
+       {
+        path: "/login",
+        element: <Login />
+      }
      ])
 
 
