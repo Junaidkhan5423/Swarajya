@@ -6,10 +6,10 @@ import firstimage from './files/1.jpeg'
 import { useEffect } from 'react';
 import MainContent from './component/maincontent/MainContent';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import SignUp from './component/admissionform/SignUp';
 import StudentFrom from './component/admissionform/StudentFrom';
 import StudentInfo from './component/studentInfo/StudentInfo';
 import Login  from './component/AdminLogin/Login';
+import SingUpPage from './component/singUpPage/SingUpPage';
 
 function App() {
      const router = createBrowserRouter([
@@ -30,6 +30,10 @@ function App() {
        {
         path: "/login",
         element: <Login />
+      } ,
+      {
+        path: "/Studentlogin",
+        element: <SingUpPage />
       }
      ])
 
