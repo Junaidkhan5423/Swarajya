@@ -1,6 +1,7 @@
 import React from 'react'
 import CourseDropDown from './dropDown/CourseDropDown';
 import Council from './dropDown/Council';
+import { Link } from 'react-router-dom';
 
 
 
@@ -36,8 +37,8 @@ const NavBar = () => {
             
             <li ><Council /></li>
             <li className="dropdown">
-                <a href="#" className="dropbtn">Students</a>
-                <div className="dropdown-content">
+                <a  className="dropbtn" href='/Studentlogin'>Students</a>
+                {/* <div className="dropdown-content">
 
                     <a href="!">STUDENT LOGIN</a>
                     <a href="#">APPEAR FOR ONLINE EXAM</a>
@@ -49,7 +50,7 @@ const NavBar = () => {
                     <a href="prospectus.html">PROSPECTUS</a>
                     <a href="#">OFFLINE ADMISSION FORM </a>
                     <a href="#">INTERNSHIP REFERENCE LETTER </a>
-                </div>
+                </div> */}
             </li>
             <li className="dropdown">
                 <a href="aboutUs.html" className="dropbtn">About Us</a>
