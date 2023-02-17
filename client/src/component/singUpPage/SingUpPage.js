@@ -5,11 +5,25 @@ import "./SingUpPage.css"
 import * as Yup from "yup";
 import StudentInfo from '../studentInfo/StudentInfo';
 import { getUser } from '../services/student.service';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
 
 
 
 function SingUpPage() {
   const [open, setOpen] = React.useState(false);
+  const availableUser = (useDetail)=>{
+   return new Promise((resolve, reject)=>{
+    if(!useDetail){
+      reject()
+    }
+      const data1 =  getUser(useDetail)
+      resolve(data1)
+  }).catch((err)=>{
+    console.log(err);
+  })
+  }
  
 const [data,setData]= useState(null)
 
@@ -30,19 +44,24 @@ const [data,setData]= useState(null)
         },
         // validate:schema,
         onSubmit: values => {
-          new Promise((resolve, reject)=>{
-            const data1 =  getUser(values)
-            resolve(data1)
-        }).then((res)=>{
-          setData(res.data);
-          setOpen(true);
-
+         availableUser(values).then((res)=>{
+          if(res.status === 200){
+            setData(res.data);
+            setOpen(true);
+          }else{
+            toast.error("User Not Found")
+          }
+        
+         
+      
         })
         },
       });
     return (
         <>
           <div className="login-page">
+          <ToastContainer />
+
   <div className="form">
     <form className="login-form"  onSubmit={formik.handleSubmit}>
       

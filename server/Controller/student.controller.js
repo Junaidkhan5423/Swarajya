@@ -87,20 +87,18 @@ const studentDataByUserName = (req,res)=>{
                 if(err) reject(err)
                 if(user)resolve(user)
                 reject(err)
-                console.log(user);
                 
             })
         })
-       
+        avalaibleUser.then((user)=>{
+            res.status(200).send(user)
+        
+        }).catch((err)=>{
+            res.status(500).send({ message: err })
+        })
+     
     }
-    avalaibleUser.then((user)=>{
-        console.log(user);
-        res.status(200).send(user)
-    
-    }).catch((err)=>{
-        res.status(500).send({ message: err })
-    })
-   
+      
     
   
 }

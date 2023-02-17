@@ -85,7 +85,7 @@
   margin-left: 0.5rem;
 }
 
-ul {
+.nav-bar-list{
   display: flex;
   justify-content: space-around;
   list-style-type: none;

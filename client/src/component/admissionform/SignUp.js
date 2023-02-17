@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Textfield from './Textfield'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
 import * as Yup from 'yup';
 import { useRef } from 'react'
 import axios from 'axios';
@@ -9,40 +11,41 @@ import 'react-toastify/dist/ReactToastify.min.css';
 // import ProfilePic from '../profilePic/ProfilePic';
 import { convertIntoBase64 } from '../profilePic/convert';
 import { postStudentData } from '../services/student.service';
+import FormControl from '@mui/material/FormControl';
+import { styled } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
+import "./form.scss"
+
+
+
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
+
 
 const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"]
 //  const disabledTextbox = Yup.string().test("disabled", "This field is disabled", () => false);
+
 function SignUp() {
+
     const [file, setFile] = useState(null)
+    const [state, setState] = useState("")
+    const [selectedCity ,setSelectedCity]=useState([])
+    const MahashtraCity=["Ahmadnagar","Akola","Amravati","Aurangabad","Bhandara","Bid (Beed)","Buldana (Buldhana)","Chandrapur","Dhule","Gadchiroli","Gondiya (Gondia)","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","Mumbai","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim", "Yavatmal"];
+    const UpCity=["Agra","Aligarh","Allahabad","Ambedkar", "Nagar","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Bara Banki","Bareilly","Basti","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad", "Farrukhabad","Fatehpur","Firozabad","Gautam" ,"Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hardoi","Hathras (Mahamaya Nagar)","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur","Kanpur Nagar","Kasganj (Kanshiram Nagar)","Kaushambi","Kheri (Lakhimpur Kheri)","Kushinagar","Lalitpur","Lucknow","Mahoba","Mahrajganj (Maharajganj)","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Rae Bareli","Rampur","Saharanpur","Sant Kabir Nagar","Sant Ravidas Nagar (Bhadohi)","Shahjahanpur","Shrawasti (Shravasti)","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"]
     const onUpload = async (e) => {
         const base64 = await convertIntoBase64(e.target.files[0])
         setFile(base64)
         console.log(base64);
     }
-    // useEffect(() => {
-    //    const data = localStorage.getItem("studentForm")
-    //     console.log(JSON.parse(data));
-    // }, [])
-
-    // useEffect(() => {
-    //     const options = {
-    //         method: 'GET',
-    //         url: 'https://andruxnet-world-cities-v1.p.rapidapi.com/',
-    //         params: { query: 'paris', searchby: 'city' },
-    //         headers: {
-    //             'X-RapidAPI-Key': '403470d12cmsh3231784fa24b81ap17abb0jsnf1a553867449',
-    //             'X-RapidAPI-Host': 'countries-cities.p.rapidapi.com'
-    //         }
-    //     };
-
-
-    //     axios.request(options).then(function (response) {
-
-    //     }).catch(function (error) {
-    //         console.error(error);
-
-    //     });
-    // }, [])
+    const handleChange = (event) => {
+        console.log(event.target.value);
+        if(event.target.value === "Mahashtra"){
+            setSelectedCity(MahashtraCity)
+        }else{
+            setSelectedCity(UpCity)
+        }
+        setState(event.target.value);
+    };
 
     const validate = Yup.object({
         firstName: Yup.string()
@@ -140,18 +143,18 @@ function SignUp() {
                 profile: '',
 
             }}
-            // validationSchema={validate}
+            validationSchema={validate}
             onSubmit={async values => {
                 values = await Object.assign(values, { profile: file || "" })
-              const data = await postStudentData(values)
-                    console.log(data);
-              if(data.status === 200){
-                toast.success("Student Registered Successfully")
-              }else{
-                toast.error(data.error.response.data.message.error)
+                const data = await postStudentData(values)
+                console.log(data);
+                if (data.status === 200) {
+                    toast.success("Student Registered Successfully")
+                } else {
+                    toast.error(data.error.response.data.message.error)
 
-              }
-               
+                }
+
             }}
         >
 
@@ -159,12 +162,11 @@ function SignUp() {
 
             {({ values }) => {
                 return (
-                    <div >
+                    <div  >
                         <ToastContainer />
-                        <h3 className='mu-4 font-weight-bold .display-4' style={{ textAlign: 'center', marginBottom: '2rem' }}>Addmission Form</h3>
+                        <h3 className='mu-4 font-weight-bold .display-4' style={{ textAlign: 'center', marginBottom: '2rem',fontSize:'3rem' }}>Addmission Form</h3>
                         <Form >
-                            <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem' }}>
-                                <input label='Photo' name='profile' type='file' onChange={onUpload} />
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem',fontSize:'20rem' }}>
                                 {/* {values.studentPhoto && <ProfilePic file={values.studentPhoto} />} */}
                                 {/* <button type='button' onClick={() => { fileRef.current.click() }}>Upload</button> */}
                                 <Textfield label='First Name' name='firstName' type='text' />
@@ -176,16 +178,51 @@ function SignUp() {
                                 <Textfield label='Nationality' name='nationality' type='text' disabled />
                                 <Textfield label='Father Occupation' name='fatherOccupation' type='text' />
                                 <Textfield label='Address' name='address' type='text' />
-                                <Textfield label='State' name='state' type='text' />
-                                <Textfield label='City' name='city' type='text' />
+                                <FormControl sx={{ m: 1, minWidth: 80 }}>
+                                    <InputLabel>State</InputLabel>
+                                    <Select
+                                        // labelId="demo-simple-select-autowidth-label"
+                                        // id="demo-simple-select-autowidth"
+                                        autoWidth
+                                        className='demo-simple-select'
+                                        value={state}
+                                        label="State"
+                                        onChange={handleChange}
+                                    // style={{display: "flex",flexDirection: "column"}}
+                                    >
+                                        <MenuItem value={"Mahashtra"}>Mahashtra</MenuItem>
+                                        <MenuItem value={"Uttar pradesh"}>Uttar pradesh</MenuItem>
+                                    </Select>
+                                </FormControl>
+
+                                <FormControl sx={{ m: 1, minWidth: 80 }}>
+                                    <InputLabel id="demo-select-small">City</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select"
+                                        value={state}
+                                        label="City"
+                                        onChange={handleChange}
+                                    >
+                                        { selectedCity.map((item)=>{
+                                            return(
+                                                <MenuItem value={item}>{item}</MenuItem>
+                                            )
+                                        })
+                                        }                                     
+
+                                    </Select>
+                                </FormControl>
                                 <Textfield label='Email' name='email' type='email' />
                                 <Textfield label='Phone No.' name='phoneNo' type='number' />
                                 <Textfield label='Center Name' name='centerName' type='text' disabled />
                                 <Textfield label='Course Name' name='courseName' type='text' />
                                 <Textfield label='Course Code' name='courseCode' type='number' />
+                                <input label='Photo' name='profile' type='file' onChange={onUpload} />
+
                             </div>
-                            <button className='btn btn-dark mt-3' type='submit'>Register</button>
-                            <button className='btn btn-danger mt-3 ml-3' type='reset'>Reset</button>
+                            <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'black'}}>Register</button>
+                            <button className='btn btn-danger mt-3 ml-3' type='Next' style={{backgroundColor:'black'}}>Next</button>
                         </Form>
                     </div>)
             }}

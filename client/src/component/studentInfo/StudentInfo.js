@@ -21,7 +21,7 @@ function StudentInfo(props) {
                         <div className="col-lg-4">
                             <div className="card shadow-sm">
                                 <div className="card-header bg-transparent text-center">
-                                    <img className="profile_img" src="https://source.unsplash.com/600x300/?student" alt="student dp" />
+                                    <img className="profile_img" src={data?.profile || ""} alt="student dp" />
                                     <h3>{data?.firstName || ' '} {data?.lastName || ""}</h3>
                                 </div>
                                 <div className="card-body">

@@ -10,11 +10,17 @@ label {
 
 input.form-control,
 input.form-control:focus {
-    background: #F0F0FF
+    background: #F0F0FF,
+   
+   
 }
 
 .error {
     position: absolute;
     color: red;
     font-size: 0.6rem;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    display: flex ;
+    flex-direction: column;
 }

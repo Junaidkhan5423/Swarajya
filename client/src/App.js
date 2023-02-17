@@ -1,9 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Footer from './component/footer/Footer';
 import NavBar from './component/navbar/NavBar';
-import firstimage from './files/1.jpeg'
-import { useEffect } from 'react';
 import MainContent from './component/maincontent/MainContent';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import StudentFrom from './component/admissionform/StudentFrom';
