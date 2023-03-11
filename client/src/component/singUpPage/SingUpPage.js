@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useFormik } from 'formik';
-
 import "./SingUpPage.css"
 import * as Yup from "yup";
 import StudentInfo from '../studentInfo/StudentInfo';
@@ -44,6 +43,7 @@ const [data,setData]= useState(null)
         },
         // validate:schema,
         onSubmit: values => {
+          console.log("data is cooming",values);
          availableUser(values).then((res)=>{
           if(res.status === 200){
             setData(res.data);
@@ -62,7 +62,7 @@ const [data,setData]= useState(null)
           <div className="login-page">
           <ToastContainer />
 
-  <div className="form">
+  <div className="sing-up-form">
     <form className="login-form"  onSubmit={formik.handleSubmit}>
       
       <input

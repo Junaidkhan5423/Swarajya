@@ -7,7 +7,7 @@ import SignUp from './SignUp'
 
 function StudentFrom() {
     return (
-        <div className='container mt-3 form' style={{backgroundColor:"smokewhite"}}>
+        <div className='container mt-3 form' style={{backgroundColor:"lavender"}}>
              <div className='row justify-content-center'>
                 <div className='col-md-5 '  >
                     <SignUp  />

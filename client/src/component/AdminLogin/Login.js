@@ -13,8 +13,19 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './Admin.css'
+import axios from 'axios';
+import { AdminLoginService } from '../services/student.service';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useAuthentication } from '../../store/store';
+import { useEffect } from 'react';
+
+
+
 
 function Copyright(props) {
+
+
+
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -30,16 +41,29 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
-  const handleSubmit = (event) => {
+const navigate = useNavigate()
+const token = useAuthentication(state => state.auth.token)
+
+const setAuthentication = useAuthentication(state => state.setAuthentication)
+useEffect(()=>{
+console.log(token);
+},[token])
+  const handleSubmit = async(event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+   const Admin = await AdminLoginService({
+    email: data.get('email'),
+    password: data.get('password'),
+  })
+setAuthentication({name:Admin?.name,token:Admin?.token})
+  navigate("/table")
+  
+  console.log(Admin);
   };
 
   return (
+    <div className='login-1'>
+        <div className='login-2'>
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -98,16 +122,18 @@ export default function Login() {
                   Forgot password?
                 </Link>
               </Grid>
-              <Grid item>
+              {/* <Grid item>
                 <Link href="#" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
-              </Grid>
+              </Grid> */}
             </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+    </div>
+    </div>
   );
 }

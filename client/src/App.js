@@ -6,6 +6,7 @@ import StudentFrom from './component/admissionform/StudentFrom';
 import StudentInfo from './component/studentInfo/StudentInfo';
 import Login  from './component/AdminLogin/Login';
 import SingUpPage from './component/singUpPage/SingUpPage';
+import Users from './component/table/table';
 
 function App() {
      const router = createBrowserRouter([
@@ -30,6 +31,10 @@ function App() {
       {
         path: "/Studentlogin",
         element: <SingUpPage />
+      },
+      {
+        path:"/table",
+        element:<Users/>
       }
      ])
 

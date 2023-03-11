@@ -93,13 +93,13 @@ export default function MenuListComposition() {
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "350px",width:"350px",zIndex:"10" }}
+                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "350px",width:"350px",zIndex:"10"}}
                                         autoFocusItem={open}
                                         id="composition-menu"
                                         aria-labelledby="composition-button"
                                         onKeyDown={handleListKeyDown}
                                     >
-                                        <div style={{height: "100%",overflow: "overlay"}}>
+                                        <div style={{height: "100%",overflow: "overlay",backgroundColor:"black"}}>
                                         {SyllabusItem.map((item,index) => {
                                             return (
                                               <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>

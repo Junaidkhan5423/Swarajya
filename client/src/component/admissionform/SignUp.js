@@ -13,7 +13,6 @@ import { convertIntoBase64 } from '../profilePic/convert';
 import { postStudentData } from '../services/student.service';
 import FormControl from '@mui/material/FormControl';
 import { styled } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
 import "./form.scss"
 
 
@@ -29,23 +28,28 @@ function SignUp() {
 
     const [file, setFile] = useState(null)
     const [state, setState] = useState("")
-    const [selectedCity ,setSelectedCity]=useState([])
-    const MahashtraCity=["Ahmadnagar","Akola","Amravati","Aurangabad","Bhandara","Bid (Beed)","Buldana (Buldhana)","Chandrapur","Dhule","Gadchiroli","Gondiya (Gondia)","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","Mumbai","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim", "Yavatmal"];
-    const UpCity=["Agra","Aligarh","Allahabad","Ambedkar", "Nagar","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Bara Banki","Bareilly","Basti","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad", "Farrukhabad","Fatehpur","Firozabad","Gautam" ,"Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hardoi","Hathras (Mahamaya Nagar)","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur","Kanpur Nagar","Kasganj (Kanshiram Nagar)","Kaushambi","Kheri (Lakhimpur Kheri)","Kushinagar","Lalitpur","Lucknow","Mahoba","Mahrajganj (Maharajganj)","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Rae Bareli","Rampur","Saharanpur","Sant Kabir Nagar","Sant Ravidas Nagar (Bhadohi)","Shahjahanpur","Shrawasti (Shravasti)","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"]
+    const [City, setCity] = useState("")
+    const [selectedCity, setSelectedCity] = useState([])
+
+    const MahashtraCity = ["Ahmadnagar", "Akola", "Amravati", "Aurangabad", "Bhandara", "Bid (Beed)", "Buldana (Buldhana)", "Chandrapur", "Dhule", "Gadchiroli", "Gondiya (Gondia)", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"];
+    const UpCity = ["Agra", "Aligarh", "Allahabad", "Ambedkar", "Nagar", "Amroha", "Auraiya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Bara Banki", "Bareilly", "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Faizabad", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam", "Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hardoi", "Hathras (Mahamaya Nagar)", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur", "Kanpur Nagar", "Kasganj (Kanshiram Nagar)", "Kaushambi", "Kheri (Lakhimpur Kheri)", "Kushinagar", "Lalitpur", "Lucknow", "Mahoba", "Mahrajganj (Maharajganj)", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Rae Bareli", "Rampur", "Saharanpur", "Sant Kabir Nagar", "Sant Ravidas Nagar (Bhadohi)", "Shahjahanpur", "Shrawasti (Shravasti)", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"]
     const onUpload = async (e) => {
         const base64 = await convertIntoBase64(e.target.files[0])
         setFile(base64)
         console.log(base64);
     }
     const handleChange = (event) => {
-        console.log(event.target.value);
-        if(event.target.value === "Mahashtra"){
+        if (event.target.value === "Mahashtra") {
             setSelectedCity(MahashtraCity)
-        }else{
+        } else {
             setSelectedCity(UpCity)
         }
         setState(event.target.value);
     };
+    const handleChangeCity = (event) => {
+        setCity(event.target.value);
+
+    }
 
     const validate = Yup.object({
         firstName: Yup.string()
@@ -139,13 +143,14 @@ function SignUp() {
                 phoneNo: '',
                 centerName: 'Swarajya Paramedical Institute',
                 courseName: '',
-                courseCode: 'AI-4794',
+                courseCode: 4794,
                 profile: '',
 
             }}
-            validationSchema={validate}
+            // validationSchema={validate}
             onSubmit={async values => {
-                values = await Object.assign(values, { profile: file || "" })
+                console.log(values)
+                values = await Object.assign(values, { profile: file || "", state: state || "", city: City || '' })
                 const data = await postStudentData(values)
                 console.log(data);
                 if (data.status === 200) {
@@ -158,15 +163,15 @@ function SignUp() {
             }}
         >
 
-            {/* {formik => { */}
+            {formik => {
 
-            {({ values }) => {
+                {/* {({ values }) => { */ }
                 return (
                     <div  >
                         <ToastContainer />
-                        <h3 className='mu-4 font-weight-bold .display-4' style={{ textAlign: 'center', marginBottom: '2rem',fontSize:'3rem' }}>Addmission Form</h3>
+                        <h3 className='mu-4 font-weight-bold .display-4' style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '3rem' }}>Addmission Form</h3>
                         <Form >
-                            <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem',fontSize:'20rem' }}>
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem', fontSize: '20rem' }}>
                                 {/* {values.studentPhoto && <ProfilePic file={values.studentPhoto} />} */}
                                 {/* <button type='button' onClick={() => { fileRef.current.click() }}>Upload</button> */}
                                 <Textfield label='First Name' name='firstName' type='text' />
@@ -178,7 +183,7 @@ function SignUp() {
                                 <Textfield label='Nationality' name='nationality' type='text' disabled />
                                 <Textfield label='Father Occupation' name='fatherOccupation' type='text' />
                                 <Textfield label='Address' name='address' type='text' />
-                                <FormControl sx={{ m: 1, minWidth: 80 }}>
+                                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                                     <InputLabel>State</InputLabel>
                                     <Select
                                         // labelId="demo-simple-select-autowidth-label"
@@ -195,21 +200,21 @@ function SignUp() {
                                     </Select>
                                 </FormControl>
 
-                                <FormControl sx={{ m: 1, minWidth: 80 }}>
+                                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                                     <InputLabel id="demo-select-small">City</InputLabel>
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select"
-                                        value={state}
+                                        value={City}
                                         label="City"
-                                        onChange={handleChange}
+                                        onChange={handleChangeCity}
                                     >
-                                        { selectedCity.map((item)=>{
-                                            return(
+                                        {selectedCity.map((item) => {
+                                            return (
                                                 <MenuItem value={item}>{item}</MenuItem>
                                             )
                                         })
-                                        }                                     
+                                        }
 
                                     </Select>
                                 </FormControl>
@@ -218,11 +223,11 @@ function SignUp() {
                                 <Textfield label='Center Name' name='centerName' type='text' disabled />
                                 <Textfield label='Course Name' name='courseName' type='text' />
                                 <Textfield label='Course Code' name='courseCode' type='number' />
-                                <input label='Photo' name='profile' type='file' onChange={onUpload} />
+                                <input label='Photo' style={{ display: "flex", flexDirection: "column", alignItems: "baseline", border: "2 px", fontSize: "1pc" }} name='profile' type='file' onChange={onUpload} />
 
                             </div>
-                            <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'black'}}>Register</button>
-                            <button className='btn btn-danger mt-3 ml-3' type='Next' style={{backgroundColor:'black'}}>Next</button>
+                            {/* <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'darkgray'}}>Submit</button> */}
+                            <button className='btn btn-danger mt-3 ' type='submit' style={{ backgroundColor: 'darkgray' }}>Submit</button>
                         </Form>
                     </div>)
             }}

@@ -1,4 +1,5 @@
 const studentModel = require("../Model/student.model")
+
 const studentAdmission = async (req, res) => {
 
     try {
@@ -112,7 +113,7 @@ const admissionlist = async (req, res) => {
 
         })
 
-
+  
     }, [])
 
 }

@@ -7,14 +7,16 @@ body {
 label {
     font-size: 0.7rem;
 }
+// .input.form-control{
+//     border: 1px solid black;
+// }
+
 
 input.form-control,
 input.form-control:focus {
-    background: #F0F0FF,
-   
-   
+    border: 1px solid black;
+    background: #F0F0FF
 }
-
 .error {
     position: absolute;
     color: red;
@@ -23,4 +25,13 @@ input.form-control:focus {
 .css-6hp17o-MuiList-root-MuiMenu-list {
     display: flex ;
     flex-direction: column;
+    
+   
+}
+.css-1869usk-MuiFormControl-root {
+margin: 0 !important;
+margin-top:35px !important;
+background:  #F0F0FF;
+border: 1px solid black;
+
 }

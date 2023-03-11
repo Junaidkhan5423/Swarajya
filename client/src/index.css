@@ -641,6 +641,7 @@ border-bottom: 4px solid #4267B2 !important;
   flex-direction: column;
   margin-top: 3%;
   overflow: hidden;
+  color: darkblue;
 }
 
 .course_slider {

@@ -97,11 +97,12 @@ export default function Council() {
                                         aria-labelledby="composition-button"
                                         onKeyDown={handleListKeyDown}
                                     >
-                                        <div style={{ height: "100%", overflow: "overlay" }}>
+                                        <div style={{ height: "100%", overflow: "overlay",backgroundColor:'black' }}>
                                             {certificates.map((item, index) => {
                                                 return (
                                                     // <a style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
-                                                    <a style={{ position: "relative", overflow: "visible" }}>{item}</a>
+                                                    // <a className='hovercolor' style={{ position: "relative", overflow: "visible" }}>{item}</a>
+                                                    <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a> 
                                                 )
 
                                             })}

@@ -42,6 +42,7 @@ const studentSchema = new mongoose.Schema({
     },
     centerName: {
         type: String,
+        
     }, courseName: {
         type: String,
     },

@@ -18,3 +18,19 @@
     animation: 
       pulse 0.5s ease-in-out;
 }
+.login-1{
+  
+   background-color: lightblue;
+  
+}
+.login-2{
+    height: 600px;
+    width: 400px;
+    background-color:lightskyblue;
+    display:flex;
+   margin-left: 450px;
+   
+   padding-bottom: 2rem;
+   border:  1px solid black;
+   
+}
