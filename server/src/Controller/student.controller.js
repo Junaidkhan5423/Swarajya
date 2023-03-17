@@ -1,4 +1,6 @@
 const studentModel = require("../Model/student.model")
+const adminModel = require("../Model/admin.model")
+
 
 const studentAdmission = async (req, res) => {
 
@@ -26,10 +28,13 @@ const studentAdmission = async (req, res) => {
             })
 
         })
-        
+      const admin =await  adminModel.findOne({cities:city})
+
+        console.log(admin);
         Promise.all([existingEmail,existingUser])
         .then(()=>{
-        // console.log(Mapemail);
+        // console.log(Mapemail);\
+        
         const student =  new studentModel({
             profile:profile,
             firstName: firstName,
@@ -46,7 +51,8 @@ const studentAdmission = async (req, res) => {
             phoneNo: phoneNo,
             centerName: centerName,
             courseName: courseName,
-            courseCode: courseCode
+            courseCode: courseCode,
+            refrencBY:admin._id
         })
 
                 student.save()
@@ -71,7 +77,8 @@ const studentAdmission = async (req, res) => {
         // console.log("app running successfully");
 
     }
-    catch {
+    catch (err){
+        res.status(500).send({ message: err })
 
     }
 
@@ -104,7 +111,9 @@ const studentDataByUserName = (req,res)=>{
   
 }
 const admissionlist = async (req, res) => {
-    studentModel.find((err, users) => {
+    const {userId}=req.user
+    console.log(userId);
+    studentModel.find({refrencBY:userId},(err, users) => {
         if (err) throw err;
         res.status(200).send({
             status: true,

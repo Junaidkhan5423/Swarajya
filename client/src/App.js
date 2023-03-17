@@ -7,6 +7,9 @@ import StudentInfo from './component/studentInfo/StudentInfo';
 import Login  from './component/AdminLogin/Login';
 import SingUpPage from './component/singUpPage/SingUpPage';
 import Users from './component/table/table';
+import StripePaymentCancel from './component/payment/StripePaymentCancel';
+import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
+import Payment from './component/payment/Payment';
 
 function App() {
      const router = createBrowserRouter([
@@ -35,6 +38,18 @@ function App() {
       {
         path:"/table",
         element:<Users/>
+      },
+      {
+        path:"/StripePaymentCancel",
+        element:<StripePaymentCancel/>
+      },
+         {
+        path:"/StripePaymentSuccess",
+        element:<StripePaymentSuccess/>
+      },
+      {
+        path:"/payment",
+        element:<Payment/>
       }
      ])
 

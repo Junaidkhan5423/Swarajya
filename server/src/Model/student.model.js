@@ -48,7 +48,11 @@ const studentSchema = new mongoose.Schema({
     },
     courseCode: {
         type: String,
+    },
+    refrencBY:{
+        type:String
     }
+
 })
 
 module.exports = mongoose.model("admissions", studentSchema);

@@ -5,6 +5,7 @@ async function auth(req , res , next) {
    const token =     req.headers.authorization              
 
      const decodeToken = await jwt.verify(token , "secret")
+     req.user = decodeToken
      next()
 //    res.json(decodeToken)
    

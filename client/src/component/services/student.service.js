@@ -15,6 +15,13 @@ export const AdminLoginService = async (values) => {
         return { error }
     }
 }
+export const AdminSingService = async (values) => {
+    try {
+        return await (await axios.post("http://localhost:9002/adminsignup", values)).data
+    } catch (error) {
+        return { error }
+    }
+}
 
 export const getUser = async (values) => {
     console.log(values);

@@ -7,9 +7,6 @@ const AdminSchema = new mongoose.Schema({
     password: {
         type: String,
     },
-    city: {
-        type: Array,
-    },
     email: {
         type: String,
     },
@@ -18,6 +15,8 @@ const AdminSchema = new mongoose.Schema({
     },
     role:{
         type:String,
+    },  cities:{
+        type:Array,
     }
 })
 

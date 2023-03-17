@@ -11,7 +11,7 @@ import Stack from '@mui/material/Stack';
 
 
 
-export default function Council() {
+export default function CounciL() {
     // const navigate = useNavigate
     const certificates = ["COUNCIL AUTHENTICATION", "CMS & ED PRACTICE GOVERNMENT JUDGMENTS",
         "SWARAJYA AFFILIATION", "AICVPS", "AICVPS VERIFICATION"]

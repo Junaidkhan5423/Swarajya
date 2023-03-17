@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './Admin.css'
 import axios from 'axios';
-import { AdminLoginService } from '../services/student.service';
+import { AdminLoginService, AdminSingService } from '../services/student.service';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../../store/store';
 import { useEffect } from 'react';
@@ -41,6 +41,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
+  const [signUp ,setSingUp]= React.useState(false)
 const navigate = useNavigate()
 const token = useAuthentication(state => state.auth.token)
 
@@ -60,8 +61,105 @@ setAuthentication({name:Admin?.name,token:Admin?.token})
   
   console.log(Admin);
   };
+  
+  const handleSubmitForSignUp = async(event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+   const Admin = await AdminSingService({
+    name: data.get('name'),
+    email: data.get('email'),
+    password: data.get('password'),
+  })
+setSingUp(false)  
+  };
 
   return (
+    <>
+   { signUp ? ( 
+    <div className='login-1'>
+        <div className='login-2'>
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+          Sing up for Admin
+          </Typography>
+          <Box component="form" onSubmit={handleSubmitForSignUp} noValidate sx={{ mt: 1 }}>
+          <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="name"
+              name="name"
+              autoComplete="name"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            {/* <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            /> */}
+            <Button
+            className='junaid'
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            
+            >
+              Sign  UP
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                
+                <Link onClick={()=> setSingUp(false)} marginLeft={"6px"} variant="body2">
+                  LOGIN
+                </Link>
+              </Grid>
+              {/* <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid> */}
+            </Grid>
+          </Box>
+        </Box>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
+      </Container>
+    </ThemeProvider>
+    </div>
+    </div>) :( 
     <div className='login-1'>
         <div className='login-2'>
     <ThemeProvider theme={theme}>
@@ -121,6 +219,9 @@ setAuthentication({name:Admin?.name,token:Admin?.token})
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
+                <Link onClick={()=> setSingUp(true)} marginLeft={"106px"}  variant="body2">
+                  Create Account
+                </Link>
               </Grid>
               {/* <Grid item>
                 <Link href="#" variant="body2">
@@ -134,6 +235,7 @@ setAuthentication({name:Admin?.name,token:Admin?.token})
       </Container>
     </ThemeProvider>
     </div>
-    </div>
+    </div>)}
+    </>
   );
 }

@@ -6,7 +6,7 @@ const adminSignUp = async (req, res) => {
 
     try {
 
-        const {  email,password,name } = req.body
+        const {  email,password,name ,cities } = req.body
         // const Mapemail =[]
         const existingEmail = new Promise ((resolve, reject)=>{
             adminModel.findOne({email}, function (err, email) {
@@ -26,6 +26,7 @@ const adminSignUp = async (req, res) => {
             name:name,
             email: email,
             password:password,
+            cities:cities,
         })
 
         newAdmin.save()
@@ -50,7 +51,8 @@ const adminSignUp = async (req, res) => {
         // console.log("app running successfully");
 
     }
-    catch {
+    catch (error){
+        res.status(500).send({ message: error })
 
     }
 
