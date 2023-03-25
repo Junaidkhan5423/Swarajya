@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const routes = require('./src/Routes/student.routes')
 const adminroutes = require('./src/Routes/admin.routes')
 const paymentRoutes = require('./src/Routes/payment.routes') 
+const courseRoutes = require('./src/Routes/course.routes') 
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -36,9 +37,11 @@ const app = express()
     // Pass to next layer of middleware
     next();
   });
+
 routes.routes(app)
 adminroutes.adminroutes(app)
 paymentRoutes.routes(app)
+courseRoutes.courseroutes(app)
 
 mongoose.connect("mongodb://127.0.0.1:27017/studentDB",{
     useNewUrlParser: true,

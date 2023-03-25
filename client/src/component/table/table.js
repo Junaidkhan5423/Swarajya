@@ -5,26 +5,41 @@ import { DataGrid, gridClasses } from '@mui/x-data-grid';
 import { grey } from '@mui/material/colors';
 import { useAuthentication } from '../../store/store';
 import { getUserAll } from '../services/student.service';
+import axios from 'axios';
+import { object } from 'yup';
 
 
 const Users = () => {
- const token = useAuthentication(state => state.auth.token)
+  const token = useAuthentication(state => state.auth.token)
 
   const [pageSize, setPageSize] = useState(5);
   const [rowId, setRowId] = useState(null);
-  const [studentDAta,setStudentData]=useState([])
+  const [studentDAta, setStudentData] = useState([])
 
-  const fetchData =async()=>{
- const data = await  getUserAll(token).then((res)=>{
-      console.log("daa",res) 
-        setStudentData(res.data);
-        
-    
+  const fetchData = async () => {
+    const data = await getUserAll(token).then((res) => {
+      console.log("daa", res)
+      setStudentData(res.data);
+
+
     })
+  }
+  const [newcolumns, setColumns] = useState([])
+  const [records, setRecords] = useState([])
+  const [data, setData] = useState([])
+
+  const fetchCoursedata = async () => {
+    console.log(fetchCoursedata)
+    axios.get('http://localhost:9002/getAllCourse')
+      .then(res => {
+        setData(res.data.data)
+        console.log(res.data);
+
+      })
   }
 
   useEffect(() => {
-
+    fetchCoursedata()
     fetchData()
   }, []);
 
@@ -34,9 +49,9 @@ const Users = () => {
         field: 'profile',
         headerName: 'Avatar',
         width: 60,
-        renderCell: (params) =>{ 
+        renderCell: (params) => {
           console.log(params)
-           return(<Avatar src={params.formattedValue} />)
+          return (<Avatar src={params.formattedValue} />)
         },
         sortable: false,
         filterable: false,
@@ -73,17 +88,17 @@ const Users = () => {
     [rowId]
   );
 
-  return token ?(
-    
+  return token ? (
+
     <Box
       sx={{
         height: "100vh",
         width: '97%',
-        margin:"1%"
+        margin: "1%"
       }}
-      
+
     >
-   
+
       <DataGrid
         columns={columns}
         rows={studentDAta}
@@ -91,7 +106,7 @@ const Users = () => {
 
         // rowsPerPageOptions={[5, 10, 20]}
         // pageSize={}
-     
+
         sx={{
           [`& .${gridClasses.row}`]: {
             bgcolor: (theme) =>
@@ -101,7 +116,41 @@ const Users = () => {
       />
     </Box>
   ) : (
- <h1>you don't have Authorization</h1>
+    //  <h1>you don't have Authorization</h1>
+
+
+
+    <div className='container mt-5'>
+      <table className='table'>
+        <thead>
+          <tr>
+
+            <th >Course Name</th>
+            <th >Full Name</th>
+            <th >specialition </th>
+            <th >duration</th>
+            <th >fees</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.map((item, index) => (
+              <tr key={index} >
+                <td >{item.name}</td>
+                <td >{item.fullName}</td>
+                <td >{item.specialition}</td>
+                <td >{item.duration}</td>
+                <td >{item.fees}</td>
+                <td >{item.type}</td>
+              </tr>
+            ))
+
+
+          }
+        </tbody>
+      </table>
+    </div>
   )
 };
 
