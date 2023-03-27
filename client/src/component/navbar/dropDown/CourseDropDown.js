@@ -69,6 +69,7 @@ export default function MenuListComposition() {
                         color: 'white', display: "inline-block",
                         textAlign: "center",
                         padding: "17px 27px", fontWeight: '900', fontSize: "16.5px", textTransform: "capitalize", fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"
+                        
                     }}
                     ref={anchorRef}
                     onClick={handleToggle}

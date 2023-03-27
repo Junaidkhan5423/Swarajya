@@ -60,10 +60,10 @@ const Footer = () => {
                 <p>Copyright © 2022 Swarajya Paramedical Institute. All India Council For Vocational & Paramedical Science. </p><br/>
                 <p>All Rights Reserved</p>
             </div> */}
-                    <div className="socio-links">
+                    <div className="socio-links" >
                         <a href="#"> <i className="bi bi-facebook fb"></i></a>
                         <a href="#"> <i className="bi bi-twitter tr"></i></a>
-                        <a href="#"><i className="bi bi-instagram ig"></i></a>
+                        <a href="#" ><i className="bi bi-instagram ig"></i></a>
                         <a href="#"> <i className="bi bi-youtube yt"></i></a>
                     </div>
                 </div>
