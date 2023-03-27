@@ -7,6 +7,8 @@ import { useAuthentication } from '../../store/store';
 import { getUserAll } from '../services/student.service';
 import axios from 'axios';
 import { object } from 'yup';
+import {Link}from 'react-router-dom'
+import Add from '../table/Add'
 
 
 const Users = () => {
@@ -121,6 +123,7 @@ const Users = () => {
 
 
     <div className='container mt-5'>
+      <div className='text-end'><Link to="/Add" className='btn btn-primary'>Add +</Link></div>
       <table className='table'>
         <thead>
           <tr>

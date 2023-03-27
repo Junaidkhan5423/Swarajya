@@ -10,6 +10,7 @@ import Users from './component/table/table';
 import StripePaymentCancel from './component/payment/StripePaymentCancel';
 import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
 import Payment from './component/payment/Payment';
+import Add from './component/table/Add';
 
 function App() {
      const router = createBrowserRouter([
@@ -40,6 +41,10 @@ function App() {
         element:<Users/>
       },
       {
+        path:"/Add",
+        element:<Add/>
+      },
+      {
         path:"/StripePaymentCancel",
         element:<StripePaymentCancel/>
       },
@@ -50,7 +55,7 @@ function App() {
       {
         path:"/payment",
         element:<Payment/>
-      }
+      }, 
      ])
 
 
