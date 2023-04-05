@@ -41,3 +41,9 @@
 .hovercolor:hover {
   color: red;
   }
+  .qrCode-done{
+    background-image: url('./images/QRCODe.jpeg');;
+    background-repeat: no-repeat;
+    height: 70vh;
+    margin-left: 32vw;
+  }

@@ -1,14 +1,15 @@
 const StripePaymentSuccess = () => {
     return (
       <>
-        <h2>Thanks for your order!</h2>
-        <h4>Your payment is successful.</h4>
-        <p>
-          We appreciate your business! If you have any questions, please email
-          <a href="/https://buy.stripe.com/test_cN24jL7CT6uQcAo5kk">please purchase</a>.
-        </p>
-        
+      <di class="text-center">
+        <h2>Thanks for your for Addmisssion</h2>
+        <h4>Your payment is Pending please Scan below QR CODE.</h4>
+        <div className="qrCode-done" >
+
+        </div>
+
+        </di>
       </>
-    );
+    ); 
   };
   export default StripePaymentSuccess;

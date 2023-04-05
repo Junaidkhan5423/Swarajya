@@ -17,7 +17,7 @@ const app = express()
 
  app.set("view engine", "ejs");
 
- //route for index page
+ //route for index page 
  app.use(function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -54,4 +54,4 @@ mongoose.connect("mongodb://127.0.0.1:27017/studentDB",{
 
 app.listen(9002,()=>{
     console.log("Server is running at 9002")
-})
+}) 

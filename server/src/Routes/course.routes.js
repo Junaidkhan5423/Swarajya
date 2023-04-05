@@ -5,6 +5,7 @@ const authSevice = require('../auth')
    
     app.post("/addCourse",service.createCourse)
     app.get("/getAllCourse",service.getAllCourses)
+    app.get("/getByCategoryCourse",service.getByCategoryCourses)
 
 }
 

@@ -12,6 +12,8 @@ import Add from '../table/Add'
 
 
 const Users = () => {
+  const [open, setOpen] = useState(false);
+
   const token = useAuthentication(state => state.auth.token)
 
   const [pageSize, setPageSize] = useState(5);
@@ -26,9 +28,12 @@ const Users = () => {
 
     })
   }
-  const [newcolumns, setColumns] = useState([])
-  const [records, setRecords] = useState([])
+ 
   const [data, setData] = useState([])
+  const [selected , setSelected]=useState(true)
+  const handleClose = () => {
+    setOpen(false);
+};
 
   const fetchCoursedata = async () => {
     console.log(fetchCoursedata)
@@ -43,7 +48,7 @@ const Users = () => {
   useEffect(() => {
     fetchCoursedata()
     fetchData()
-  }, []);
+  }, [open]);
 
   const columns = useMemo(
     () => [
@@ -91,8 +96,14 @@ const Users = () => {
   );
 
   return token ? (
+  <>
+ 
 
-    <Box
+{selected ?
+(
+  <>
+  <button type="button" class="btn btn-primary" style={{ margin: "3px"}} onClick={()=> setSelected(false)}>Courses</button>
+  <Box
       sx={{
         height: "100vh",
         width: '97%',
@@ -117,43 +128,59 @@ const Users = () => {
         }}
       />
     </Box>
-  ) : (
-    //  <h1>you don't have Authorization</h1>
+  </>
 
+) :(
+  <>
+  
+<button type="button" class="btn btn-primary" style={{ margin: "3px"}} onClick={()=> setSelected(true)}>STudent List</button>
+<div className='container mt-5'>
+  <div className='text-end'><button onClick={()=> setOpen(true)} className='btn btn-primary'>Add +</button></div>
+  <table className='table'>
+    <thead>
+      <tr>
 
-
-    <div className='container mt-5'>
-      <div className='text-end'><Link to="/Add" className='btn btn-primary'>Add +</Link></div>
-      <table className='table'>
-        <thead>
-          <tr>
-
-            <th >Course Name</th>
-            <th >Full Name</th>
-            <th >specialition </th>
-            <th >duration</th>
-            <th >fees</th>
-            <th>Type</th>
+        <th >Course Name</th>
+        <th >Full Name</th>
+        <th >specialition </th>
+        <th >duration</th>
+        <th >fees</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        data.map((item, index) => (
+          <tr key={index} >
+            <td >{item.name}</td>
+            <td >{item.fullName}</td>
+            <td >{item.specialition}</td>
+            <td >{item.duration}</td>
+            <td >{item.fees}</td>
+            <td >{item.type}</td>
           </tr>
-        </thead>
-        <tbody>
-          {
-            data.map((item, index) => (
-              <tr key={index} >
-                <td >{item.name}</td>
-                <td >{item.fullName}</td>
-                <td >{item.specialition}</td>
-                <td >{item.duration}</td>
-                <td >{item.fees}</td>
-                <td >{item.type}</td>
-              </tr>
-            ))
+        ))
 
 
-          }
-        </tbody>
-      </table>
-    </div>
+      }
+    </tbody>
+  </table>
+</div>
+{open && <Add handleClose={handleClose}  open={open}  /> }
+
+  </>
+ 
+)
+  
+}
+    
+    </> 
+  ) : (
+     <h1>you don't have Authorization</h1>
+
+
+
+   
   )
 };
 

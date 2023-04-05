@@ -40,10 +40,10 @@ function App() {
         path:"/table",
         element:<Users/>
       },
-      {
-        path:"/Add",
-        element:<Add/>
-      },
+      // {
+      //   path:"/Add",
+      //   element:<Add/>
+      // },
       {
         path:"/StripePaymentCancel",
         element:<StripePaymentCancel/>

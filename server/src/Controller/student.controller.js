@@ -7,6 +7,7 @@ const studentAdmission = async (req, res) => {
     try {
 
         const { profile,userName ,firstName, lastName, fatherName, dob, nationality, address, fatherOccupation, state, city, email, phoneNo, centerName, courseName, courseCode } = req.body
+        console.log(userName);
         // const Mapemail =[]
         const existingEmail = new Promise ((resolve, reject)=>{
             studentModel.findOne({email}, function (err, email) {
@@ -114,6 +115,7 @@ const admissionlist = async (req, res) => {
     const {userId}=req.user
     console.log(userId);
     studentModel.find({refrencBY:userId},(err, users) => {
+        console.log(users);
         if (err) throw err;
         res.status(200).send({
             status: true,

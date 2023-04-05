@@ -70,7 +70,20 @@ const getAllCourses = async(req ,res)=>{
         })
     
     }
+    const getByCategoryCourses = async(req ,res)=>{
+        
+
+        const allCourse= await   couserModel.find({type:req.query.type})
+        console.log(allCourse);
+               res.status(200).send({
+                   status: true,
+                   message: "success",
+                   data: allCourse
+           })
+       
+       }
+   
 
 
 
-module.exports = {createCourse ,getAllCourses}
+module.exports = {createCourse ,getAllCourses ,getByCategoryCourses}

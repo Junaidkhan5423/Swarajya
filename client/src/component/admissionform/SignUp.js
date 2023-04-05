@@ -27,13 +27,19 @@ const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"]
 //  const disabledTextbox = Yup.string().test("disabled", "This field is disabled", () => false);
 
 function SignUp() {
+    const [data, setData] = useState([])
 
     const [file, setFile] = useState(null)
     const [state, setState] = useState("")
     const [City, setCity] = useState("")
+    const [courseName, setCourseName] = useState("")
     const [CourseType, setCourseType] = useState("")
     const [selectedCity, setSelectedCity] = useState([])
 const navigate = useNavigate()
+const fetchCoursedata = async () => {
+    console.log(fetchCoursedata)
+   
+  }
 
 
     const MahashtraCity = ["Ahmadnagar", "Akola", "Amravati", "Aurangabad", "Bhandara", "Bid (Beed)", "Buldana (Buldhana)", "Chandrapur", "Dhule", "Gadchiroli", "Gondiya (Gondia)", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"];
@@ -49,6 +55,10 @@ const navigate = useNavigate()
         setFile(base64)
         console.log(base64);
     }
+
+    useEffect(()=>{
+        fetchCoursedata()
+    },[])
     const handleChange = (event) => {
         if (event.target.value === "Mahashtra") {
             setSelectedCity(MahashtraCity)
@@ -61,10 +71,21 @@ const navigate = useNavigate()
         setCity(event.target.value);
 
     }
-    const handleChangeCourse = (event) => {
-        setCourseType(event.target.value);
+    const handleCourseName = (event) => {
+        setCourseName(event.target.value);
 
     }
+    const handleChangeCourse = (event) => {
+        setCourseType(event.target.value);
+        axios.get(`http://localhost:9002/getByCategoryCourse?type=${event.target.value}`)
+        .then(res => {
+          setData(res.data.data.map((item)=> item.name))
+
+  
+        })
+
+    }
+    console.log(data);
 
     const validate = Yup.object({
         firstName: Yup.string()
@@ -244,14 +265,35 @@ const navigate = useNavigate()
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select"
-                                        value={City}
+                                        value={CourseType}
                                         label="Select Course Type"
                                         onChange={handleChangeCourse}
                                     >
                                     <MenuItem value={"PGDiploma"}>PG Diploma</MenuItem>
                                     <MenuItem value={"Diploma"}>Diploma</MenuItem>
-                                        <MenuItem value={"uGDegree"}>UG Degree</MenuItem>
+                                        <MenuItem value={"UG"}>UG Degree</MenuItem>
                                         <MenuItem value={"pGDegree"}>PG Degree</MenuItem>
+
+                                    </Select>
+                                </FormControl>
+                                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                                    <InputLabel id="demo-select-small">Select Course Name</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select"
+                                        value={courseName}
+                                        label="Select Course Type"
+                                        onChange={handleCourseName}
+                                    >
+                                {data.map((item)=>{
+                                        return(
+                                            <MenuItem value={item}>{item}</MenuItem>
+                                        )
+                                })
+                                 
+
+                                }
+                                    
 
                                     </Select>
                                 </FormControl>
