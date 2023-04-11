@@ -48,7 +48,7 @@ const MainContent = () => {
       <div className="content" style={{zIndex: "-1", position: "relative" }}>
 
 
-        <div className="slideshow-container">
+        <div className="slideshow-container" style={{marginTop:"1rem"}}>
 
           <div className="mySlides fade">
 

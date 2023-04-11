@@ -14,9 +14,8 @@ import Stack from '@mui/material/Stack';
 //2,5,6,9,10,
 export default function MenuListComposition() {
     // const navigate = useNavigate
-    const SyllabusItem = ["DMLT (DIPLOMA IN MEDICAL LABORATORY TECHNICIAN)",
-        "DIPLOMA IN X-RAY TECHNICIAN", "DIPLOMA IN RADIOLOGY TECHNICIAN", "IN ECG TECHNICIAN",
-        "DIPLOMA IN HEALTH AND SANITARY INSPECTOR", "DIPLOMA IN SANITARY INSPECTOR", "DIPLOMA IN MRI TECHNICIAN", "DIPLOMA IN CT SCAN TECHNICIAN", "DIPLOMA IN ICU ASSISTANT", "DIPLOMA IN OPERATION THEATRE ASSISTANT", "DIPLOMA IN DIETITICIAN", "DIPLOMA IN PHYSIOTHERAPY", "DIPLOMA IN COMMUNITY HEALTH WORKER", "DIPLOMA IN AROGYA SEWAK"]
+    const SyllabusItem = ["DIPLOMA COURSES ","UG-GRADUATE COURSES ","PG-POST GRADUATE COURSES"]
+        
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
 
@@ -94,13 +93,13 @@ export default function MenuListComposition() {
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "350px",width:"350px",zIndex:"10"}}
+                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "197px",width:"350px",zIndex:"10"}}
                                         autoFocusItem={open}
                                         id="composition-menu"
                                         aria-labelledby="composition-button"
                                         onKeyDown={handleListKeyDown}
                                     >
-                                        <div style={{height: "100%",overflow: "overlay",backgroundColor:"black"}}>
+                                        <div style={{height: "107%",overflow: "overlay",backgroundColor:"black"}}>
                                         {SyllabusItem.map((item,index) => {
                                             return (
                                               <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>

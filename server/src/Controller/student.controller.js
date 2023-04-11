@@ -53,7 +53,7 @@ const studentAdmission = async (req, res) => {
             centerName: centerName,
             courseName: courseName,
             courseCode: courseCode,
-            refrencBY:admin._id
+            refrencBY:admin?._id
         })
 
                 student.save()

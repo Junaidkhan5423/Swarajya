@@ -9,6 +9,7 @@ import axios from 'axios';
 import { object } from 'yup';
 import {Link}from 'react-router-dom'
 import Add from '../table/Add'
+import AppDataGrid from '../../utils/AppDataGrid';
 
 
 const Users = () => {
@@ -37,7 +38,7 @@ const Users = () => {
 
   const fetchCoursedata = async () => {
     console.log(fetchCoursedata)
-    axios.get('http://localhost:9002/getAllCourse')
+    axios.get('https://swarajyabackend.onrender.com/getAllCourse')
       .then(res => {
         setData(res.data.data)
         console.log(res.data);
@@ -95,7 +96,7 @@ const Users = () => {
     [rowId]
   );
 
-  return token ? (
+  return !token ? (
   <>
  
 
@@ -103,7 +104,7 @@ const Users = () => {
 (
   <>
   <button type="button" class="btn btn-primary" style={{ margin: "3px"}} onClick={()=> setSelected(false)}>Courses</button>
-  <Box
+  {/* <Box
       sx={{
         height: "100vh",
         width: '97%',
@@ -127,7 +128,8 @@ const Users = () => {
           },
         }}
       />
-    </Box>
+    </Box> */}
+    <AppDataGrid studentDAta={studentDAta}/>
   </>
 
 ) :(
