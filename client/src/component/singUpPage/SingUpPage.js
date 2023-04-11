@@ -63,7 +63,7 @@ const [data,setData]= useState(null)
           <ToastContainer />
 
   <div className="sing-up-form">
-    <form className="login-form"  onSubmit={formik.handleSubmit}>
+    <form  onSubmit={formik.handleSubmit}>
       
       <input
       id="useName"

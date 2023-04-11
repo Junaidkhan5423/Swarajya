@@ -1,7 +1,6 @@
 import React from 'react'
 import CourseDropDown from './dropDown/CourseDropDown';
 import CounciL from './dropDown/CounciL';
-import { Link } from 'react-router-dom';
 
 
 
@@ -53,19 +52,19 @@ const NavBar = () => {
                 </div> */}
             </li>
             <li className="dropdown">
-                <a href="aboutUs.html" className="dropbtn">About Us</a>
+                <a href="/AboutUs" className="dropbtn">About Us</a>
 
-                <div className="dropdown-content">
+                {/* <div className="dropdown-content">
 
                     <a href="#">ABOUT DISTANCE EDUCATION </a>
                     <a href="#">BENEFITS OF CORRESPONDANCE EDUCATION </a>
                     <a href="#">OPPORTUNITIES IN NHM/NRHM</a>
 
-                </div>
+                </div> */}
             </li>
-            <li><a href="#home">Principal Desk</a></li>
-            <li><a href="#home">Contact Us</a></li>
-            <li><a href="#home">Help</a></li>
+            <li><a href="/DirectorDesk">Director Desk</a></li>
+            <li><a href="/ContactUs">Contact Us</a></li>
+            {/* <li><a href="#home">Help</a></li> */}
        </ul>
 
     </nav>

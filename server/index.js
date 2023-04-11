@@ -43,7 +43,7 @@ adminroutes.adminroutes(app)
 paymentRoutes.routes(app)
 courseRoutes.courseroutes(app)
 
-€mongoose.connect("mongodb+srv://info:SiUrcBpl8BaCcVJ1@cluster0.9nmo1o3.mongodb.net/StudentDB?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://info:SiUrcBpl8BaCcVJ1@cluster0.9nmo1o3.mongodb.net/StudentDB?retryWrites=true&w=majority",{
     useNewUrlParser: true,
     useUnifiedTopology:true,
 

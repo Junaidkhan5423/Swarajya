@@ -17,8 +17,7 @@ import "./form.scss"
 
 
 
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import Payment from '../payment/Payment';
+import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -190,7 +189,7 @@ const fetchCoursedata = async () => {
                 console.log(data);
                 if (data.status === 200) {
                     toast.success("Student Registered Successfully")
-                    navigate("/StripePaymentSuccess")
+                    navigate("/payment")
                     
                 } else {
                     toast.error(data.error.response.data.message.error)

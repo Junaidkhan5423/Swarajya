@@ -7,10 +7,14 @@ import StudentInfo from './component/studentInfo/StudentInfo';
 import Login  from './component/AdminLogin/Login';
 import SingUpPage from './component/singUpPage/SingUpPage';
 import Users from './component/table/table';
-import StripePaymentCancel from './component/payment/StripePaymentCancel';
-import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
-import Payment from './component/payment/Payment';
-import Add from './component/table/Add';
+import AboutUs from './component/contactus/AboutUs';
+import ContactUs from './component/contactus/ContactUs';
+import DirectorDesk from './component/contactus/DirectorDesk';
+import PravicyPolisy from './component/contactus/PravicyPolisy';
+import Payment from './component/payment/payment';
+// import StripePaymentCancel from './component/payment/StripePaymentCancel';
+// import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
+// import Add from './component/table/Add';
 
 function App() {
      const router = createBrowserRouter([
@@ -40,22 +44,28 @@ function App() {
         path:"/table",
         element:<Users/>
       },
-      // {
-      //   path:"/Add",
-      //   element:<Add/>
-      // },
       {
-        path:"/StripePaymentCancel",
-        element:<StripePaymentCancel/>
-      },
-         {
-        path:"/StripePaymentSuccess",
-        element:<StripePaymentSuccess/>
+        path:"/AboutUs",
+        element:<AboutUs/>
       },
       {
-        path:"/payment",
+        path:"/ContactUs",
+        element:<ContactUs/>
+      },
+      {
+        path:"/DirectorDesk",
+        element:<DirectorDesk/>
+      },
+      {
+        path:"/PravicyPolisy",
+        element:<PravicyPolisy/>
+      },
+      {
+        path:"/Payment",
         element:<Payment/>
-      }, 
+      },
+    
+
      ])
 
 
