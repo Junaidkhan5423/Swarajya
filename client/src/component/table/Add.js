@@ -13,7 +13,7 @@ const Add = (props) => {
     function handleSubmit(e){
            e.preventDefault()
 
-           axios.post('http://localhost:9002/addCourse',inputData)
+           axios.post('https://swarajyabackend.onrender.com/addCourse',inputData)
                  .then(res=>{
                     navigate('/table')
                     alert("Data add successfully");

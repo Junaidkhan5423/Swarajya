@@ -76,7 +76,7 @@ const fetchCoursedata = async () => {
     }
     const handleChangeCourse = (event) => {
         setCourseType(event.target.value);
-        axios.get(`http://localhost:9002/getByCategoryCourse?type=${event.target.value}`)
+        axios.get(`https://swarajyabackend.onrender.com/getByCategoryCourse?type=${event.target.value}`)
         .then(res => {
           setData(res.data.data.map((item)=> item.name))
 
