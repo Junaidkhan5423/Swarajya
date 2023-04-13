@@ -93,7 +93,7 @@ export default function MenuListComposition() {
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "197px",width:"350px",zIndex:"10"}}
+                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "193 px",width:"321px",zIndex:"10"}}
                                         autoFocusItem={open}
                                         id="composition-menu"
                                         aria-labelledby="composition-button"

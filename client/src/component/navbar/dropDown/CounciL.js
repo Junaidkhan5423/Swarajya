@@ -13,8 +13,7 @@ import Stack from '@mui/material/Stack';
 
 export default function CounciL() {
     // const navigate = useNavigate
-    const certificates = ["COUNCIL AUTHENTICATION", "CMS & ED PRACTICE GOVERNMENT JUDGMENTS",
-        "SWARAJYA AFFILIATION", "AICVPS", "AICVPS VERIFICATION"]
+    const certificates = ["AICVPS AUTHORITY","ASIAN INTERNATIONAL UNIVERSITY AUTHORITY","SIKKIM SKILL UNIVERSITY AUTHORITY"]
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
 
@@ -71,7 +70,7 @@ export default function CounciL() {
                     ref={anchorRef}
                     onClick={handleToggle}
                 >
-                    Council
+                   INSTITUTEAFFILIATIONS 	
                 </Button>
                 <Popper
                     open={open}
@@ -88,10 +87,11 @@ export default function CounciL() {
                                 transformOrigin:
                                     placement === 'bottom-start' ? 'left top' : 'left bottom',
                             }}
+    
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "350px", width: "350px" }}
+                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "246px", width: "263px" }}
                                         autoFocusItem={open}
                                         id="composition-menu"
                                         aria-labelledby="composition-button"

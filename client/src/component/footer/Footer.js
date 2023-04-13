@@ -1,5 +1,5 @@
 import React from 'react'
-import pdf1 from '../../pdf/AI4794.pdf'
+import pdf1 from '../../pdf/Afflation.pdf'
 
 const Footer = () => {
     return (

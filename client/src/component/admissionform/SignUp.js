@@ -177,9 +177,9 @@ const fetchCoursedata = async () => {
                 email: '',
                 phoneNo: '',
                 centerName: 'Swarajya Paramedical Institute',
-                courseName: '',
+                // courseName: '',
                 courseCode: 4794,
-                profile: '',
+                // profile: '',
 
             }}
             // validationSchema={validate}
@@ -201,7 +201,7 @@ const fetchCoursedata = async () => {
 
             {formik => {
 
-                {/* {({ values }) => { */ }
+               
                 return (
                     <div  >
                         <ToastContainer />

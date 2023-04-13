@@ -30,18 +30,18 @@
 	   font-size:30px;
    }
 
-    .content 
+    .payment-content 
     {
         text-align:center;
     }
 
-    .content  h1
+    .payment-content  h1
     {
         font-size:25px;
         padding-top:25px;
     }
 
-    .content a
+    .payment-content a
     {
         width:200px;
         height:35px;
@@ -52,7 +52,7 @@
         transition:all ease-in-out 0.3s;
     }
 
-    .content a:hover
+    .payment-content a:hover
     {
         text-decoration:none;
         background:#000;

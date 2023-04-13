@@ -11,7 +11,7 @@ function Payment() {
             <div class="payment_header">
                <div class="check"><i class="fa fa-check" aria-hidden="true"></i></div>
             </div>
-            <div class="content">
+            <div class="payment-content">
                <h1>Payment is Pending </h1>
                <p>Your addmission is pending Please pay the fees</p>
                <img src={Qrcode} style={ {   height: "78vh", width: "34vw"}}/>
