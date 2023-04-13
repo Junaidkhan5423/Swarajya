@@ -1,4 +1,4 @@
-import { AppBar, Dialog, Toolbar, Typography } from '@mui/material'
+import { AppBar, Dialog, FormControl, InputLabel, MenuItem, Select, Toolbar, Typography } from '@mui/material'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -7,6 +7,8 @@ import img1 from './arrow.png'
 
 const Add = (props) => {
     const { open, handleClose } = props
+    const [CourseType, setCourseType] = useState("")
+
     
      const navigate = useNavigate()
     const [inputData, setinputData] = useState({ name: '', fullName: '', specialition: '', duration: '', fees: '', type: '' })
@@ -19,6 +21,12 @@ const Add = (props) => {
                     alert("Data add successfully");
                     handleClose()
                  } ).catch(err=>console.log(err))
+    }
+    const handleChangeCourse = (event) => {
+        setCourseType(event.target.value);
+        setinputData({...inputData, type: event.target.value })
+       
+
     }
     return (
         // <div className='d-flex  vh-70 justify-content-center align-items-center'>
@@ -113,11 +121,21 @@ const Add = (props) => {
                         <input type="text" name="fees" class="form-control"  style={{width:"110%"}}
                             onChange={e => setinputData({ ...inputData, fees: e.target.value })} />
                     </div>
-                    <div class="form-outline">
-                        <label htmlFor='name' >type</label>
-                        <input type="text" name="type" class="form-control"  style={{width:"110%"}}
-                            onChange={e => setinputData({ ...inputData, type: e.target.value })} />
-                    </div><br/>
+                    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                                    <InputLabel id="demo-select-small">Select Course Type</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select"
+                                        value={CourseType}
+                                        label="Select Course Type"
+                                        onChange={handleChangeCourse}
+                                    >
+                                    <MenuItem value={"Diploma"}>Diploma</MenuItem>
+                                        <MenuItem value={"UG"}>UG Degree</MenuItem>
+                                        <MenuItem value={"pGDegree"}>PG Degree</MenuItem>
+
+                                    </Select>
+                                </FormControl><br/>
                     <button className='btn btn-info'>Submit</button>
                 </form>
             </div>

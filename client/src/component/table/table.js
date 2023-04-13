@@ -16,6 +16,7 @@ const Users = () => {
   const [open, setOpen] = useState(false);
 
   const token = useAuthentication(state => state.auth.token)
+  console.log(token);
 
   const [pageSize, setPageSize] = useState(5);
   const [rowId, setRowId] = useState(null);
@@ -96,7 +97,7 @@ const Users = () => {
     [rowId]
   );
 
-  return !token ? (
+  return token ? (
   <>
  
 

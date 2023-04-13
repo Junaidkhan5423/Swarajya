@@ -23,7 +23,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"]
-//  const disabledTextbox = Yup.string().test("disabled", "This field is disabled", () => false);
 
 function SignUp() {
     const [data, setData] = useState([])
@@ -43,16 +42,15 @@ const fetchCoursedata = async () => {
 
     const MahashtraCity = ["Ahmadnagar", "Akola", "Amravati", "Aurangabad", "Bhandara", "Bid (Beed)", "Buldana (Buldhana)", "Chandrapur", "Dhule", "Gadchiroli", "Gondiya (Gondia)", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"];
     const UpCity = ["Agra", "Aligarh", "Allahabad", "Ambedkar", "Nagar", "Amroha", "Auraiya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Bara Banki", "Bareilly", "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Faizabad", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam", "Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hardoi", "Hathras (Mahamaya Nagar)", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur", "Kanpur Nagar", "Kasganj (Kanshiram Nagar)", "Kaushambi", "Kheri (Lakhimpur Kheri)", "Kushinagar", "Lalitpur", "Lucknow", "Mahoba", "Mahrajganj (Maharajganj)", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Rae Bareli", "Rampur", "Saharanpur", "Sant Kabir Nagar", "Sant Ravidas Nagar (Bhadohi)", "Shahjahanpur", "Shrawasti (Shravasti)", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"]
-    const PgDiploma = ['PG Diploma in Pharmacy Assistant','PG Diploma in Radiology Technician','PG Diploma in Phlebotomy Technician','PG Diploma in Vision Technician','lo']
-    const uGDegree = ['Bachelor of Science (B.Sc.) in Physics, Chemistry & Math','(B.Sc.) in Agronomy ','(B.Sc.) in Entomology',"(B.Sc.) in Agricultural Biotechnology"]
-    const Diploma = ["DMLT (DIPLOMA IN MEDICAL LABORATORY TECHNICIAN)",
-        "DIPLOMA IN X-RAY TECHNICIAN", "DIPLOMA IN RADIOLOGY TECHNICIAN", "IN ECG TECHNICIAN",
-        "DIPLOMA IN HEALTH AND SANITARY INSPECTOR", "DIPLOMA IN SANITARY INSPECTOR", "DIPLOMA IN MRI TECHNICIAN", "DIPLOMA IN CT SCAN TECHNICIAN", "DIPLOMA IN ICU ASSISTANT", "DIPLOMA IN OPERATION THEATRE ASSISTANT", "DIPLOMA IN DIETITICIAN", "DIPLOMA IN PHYSIOTHERAPY", "DIPLOMA IN COMMUNITY HEALTH WORKER", "DIPLOMA IN AROGYA SEWAK"]
-        const pGDegree = []
+    // const PgDiploma = ['PG Diploma in Pharmacy Assistant','PG Diploma in Radiology Technician','PG Diploma in Phlebotomy Technician','PG Diploma in Vision Technician','lo']
+    // const uGDegree = ['Bachelor of Science (B.Sc.) in Physics, Chemistry & Math','(B.Sc.) in Agronomy ','(B.Sc.) in Entomology',"(B.Sc.) in Agricultural Biotechnology"]
+    // const Diploma = ["DMLT (DIPLOMA IN MEDICAL LABORATORY TECHNICIAN)",
+    //     "DIPLOMA IN X-RAY TECHNICIAN", "DIPLOMA IN RADIOLOGY TECHNICIAN", "IN ECG TECHNICIAN",
+    //     "DIPLOMA IN HEALTH AND SANITARY INSPECTOR", "DIPLOMA IN SANITARY INSPECTOR", "DIPLOMA IN MRI TECHNICIAN", "DIPLOMA IN CT SCAN TECHNICIAN", "DIPLOMA IN ICU ASSISTANT", "DIPLOMA IN OPERATION THEATRE ASSISTANT", "DIPLOMA IN DIETITICIAN", "DIPLOMA IN PHYSIOTHERAPY", "DIPLOMA IN COMMUNITY HEALTH WORKER", "DIPLOMA IN AROGYA SEWAK"]
+    //     const pGDegree = []
     const onUpload = async (e) => {
         const base64 = await convertIntoBase64(e.target.files[0])
         setFile(base64)
-        console.log(base64);
     }
 
     useEffect(()=>{
@@ -84,76 +82,71 @@ const fetchCoursedata = async () => {
         })
 
     }
-    console.log(data);
 
-    const validate = Yup.object({
-        firstName: Yup.string()
-            .max(25, 'Must be 25 characters or less')
-            .required('Required'),
-        lastName: Yup.string()
-            .max(25, 'Must be 25 characters or less')
-            .required('Required'),
-        fatherName: Yup.string()
-            .max(25, 'Must be 25 characters or less')
-            .required('Required'),
-        motherName: Yup.string()
-            .max(25, 'Must be 25 characters or less')
-            .required('Required'),
-        dob: Yup.string()
-            .required('Required'),
-        nationality: Yup.string()
-            .required('Required'),
-        fatherOccupation: Yup.string()
-            .max(20, 'Must be 20 characters or less')
-            .required('Required'),
-        address: Yup.string()
-            .max(20, 'Must be 20 characters or less')
-            .required('Required'),
-        state: Yup.string()
-            .max(20, 'Must be 20 characters or less')
-            .required('Required'),
-        city: Yup.string()
-            .max(20, 'Must be 20 characters or less')
-            .required('Required'),
-        email: Yup.string()
-            .email('Email is invalid')
-            .required('Email is required'),
-        phoneNo: Yup.string()
-            .max(15, 'Must be 15 characters or less')
-            .required('Required'),
-        centerName: Yup.string()
-            .required('Please enter the center name'),
-        courseName: Yup.string()
-            .required('Please enter the course name'),
-        courseCode: Yup.string()
-            .required('Please enter the course code'),
-        userName: Yup.string()
-            .required('Please enter username'),
+    // const validate = Yup.object({
+    //     firstName: Yup.string()
+    //         .max(25, 'Must be 25 characters or less')
+    //         .required('Required'),
+    //     lastName: Yup.string()
+    //         .max(25, 'Must be 25 characters or less')
+    //         .required('Required'),
+    //     fatherName: Yup.string()
+    //         .max(25, 'Must be 25 characters or less')
+    //         .required('Required'),
+    //     motherName: Yup.string()
+    //         .max(25, 'Must be 25 characters or less')
+    //         .required('Required'),
+    //     dob: Yup.string()
+    //         .required('Required'),
+    //     nationality: Yup.string()
+    //         .required('Required'),
+    //     fatherOccupation: Yup.string()
+    //         .max(20, 'Must be 20 characters or less')
+    //         .required('Required'),
+    //     address: Yup.string()
+    //         .max(20, 'Must be 20 characters or less')
+    //         .required('Required'),
+    //     state: Yup.string()
+    //         .max(20, 'Must be 20 characters or less')
+    //         .required('Required'),
+    //     city: Yup.string()
+    //         .max(20, 'Must be 20 characters or less')
+    //         .required('Required'),
+    //     email: Yup.string()
+    //         .email('Email is invalid')
+    //         .required('Email is required'),
+    //     phoneNo: Yup.string()
+    //         .max(15, 'Must be 15 characters or less')
+    //         .required('Required'),
+    //     centerName: Yup.string()
+    //         .required('Please enter the center name'),
+    //     userName: Yup.string()
+    //         .required('Please enter username'),
 
-        //................... image validation................
-        // studentPhoto: Yup
-        //     .mixed()
-        //     .nullable()
-        //     .required()
-        //     .test(
-        //         "FILE_SIZE",
-        //         "Uploaded file is too big",
-        //         (value) => !value || (value && value.size <= 1024 * 1024)
-        //     )
-        //     .test(
-        //         "FILE_FORMAT",
-        //         "Uploaded file has unsupported format",
-        //         (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type))
-        //     )
-        //     .required("Please Upload Photo"),
+    //     //................... image validation................
+    //     // studentPhoto: Yup
+    //     //     .mixed()
+    //     //     .nullable()
+    //     //     .required()
+    //     //     .test(
+    //     //         "FILE_SIZE",
+    //     //         "Uploaded file is too big",
+    //     //         (value) => !value || (value && value.size <= 1024 * 1024)
+    //     //     )
+    //     //     .test(
+    //     //         "FILE_FORMAT",
+    //     //         "Uploaded file has unsupported format",
+    //     //         (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type))
+    //     //     )
+    //     //     .required("Please Upload Photo"),
 
-        // password: Yup.string()
-        //     .min(6, 'Password must be at least 6 characters')
-        //     .required('PassWord is required'),
-        // consfirmPassword: Yup.string()
-        //     .oneOf([Yup.ref('password'), null], 'Password must match')
-        //     .required('Confirm password is required'),
-    })
+    //     // password: Yup.string()
+    //     //     .min(6, 'Password must be at least 6 characters')
+    //     //     .required('PassWord is required'),
+    //     // consfirmPassword: Yup.string()
+    //     //     .oneOf([Yup.ref('password'), null], 'Password must match')
+    //     //     .required('Confirm password is required'),
+    // })
 
     // const validationSchema = Yup.shape({
     //     file: Yup.mixed().required(),
@@ -172,8 +165,8 @@ const fetchCoursedata = async () => {
                 nationality: 'Indian',
                 fatherOccupation: '',
                 address: '',
-                state: '',
-                city: '',
+                // state: '',
+                // city: '',
                 email: '',
                 phoneNo: '',
                 centerName: 'Swarajya Paramedical Institute',
@@ -184,7 +177,8 @@ const fetchCoursedata = async () => {
             }}
             // validationSchema={validate}
             onSubmit={async values => {
-                values = await Object.assign(values, { profile: file || "", state: state || "", city: City || '' })
+                console.log(values);
+                values = await Object.assign(values, { profile: file || "", state: state || "", city: City || '' , courseName: courseName || "", CourseType: CourseType || "",})
                 const data = await postStudentData(values)
                 console.log(data);
                 if (data.status === 200) {
@@ -197,6 +191,7 @@ const fetchCoursedata = async () => {
                 }
 
             }}
+
         >
 
             {formik => {
@@ -257,7 +252,6 @@ const fetchCoursedata = async () => {
                                 <Textfield label='Email' name='email' type='email' />
                                 <Textfield label='Phone No.' name='phoneNo' type='number' />
                                 <Textfield label='Center Name' name='centerName' type='text' disabled />
-                                <Textfield label='Course Name' name='courseName' type='text' />
 
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                                     <InputLabel id="demo-select-small">Select Course Type</InputLabel>
@@ -268,7 +262,6 @@ const fetchCoursedata = async () => {
                                         label="Select Course Type"
                                         onChange={handleChangeCourse}
                                     >
-                                    <MenuItem value={"PGDiploma"}>PG Diploma</MenuItem>
                                     <MenuItem value={"Diploma"}>Diploma</MenuItem>
                                         <MenuItem value={"UG"}>UG Degree</MenuItem>
                                         <MenuItem value={"pGDegree"}>PG Degree</MenuItem>
