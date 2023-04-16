@@ -57,7 +57,7 @@ function AppDataGrid( props) {
     <>
     <Box
       sx={{
-        height: "100vh",
+        height: "80vh",
         width: '97%',
         margin: "1%"
       }}

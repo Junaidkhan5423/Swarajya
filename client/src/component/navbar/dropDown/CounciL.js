@@ -13,7 +13,8 @@ import Stack from '@mui/material/Stack';
 
 export default function CounciL() {
     // const navigate = useNavigate
-    const certificates = ["AICVPS AUTHORITY","ASIAN INTERNATIONAL UNIVERSITY AUTHORITY","SIKKIM SKILL UNIVERSITY AUTHORITY"]
+    const certificates = ["AICVPS  AUTHORITY","ASIAN INTERNATIONAL UNIVERSITY AUTHORITY","UGC  With  AIU"]
+    
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
 
@@ -70,7 +71,7 @@ export default function CounciL() {
                     ref={anchorRef}
                     onClick={handleToggle}
                 >
-                   INSTITUTEAFFILIATIONS 	
+                   Institute Affiliations 	
                 </Button>
                 <Popper
                     open={open}

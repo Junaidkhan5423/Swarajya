@@ -1,5 +1,7 @@
 import React from 'react'
 import pdf1 from '../../pdf/Afflation.pdf'
+import pdf2 from '../../pdf/ODLEquivalenceDegrees.pdf'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -14,27 +16,27 @@ const Footer = () => {
                     <p>Swarajya Paramedical Institute</p> */}
                         </div>
                         <div className="paymodes">
-                            <h2 className='footerH2'>Payment</h2>
-                            <div className="payicon">
-                                <a href="#"> <img src={require('../../images/UPI.png')} /></a>
-                                <a href="#"> <img src={require('../../images/visa.png')} /></a>
-                                {/* <a href="#"> <img src={require('../../images/Mastercard-2.png')}/></a> */}
-                                <a href="#"> <img src={require("../../images/gpay-1.png")} /></a>
-                                <a href="#"> <img src={require("../../images/phonepe.png")} /></a>
+                            <h2 className='footerH2'>Current Affairs</h2>
+                                      <a href={pdf2} target='blank'><h6 style={{color:'whitesmoke' ,border:'none'}}>IMP Govt. Decision</h6></a>
+                                      <h6 href="mission and vision.html" style={{color:'whitesmoke'}}>Devloped BY</h6>
+                                    <a href='https://prabhavatids.com/'> <img src={require('../../images/Prabhavati Logo FINEL PNG ORANGE.png')} style={{ height: '65px'}} /></a> 
 
-                            </div>
-                        </div>
+                                    <h6 style={{color:'whitesmoke',marginTop:'0.6rem'}}>E-Mail : info@prabhavatids.com</h6>
+                                    <h6 style={{color:'whitesmoke'}}>Developers (L M J Coders)</h6>  
+                                    <h6 style={{color:'whitesmoke'}}>Contact : +91-9420114282</h6>                                 
+
+                                      
+                        </div> 
                     </div>
                     <div className='.info_main'>
                         <div className="quick">
                             <h2 className='footerH2'>Quick Links</h2>
                             <a href="courses.html">Courses</a>
                             <a href={pdf1} target='blank'>Institute Affiliation</a>
-                            <a href="#">Franchise</a>
-                            <a href="aboutUs.html">About Us</a>
-                            {/* <a href="#">Student Certificate</a> */}
-                            <a href="mission and vision.html">Our Mission</a>
-                            {/* <a href="#">Payment Mode</a> */}
+                            <a href="mission and vision.html">Exam Date</a>
+                            <a href="mission and vision.html">Internship Vacancies</a>
+                        
+                         
                             <a href="#">Our Prospectus</a>
                         </div>
                     </div>
@@ -44,6 +46,8 @@ const Footer = () => {
                             <h2 className='footerH2'>Policy</h2>
                             <a href="#">Privacy Policy</a>
                             <a href="#">Terms & Conditions</a>
+                            <a href="mission and vision.html">Our Mission</a>
+                            <a href="aboutUs.html">About Us</a>
                         </div>
                         {/* <div className="info">
                     <h2>Info</h2>

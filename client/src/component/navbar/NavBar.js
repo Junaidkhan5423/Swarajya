@@ -8,7 +8,10 @@ const NavBar = () => {
   return (
     <div style={{width:'100%'}}>
      <header className="header_main">
-        <div className="head1">
+        <div className='header-Img'>
+            {/* <img src={require("../../images/LAIQUEMOBILEVIEW.png")}/> */}
+        </div>
+        {/* <div className="head1">
             <h3>Affiliation Code : AI-4794</h3>
             <p>मानव संसाधन आणि विकास मंत्रालय, उच्च शिक्षण विभाग व <br/> कौशल्य विकास आणि उद्योजकता मंत्रालय भारत सरकार-नवी दिल्ल्ली मान्यता प्राप्त <br/> ऑल इंडिया कौन्सिल फॉर व्होकेशनल अँड पॅरामेडिकल सायन्स नवी दिल्ली संलग्नित <br/> ओजस बहू उद्देशीय सेवा
                 भावी संस्था संचालित </p>
@@ -23,7 +26,7 @@ const NavBar = () => {
                 </h2>
             </div>
             <img  src={require("../../images/flogo.png")} className="logohead2"/>
-        </div>
+        </div> */}
 
     </header>
 

@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import Textfield from './Textfield'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import * as Yup from 'yup';
-import { useRef } from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-// import ProfilePic from '../profilePic/ProfilePic';
 import { convertIntoBase64 } from '../profilePic/convert';
 import { postStudentData } from '../services/student.service';
 import FormControl from '@mui/material/FormControl';
-import { styled } from '@mui/material/styles';
 import "./form.scss"
 
 
@@ -22,7 +18,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"]
 
 function SignUp() {
     const [data, setData] = useState([])
@@ -83,75 +78,7 @@ const fetchCoursedata = async () => {
 
     }
 
-    // const validate = Yup.object({
-    //     firstName: Yup.string()
-    //         .max(25, 'Must be 25 characters or less')
-    //         .required('Required'),
-    //     lastName: Yup.string()
-    //         .max(25, 'Must be 25 characters or less')
-    //         .required('Required'),
-    //     fatherName: Yup.string()
-    //         .max(25, 'Must be 25 characters or less')
-    //         .required('Required'),
-    //     motherName: Yup.string()
-    //         .max(25, 'Must be 25 characters or less')
-    //         .required('Required'),
-    //     dob: Yup.string()
-    //         .required('Required'),
-    //     nationality: Yup.string()
-    //         .required('Required'),
-    //     fatherOccupation: Yup.string()
-    //         .max(20, 'Must be 20 characters or less')
-    //         .required('Required'),
-    //     address: Yup.string()
-    //         .max(20, 'Must be 20 characters or less')
-    //         .required('Required'),
-    //     state: Yup.string()
-    //         .max(20, 'Must be 20 characters or less')
-    //         .required('Required'),
-    //     city: Yup.string()
-    //         .max(20, 'Must be 20 characters or less')
-    //         .required('Required'),
-    //     email: Yup.string()
-    //         .email('Email is invalid')
-    //         .required('Email is required'),
-    //     phoneNo: Yup.string()
-    //         .max(15, 'Must be 15 characters or less')
-    //         .required('Required'),
-    //     centerName: Yup.string()
-    //         .required('Please enter the center name'),
-    //     userName: Yup.string()
-    //         .required('Please enter username'),
 
-    //     //................... image validation................
-    //     // studentPhoto: Yup
-    //     //     .mixed()
-    //     //     .nullable()
-    //     //     .required()
-    //     //     .test(
-    //     //         "FILE_SIZE",
-    //     //         "Uploaded file is too big",
-    //     //         (value) => !value || (value && value.size <= 1024 * 1024)
-    //     //     )
-    //     //     .test(
-    //     //         "FILE_FORMAT",
-    //     //         "Uploaded file has unsupported format",
-    //     //         (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type))
-    //     //     )
-    //     //     .required("Please Upload Photo"),
-
-    //     // password: Yup.string()
-    //     //     .min(6, 'Password must be at least 6 characters')
-    //     //     .required('PassWord is required'),
-    //     // consfirmPassword: Yup.string()
-    //     //     .oneOf([Yup.ref('password'), null], 'Password must match')
-    //     //     .required('Confirm password is required'),
-    // })
-
-    // const validationSchema = Yup.shape({
-    //     file: Yup.mixed().required(),
-    //     image: Yup.mixed().required(),
-    // });
 
     return (
         <Formik
@@ -172,7 +99,7 @@ const fetchCoursedata = async () => {
                 centerName: 'Swarajya Paramedical Institute',
                 // courseName: '',
                 courseCode: 4794,
-                // profile: '',
+                profile: '',
 
             }}
             // validationSchema={validate}

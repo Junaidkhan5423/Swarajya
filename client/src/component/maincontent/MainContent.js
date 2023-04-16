@@ -1,13 +1,32 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';  
 import Footer from '../footer/Footer';
 import pdf from '../../AllEnrolmainpdf/Offline AICVPS  23-24.pdf'
+import img1 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-1.jpg'
+import img2 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-2.jpg'
+import img3 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-3.jpg'
+import img4 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-4.jpg'
+import img5 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-5.jpg'
+import img6 from '../../AllEnrolmainpdf/gr2-1.jpg'
+import img7 from '../../AllEnrolmainpdf/gr2-2.jpg'
+import img8 from '../../AllEnrolmainpdf/gr2-3.jpg'
+import img9 from '../../AllEnrolmainpdf/gr2-4.jpg'
+import img10 from '../../AllEnrolmainpdf/gr2-5.jpg'
+import img11 from '../../AllEnrolmainpdf/gr3-1.jpg'
+import img12 from '../../AllEnrolmainpdf/gr3-2.jpg'
+import img13 from '../../AllEnrolmainpdf/gr3-3.jpg'
+import img14 from '../../AllEnrolmainpdf/gr4-1.jpg'
+import img15 from '../../AllEnrolmainpdf/gr4-2.jpg'
+import img16 from '../../AllEnrolmainpdf/gr4-3.jpg'
+import img17 from '../../AllEnrolmainpdf/gr4-4.jpg'
+import img18 from '../../AllEnrolmainpdf/gr4-5.jpg'
 const MainContent = () => {
+  const [visible , setVisibile]=useState(false)
   var myIndex = 0;
 
   function carousel() {
     var i;
-    var x = document.getElementsByClassName("mySlidess");
+    var x = document.getElementsByClassName("mySlides");
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
     }
@@ -22,7 +41,7 @@ const MainContent = () => {
 
   function showSlides() {
     let i;
-    let slides = document.getElementsByClassName("mySlides");
+    let slides = document.getElementsByClassName("mySlidess");
     let dots = document.getElementsByClassName("dot");
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
@@ -32,10 +51,10 @@ const MainContent = () => {
       slideIndex = 1
     }
     for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].className = dots[i]?.className.replace("active", "");
     }
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex -1].className += " active";
+    dots[slideIndex -1].className += "active";
     setTimeout(showSlides, 1000);
   }
   useEffect(() => {
@@ -48,43 +67,323 @@ const MainContent = () => {
       <div className="content" style={{zIndex: "-1", position: "relative" }}>
 
 
-        <div className="slideshow-container" style={{marginTop:"1rem"}}>
+         <div className="slideshow-container" style={{marginTop:"1rem"}}>
 
+           {/* <div className="mySlides fade">
+
+              <img alt='!' src={require('../../files/1.jpeg')} style={{ width: "100%" }} />
+
+           </div>
+
+           <div className="mySlides fade">
+
+             <img alt='!' src={require('../../files/2.jpeg')} style={{ width: "100%" }} />
+
+           </div>
+
+           <div className="mySlides  fade">
+
+             <img alt='!' src={require('../../files/3.jpeg')} style={{ width: "100%" }} />
+
+           </div> */}
+           <div className="mySlides fade">
+
+             <img alt='!' src={require('../../MainContainImages/3.PNG')} style={{ width: "100%" }} />
+
+           </div>
+           <div className="mySlides fade">
+
+             <img alt='!' src={require('../../MainContainImages/25.PNG')} style={{ width: "100%" }} />
+
+           </div>
+           <div className="mySlides fade">
+
+             <img alt='!' src={require('../../MainContainImages/27.PNG')} style={{ width: "100%" }} />
+
+          </div>  
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../files/1.jpeg')} style={{ width: "100%" }} />
+<img alt='!' src={require('../../MainContainImages/30.PNG')} style={{ width: "100%" }} />
 
-          </div>
+</div> 
+<div className="mySlides fade">
 
-          <div className="mySlides fade">
+<img alt='!' src={require('../../MainContainImages/31.PNG')} style={{ width: "100%" }} />
 
-            <img alt='!' src={require('../../files/2.jpeg')} style={{ width: "100%" }} />
+</div> 
+<div className="mySlides fade">
 
-          </div>
+<img alt='!' src={require('../../MainContainImages/32.PNG')} style={{ width: "100%" }} />
 
-          <div className="mySlides //. fade">
+</div> 
+<div className="mySlides fade">
 
-            <img alt='!' src={require('../../files/3.jpeg')} style={{ width: "100%" }} />
+<img alt='!' src={require('../../MainContainImages/33.PNG')} style={{ width: "100%" }} />
 
-          </div>
-          <div className="mySlides //. fade">
+</div> 
+<div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/19.PNG')} style={{ width: "100%" }} />
+<img alt='!' src={require('../../MainContainImages/34.PNG')} style={{ width: "100%" }} />
 
-          </div>
-          <div className="mySlides //. fade">
+</div> 
+<div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide9.PNG')} style={{ width: "100%" }} />
+<img alt='!' src={require('../../MainContainImages/35.PNG')} style={{ width: "100%" }} />
 
-          </div>
-          <div className="mySlides //. fade">
+</div> 
+<div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide12.PNG')} style={{ width: "100%" }} />
+<img alt='!' src={require('../../MainContainImages/36.PNG')} style={{ width: "100%" }} />
 
-          </div>
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/37.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/38.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/39.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/40.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/41.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/42.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/43.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/44.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/45.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/46.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/47.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/48.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/49.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/50.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/51.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/52.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/53.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/54.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/55.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/56.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/57.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/58.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/59.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/60.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/61.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/62.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide7.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide8.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide9.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide10.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide11.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide12.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide13.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide14.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide15.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide16.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide17.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide18.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/27.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide19.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide20.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide21.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide22.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide23.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide24.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide25.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide26.PNG')} style={{ width: "100%" }} />
+
+</div> 
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide27.PNG')} style={{ width: "100%" }} />
+
+</div>
+<div className="mySlides fade">
+
+<img alt='!' src={require('../../MainContainImages/Slide28.PNG')} style={{ width: "100%" }} />
+
+</div>  
 
 
-        </div>
+        </div> 
         <br />
 
         <div style={{ textAlign: "center" }}>
@@ -115,22 +414,22 @@ const MainContent = () => {
               <a href="aim & objective.html">Aim & Objective</a>
               <a href="aboutUs.html">Our Scope</a>
               <a href="courses.html">Course Details</a>
-              <a href="!">E-Learning</a>
+              <a href="!">E-Learning & Self Study Mode</a>
             </div>
 
             <div className="institution">
               <h2>Institution</h2>
-              <a href="!">Apply Center</a>
-              <a href="!">Payment Details</a>
-              <a href="!">Center List</a>
-              <a href="!">Advertisement</a>
+              <a href="!">Apply For From Collection Center</a>
+              <a href="!">Apply For Online Faculty</a>
+              
+              <a href="!">Jobs & Advertisement </a>
               <a href="!">Press Release</a>
             </div>
 
           </div>
           <div className="swarajya">
             <div className='swarajya_info'>
-              <h2>Swarajya Paramedical Institute</h2>
+              <h2>Swarajya Institute Of Distance Learning </h2>
               <p><b>Welcome to Swarajya Paramedical Institute.</b></p>
               <p>Swarajya Institute of Distance Learning in India, We Provide a Platform for those Student who are on Job, and want to continue their education in various sectors like, Paramedical, Traditional, Computer Science, Business Administration, Home Science, Life Science etc.</p>
               <p>As Paramedical education has emerged as an essential component of the healthcare industry in India. With the increasing demand for healthcare services, the scope of paramedical education has also grown significantly in recent years. Today, paramedical education in India offers
@@ -157,10 +456,22 @@ const MainContent = () => {
               <h2>Student</h2>
               <Link to={"/admission"}>Student Login</Link>
               {/* <a href='!'>Appear For Online Exam</a> */}
-              <a href='!'>Online Enrollment</a>
+              <Link to={"/admission"}>Online Enrollment</Link>
               <a href={pdf}  target='blank'> Offline Enrollment Form</a>
               {/* <a href='!'> Offline Self Affidavit Form</a> */}
-              <a href='!'>Internship Reference Letter</a>
+              {!visible && <a   target='blank' onClick={()=>setVisibile(true)} className='visible-class'>Internship Reference</a>}
+             {visible && 
+             <>
+             <a   target='blank' onClick={()=>setVisibile(false)} className='visible-class'>Internship Reference</a>
+             <ul style={{height: "17vh" , listStyle:'none' ,paddingLeft:'0' }}>
+             
+      <li style={{width: '9rem'}}><a href="#" style={{fontSize: '1.8vh'}}> 1 .English </a></li>
+      <li style={{width: '9rem'}}><a href="#" style={{fontSize: '1.8vh'}}> 2 .Hindi </a></li>
+      <li style={{width: '9rem'}}><a href="#" style={{fontSize: '1.8vh'}}> 3 .Marathi </a></li>
+    </ul>
+    </>
+    }
+          
               {/* <a href='!'>Syllabus</a> */}
               <a href='!'>Prospectus</a>
               <a href='!'>Offline Admission Form</a>
@@ -171,20 +482,33 @@ const MainContent = () => {
         <div className="noticeboard">
           <div className="nb">
             <h2>Notice Board</h2>
-            <marquee width="100%" direction="up" height="230px" className="mrq2">
-              <a href='!'>Notice 1</a>
-              <a href='!'>Notice 2</a>
-              <a href='!'>Notice 3</a>
-              <a href='!'>Notice 4</a>
-              <a href='!'>Notice 5</a>
-              <a href='!'>Notice 6</a>
-              <a href='!'>Notice 7</a>
-              <a href='!'>Notice 8</a>
-              <a href='!'>Notice 9</a>
-              <a href='!'>Notice 10</a>
-              <a href='!'>Notice 11</a>
-              <a href='!'>Notice 12</a>
-            </marquee>
+            <div  direction="up"   className="marquee" >
+            <div className="marquee-content">
+                <a href={img1}>CMS & ED GOVT. RES 1</a>
+              <a href={img2}>CMS & ED GOVT. RES 2</a>
+              <a href={img3}>CMS & ED GOVT. RES 3</a>
+              <a href={img4}>CMS & ED GOVT. RES 4</a>
+              <a href={img5}>CMS & ED GOVT. RES 5</a>
+              <a href={img6}>CMS & ED GOVT. RES 6</a>
+              <a href={img7}>CMS & ED GOVT. RES 7</a>
+              <a href={img8}>CMS & ED GOVT. RES 8</a>
+              <a href={img9}>CMS & ED GOVT. RES 9</a>
+              <a href={img10}>CMS & ED GOVT. RES 10</a>
+              <a href={img11}>CMS & ED GOVT. RES 11</a>
+              <a href={img12}>CMS & ED GOVT. RES 12</a>
+              <a href={img13}>CMS & ED GOVT. RES 13</a>
+              <a href={img14}>CMS & ED GOVT. RES 14</a>
+              <a href={img15}>CMS & ED GOVT. RES 15</a>
+              <a href={img16}>CMS & ED GOVT. RES 16</a>
+              <a href={img17}>CMS & ED GOVT. RES 17</a>
+              <a href={img18}>CMS & ED GOVT. RES 18</a>
+              </div>
+              <div></div>
+              
+            </div>
+              
+
+              
           </div>
 
           <div className="course_slider">
