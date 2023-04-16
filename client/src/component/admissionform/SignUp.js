@@ -37,12 +37,7 @@ const fetchCoursedata = async () => {
 
     const MahashtraCity = ["Ahmadnagar", "Akola", "Amravati", "Aurangabad", "Bhandara", "Bid (Beed)", "Buldana (Buldhana)", "Chandrapur", "Dhule", "Gadchiroli", "Gondiya (Gondia)", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"];
     const UpCity = ["Agra", "Aligarh", "Allahabad", "Ambedkar", "Nagar", "Amroha", "Auraiya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Bara Banki", "Bareilly", "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Faizabad", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam", "Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hardoi", "Hathras (Mahamaya Nagar)", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur", "Kanpur Nagar", "Kasganj (Kanshiram Nagar)", "Kaushambi", "Kheri (Lakhimpur Kheri)", "Kushinagar", "Lalitpur", "Lucknow", "Mahoba", "Mahrajganj (Maharajganj)", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Rae Bareli", "Rampur", "Saharanpur", "Sant Kabir Nagar", "Sant Ravidas Nagar (Bhadohi)", "Shahjahanpur", "Shrawasti (Shravasti)", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"]
-    // const PgDiploma = ['PG Diploma in Pharmacy Assistant','PG Diploma in Radiology Technician','PG Diploma in Phlebotomy Technician','PG Diploma in Vision Technician','lo']
-    // const uGDegree = ['Bachelor of Science (B.Sc.) in Physics, Chemistry & Math','(B.Sc.) in Agronomy ','(B.Sc.) in Entomology',"(B.Sc.) in Agricultural Biotechnology"]
-    // const Diploma = ["DMLT (DIPLOMA IN MEDICAL LABORATORY TECHNICIAN)",
-    //     "DIPLOMA IN X-RAY TECHNICIAN", "DIPLOMA IN RADIOLOGY TECHNICIAN", "IN ECG TECHNICIAN",
-    //     "DIPLOMA IN HEALTH AND SANITARY INSPECTOR", "DIPLOMA IN SANITARY INSPECTOR", "DIPLOMA IN MRI TECHNICIAN", "DIPLOMA IN CT SCAN TECHNICIAN", "DIPLOMA IN ICU ASSISTANT", "DIPLOMA IN OPERATION THEATRE ASSISTANT", "DIPLOMA IN DIETITICIAN", "DIPLOMA IN PHYSIOTHERAPY", "DIPLOMA IN COMMUNITY HEALTH WORKER", "DIPLOMA IN AROGYA SEWAK"]
-    //     const pGDegree = []
+
     const onUpload = async (e) => {
         const base64 = await convertIntoBase64(e.target.files[0])
         setFile(base64)

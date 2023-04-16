@@ -11,7 +11,7 @@ const Add = (props) => {
 
     
      const navigate = useNavigate()
-    const [inputData, setinputData] = useState({ name: '', fullName: '', specialition: '', duration: '', fees: '', type: '' })
+    const [inputData, setinputData] = useState({ name: '', fullName: '', specialition: '', duration: '', fees: '', type: '' ,syllabus:"'" })
     function handleSubmit(e){
            e.preventDefault()
 
@@ -99,29 +99,35 @@ const Add = (props) => {
                     <div  class="form-outline">
                          <label htmlFor='name' >Name</label>
                         <input type="text" name="name" class="form-control"  style={{width:"110%"}}
-                            onChange={e => setinputData({ ...inputData, name: e.target.value })} />
+                            onChange={e => setinputData({ ...inputData, name: e.target.value})} />
                     </div>
                     <div class="form-outline">
                         <label htmlFor='name' >fullName</label>
                         <input type="text" name="fullName" class="form-control"  style={{width:"110%"}}
-                            onChange={e => setinputData({ ...inputData, fullName: e.target.value })} />
+                            onChange={e => setinputData({ ...inputData, fullName: e.target.value})} />
                     </div>
                     <div class="form-outline">
                         <label htmlFor='name' >specialition</label>
                         <input type="text" name="specialition" class="form-control"  style={{width:"110%"}}
-                            onChange={e => setinputData({ ...inputData, specialition: e.target.value })} />
+                            onChange={e => setinputData({ ...inputData, specialition: e.target.value})} />
                     </div>
                     <div class="form-outline">
                         <label htmlFor='name' >duration</label>
                         <input type="text" name="duration" class="form-control"  style={{width:"110%"}}
-                            onChange={e => setinputData({ ...inputData, duration: e.target.value })} />
+                            onChange={e => setinputData({ ...inputData, duration: e.target.value})} />
                     </div>
                     <div class="form-outline">
                         <label htmlFor='name' >fees</label>
                         <input type="text" name="fees" class="form-control"  style={{width:"110%"}}
-                            onChange={e => setinputData({ ...inputData, fees: e.target.value })} />
+                            onChange={e => setinputData({ ...inputData, fees: e.target.value})} />
                     </div>
-                    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                    <div class="form-outline">
+                        <label htmlFor='name' >Syllabus</label>
+                        <input type="text" name='syllabus' class="form-control"  style={{width:"110%"}}
+                            onChange={e => setinputData({ ...inputData, status: e.target.value})} />
+                    </div>
+                    <div class="form-outline">
+                    <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
                                     <InputLabel id="demo-select-small">Select Course Type</InputLabel>
                                     <Select
                                         labelId="demo-select-small"
@@ -135,7 +141,9 @@ const Add = (props) => {
                                         <MenuItem value={"pGDegree"}>PG Degree</MenuItem>
 
                                     </Select>
-                                </FormControl><br/>
+                                </FormControl>
+                                </div>
+                                <br/>
                     <button className='btn btn-info'>Submit</button>
                 </form>
             </div>
