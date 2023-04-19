@@ -19,7 +19,6 @@ const Users = () => {
   console.log(token);
 
   const [pageSize, setPageSize] = useState(5);
-  const [rowId, setRowId] = useState(null);
   const [studentDAta, setStudentData] = useState([])
 
   const fetchData = async () => {
@@ -52,50 +51,52 @@ const Users = () => {
     fetchData()
   }, [open]);
 
-  const columns = useMemo(
-    () => [
-      {
-        field: 'profile',
-        headerName: 'Avatar',
-        width: 60,
-        renderCell: (params) => {
-          console.log(params)
-          return (<Avatar src={params.formattedValue} />)
-        },
-        sortable: false,
-        filterable: false,
-      },
-      { field: 'firstName', headerName: 'Name', width: 170 },
-      { field: 'email', headerName: 'Email', width: 200 },
-      {
-        field: 'phoneNo',
-        headerName: 'phoneNo',
-        width: 100,
-        type: 'singleSelect',
-        valueOptions: ['basic', 'editor', 'admin'],
-        editable: true,
-      },
-      {
-        field: 'userName',
-        headerName: 'userName',
-        width: 100,
-        editable: true,
-      },
-      {
-        field: 'city',
-        headerName: 'city',
-        width: 200,
+  const [rowId, setRowId] = useState(null);
 
-      },
-      { field: 'state', headerName: 'state', width: 220 },
-      {
-        field: 'nationality',
-        headerName: 'nationality',
-        // type: 'actions',
-      },
-    ],
-    [rowId]
-  );
+  const columns = useMemo(
+      () => [
+        {
+          field: 'profile',
+          headerName: 'Avatar',
+          width: 60,
+          renderCell: (params) => {
+            console.log(params)
+            return (<Avatar src={params.formattedValue} />)
+          },
+          sortable: false,
+          filterable: false,
+        },
+        { field: 'firstName', headerName: 'Name', width: 170 },
+        { field: 'email', headerName: 'Email', width: 200 },
+        {
+          field: 'phoneNo',
+          headerName: 'phoneNo',
+          width: 100,
+          type: 'singleSelect',
+          valueOptions: ['basic', 'editor', 'admin'],
+          editable: true,
+        },
+        {
+          field: 'userName',
+          headerName: 'userName',
+          width: 100,
+          editable: true,
+        },
+        {
+          field: 'city',
+          headerName: 'city',
+          width: 200,
+  
+        },
+        { field: 'state', headerName: 'state', width: 220 },
+        {
+          field: 'nationality',
+          headerName: 'nationality',
+          // type: 'actions',
+        },
+      ],
+      [rowId]
+    );
 
   return token ? (
   <>
@@ -130,7 +131,7 @@ const Users = () => {
         }}
       />
     </Box> */}
-    <AppDataGrid studentDAta={studentDAta}/>
+    <AppDataGrid studentDAta={studentDAta} columns={columns}/>
   </>
 
 ) :(

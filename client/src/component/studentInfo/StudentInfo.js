@@ -5,6 +5,7 @@ import Dialog from '@mui/material/Dialog';
 
 function StudentInfo(props) {
    const {data , open} = props
+   console.log(data);
     return (
         <>
           <Dialog
@@ -59,9 +60,14 @@ function StudentInfo(props) {
                                             <td>B+</td>
                                         </tr>
                                         <tr>
-                                            <th width="30%">Fees</th>
+                                            <th width="30%">Total fees</th>
                                             <td width="2%">:</td>
-                                            <td>Paid</td>
+                                            <td>{data?.totalFees}</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Paid Fees</th>
+                                            <td width="2%">:</td>
+                                            <td>Pending</td>
                                         </tr>
                                     </table>
                                 </div>

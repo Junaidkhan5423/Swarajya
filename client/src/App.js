@@ -36,6 +36,7 @@ function App() {
           <Route path='/DirectorDesk' element={<DirectorDesk/>} />
           <Route path='/PravicyPolisy' element={<PravicyPolisy/>} />
           <Route path='/ContactUs' element={<ContactUs/>} />
+         
 
         </Route>
          <Route  element={<AdminProtected />}>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';  
 import Footer from '../footer/Footer';
-import pdf from '../../AllEnrolmainpdf/Offline AICVPS  23-24.pdf'
 import img1 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-1.jpg'
 import img2 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-2.jpg'
 import img3 from '../../AllEnrolmainpdf/C.M.S.-ED-GR-3.jpg'
@@ -20,9 +19,23 @@ import img15 from '../../AllEnrolmainpdf/gr4-2.jpg'
 import img16 from '../../AllEnrolmainpdf/gr4-3.jpg'
 import img17 from '../../AllEnrolmainpdf/gr4-4.jpg'
 import img18 from '../../AllEnrolmainpdf/gr4-5.jpg'
+import English from '../../Allpdf/Internship Letter Swarajya English (3).pdf'
+import Marathi from '../../Allpdf/INTERNSHIP REF LETTER MARATHI (1).pdf'
+import Hindi from '../../Allpdf/Internship Letter Swarajya Hindi (2).pdf'
+import Asian from '../../Allpdf/Offline AICVPS Admission Form 23-24 (1).pdf'
+import AICVPS from '../../Allpdf/AIU Admisison Form.pdf'
+import Brocher from '../../Allpdf/SWARAJYA PARAMEDICAL BROCHURE 23-24.pdf'
+import sikkim from '../../Allpdf/skmsuniv.pdf'
+import offlinesikkim from '../../Allpdf/APPLICATION FOR ADMISSION - SSU.pdf'
+
 const MainContent = () => {
   const [visible , setVisibile]=useState(false)
+  const [Prospectus,setProspectus]=useState(false)
+  const [international,setinternational]=useState(false)
+  const [course,setCourse]=useState(false)
+  const [english,setEnglish]=useState(false)
   var myIndex = 0;
+  
 
   function carousel() {
     var i;
@@ -413,14 +426,27 @@ const MainContent = () => {
               <a href="mission and vision.html"> Mission & Vision</a>
               <a href="aim & objective.html">Aim & Objective</a>
               <a href="aboutUs.html">Our Scope</a>
-              <a href="courses.html">Course Details</a>
-              <a href="!">E-Learning & Self Study Mode</a>
+              {!course && <a target='blank' onClick={()=>setCourse(true)}>Course Details</a>}
+              { course && 
+              <>
+                <a target='blank' onClick={()=>setCourse(false)}>Course Details</a>
+                <ul style={{height: "16vh" , listStyle:'none' ,paddingLeft:'0' }}>
+             
+             <li style={{width: '9rem'}}><a href=""style={{fontSize: '1.8vh'}}> Diploma</a></li>
+             <li style={{width: '9rem'}}><a href="" style={{fontSize: '1.8vh'}}> UG-graduation </a></li>
+             <li style={{width: '9rem'}}><a href="" style={{fontSize: '1.8vh'}}> PG-Post-graduation  </a></li>
+           </ul>
+
+              </>
+              }
+            
+              <a href="/ELearning">E-Learning & Self Study Mode</a>
             </div>
 
             <div className="institution">
               <h2>Institution</h2>
-              <a href="!">Apply For From Collection Center</a>
-              <a href="!">Apply For Online Faculty</a>
+              <a href="https://forms.gle/xJiHqhQhLcKwjxxp9">Apply For From Collection Center(ACC) </a>
+              <a href=" https://forms.gle/scE8iviYy8quuVdR8">Apply For Online Faculty</a>
               
               <a href="!">Jobs & Advertisement </a>
               <a href="!">Press Release</a>
@@ -455,26 +481,49 @@ const MainContent = () => {
             <div className="studentsec">
               <h2>Student</h2>
               <Link to={"/admission"}>Student Login</Link>
-              {/* <a href='!'>Appear For Online Exam</a> */}
+              
               <Link to={"/admission"}>Online Enrollment</Link>
-              <a href={pdf}  target='blank'> Offline Enrollment Form</a>
-              {/* <a href='!'> Offline Self Affidavit Form</a> */}
+            
               {!visible && <a   target='blank' onClick={()=>setVisibile(true)} className='visible-class'>Internship Reference</a>}
              {visible && 
              <>
              <a   target='blank' onClick={()=>setVisibile(false)} className='visible-class'>Internship Reference</a>
-             <ul style={{height: "17vh" , listStyle:'none' ,paddingLeft:'0' }}>
+             <ul style={{height: "16vh" , listStyle:'none' ,paddingLeft:'0' }}>
              
-      <li style={{width: '9rem'}}><a href="#" style={{fontSize: '1.8vh'}}> 1 .English </a></li>
-      <li style={{width: '9rem'}}><a href="#" style={{fontSize: '1.8vh'}}> 2 .Hindi </a></li>
-      <li style={{width: '9rem'}}><a href="#" style={{fontSize: '1.8vh'}}> 3 .Marathi </a></li>
+      <li style={{width: '9rem'}}><a href={English} style={{fontSize: '1.8vh'}}> 1 .English </a></li>
+      <li style={{width: '9rem'}}><a href={Hindi} style={{fontSize: '1.8vh'}}> 2 .Hindi </a></li>
+      <li style={{width: '9rem'}}><a href={Marathi} style={{fontSize: '1.8vh'}}> 3 .Marathi </a></li>
     </ul>
     </>
     }
-          
-              {/* <a href='!'>Syllabus</a> */}
-              <a href='!'>Prospectus</a>
-              <a href='!'>Offline Admission Form</a>
+         
+      {!Prospectus && <a   target='blank' onClick={()=>setProspectus(true)} className='visible-class'>Prospectus</a>}
+              
+           {Prospectus && 
+             <>
+             <a   target='blank' onClick={()=>setProspectus(false)} className='prospects-class'>Prospectus</a>
+             <ul style={{height: "17vh" , listStyle:'none' ,paddingLeft:'0' }}>
+             
+      <li style={{width: '9rem'}}><a href={Brocher} style={{fontSize: '1vh'}}> AICVPS </a></li>
+      <li style={{width: '9rem'}}><a href="" style={{fontSize: '1vh'}}> Asian International University </a></li>
+      <li style={{width: '9rem'}}><a href={sikkim} style={{fontSize: '1vh'}}>Sikkim Skill University </a></li>
+    </ul>
+    </>
+    }
+         {!international && <a   target='blank' onClick={()=>setinternational(true)} className='visible-class'>Offline Admission Form</a>}
+              
+              {international && 
+                <>
+                <a   target='blank' onClick={()=>setinternational(false)} className='offline-class'>Offline Admission Form</a>
+                <ul style={{height: "17vh" , listStyle:'none' ,paddingLeft:'0' }}>
+                
+         <li style={{width: '9rem'}}><a href={AICVPS} style={{fontSize: '1.8vh'}}> AICVPS </a></li>
+         <li style={{width: '9rem'}}><a href={Asian} style={{fontSize: '1.8vh'}}> Asian International University </a></li>
+         <li style={{width: '9rem'}}><a href={offlinesikkim} style={{fontSize: '1.8vh'}}>Sikkim Skill University </a></li>
+       </ul>
+       </>
+}   
+               {/* <a href='!'>Offline Admission Form</a> */}
             </div>
           </div>
         </div>

@@ -7,65 +7,41 @@ import {  gridClasses } from '@mui/x-data-grid';
 import React, { useMemo, useState } from 'react'
 
 function AppDataGrid( props) {
-  const [rowId, setRowId] = useState(null);
-
-    const columns = useMemo(
-        () => [
-          {
-            field: 'profile',
-            headerName: 'Avatar',
-            width: 60,
-            renderCell: (params) => {
-              console.log(params)
-              return (<Avatar src={params.formattedValue} />)
-            },
-            sortable: false,
-            filterable: false,
-          },
-          { field: 'firstName', headerName: 'Name', width: 170 },
-          { field: 'email', headerName: 'Email', width: 200 },
-          {
-            field: 'phoneNo',
-            headerName: 'phoneNo',
-            width: 100,
-            type: 'singleSelect',
-            valueOptions: ['basic', 'editor', 'admin'],
-            editable: true,
-          },
-          {
-            field: 'userName',
-            headerName: 'userName',
-            width: 100,
-            editable: true,
-          },
-          {
-            field: 'city',
-            headerName: 'city',
-            width: 200,
-    
-          },
-          { field: 'state', headerName: 'state', width: 220 },
-          {
-            field: 'nationality',
-            headerName: 'nationality',
-            // type: 'actions',
-          },
-        ],
-        [rowId]
-      );
+  
   return (
     <>
-    <Box
-      sx={{
-        height: "80vh",
-        width: '97%',
-        margin: "1%"
-      }}
-
-    >
+     <Box
+       m="40px 0 0 0"
+       height="75vh"
+       sx={{
+         "& .MuiDataGrid-root": {
+           border: "none",
+         },
+         "& .MuiDataGrid-cell": {
+           borderBottom: "none",
+         },
+         "& .name-column--cell": {
+           color: '#94e2cd',
+         },
+         "& .MuiDataGrid-columnHeaders": {
+           backgroundColor: '#3e4396',
+           borderBottom: "none",
+         },
+         "& .MuiDataGrid-virtualScroller": {
+           backgroundColor: '#1F2A40',
+         },
+         "& .MuiDataGrid-footerContainer": {
+           borderTop: "none",
+           backgroundColor: '#3e4396',
+         },
+         "& .MuiCheckbox-root": {
+           color: `#b7ebde !important`,
+         },
+       }}
+          >
 
       <DataGrid
-        columns={columns}
+        columns={props?.columns}
         rows={props?.studentDAta}
         getRowId={(row) => row._id}
 
