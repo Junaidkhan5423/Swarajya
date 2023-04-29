@@ -10,9 +10,6 @@ import { convertIntoBase64 } from '../profilePic/convert';
 import { postStudentData } from '../services/student.service';
 import FormControl from '@mui/material/FormControl';
 import "./form.scss"
-
-
-
 import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
 
@@ -137,6 +134,7 @@ const fetchCoursedata = async () => {
                                 <Textfield label='Father Occupation' name='fatherOccupation' type='text' />
                                 <Textfield label='Address' name='address' type='text' />
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                                    
                                     <InputLabel>State</InputLabel>
                                     <Select
                                         // labelId="demo-simple-select-autowidth-label"

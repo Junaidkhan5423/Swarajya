@@ -13,6 +13,8 @@ function AppDataGrid( props) {
      <Box
        m="40px 0 0 0"
        height="75vh"
+       paddingLeft="5rem"
+       paddingRight="5rem"
        sx={{
          "& .MuiDataGrid-root": {
            border: "none",
@@ -37,6 +39,12 @@ function AppDataGrid( props) {
          "& .MuiCheckbox-root": {
            color: `#b7ebde !important`,
          },
+         "& .MuiDataGrid-row":{
+          background:'#6c757d'
+         },
+         "& .MuiDataGrid-row:hover":{
+          background:'#d9c68f'
+         }
        }}
           >
 

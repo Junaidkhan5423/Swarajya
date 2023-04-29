@@ -85,13 +85,18 @@ const Users = () => {
         {
           field: 'city',
           headerName: 'city',
-          width: 200,
+          width: 100,
   
         },
-        { field: 'state', headerName: 'state', width: 220 },
+        { field: 'state', headerName: 'state', width: 100 },
         {
           field: 'nationality',
           headerName: 'nationality',
+          // type: 'actions',
+        },
+        {
+          field: 'payment',
+          headerName: 'payment',
           // type: 'actions',
         },
       ],

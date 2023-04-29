@@ -124,7 +124,7 @@ const Add = (props) => {
                     <div class="form-outline">
                         <label htmlFor='name' >Syllabus</label>
                         <input type="text" name='syllabus' class="form-control"  style={{width:"110%"}}
-                            onChange={e => setinputData({ ...inputData, status: e.target.value})} />
+                            onChange={e => setinputData({ ...inputData, syllabus: e.target.value})} />
                     </div>
                     <div class="form-outline">
                     <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">

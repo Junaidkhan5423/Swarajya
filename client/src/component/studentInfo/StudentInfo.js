@@ -67,7 +67,7 @@ function StudentInfo(props) {
                                         <tr>
                                             <th width="30%">Paid Fees</th>
                                             <td width="2%">:</td>
-                                            <td>Pending</td>
+                                            <td>{data?.totalPaid}</td>
                                         </tr>
                                     </table>
                                 </div>

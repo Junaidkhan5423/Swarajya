@@ -461,11 +461,11 @@ const MainContent = () => {
               <p>As Paramedical education has emerged as an essential component of the healthcare industry in India. With the increasing demand for healthcare services, the scope of paramedical education has also grown significantly in recent years. Today, paramedical education in India offers
                  a wide range of courses that prepare students to assist doctors and other healthcare professionals in various medical procedures.</p>
              
-               <h5>Some of the popular courses in paramedical education in India include</h5>
+              <h5>Some of the popular courses in paramedical education in India include</h5>
               <h6>1.	Bachelor of Physiotherapy (BPT)</h6>
               <h6>2.	Bachelor of Occupational Therapy (BOT)</h6>
               <h6>3.	Bachelor of Science in Medical Laboratory Technology (BMLT)</h6>
-              <h6>4. Post Graduate Diploma in Medical Laboratory Technology (PGDMLT)</h6>
+              <h6>4.  Post Graduate Diploma in Medical Laboratory Technology (PGDMLT)</h6>
               <h6>5.	Bachelor of Science in Radiology and Imaging Technology (BSc RIT)</h6>
               <h6>6.	Diploma in Nursing</h6>
               <h6>7.	Diploma in Medical Laboratory Technology (DMLT)</h6>
