@@ -11,7 +11,7 @@ import AboutUs from './component/contactus/AboutUs';
 import ContactUs from './component/contactus/ContactUs';
 import DirectorDesk from './component/contactus/DirectorDesk';
 import PravicyPolisy from './component/contactus/PravicyPolisy';
-import Payment from './component/payment/Payment';
+import Payment from './component/payment/payment';
 import Root from './component/Root/Root';
 // import Admin from './component/Root/AdminProtected';
 import AdminProtected from './component/Root/AdminProtected';
