@@ -50,6 +50,9 @@ const Users = () => {
     fetchCoursedata()
     fetchData()
   }, [open]);
+  const handleEdit=(e) => {
+console.log(e);
+  }
 
   const deleteCourse =async (id)=>{
     const data = await deleteCourseByID(id)
@@ -65,7 +68,6 @@ const Users = () => {
       headerName: 'Avatar',
       width: 60,
       renderCell: (params) => {
-        console.log(params)
         return (<Avatar src={params.formattedValue} />)
       },
       sortable: false,
@@ -116,7 +118,14 @@ const Users = () => {
     {
       field: 'enrollmentNo',
       headerName: 'Enrollment No'
-  }
+  },
+  {
+    field: 'Action',
+    headerName: 'Edit',
+  renderCell: (params) => {
+    return (<button onClick={()=> handleEdit(params.row._id)} >Edit</button>)
+  },
+}
   ]
 
   return token ? (
