@@ -6,6 +6,7 @@ import StudentInfo from "../studentInfo/StudentInfo";
 import { getUser } from "../services/student.service";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import { Link } from "react-router-dom";
 
 function SingUpPage() {
   const [open, setOpen] = React.useState(false);
@@ -88,8 +89,8 @@ function SingUpPage() {
             </div>
             <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
             <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
-              Registered? <a href="#" class="text-dark fw-bold"> Create an
-                Account</a>
+              Registered? <Link to='/admission' class="text-dark fw-bold"> Create an
+                Account</Link>
             </div>
           </form>
         </div>

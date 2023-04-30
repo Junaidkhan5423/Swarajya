@@ -4,7 +4,7 @@ import { DataGrid, gridClasses } from '@mui/x-data-grid';
 // import moment from 'moment';
 import { grey } from '@mui/material/colors';
 import { useAuthentication } from '../../store/store';
-import { getUserAll } from '../services/student.service';
+import { deleteCourseByID, getUserAll } from '../services/student.service';
 import axios from 'axios';
 import { object } from 'yup';
 import {Link}from 'react-router-dom'
@@ -50,6 +50,12 @@ const Users = () => {
     fetchCoursedata()
     fetchData()
   }, [open]);
+
+  const deleteCourse =async (id)=>{
+    const data = await deleteCourseByID(id)
+    fetchCoursedata() 
+       console.log(data);
+  }
 
   const [rowId, setRowId] = useState(null);
 
@@ -155,6 +161,7 @@ const Users = () => {
         <th >duration</th>
         <th >fees</th>
         <th>Type</th>
+        <th>actions</th>
       </tr>
     </thead>
     <tbody>
@@ -167,6 +174,7 @@ const Users = () => {
             <td >{item.duration}</td>
             <td >{item.fees}</td>
             <td >{item.type}</td>
+            <td ><button onClick={()=>deleteCourse(item._id)} color='red'>delete</button></td>
           </tr>
         ))
 

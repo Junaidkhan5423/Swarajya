@@ -22,6 +22,13 @@ export const AdminSingService = async (values) => {
         return { error }
     }
 }
+export const deleteCourseByID = async (values) => {
+    try {
+        return await (await axios.get(`https://swarajyabackend.onrender.com/deleteCourse?id=${values}`)).data
+    } catch (error) {
+        return { error }
+    }
+}
 
 export const getUser = async (values) => {
     console.log(values);
