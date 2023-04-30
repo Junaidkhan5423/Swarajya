@@ -69,6 +69,11 @@ function StudentInfo(props) {
                                             <td width="2%">:</td>
                                             <td>{data?.totalPaid}</td>
                                         </tr>
+                                        <tr>
+                                            <th width="30%">SYLLABUS</th>
+                                            <td width="2%">:</td>
+                                            <td><a href={data?.syllabus}>Download Syllabus</a></td>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>

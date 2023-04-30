@@ -59,55 +59,71 @@ const Users = () => {
 
   const [rowId, setRowId] = useState(null);
 
-  const columns = useMemo(
-      () => [
-        {
-          field: 'profile',
-          headerName: 'Avatar',
-          width: 60,
-          renderCell: (params) => {
-            console.log(params)
-            return (<Avatar src={params.formattedValue} />)
-          },
-          sortable: false,
-          filterable: false,
-        },
-        { field: 'firstName', headerName: 'Name', width: 170 },
-        { field: 'email', headerName: 'Email', width: 200 },
-        {
-          field: 'phoneNo',
-          headerName: 'phoneNo',
-          width: 100,
-          type: 'singleSelect',
-          valueOptions: ['basic', 'editor', 'admin'],
-          editable: true,
-        },
-        {
-          field: 'userName',
-          headerName: 'userName',
-          width: 100,
-          editable: true,
-        },
-        {
-          field: 'city',
-          headerName: 'city',
-          width: 100,
-  
-        },
-        { field: 'state', headerName: 'state', width: 100 },
-        {
-          field: 'nationality',
-          headerName: 'nationality',
-          // type: 'actions',
-        },
-        {
-          field: 'payment',
-          headerName: 'payment',
-          // type: 'actions',
-        },
-      ],
-      [rowId]
-    );
+  const columns = [
+    {
+      field: 'profile',
+      headerName: 'Avatar',
+      width: 60,
+      renderCell: (params) => {
+        console.log(params)
+        return (<Avatar src={params.formattedValue} />)
+      },
+      sortable: false,
+      filterable: false,
+    },
+    { field: 'firstName', headerName: 'Name', width: 170 },
+    { field: 'email', headerName: 'Email', width: 200 },
+    {
+      field: 'phoneNo',
+      headerName: 'phoneNo',
+      width: 100,
+      type: 'singleSelect',
+      valueOptions: ['basic', 'editor', 'admin'],
+      editable: true,
+    },
+    {
+      field: 'userName',
+      headerName: 'userName',
+      width: 100,
+      editable: true,
+    },
+    {
+      field: 'city',
+      headerName: 'city',
+      width: 100,
+
+    },
+    { field: 'state', headerName: 'state', width: 100 },
+    {
+      field: 'nationality',
+      headerName: 'nationality',
+      // type: 'actions',
+    },  
+    {
+      field: 'totalFees',
+      headerName: 'Total Fees',
+      renderCell: (params) => {
+        console.log(params)
+        return (<button>Add Paid Fees</button>)
+    },
+  },
+  {
+    field: 'AddFees',
+    headerName: 'Add Fees',
+    renderCell: (params) => {
+      return (<button>Add Paid Fees</button>)
+  },
+},
+    
+    {
+      field: 'payment',
+      headerName: 'payment',
+      renderCell: (params) => {
+        console.log(params)
+        return (<button>Add Paid Fees</button>)
+    },
+  }
+  ]
 
   return token ? (
   <>
