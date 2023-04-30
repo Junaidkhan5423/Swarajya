@@ -101,27 +101,21 @@ const Users = () => {
     },  
     {
       field: 'totalFees',
-      headerName: 'Total Fees',
-      renderCell: (params) => {
-        console.log(params)
-        return (<button>Add Paid Fees</button>)
-    },
+      headerName: 'Total Fees'
+  },
+  ,  
+    {
+      field: 'totalPaid',
+      headerName: 'paid Fees'
   },
   {
-    field: 'AddFees',
-    headerName: 'Add Fees',
-    renderCell: (params) => {
-      return (<button>Add Paid Fees</button>)
-  },
+    field: 'rollNo',
+    headerName: 'Roll no'
 },
     
     {
-      field: 'payment',
-      headerName: 'payment',
-      renderCell: (params) => {
-        console.log(params)
-        return (<button>Add Paid Fees</button>)
-    },
+      field: 'enrollmentNo',
+      headerName: 'Enrollment No'
   }
   ]
 
