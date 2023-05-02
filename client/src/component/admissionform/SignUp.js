@@ -101,7 +101,7 @@ const fetchCoursedata = async () => {
                 console.log(values);
                 values = await Object.assign(values, { profile: file || "", state: state || "", city: City || '' , courseName: courseName || "", CourseType: CourseType || "",})
                 const data = await postStudentData(values)
-                console.log(data);
+                // console.log(data);
                 if (data.status === 200) {
                     toast.success("Student Registered Successfully")
                     navigate("/payment")

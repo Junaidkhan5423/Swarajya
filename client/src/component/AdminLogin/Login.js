@@ -46,9 +46,9 @@ const navigate = useNavigate()
 const token = useAuthentication(state => state.auth.token)
 
 const setAuthentication = useAuthentication(state => state.setAuthentication)
-useEffect(()=>{
-console.log(token);
-},[token])
+// useEffect(()=>{
+// console.log(token);
+// },[token])
   const handleSubmit = async(event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -59,7 +59,7 @@ console.log(token);
 setAuthentication({name:Admin?.name,token:Admin?.token})
   navigate("/table")
   
-  console.log(Admin);
+  // console.log(Admin);
   };
   
   const handleSubmitForSignUp = async(event) => {

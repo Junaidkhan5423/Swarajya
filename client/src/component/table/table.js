@@ -11,24 +11,32 @@ import { Link } from "react-router-dom";
 import Add from "../table/Add";
 import AppDataGrid from "../../utils/AppDataGrid";
 import PopUp from "../modal/PopUp";
+import { useQuery } from 'react-query';
 
 const Users = () => {
   const [open, setOpen] = useState(false);
 
   const token = useAuthentication((state) => state.auth.token);
-  console.log(token);
+  const { data, isLoading, isError, refetch } = useQuery('my-data', async()=>{
+  const response = await  getUserAll(token).then((res) => {
+      return res.data
+      // setStudentData(res.data);
+    })
+    // console.log(response,'response')
+    return response
+  })
+  console.log(data);
 
-  const [pageSize, setPageSize] = useState(5);
   const [studentDAta, setStudentData] = useState([]);
 
   const fetchData = async () => {
     const data = await getUserAll(token).then((res) => {
-      console.log("daa", res);
+      // console.log("daa", res);
       setStudentData(res.data);
     });
   };
 
-  const [data, setData] = useState([]);
+  const [newData, setNewData] = useState([]);
   const [selected, setSelected] = useState(true);
   const handleClose = () => {
     setOpen(false);
@@ -39,14 +47,15 @@ const Users = () => {
     axios
       .get("https://swarajyabackend.onrender.com/getAllCourse")
       .then((res) => {
-        setData(res.data.data);
-        console.log(res.data);
+        setNewData(res.data.data);
+        // console.log(res.data);
       });
   };
 
   useEffect(() => {
     fetchCoursedata();
     fetchData();
+    refetch()
   }, [open]);
   const handleEdit = (e) => {
     console.log(e);
@@ -55,7 +64,7 @@ const Users = () => {
   const deleteCourse = async (id) => {
     const data = await deleteCourseByID(id);
     fetchCoursedata();
-    console.log(data);
+    // console.log(data);
   };
 
   const [rowId, setRowId] = useState(null);
@@ -120,7 +129,6 @@ const Users = () => {
       field: "Action",
       headerName: "Edit",
       renderCell: (params) => {
-        console.log(params);
         return (
           <PopUp params={params} handleEdit={handleEdit} />
           // <button
@@ -135,11 +143,13 @@ const Users = () => {
       },
     },
   ];
+  // return isLoading && <h1>...loading</h1>
 
   return token ? (
     <>
       {selected ? (
         <>
+        { isLoading && <h1>...loading</h1>}
           <button
             type="button"
             class="btn btn-primary"
@@ -204,7 +214,7 @@ const Users = () => {
                 </tr>
               </thead>
               <tbody>
-                {data.map((item, index) => (
+                {newData.map((item, index) => (
                   <tr key={index}>
                     <td>{item.name}</td>
                     <td>{item.fullName}</td>
