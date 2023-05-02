@@ -19,6 +19,7 @@ const Form = (props) => {
   const [nationality, setNationality] = useState(previousData.nationality);
   const [totalFees, setTotalFees] = useState(previousData.totalFees);
   const [totalPaid, setTotalPaid] = useState(previousData.totalPaid);
+  const [addFessPaid, setAddFessPaid] = useState(0);
   const [rollNo, setRollNo] = useState("");
   const [enrollmentNo, setEnrollmentNo] = useState("");
 
@@ -53,8 +54,17 @@ const Form = (props) => {
     });
 
     console.log("This is updated data", updatedData);
+    const body ={
+      fees:addFessPaid,
+      id:props.params.row._id
+    }
 
-    getEditableData(token, props.params.row._id, updatedData);
+  const responseData :any= await  getEditableData(token, body);
+  console.log(responseData.status);
+  if(responseData.status  === 200) {
+    setTotalPaid((prev)=> prev + addFessPaid)
+  }
+  
   };
 
   return (
@@ -153,6 +163,15 @@ const Form = (props) => {
             value={totalPaid}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setTotalPaid(e.target.value)
+            }
+          />
+          <StyledTextField
+            label="Add Fees Paid"
+            type="number"
+            variant="filled"
+            value={addFessPaid}
+            onChange={(e: any) =>
+              setAddFessPaid(e.target.value)
             }
           />
           <StyledTextField

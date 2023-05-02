@@ -74,28 +74,24 @@ export const getUserAll = async (token) => {
   }
 };
 
-export const getEditableData = async (token, id, editedParams) => {
-  console.log("getEditableData called", editedParams);
-  let params = {
-    row: { ...editedParams },
-  };
-  console.log("this is params from..........", params);
-  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
+export const getEditableData = async (token, editedParams) => {
+// console.log(editedParams);
+//  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
   try {
-    await axios
+   return await axios
       .put(
-        `https://swarajyabackend.onrender.com/updateFeesStatus?id=${id}`,
-        params,
+        `https://swarajyabackend.onrender.com/updateFeesStatus`,
+        editedParams,
 
         {
           headers: { Authorization: token },
         }
       )
       .then((response) => {
-        console.log(response);
-        console.log("success");
+       return response
       });
   } catch (error) {
+    return error;
     console.log(error);
   }
 };
