@@ -92,6 +92,5 @@ export const getEditableData = async (token, editedParams) => {
       });
   } catch (error) {
     return error;
-    console.log(error);
   }
 };

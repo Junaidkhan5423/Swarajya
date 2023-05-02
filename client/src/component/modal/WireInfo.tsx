@@ -18,7 +18,7 @@ const Form = (props) => {
   const [state, setState] = useState(previousData.state);
   const [nationality, setNationality] = useState(previousData.nationality);
   const [totalFees, setTotalFees] = useState(previousData.totalFees);
-  const [totalPaid, setTotalPaid] = useState(previousData.totalPaid);
+  const [totalPaid, setTotalPaid] = useState(parseInt( previousData.totalPaid));
   const [addFessPaid, setAddFessPaid] = useState(0);
   const [rollNo, setRollNo] = useState("");
   const [enrollmentNo, setEnrollmentNo] = useState("");
@@ -39,8 +39,6 @@ const Form = (props) => {
       enrollmentNo
     );
     let EditabledData = {
-      totalFees: totalFees,
-      totalPaid: totalPaid,
       rollNo: rollNo,
       enrollmentNo: enrollmentNo,
     };
