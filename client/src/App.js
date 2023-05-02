@@ -22,6 +22,7 @@ import Root from "./component/Root/Root";
 // import Admin from './component/Root/AdminProtected';
 import AdminProtected from "./component/Root/AdminProtected";
 import axios from "axios";
+import ELearnig from "./component/contactus/ELearnig";
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
 // import Add from './component/table/Add';
@@ -43,6 +44,7 @@ function App() {
           <Route path="/DirectorDesk" element={<DirectorDesk />} />
           <Route path="/PravicyPolisy" element={<PravicyPolisy />} />
           <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path='/ELearning' element={<ELearnig/>} />
         </Route>
         <Route element={<AdminProtected />}>
           <Route path="/table" element={<Users />} />

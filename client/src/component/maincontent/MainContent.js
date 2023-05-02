@@ -30,13 +30,28 @@ import offlinesikkim from '../../Allpdf/APPLICATION FOR ADMISSION - SSU.pdf'
 
 const MainContent = () => {
   const [visible , setVisibile]=useState(false)
+  const [mission , setMission]=useState(false)
+  const [objective , setObjective]=useState(false)
+  const [eLearning , setELearning] =useState(false)
   const [Prospectus,setProspectus]=useState(false)
   const [international,setinternational]=useState(false)
   const [course,setCourse]=useState(false)
   const [english,setEnglish]=useState(false)
   var myIndex = 0;
   
+const handeContentChange =(param)=>{
+  if(param === 'mission' ){
+    setObjective(false)
+    setMission(true)
+  }else if(param === 'objective'){
+    setMission(false)
+    setObjective(true)
+  }else if (param === "Elearnig"){
+    setMission(false)
+    setObjective(false)
+  }
 
+}
   function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
@@ -423,8 +438,8 @@ const MainContent = () => {
           <div className="one">
             <div className="menu">
               <h2>Menu</h2>
-              <a href="mission and vision.html"> Mission & Vision</a>
-              <a href="aim & objective.html">Aim & Objective</a>
+              <a className='visible-class' onClick={()=> handeContentChange("mission")}> Mission & Vision</a>
+              <a className='visible-class' onClick={()=> handeContentChange("objective")}>Aim & Objective</a>
               <a href="aboutUs.html">Our Scope</a>
               {!course && <a target='blank' onClick={()=>setCourse(true)}>Course Details</a>}
               { course && 
@@ -440,7 +455,7 @@ const MainContent = () => {
               </>
               }
             
-              <a href="/ELearning">E-Learning & Self Study Mode</a>
+              <Link to="/ELearning">E-Learning & Self Study Mode</Link>
             </div>
 
             <div className="institution">
@@ -457,7 +472,47 @@ const MainContent = () => {
             <div className='swarajya_info'>
               <h2>Swarajya Institute Of Distance Learning </h2>
               <p><b>Welcome to Swarajya Paramedical Institute.</b></p>
-              <p>Swarajya Institute of Distance Learning in India, We Provide a Platform for those Student who are on Job, and want to continue their education in various sectors like, Paramedical, Traditional, Computer Science, Business Administration, Home Science, Life Science etc.</p>
+              {mission ? (
+                <>   <main class="container mt-5">
+                <h3>Mission</h3>
+                <p>Our mission at the Swarajya Institute of Distance Learning is to provide accessible and high-quality education to students from all over the world. We aim to provide a flexible learning environment that caters to the diverse needs and interests of our students, and to equip them with the skills and knowledge necessary for personal and professional growth.</p>
+                
+                <h3>Vision</h3>
+                <p>Our vision is to become a global leader in distance education, recognized for our commitment to excellence in teaching, research, and innovation. We strive to create a community of lifelong learners who are empowered to reach their full potential, and who contribute to the betterment of society. We believe that education is a fundamental human right, and that everyone should have access to quality education, regardless of their background or circumstances.</p>
+            </main></>
+              ) : objective ? (
+<><main class="container mt-5">
+		<h3>Aims and Objectives</h3>
+		<ol>
+			<li>
+				<p>To provide accessible and affordable education to students from all over the world, regardless of their location, background or circumstances.</p>
+			</li>
+			<li>
+				<p>To offer a wide range of courses and programs that are designed to meet the diverse needs and interests of our students, and to ensure that they have the knowledge and skills necessary for personal and professional growth.</p>
+			</li>
+			<li>
+				<p>To use the latest technologies and teaching methods to provide a flexible and engaging learning experience that is tailored to the needs of each individual student.</p>
+			</li>
+			<li>
+				<p>To provide students with access to experienced and qualified educators who are passionate about their subjects and who are dedicated to helping them achieve their academic and career goals.</p>
+			</li>
+			<li>
+				<p>To create a supportive and inclusive learning community where students can connect with one another, share ideas and experiences, and collaborate on projects.</p>
+			</li>
+			<li>
+				<p>To promote lifelong learning and to provide students with the tools and resources necessary to continue learning and growing throughout their lives.</p>
+			</li>
+			<li>
+				<p>To foster a culture of innovation and research, and to contribute to the advancement of knowledge in our respective fields.</p>
+			</li>
+		</ol>
+		<p>Overall, our aims and objectives are centered around providing an exceptional learning experience to our students, empowering them with the knowledge and skills necessary to succeed in their chosen fields, and fostering a culture of excellence and innovation.</p>
+	</main>
+	
+ </>
+              ) : (
+                <>
+                <p>Swarajya Institute of Distance Learning in India, We Provide a Platform for those Student who are on Job, and want to continue their education in various sectors like, Paramedical, Traditional, Computer Science, Business Administration, Home Science, Life Science etc.</p>
               <p>As Paramedical education has emerged as an essential component of the healthcare industry in India. With the increasing demand for healthcare services, the scope of paramedical education has also grown significantly in recent years. Today, paramedical education in India offers
                  a wide range of courses that prepare students to assist doctors and other healthcare professionals in various medical procedures.</p>
              
@@ -475,6 +530,11 @@ const MainContent = () => {
              
               <p>These courses equip students with the necessary knowledge and skills to perform a range of diagnostic, therapeutic, and supportive roles in the healthcare industry. The demand for paramedical professionals in India is expected to grow at a rapid pace in the coming years, as the healthcare industry continues to expand.</p>
               <p>In conclusion, the scope of paramedical education in India is immense, with plenty of opportunities for students who wish to pursue a career in healthcare. With the increasing demand for healthcare services and the growing need for skilled healthcare professionals, paramedical education has become an attractive option for many students in India.</p>
+                </>
+              )
+                
+              }
+              
             </div>
           </div>
           <div className="two">

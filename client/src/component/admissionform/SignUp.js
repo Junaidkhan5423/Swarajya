@@ -36,7 +36,9 @@ const fetchCoursedata = async () => {
     const UpCity = ["Agra", "Aligarh", "Allahabad", "Ambedkar", "Nagar", "Amroha", "Auraiya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Bara Banki", "Bareilly", "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Faizabad", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam", "Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hardoi", "Hathras (Mahamaya Nagar)", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur", "Kanpur Nagar", "Kasganj (Kanshiram Nagar)", "Kaushambi", "Kheri (Lakhimpur Kheri)", "Kushinagar", "Lalitpur", "Lucknow", "Mahoba", "Mahrajganj (Maharajganj)", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Rae Bareli", "Rampur", "Saharanpur", "Sant Kabir Nagar", "Sant Ravidas Nagar (Bhadohi)", "Shahjahanpur", "Shrawasti (Shravasti)", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"]
 
     const onUpload = async (e) => {
+        console.log(e);
         const base64 = await convertIntoBase64(e.target.files[0])
+        console.log(base64);
         setFile(base64)
     }
 
@@ -121,9 +123,17 @@ const fetchCoursedata = async () => {
                         <ToastContainer />
                         <h3 className='mu-4 font-weight-bold .display-4' style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '3rem' }}>Addmission Form</h3>
                         <Form >
+                        <div class="form-group">
+
+  <div class="text-center">
+    <img src={file ||"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFrUbjn8k0GKrwRH_ibGTGlkoH3eLw9EZz6A&usqp=CAU" } id="imagePreview"  class="img-thumbnail rounded-circle" style={{maxWidth: "50px", maxHeight: "50px"}}/>
+  </div>
+</div>
+
                             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridColumnGap: '2rem', fontSize: '20rem' }}>
                                 {/* {values.studentPhoto && <ProfilePic file={values.studentPhoto} />} */}
                                 {/* <button type='button' onClick={() => { fileRef.current.click() }}>Upload</button> */}
+                          
                                 <Textfield label='First Name' name='firstName' type='text' />
                                 <Textfield label='Last Name' name='lastName' type='text' />
                                 <Textfield label='User Name' name='userName' type='text' />
@@ -210,7 +220,16 @@ const fetchCoursedata = async () => {
                                     </Select>
                                 </FormControl>
                                 <Textfield label='Course Code' name='courseCode' type='number' />
-                                <input label='Photo' style={{ display: "flex", flexDirection: "column", alignItems: "baseline", border: "2 px", fontSize: "1pc" }} name='profile' type='file' onChange={onUpload} />
+                                {/* <input label='Photo' style={{ display: "flex", flexDirection: "column", alignItems: "baseline", border: "2 px", fontSize: "1pc" }} name='profile' type='file' onChange={onUpload} /> */}
+                                <div style={{    height: "11.5vh" ,alignItems:"end"}} class="input-group">
+    <div class="input-group-prepend" style={{height: "calc(2.25rem + 2px)"}}>
+      <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-upload"></i></span>
+    </div>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input"  name='profile' onChange={onUpload} aria-describedby="inputGroupFileAddon01"/>
+      <label class="custom-file-label"   for="imageUpload">Choose file</label>
+    </div>
+  </div>
 
                             </div>
                             {/* <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'darkgray'}}>Submit</button> */}
