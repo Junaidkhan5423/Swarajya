@@ -14,16 +14,16 @@ function StudentInfo(props) {
          
          
          >
-            <div className="student-profile py-4">
+            <div className="student-profile py-4 " style={{background:'#f0f8ff'}}>
           
         
-        <div className="container">
-                    <div className="row">
-                        <div className="col-lg-4">
-                            <div className="card shadow-sm">
-                                <div className="card-header bg-transparent text-center">
-                                    <img className="profile_img" src={data?.profile || ""} alt="student dp" />
-                                    <h3>{data?.firstName || ' '} {data?.lastName || ""}</h3>
+        <div className="container " >
+                    <div className="row gap-3">
+                        <div className="col-12 " style={{background:'#f0f8ff'}}>
+                            <div className="card shadow-sm"   >
+                                <div className="card-header  text-center" style={{backgroundColor:"#163169"}}>
+                                    <img className="profile_img" color='white'   src={data?.profile || ""} alt="student dp" />
+                                    <h3 className='text-white'>{data?.firstName || ' '} {data?.lastName || ""}</h3>
                                 </div>
                                 <div className="card-body">
                                     <p className="mb-0"><strong className="pr-1">Student ID:</strong>{data?.userName || ""}</p>
@@ -32,8 +32,8 @@ function StudentInfo(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-8">
-                            <div className="card shadow-sm">
+                        <div className=" d-flex">
+                            <div className="card shadow-sm flex-fill p-3 w-50">
                                 <div className="card-header bg-transparent border-0">
                                     <h3 className="mb-0"><i className="far fa-clone pr-1"></i>General Information</h3>
                                 </div>
@@ -77,8 +77,8 @@ function StudentInfo(props) {
                                     </table>
                                 </div>
                             </div>
-                            <div style={{ height: '26px' }}></div>
-                            <div className="card shadow-sm">
+                            {/* <div style={{ height: '26px' }}></div> */}
+                            <div className="  card shadow-sm flex-fill p-3 ml-1 w-50">
                                 <div className="card-header bg-transparent border-0">
                                     <h3 className="mb-0"><i className="far fa-clone pr-1"></i>Other Information</h3>
                                 </div>

@@ -32,11 +32,9 @@ const MainContent = () => {
   const [visible , setVisibile]=useState(false)
   const [mission , setMission]=useState(false)
   const [objective , setObjective]=useState(false)
-  const [eLearning , setELearning] =useState(false)
   const [Prospectus,setProspectus]=useState(false)
   const [international,setinternational]=useState(false)
   const [course,setCourse]=useState(false)
-  const [english,setEnglish]=useState(false)
   var myIndex = 0;
   
 const handeContentChange =(param)=>{
