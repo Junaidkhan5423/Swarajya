@@ -101,17 +101,21 @@ function StudentInfo(props) {
                                         <tr>
                                             <th width="30%">SYLLABUS</th>
                                             <td width="2%">:</td>
-                                            <td><a href={data?.syllabus}>Download Syllabus</a></td>
+                                            <td><a href={data?.syllabus} className="btn btn-download text-info"><span className="bi bi-download"></span>Download Syllabus</a></td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Result</th>
                                             <td width="2%">:</td>
-                                            <td onClick={downloadResult} ><a >Download Result</a></td>
+                                            <td  > <button type="button" className="btn btn-download text-info" onClick={downloadResult}>
+  <span className="bi bi-download"></span> Download Result
+</button></td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Identi Card</th>
                                             <td width="2%">:</td>
-                                            <td onClick={downloadIdentyCard}><a >Download Identi Card</a></td>
+                                            <td >  <button type="button" className="btn btn-download text-info" onClick={downloadIdentyCard}>
+  <span className="bi bi-download"></span>Download IdentiCard
+</button></td>
                                         </tr>
                                     </table>
                                 </div>
