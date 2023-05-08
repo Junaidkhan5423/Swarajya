@@ -52,7 +52,7 @@ export default function BasicModal(props) {
             Edit Details
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <Form previousData={previousData} params={props.params} />
+            <Form previousData={previousData} refetch={props.refetch} params={props.params} />
           </Typography>
         </Box>
       </Modal>

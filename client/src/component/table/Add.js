@@ -17,6 +17,7 @@ const Add = (props) => {
 
            axios.post('https://swarajyabackend.onrender.com/addCourse',inputData)
                  .then(res=>{
+                    props.refetch()
                     navigate('/table')
                     alert("Data add successfully");
                     handleClose()

@@ -17,15 +17,15 @@ const Users = () => {
   const [open, setOpen] = useState(false);
 
   const token = useAuthentication((state) => state.auth.token);
-  const { data, isLoading, isError, refetch } = useQuery('my-data', async()=>{
-  const response = await  getUserAll(token).then((res) => {
-      return res.data
-      // setStudentData(res.data);
-    })
-    // console.log(response,'response')
-    return response
-  })
-  console.log(data);
+  // const { data, isLoading, isError, refetch } = useQuery('my-data', async()=>{
+  // const response = await  getUserAll(token).then((res) => {
+  //     return res.data
+  //     // setStudentData(res.data);
+  //   })
+  //   // console.log(response,'response')
+  //   return response
+  // })
+  // console.log(data);
 
   const [studentDAta, setStudentData] = useState([]);
 
@@ -43,7 +43,7 @@ const Users = () => {
   };
 
   const fetchCoursedata = async () => {
-    console.log(fetchCoursedata);
+    // console.log(fetchCoursedata);
     axios
       .get("https://swarajyabackend.onrender.com/getAllCourse")
       .then((res) => {
@@ -51,11 +51,29 @@ const Users = () => {
         // console.log(res.data);
       });
   };
+  function handleFileUpload(event ,id ,status) {
+    console.log(id);
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('pdf', file);
+    formData.append('id', id);
+    formData.append('status', status);
+  console.log(formData);
+    axios.post('https://swarajyabackend.onrender.com/addResult', formData, {
+      headers: { Authorization: token },
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   useEffect(() => {
     fetchCoursedata();
     fetchData();
-    refetch()
+    // refetch()
   }, [open]);
   const handleEdit = (e) => {
     console.log(e);
@@ -122,15 +140,31 @@ const Users = () => {
     },
 
     {
+      field: "identityCard",
+      headerName: "Upload Identicard",
+      renderCell: (params) => {
+        return    <input type="file"  onChange={(e)=>handleFileUpload( e,params.row._id ,'identyCard')} />;
+      },
+    }, 
+    {
+      field: "result",
+      headerName: "Upload Result",
+      renderCell: (params) => {
+        return    <input type="file" onChange={(e)=>handleFileUpload( e,params.row._id ,'result')} />;
+      },
+    },
+    
+    {
       field: "enrollmentNo",
       headerName: "Enrollment No",
+      
     },
     {
       field: "Action",
       headerName: "Edit",
       renderCell: (params) => {
         return (
-          <PopUp params={params} handleEdit={handleEdit} />
+          <PopUp refetch={fetchData} params={params} handleEdit={handleEdit} />
           // <button
           //   onClick={() => {
           //     handleEdit(params.row._id);
@@ -149,7 +183,6 @@ const Users = () => {
     <>
       {selected ? (
         <>
-        { isLoading && <h1>...loading</h1>}
           <button
             type="button"
             class="btn btn-primary"
@@ -235,7 +268,7 @@ const Users = () => {
               </tbody>
             </table>
           </div>
-          {open && <Add handleClose={handleClose} open={open} />}
+          {open && <Add refetch={fetchCoursedata} handleClose={handleClose} open={open} />}
         </>
       )}
     </>

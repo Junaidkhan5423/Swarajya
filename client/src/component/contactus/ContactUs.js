@@ -5,7 +5,7 @@ function ContactUs() {
     return (
         <>
             <h4 className='mainhading'>We Welcome Your Questions, Comments, And Feedback! Here Are The Ways You Can Get In Touch With Us:</h4>
-            <table>
+            <table className='table-name'>
                 <tr>
                     <th>Director Name</th>
                     <th>Email Addres</th>

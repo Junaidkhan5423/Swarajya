@@ -60,6 +60,7 @@ const Form = (props) => {
   const responseData :any= await  getEditableData(token, body);
   console.log(responseData.status);
   if(responseData.status  === 200) {
+  props.refetch()
     setTotalPaid((prev)=> prev + addFessPaid)
   }
   

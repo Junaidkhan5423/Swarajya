@@ -2,10 +2,39 @@ import React, { useEffect, useState } from 'react'
 import './StudentInfo.css'
 import { getUser } from '../services/student.service'
 import Dialog from '@mui/material/Dialog';
+import axios from 'axios';
 
 function StudentInfo(props) {
    const {data , open} = props
-   console.log(data);
+   const downloadResult = async()=>{
+    axios({
+        url: 'https://swarajyabackend.onrender.com/result/644e91f1041954aaf7b9985b',
+        method: 'GET',
+        responseType: 'blob', // set the response type to blob to receive a binary data
+      }).then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data])); // create a URL to the file
+        const link = document.createElement('a'); // create a new link element
+        link.href = url; // set the link's href to the created URL
+        link.setAttribute('download', 'file.pdf'); // set the download attribute to trigger the download dialog
+        document.body.appendChild(link); // append the link element to the DOM
+        link.click(); // click the link to trigger the download
+      });
+   }
+   const downloadIdentyCard = async()=>{
+    axios({
+        url: `https://swarajyabackend.onrender.com/identyCard/${data._id}`,
+        method: 'GET',
+        responseType: 'blob', // set the response type to blob to receive a binary data
+      }).then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data])); // create a URL to the file
+        const link = document.createElement('a'); // create a new link element
+        link.href = url; // set the link's href to the created URL
+        link.setAttribute('download', 'file.pdf'); // set the download attribute to trigger the download dialog
+        document.body.appendChild(link); // append the link element to the DOM
+        link.click(); // click the link to trigger the download
+      });
+   }
+   console.log(data._id);
     return (
         <>
           <Dialog
@@ -32,8 +61,8 @@ function StudentInfo(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className=" d-flex">
-                            <div className="card shadow-sm flex-fill p-3 w-50">
+                        <div className=" d-flex flex-column">
+                            <div className="card shadow-sm flex-fill p-3 w-100">
                                 <div className="card-header bg-transparent border-0">
                                     <h3 className="mb-0"><i className="far fa-clone pr-1"></i>General Information</h3>
                                 </div>
@@ -74,11 +103,21 @@ function StudentInfo(props) {
                                             <td width="2%">:</td>
                                             <td><a href={data?.syllabus}>Download Syllabus</a></td>
                                         </tr>
+                                        <tr>
+                                            <th width="30%">Result</th>
+                                            <td width="2%">:</td>
+                                            <td onClick={downloadResult} ><a >Download Result</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Identi Card</th>
+                                            <td width="2%">:</td>
+                                            <td onClick={downloadIdentyCard}><a >Download Identi Card</a></td>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>
                             {/* <div style={{ height: '26px' }}></div> */}
-                            <div className="  card shadow-sm flex-fill p-3 ml-1 w-50">
+                            <div className="  card shadow-sm flex-fill p-3 ml-1 w-100">
                                 <div className="card-header bg-transparent border-0">
                                     <h3 className="mb-0"><i className="far fa-clone pr-1"></i>Other Information</h3>
                                 </div>
