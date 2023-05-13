@@ -45,29 +45,27 @@ const Users = () => {
   const fetchCoursedata = async () => {
     // console.log(fetchCoursedata);
     axios
-      .get("https://swarajyabackend.onrender.com/getAllCourse")
+      .get(`${process.env.REACT_APP_API_URL_LOCAL}/getAllCourse`)
       .then((res) => {
         setNewData(res.data.data);
         // console.log(res.data);
       });
   };
   function handleFileUpload(event ,id ,status) {
-    console.log(id);
-    const file = event.target.files[0];
-    const formData = new FormData();
-    formData.append('pdf', file);
-    formData.append('id', id);
-    formData.append('status', status);
-  console.log(formData);
-    axios.post('https://swarajyabackend.onrender.com/addResult', formData, {
-      headers: { Authorization: token },
-    })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  
+    // axios.post(`${process.env.REACT_APP_API_URL_LOCAL}/addResult`, formData, {
+    //   headers: { Authorization: token },
+    // })
+    //   .then(response => {
+    //     console.log(response);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+  }
+  const refreshData = () => {
+    fetchCoursedata();
+    fetchData();
   }
 
   useEffect(() => {
@@ -140,17 +138,18 @@ const Users = () => {
     },
 
     {
-      field: "identityCard",
+      field: "identyCard",
       headerName: "Upload Identicard",
       renderCell: (params) => {
-        return    <input type="file"  onChange={(e)=>handleFileUpload( e,params.row._id ,'identyCard')} />;
+        console.log(params.row.identyCard  ,"params.row.identityCard ");
+        return  params.row.identyCard ? <strong>Uploaded</strong> : <strong>Not Uploaded</strong>
       },
     }, 
     {
       field: "result",
       headerName: "Upload Result",
       renderCell: (params) => {
-        return    <input type="file" onChange={(e)=>handleFileUpload( e,params.row._id ,'result')} />;
+        return    params.row.result ? <strong>Uploaded</strong> : <strong>Not Uploaded</strong>
       },
     },
     
@@ -191,6 +190,9 @@ const Users = () => {
           >
             Courses
           </button>
+          <button onClick={refreshData} className="btn btn-primary">
+              <i class="bi bi-arrow-clockwise"></i>
+              </button>
           {/* <Box
       sx={{
         height: "100vh",
@@ -233,6 +235,7 @@ const Users = () => {
               <button onClick={() => setOpen(true)} className="btn btn-primary">
                 Add +
               </button>
+             
             </div>
             <table className="table">
               <thead>

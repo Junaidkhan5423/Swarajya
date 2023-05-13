@@ -1,37 +1,39 @@
 import { Button, styled, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { getEditableData } from "../services/student.service.js";
+import { getEditableData, uploadResultId } from "../services/student.service.js";
 import { useAuthentication } from "../../store/store.js";
+import axios from "axios";
 const StyledTextField = styled(TextField)(({ theme }) => ({
   margin: "1rem",
   width: "300px",
 }));
 
-const Form = (props) => {
+const Form = (props :any) => {
   const previousData = props.previousData;
   const token = useAuthentication((state) => state.auth.token);
   const [firstName, setfirstName] = useState(previousData.firstName);
-  const [email, setEmail] = useState(previousData.email);
+  const [identyCard, setIdentyCard] = useState(previousData.identyCard &&'IdentyCard Available');
   const [phoneNo, setphoneNo] = useState(previousData.phoneNo);
   const [userName, setUserName] = useState(previousData.userName);
   const [city, setCity] = useState(previousData.city);
-  const [state, setState] = useState(previousData.state);
+  const [result, setResult] = useState(previousData.result && "Result Available");
   const [nationality, setNationality] = useState(previousData.nationality);
   const [totalFees, setTotalFees] = useState(previousData.totalFees);
-  const [totalPaid, setTotalPaid] = useState(parseInt( previousData.totalPaid));
+  const [totalPaid, setTotalPaid] = useState(parseInt(previousData.totalPaid));
   const [addFessPaid, setAddFessPaid] = useState(0);
   const [rollNo, setRollNo] = useState("");
   const [enrollmentNo, setEnrollmentNo] = useState("");
+  const [isFeesAdd, setIsFeesAdd] = useState(false);
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     console.log(
       firstName,
       phoneNo,
-      email,
+      identyCard,
       userName,
       city,
-      state,
+      result,
       nationality,
       totalFees,
       totalPaid,
@@ -39,19 +41,20 @@ const Form = (props) => {
       enrollmentNo
     );
     let EditabledData = {
+      id:props.params.row._id,
       rollNo: rollNo,
       enrollmentNo: enrollmentNo,
+      identyCard:identyCard,
+      result:result
     };
-    let updatedData = {};
-    await Object.entries(EditabledData).forEach(([key, value]) => {
-      console.log("key", key);
-      console.log("value", value);
-      if (value !== previousData.key || value !== "") {
-        updatedData[key] = value;
-      }
-    });
+ 
+ const resultData = await uploadResultId(token,EditabledData)
 
-    console.log("This is updated data", updatedData);
+ props.refetch() 
+ 
+  
+  };
+  const AddFessService = async()=>{
     const body ={
       fees:addFessPaid,
       id:props.params.row._id
@@ -60,11 +63,19 @@ const Form = (props) => {
   const responseData :any= await  getEditableData(token, body);
   console.log(responseData.status);
   if(responseData.status  === 200) {
+    console.log(responseData,'responseData');
+    
   props.refetch()
-    setTotalPaid((prev)=> prev + addFessPaid)
+    setTotalPaid((prev:number)=> {
+      const total  = Number(prev)
+      const prevaddFessPaid = Number(addFessPaid)
+      const result = total + prevaddFessPaid;
+      
+     return result
+    
+    })
   }
-  
-  };
+  }
 
   return (
     <form
@@ -76,77 +87,11 @@ const Form = (props) => {
         alignItems: "center",
       }}
     >
+      <Button onClick={()=> setIsFeesAdd(!isFeesAdd)}>Add {!isFeesAdd ? "Fees" : 'Result'}</Button>
       <div style={{ display: "flex" }}>
-        <div>
-          <StyledTextField
-            disabled={true}
-            label="First Name"
-            variant="filled"
-            value={firstName}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setfirstName(e.target.value)
-            }
-          />
-          <StyledTextField
-            disabled={true}
-            label="Email"
-            type="email"
-            variant="filled"
-            value={email}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEmail(e.target.value)
-            }
-          />
-          <StyledTextField
-            disabled={true}
-            label="Phone No"
-            type="number"
-            variant="filled"
-            value={phoneNo}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setphoneNo(e.target.value)
-            }
-          />
-
-          <StyledTextField
-            disabled={true}
-            label="User Name"
-            variant="filled"
-            value={userName}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUserName(e.target.value)
-            }
-          />
-          <StyledTextField
-            disabled={true}
-            label="City"
-            variant="filled"
-            value={city}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setCity(e.target.value)
-            }
-          />
-          <StyledTextField
-            disabled={true}
-            label="State"
-            variant="filled"
-            value={state}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setState(e.target.value)
-            }
-          />
-        </div>
-        <div>
-          <StyledTextField
-            disabled={true}
-            label="Nationality"
-            variant="filled"
-            value={nationality}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setNationality(e.target.value)
-            }
-          />
-          <StyledTextField
+        {isFeesAdd ?(
+          <div>
+                     <StyledTextField
             label="Total Fees"
             variant="filled"
             type="number"
@@ -173,9 +118,93 @@ const Form = (props) => {
               setAddFessPaid(e.target.value)
             }
           />
+          
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={AddFessService}
+          sx={{ margin: "2rem" }}
+        >
+          Update
+        </Button>
+          </div>
+        ) :(  <>
+        
+        <div>
+          <StyledTextField
+            disabled={true}
+            label="First Name"
+            variant="filled"
+            value={firstName}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setfirstName(e.target.value)
+            }
+          />
+          
+          {/* <StyledTextField
+            disabled={true}
+            label="Phone No"
+            type="number"
+            variant="filled"
+            value={phoneNo}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setphoneNo(e.target.value)
+            }
+          /> */}
+
+          <StyledTextField
+            disabled={true}
+            label="User Name"
+            variant="filled"
+            value={userName}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setUserName(e.target.value)
+            }
+          />
+          <StyledTextField
+            disabled={true}
+            label="City"
+            variant="filled"
+            value={city}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setCity(e.target.value)
+            }
+          />
+        
+        </div>
+        <div>
+          {/* <StyledTextField
+            disabled={true}
+            label="Nationality"
+            variant="filled"
+            value={nationality}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setNationality(e.target.value)
+            }
+          /> */}
+          <StyledTextField
+            disabled={previousData.identyCard ? true : false}
+            label="Identy Card"
+            type="identyCard"
+            variant="filled"
+            value={identyCard}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setIdentyCard(e.target.value)
+            }
+          />  
+   <StyledTextField
+            disabled={previousData.result ?true :false}
+            label="Result"
+            variant="filled"
+            value={result}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setResult(e.target.value)
+            }
+          />
           <StyledTextField
             label="Roll No"
             variant="filled"
+            type="number"
             value={rollNo}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setRollNo(e.target.value)
@@ -189,9 +218,25 @@ const Form = (props) => {
               setEnrollmentNo(e.target.value)
             }
           />
+           {/* <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          sx={{ margin: "2rem" }}
+        >
+          Update
+        </Button> */}
         </div>
+
+ 
+    
+        </>
+        )
+
+        }
+       
       </div>
-      <div>
+      {!isFeesAdd ?  (
         <Button
           variant="contained"
           color="primary"
@@ -199,8 +244,8 @@ const Form = (props) => {
           sx={{ margin: "2rem" }}
         >
           Update
-        </Button>
-      </div>
+        </Button>): 'Fess'}
+    
     </form>
   );
 };
