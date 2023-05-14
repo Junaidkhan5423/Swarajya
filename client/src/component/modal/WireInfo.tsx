@@ -12,17 +12,17 @@ const Form = (props :any) => {
   const previousData = props.previousData;
   const token = useAuthentication((state) => state.auth.token);
   const [firstName, setfirstName] = useState(previousData.firstName);
-  const [identyCard, setIdentyCard] = useState(previousData.identyCard &&'IdentyCard Available');
+  const [identyCard, setIdentyCard] = useState(previousData.identyCard );
   const [phoneNo, setphoneNo] = useState(previousData.phoneNo);
   const [userName, setUserName] = useState(previousData.userName);
   const [city, setCity] = useState(previousData.city);
-  const [result, setResult] = useState(previousData.result && "Result Available");
+  const [result, setResult] = useState(previousData.result );
   const [nationality, setNationality] = useState(previousData.nationality);
   const [totalFees, setTotalFees] = useState(previousData.totalFees);
   const [totalPaid, setTotalPaid] = useState(parseInt(previousData.totalPaid));
   const [addFessPaid, setAddFessPaid] = useState(0);
-  const [rollNo, setRollNo] = useState("");
-  const [enrollmentNo, setEnrollmentNo] = useState("");
+  const [rollNo, setRollNo] = useState(previousData.rollNo);
+  const [enrollmentNo, setEnrollmentNo] = useState(previousData.enrollmentNo);
   const [isFeesAdd, setIsFeesAdd] = useState(false);
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -183,7 +183,7 @@ const Form = (props :any) => {
             }
           /> */}
           <StyledTextField
-            disabled={previousData.identyCard ? true : false}
+            // disabled={previousData.identyCard ? true : false}
             label="Identy Card"
             type="identyCard"
             variant="filled"
@@ -193,7 +193,7 @@ const Form = (props :any) => {
             }
           />  
    <StyledTextField
-            disabled={previousData.result ?true :false}
+            // disabled={previousData.result ?true :false}
             label="Result"
             variant="filled"
             value={result}

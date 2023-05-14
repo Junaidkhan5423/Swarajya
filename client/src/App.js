@@ -17,12 +17,15 @@ import AboutUs from "./component/contactus/AboutUs";
 import ContactUs from "./component/contactus/ContactUs";
 import DirectorDesk from "./component/contactus/DirectorDesk";
 import PravicyPolisy from "./component/contactus/PravicyPolisy";
-import Payment from "./component/payment/Payment";
+import Payment from "./component/payment/payment";
 import Root from "./component/Root/Root";
 // import Admin from './component/Root/AdminProtected';
 import AdminProtected from "./component/Root/AdminProtected";
 import axios from "axios";
 import ELearnig from "./component/contactus/ELearnig";
+import PgCourse from "./component/courses-table/PgCourse";
+import DiplomaCourses from "./component/courses-table/DiplomaCourses";
+import UgCourse from "./component/courses-table/UgCourses";
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
 // import Add from './component/table/Add';
@@ -45,6 +48,9 @@ function App() {
           <Route path="/PravicyPolisy" element={<PravicyPolisy />} />
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path='/ELearning' element={<ELearnig/>} />
+          <Route path='/diploma' element={<DiplomaCourses/>} />
+          <Route path='/ugCourse' element={<UgCourse/>} />
+          <Route path='/pgCourse' element={<PgCourse/>} />
         </Route>
         <Route element={<AdminProtected />}>
           <Route path="/table" element={<Users />} />

@@ -445,9 +445,9 @@ const handeContentChange =(param)=>{
                 <a target='blank' onClick={()=>setCourse(false)}>Course Details</a>
                 <ul style={{height: "16vh" , listStyle:'none' ,paddingLeft:'0' }}>
              
-             <li style={{width: '9rem'}}><a href=""style={{fontSize: '1.8vh'}}> Diploma</a></li>
-             <li style={{width: '9rem'}}><a href="" style={{fontSize: '1.8vh'}}> UG-graduation </a></li>
-             <li style={{width: '9rem'}}><a href="" style={{fontSize: '1.8vh'}}> PG-Post-graduation  </a></li>
+             <li style={{width: '9rem'}}><a href="" style={{fontSize: '1.8vh'}}> Diploma</a></li>
+             <li style={{width: '9rem'}}><a href=""  style={{fontSize: '1.8vh'}}> UG-graduation </a></li>
+             <li style={{width: '9rem'}}><a href="/paytm"  style={{fontSize: '1.8vh'}}> PG-Post-graduation  </a></li>
            </ul>
 
               </>
@@ -458,8 +458,8 @@ const handeContentChange =(param)=>{
 
             <div className="institution">
               <h2>Institution</h2>
-              <a href="https://forms.gle/xJiHqhQhLcKwjxxp9">Apply For From Collection Center(ACC) </a>
-              <a href=" https://forms.gle/scE8iviYy8quuVdR8">Apply For Online Faculty</a>
+              <a href="https://forms.gle/xJiHqhQhLcKwjxxp9" target='_blank'>Apply For From Collection Center(ACC) </a>
+              <a href=" https://forms.gle/scE8iviYy8quuVdR8" target='_blank'>Apply For Online Faculty</a>
               
               <a href="!">Jobs & Advertisement </a>
               <a href="!">Press Release</a>

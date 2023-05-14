@@ -66,10 +66,7 @@ const fetchCoursedata = async () => {
         axios.get(`https://swarajyabackend.onrender.com/getByCategoryCourse?type=${event.target.value}`)
         .then(res => {
           setData(res.data.data.map((item)=> item.name))
-
-  
         })
-
     }
 
 

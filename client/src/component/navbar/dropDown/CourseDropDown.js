@@ -7,6 +7,7 @@ import Popper from '@mui/material/Popper';
 // import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
+import zIndex from '@mui/material/styles/zIndex';
 // import { Navigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
@@ -54,7 +55,7 @@ export default function MenuListComposition() {
     }, [open]);
 
     return (
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={2} style={{zIndex:1}}>
             {/* <Paper>
         <MenuList>
           <MenuItem>Profile</MenuItem>
@@ -82,6 +83,7 @@ export default function MenuListComposition() {
                     placement="bottom-start"
                     transition
                     disablePortal
+                    style={{zIndex:1}}
                 >
                     {({ TransitionProps, placement }) => (
                         <Grow
@@ -100,13 +102,11 @@ export default function MenuListComposition() {
                                         onKeyDown={handleListKeyDown}
                                     >
                                         <div style={{height: "107%",overflow: "overlay",backgroundColor:"black"}}>
-                                        {SyllabusItem.map((item,index) => {
-                                            return (
-                                              <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
+                                       
+                                              <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={`/diploma`}>DIPLOMA COURSES </a>
+                                              <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={`/ugcourse`}>UG-GRADUATE COURSES </a>
+                                              <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={`/pgCourse`}>PG-POST GRADUATE COURSES</a>
 
-                                            )
-
-                                        })}
                                         </div>
                                     </MenuList>
                                 </ClickAwayListener>

@@ -96,8 +96,8 @@ const Users = () => {
       sortable: false,
       filterable: false,
     },
-    { field: "firstName", headerName: "Name", width: 170 },
-    { field: "email", headerName: "Email", width: 200 },
+    { field: "firstName", headerName: "Name", width: 100 },
+    { field: "email", headerName: "Email", width: 100 },
     {
       field: "phoneNo",
       headerName: "phoneNo",
@@ -139,7 +139,7 @@ const Users = () => {
 
     {
       field: "identyCard",
-      headerName: "Upload Identicard",
+      headerName: " Identicard",
       renderCell: (params) => {
         console.log(params.row.identyCard  ,"params.row.identityCard ");
         return  params.row.identyCard ? <strong>Uploaded</strong> : <strong>Not Uploaded</strong>
@@ -147,7 +147,7 @@ const Users = () => {
     }, 
     {
       field: "result",
-      headerName: "Upload Result",
+      headerName: "Result ",
       renderCell: (params) => {
         return    params.row.result ? <strong>Uploaded</strong> : <strong>Not Uploaded</strong>
       },

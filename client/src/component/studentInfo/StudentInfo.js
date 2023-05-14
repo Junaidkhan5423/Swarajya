@@ -69,9 +69,14 @@ function StudentInfo(props) {
                                 <div className="card-body pt-0">
                                     <table className="table table-bordered">
                                         <tr>
-                                            <th width="30%">Roll</th>
+                                            <th width="30%">Enrollment No</th>
                                             <td width="2%">:</td>
-                                            <td>125</td>
+                                            <td>{data?.enrollmentNo}</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Roll No</th>
+                                            <td width="2%">:</td>
+                                            <td>{data?.rollNo}</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Academic Year	</th>
@@ -122,7 +127,7 @@ function StudentInfo(props) {
                                     <h3 className="mb-0"><i className="far fa-clone pr-1"></i>Other Information</h3>
                                 </div>
                                 <div className="card-body pt-0">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href='/Payment'>Pay Fees</a> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                 </div>
                             </div>
                         </div>
