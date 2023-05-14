@@ -42,6 +42,8 @@ const theme = createTheme();
 
 export default function Login() {
   const [signUp ,setSingUp]= React.useState(false)
+  const [isLoading, setIsLoading] = React.useState(false);
+
 const navigate = useNavigate()
 const token = useAuthentication(state => state.auth.token)
 
@@ -52,10 +54,13 @@ const setAuthentication = useAuthentication(state => state.setAuthentication)
   const handleSubmit = async(event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    setIsLoading(true)
    const Admin = await AdminLoginService({
     email: data.get('email'),
     password: data.get('password'),
   })
+  setIsLoading(false)
+
 setAuthentication({name:Admin?.name,token:Admin?.token})
   navigate("/table")
   
@@ -72,6 +77,15 @@ setAuthentication({name:Admin?.name,token:Admin?.token})
   })
 setSingUp(false)  
   };
+  if(isLoading){
+    return (
+      <button class="btn btn-primary d-flex justify-content-center align-items-center position-absolute top-50 start-50">
+      <span class="spinner-border spinner-border-sm me-2"></span>
+      Loading...
+    </button>
+    
+    )
+  }
 
   return (
     <>

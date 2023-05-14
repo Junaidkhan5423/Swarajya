@@ -8,8 +8,6 @@ function DiplomaCourses() {
           field: "name",
           headerName: "Name",
           width: 260,
-          sortable: false,
-          filterable: false,
         },
         { field: "fullName", headerName: "Full Name", width: 150 },
         { field: "specialition", headerName: "Specialition", width: 200 },
@@ -41,7 +39,7 @@ field:"type",
     const fetchCoursedata = async () => {
         // console.log(fetchCoursedata);
         axios
-          .get(`${process.env.REACT_APP_API_URL_LOCAL}/getByCategoryCourse?type=Diploma`)
+          .get(`${process.env.REACT_APP_API_URL_DEV}/getByCategoryCourse?type=Diploma`)
           .then((res) => {
             setStudentData(res.data.data);
             // console.log(res.data);

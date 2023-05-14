@@ -43,7 +43,7 @@ field:"type",
     const fetchCoursedata = async () => {
         // console.log(fetchCoursedata);
         axios
-          .get(`${process.env.REACT_APP_API_URL_LOCAL}/getByCategoryCourse?type=pGDegree`)
+          .get(`${process.env.REACT_APP_API_URL_DEV}/getByCategoryCourse?type=pGDegree`)
           .then((res) => {
             setStudentData(res.data.data);
             // console.log(res.data);

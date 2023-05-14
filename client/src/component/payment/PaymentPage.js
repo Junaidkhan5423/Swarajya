@@ -2,7 +2,7 @@ import React from 'react'
 import './payment.css'
 import Qrcode from "../../images/QRCODe.jpeg"
 
-function Payment() {
+function PaymentPage() {
   return (
 <div class="container">
    <div class="row">
@@ -26,4 +26,4 @@ function Payment() {
   )
 }
 
-export default Payment
+export default PaymentPage

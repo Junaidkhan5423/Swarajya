@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getEditableData, uploadResultId } from "../services/student.service.js";
 import { useAuthentication } from "../../store/store.js";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 const StyledTextField = styled(TextField)(({ theme }) => ({
   margin: "1rem",
   width: "300px",
@@ -49,6 +50,8 @@ const Form = (props :any) => {
     };
  
  const resultData = await uploadResultId(token,EditabledData)
+ toast.success("Student Data Successfully Updated")
+
 
  props.refetch() 
  
@@ -63,6 +66,8 @@ const Form = (props :any) => {
   const responseData :any= await  getEditableData(token, body);
   console.log(responseData.status);
   if(responseData.status  === 200) {
+    toast.success("Student Fess Successfully Updated")
+    // navigate("/payment")
     console.log(responseData,'responseData');
     
   props.refetch()
@@ -74,6 +79,8 @@ const Form = (props :any) => {
      return result
     
     })
+  }else{
+    toast.error("error")
   }
   }
 
@@ -87,6 +94,7 @@ const Form = (props :any) => {
         alignItems: "center",
       }}
     >
+       <ToastContainer />
       <Button onClick={()=> setIsFeesAdd(!isFeesAdd)}>Add {!isFeesAdd ? "Fees" : 'Result'}</Button>
       <div style={{ display: "flex" }}>
         {isFeesAdd ?(

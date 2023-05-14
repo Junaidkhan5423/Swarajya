@@ -17,7 +17,7 @@ import AboutUs from "./component/contactus/AboutUs";
 import ContactUs from "./component/contactus/ContactUs";
 import DirectorDesk from "./component/contactus/DirectorDesk";
 import PravicyPolisy from "./component/contactus/PravicyPolisy";
-import Payment from "./component/payment/payment";
+import PaymentPage from "./component/payment/PaymentPage";
 import Root from "./component/Root/Root";
 // import Admin from './component/Root/AdminProtected';
 import AdminProtected from "./component/Root/AdminProtected";
@@ -26,16 +26,21 @@ import ELearnig from "./component/contactus/ELearnig";
 import PgCourse from "./component/courses-table/PgCourse";
 import DiplomaCourses from "./component/courses-table/DiplomaCourses";
 import UgCourse from "./component/courses-table/UgCourses";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode } from "./theme";
+
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
 // import Add from './component/table/Add';
 
 function App() {
+  const [theme, colorMode] = useMode();
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         <Route path="/login" element={<Login />} />
-        <Route path="/Payment" element={<Payment />} />
+        <Route path="/Payment" element={<PaymentPage />} />
         <Route path="/Studentlogin" element={<SingUpPage />} />
 
         <Route element={<Root />}>
@@ -110,9 +115,13 @@ function App() {
   //  ])
 
   return (
-    <div style={{ height: "100%", width: "" }}>
+    <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
       <RouterProvider router={router}></RouterProvider>
-    </div>
+      </ThemeProvider>
+
+    </>
   );
 }
 

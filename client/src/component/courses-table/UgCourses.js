@@ -7,31 +7,26 @@ function UgCourse() {
         {
           field: "name",
           headerName: "Name",
-          width: 260,
-          sortable: false,
-          filterable: false,
+          width: 200,
         },
-        { field: "fullName", headerName: "Full Name", width: 150 },
+        { field: "fullName", headerName: "Full Name", width: 200 },
         { field: "specialition", headerName: "Specialition", width: 200 },
         {
           field: "duration",
           headerName: "Duration",
-          width: 260,
-          type: "singleSelect",
-          valueOptions: ["basic", "editor", "admin"],
-          editable: true,
+          width: 200,
         },
         {
           field: "fees",
           headerName: "Fees",
-          width: 200,
-          editable: true,
+          width: 180,
+          
         },
 {
 field:"type",
     headerName: "Type",
-          width: 200,
-          editable: true
+          width: 150,
+        
 }
 
       ];
@@ -43,7 +38,7 @@ field:"type",
     const fetchCoursedata = async () => {
         // console.log(fetchCoursedata);
         axios
-          .get(`${process.env.REACT_APP_API_URL_LOCAL}/getByCategoryCourse?type=UG`)
+          .get(`${process.env.REACT_APP_API_URL_DEV}/getByCategoryCourse?type=UG`)
           .then((res) => {
             setStudentData(res.data.data);
             // console.log(res.data);

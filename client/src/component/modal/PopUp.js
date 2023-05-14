@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Form from "./WireInfo.tsx";
+import { colors } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -23,6 +24,7 @@ export default function BasicModal(props) {
   const [previousData, setPreviousData] = React.useState();
   return (
     <div>
+    
       <Button
         onClick={() => {
           handleOpen();
@@ -30,6 +32,7 @@ export default function BasicModal(props) {
           props.handleEdit(props.params.row._id);
           setPreviousData(props.params.row);
         }}
+        color="info"
       >
         Edit
       </Button>

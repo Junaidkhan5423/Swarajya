@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 function SingUpPage() {
   const [open, setOpen] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const availableUser = (useDetail) => {
     return new Promise((resolve, reject) => {
       if (!useDetail) {
@@ -39,10 +40,16 @@ function SingUpPage() {
     },
     // validate:schema,
     onSubmit: (values) => {
+      setIsLoading(true)
       console.log("data is cooming", values);
       availableUser(values).then((res) => {
         if (res.status === 200) {
+          setIsLoading(false)
+
+          console.log(res.data,'data');
           setData(res.data);
+          toast.success("You  Successfully Login")
+
           setOpen(true);
         } else {
           toast.error("User Not Found");
@@ -50,6 +57,15 @@ function SingUpPage() {
       });
     },
   });
+  if(isLoading){
+    return (
+      <button class="btn btn-primary d-flex justify-content-center align-items-center position-absolute top-50 start-50">
+      <span class="spinner-border spinner-border-sm me-2"></span>
+      Loading...
+    </button>
+    
+    )
+  }
   return (
     <>
      <div class="container">
