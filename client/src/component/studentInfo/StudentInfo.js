@@ -114,7 +114,7 @@ function StudentInfo(props) {
                                             <td  > <a href={data?.result}  target='_blank' className="btn btn-download text-info"><span className="bi bi-download"></span>Download Result</a></td>
                                         </tr>
                                         <tr>
-                                            <th width="30%">Identi Card</th>
+                                            <th width="30%">Identity Card</th>
                                             <td width="2%">:</td>
                                             <td ><a href={data?.identyCard}  target='_blank' className="btn btn-download text-info"><span className="bi bi-download"></span>Download Identicard</a></td>
                                         </tr>

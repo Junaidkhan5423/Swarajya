@@ -108,7 +108,7 @@ const Add = (props) => {
                             onChange={e => setinputData({ ...inputData, fullName: e.target.value})} />
                     </div>
                     <div class="form-outline">
-                        <label htmlFor='name' >specialition</label>
+                        <label htmlFor='name' >specialization</label>
                         <input type="text" name="specialition" class="form-control"  style={{width:"110%"}}
                             onChange={e => setinputData({ ...inputData, specialition: e.target.value})} />
                     </div>

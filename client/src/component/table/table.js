@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Avatar, Box, Typography } from "@mui/material";
+import { Avatar, Box, Button, Typography } from "@mui/material";
 import { DataGrid, gridClasses } from "@mui/x-data-grid";
 // import moment from 'moment';
 import { grey } from "@mui/material/colors";
@@ -12,6 +12,7 @@ import Add from "../table/Add";
 import AppDataGrid from "../../utils/AppDataGrid";
 import PopUp from "../modal/PopUp";
 import { useQuery } from 'react-query';
+import { ToastContainer, toast } from "react-toastify";
 
 const Users = () => {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,10 @@ const Users = () => {
   const [studentDAta, setStudentData] = useState([]);
 
   const fetchData = async () => {
+    setIsLoading(true)
+
     const data = await getUserAll(token).then((res) => {
+      setIsLoading(false)
       // console.log("daa", res);
       setStudentData(res.data);
     });
@@ -38,31 +42,25 @@ const Users = () => {
 
   const [newData, setNewData] = useState([]);
   const [selected, setSelected] = useState(true);
+  const [isLoading, setIsLoading] =useState(false);
+
   const handleClose = () => {
     setOpen(false);
   };
 
   const fetchCoursedata = async () => {
     // console.log(fetchCoursedata);
+    // setIsLoading(true)
     axios
-      .get(`${process.env.REACT_APP_API_URL_LOCAL}/getAllCourse`)
+      .get(`${process.env.REACT_APP_API_URL_DEV}/getAllCourse`)
       .then((res) => {
+        // setIsLoading(false)
+
         setNewData(res.data.data);
         // console.log(res.data);
       });
   };
-  function handleFileUpload(event ,id ,status) {
-  
-    // axios.post(`${process.env.REACT_APP_API_URL_LOCAL}/addResult`, formData, {
-    //   headers: { Authorization: token },
-    // })
-    //   .then(response => {
-    //     console.log(response);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
-  }
+
   const refreshData = () => {
     fetchCoursedata();
     fetchData();
@@ -79,6 +77,7 @@ const Users = () => {
 
   const deleteCourse = async (id) => {
     const data = await deleteCourseByID(id);
+    toast.success("Successfully Delete Course")
     fetchCoursedata();
     // console.log(data);
   };
@@ -100,27 +99,24 @@ const Users = () => {
     { field: "email", headerName: "Email", width: 100 },
     {
       field: "phoneNo",
-      headerName: "phoneNo",
-      width: 100,
-      type: "singleSelect",
-      valueOptions: ["basic", "editor", "admin"],
-      editable: true,
+      headerName: "Phone No",
+      width: 100
     },
     {
       field: "userName",
-      headerName: "userName",
+      headerName: "User Name",
       width: 100,
-      editable: true,
+     
     },
     {
       field: "city",
-      headerName: "city",
+      headerName: "City",
       width: 100,
     },
-    { field: "state", headerName: "state", width: 100 },
+    { field: "state", headerName: "State", width: 100 },
     {
       field: "nationality",
-      headerName: "nationality",
+      headerName: "Nationality",
       // type: 'actions',
     },
     {
@@ -130,7 +126,7 @@ const Users = () => {
     ,
     {
       field: "totalPaid",
-      headerName: "paid Fees",
+      headerName: "Paid Fees",
     },
     {
       field: "rollNo",
@@ -139,9 +135,9 @@ const Users = () => {
 
     {
       field: "identyCard",
-      headerName: " Identicard",
+      headerName: " Identity card",
       renderCell: (params) => {
-        console.log(params.row.identyCard  ,"params.row.identityCard ");
+       
         return  params.row.identyCard ? <strong>Uploaded</strong> : <strong>Not Uploaded</strong>
       },
     }, 
@@ -177,6 +173,13 @@ const Users = () => {
     },
   ];
   // return isLoading && <h1>...loading</h1>
+  if(isLoading){
+    return (
+      <div class="spinner-border  position-absolute top-50 start-50" style={{width: "48px", height: "48px", borderWidth: "5px"}}>
+  <span class="visually-hidden">Loading...</span>
+</div>
+    )
+  }
 
   return token ? (
     <>
@@ -231,6 +234,7 @@ const Users = () => {
             STudent List
           </button>
           <div className="container mt-5">
+          <ToastContainer />
             <div className="text-end">
               <button onClick={() => setOpen(true)} className="btn btn-primary">
                 Add +
@@ -242,7 +246,7 @@ const Users = () => {
                 <tr>
                   <th>Course Name</th>
                   <th>Full Name</th>
-                  <th>specialition </th>
+                  <th>specialization </th>
                   <th>duration</th>
                   <th>fees</th>
                   <th>Type</th>
@@ -259,12 +263,12 @@ const Users = () => {
                     <td>{item.fees}</td>
                     <td>{item.type}</td>
                     <td>
-                      <button
+                      <Button
                         onClick={() => deleteCourse(item._id)}
-                        color="red"
+                        color="error"
                       >
                         delete
-                      </button>
+                      </Button>
                     </td>
                   </tr>
                 ))}
