@@ -1,6 +1,6 @@
-import { Button, styled, TextField } from "@mui/material";
+import { Button, styled, Tab, Tabs, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { getEditableData, uploadResultId } from "../services/student.service.js";
+import { getEditableData, uploadResultId, uploadResultOnly } from "../services/student.service.js";
 import { useAuthentication } from "../../store/store.js";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -14,48 +14,36 @@ const Form = (props :any) => {
   const token = useAuthentication((state) => state.auth.token);
   const [firstName, setfirstName] = useState(previousData.firstName);
   const [identyCard, setIdentyCard] = useState(previousData.identyCard );
-  const [phoneNo, setphoneNo] = useState(previousData.phoneNo);
   const [userName, setUserName] = useState(previousData.userName);
   const [city, setCity] = useState(previousData.city);
-  const [result, setResult] = useState(previousData.result );
-  const [nationality, setNationality] = useState(previousData.nationality);
+  const [result, setResult] = useState("");
+  const [newResult, setNewResult] = useState(previousData.results);
   const [totalFees, setTotalFees] = useState(previousData.totalFees);
   const [totalPaid, setTotalPaid] = useState(parseInt(previousData.totalPaid));
   const [addFessPaid, setAddFessPaid] = useState(0);
   const [rollNo, setRollNo] = useState(previousData.rollNo);
   const [enrollmentNo, setEnrollmentNo] = useState(previousData.enrollmentNo);
-  const [isFeesAdd, setIsFeesAdd] = useState(false);
+  const [resultName, SetResultName] = useState("");
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabClick = (tab:any) => {
+    setActiveTab(tab);
+  };
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log(
-      firstName,
-      phoneNo,
-      identyCard,
-      userName,
-      city,
-      result,
-      nationality,
-      totalFees,
-      totalPaid,
-      rollNo,
-      enrollmentNo
-    );
     let EditabledData = {
       id:props.params.row._id,
       rollNo: rollNo,
       enrollmentNo: enrollmentNo,
       identyCard:identyCard,
-      result:result
     };
- 
  const resultData = await uploadResultId(token,EditabledData)
  toast.success("Student Data Successfully Updated")
-
-
  props.refetch() 
- 
-  
   };
   const AddFessService = async()=>{
     const body ={
@@ -64,12 +52,9 @@ const Form = (props :any) => {
     }
 
   const responseData :any= await  getEditableData(token, body);
-  console.log(responseData.status);
   if(responseData.status  === 200) {
     toast.success("Student Fess Successfully Updated")
-    // navigate("/payment")
-    console.log(responseData,'responseData');
-    
+    // navigate("/payment")    
   props.refetch()
     setTotalPaid((prev:number)=> {
       const total  = Number(prev)
@@ -83,7 +68,19 @@ const Form = (props :any) => {
     toast.error("error")
   }
   }
+  const handleClickResultAdd = async() => {
+    const body ={
+      id:props.params.row._id,
+      name: resultName,
+      link:result
+    }
 
+   const uploadResult=await uploadResultOnly(token,body)
+   console.log(uploadResult);
+   
+  }
+
+  
   return (
     <form
       onSubmit={handleSubmit}
@@ -95,9 +92,13 @@ const Form = (props :any) => {
       }}
     >
        <ToastContainer />
-      <Button onClick={()=> setIsFeesAdd(!isFeesAdd)}>Add {!isFeesAdd ? "Fees" : 'Result'}</Button>
-      <div style={{ display: "flex" }}>
-        {isFeesAdd ?(
+          <Tabs value={activeTab} onChange={handleTabChange}>
+        <Tab label="Fees" />
+        <Tab label="Identity" />
+        <Tab label="Result" />
+      </Tabs>
+      <div style={{ display: "flex" }} className="tabstrip row ">
+        {activeTab === 0 && (
           <div>
                      <StyledTextField
             label="Total Fees"
@@ -136,7 +137,10 @@ const Form = (props :any) => {
           Update
         </Button>
           </div>
-        ) :(  <>
+        ) 
+          }
+          { activeTab === 1 && 
+        (  <>
         
         <div>
           <StyledTextField
@@ -200,7 +204,7 @@ const Form = (props :any) => {
               setIdentyCard(e.target.value)
             }
           />  
-   <StyledTextField
+   {/* <StyledTextField
             // disabled={previousData.result ?true :false}
             label="Result"
             variant="filled"
@@ -208,7 +212,7 @@ const Form = (props :any) => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setResult(e.target.value)
             }
-          />
+          /> */}
           <StyledTextField
             label="Roll No"
             variant="filled"
@@ -242,9 +246,54 @@ const Form = (props :any) => {
         )
 
         }
+
+           {activeTab === 2 && (
+          <div>
+           <h6 className="text-center">Added Result till now</h6>
+            <ul className="list-group">
+      {newResult.map((item, index) => (
+        <li className="list-group-item" key={index}>
+          <span className="text-primary font-weight-bold">{item.name}</span>
+        </li>
+      ))}
+    </ul>
+            {/* Add your content related to result here */}
+            <div>
+            <StyledTextField
+            // disabled={previousData.identyCard ? true : false}
+            label="Result Name"
+            type="identyCard"
+            variant="filled"
+            value={resultName}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              SetResultName(e.target.value)
+            }
+          />   <StyledTextField
+          // disabled={previousData.identyCard ? true : false}
+          label="Result Link"
+          type="text"
+          variant="filled"
+          value={result}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setResult(e.target.value)
+          }
+          helperText="Add Drive link here"
+        />  
+            </div>
+            <Button
+          variant="contained"
+          color="primary"
+          sx={{ margin: "2rem" }}
+          onClick={handleClickResultAdd}
+        >
+          Update
+        </Button>
+          </div>
+
+        )}
        
       </div>
-      {!isFeesAdd ?  (
+      {activeTab === 1 && (
         <Button
           variant="contained"
           color="primary"
@@ -252,7 +301,7 @@ const Form = (props :any) => {
           sx={{ margin: "2rem" }}
         >
           Update
-        </Button>): 'Fess'}
+        </Button>)}
     
     </form>
   );

@@ -117,6 +117,25 @@ export const uploadResultId = async (token ,EditabledData) => {
     }
   };
 
+  export const uploadResultOnly = async (token ,EditabledData) => {
+    //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
+      try {
+       return await axios
+          .post(
+            `${baseUrl}/addResultsArray`,
+            EditabledData,
+    
+            {
+              headers: { Authorization: token },
+            }
+          )
+          .then((response) => {
+           return response
+          });
+      } catch (error) {
+        return error;
+      }
+    };
 // axios.post(`${process.env.REACT_APP_API_URL_LOCAL}/addResult`, EditabledData, {
 //   headers: { Authorization: token },
 // })

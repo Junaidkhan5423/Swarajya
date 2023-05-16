@@ -110,7 +110,14 @@ function StudentInfo(props) {
                                         <tr>
                                             <th width="30%">Result</th>
                                             <td width="2%">:</td>
-                                            <td  >{data?.result ? <a href={data?.result}  target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Result</a> : 'Not Available' }</td>
+                                            <td  >{data?.results && data?.results.map((item)=>{
+                                                console.log(item,'result');
+                                                return (
+<a href={item?.link}  target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>{item?.name}</a> 
+                                                )
+                                            }) 
+                                        }
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Identity Card</th>
