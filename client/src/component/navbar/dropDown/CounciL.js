@@ -13,7 +13,7 @@ import Stack from '@mui/material/Stack';
 
 export default function CounciL() {
     // const navigate = useNavigate
-    const certificates = ["AICVPS  AUTHORITY","ASIAN INTERNATIONAL UNIVERSITY AUTHORITY","UGC  With  AIU"]
+    const certificates = ["ASIAN INTERNATIONAL UNIVERSITY AUTHORITY","AICVPS  AUTHORITY","UGC  With  AIU"]
     
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -79,7 +79,7 @@ export default function CounciL() {
                     role={undefined}
                     placement="bottom-start"
                     transition
-                    disablePortal
+                    disablePortal                 
                 >
                     {({ TransitionProps, placement }) => (
                         <Grow
@@ -103,7 +103,7 @@ export default function CounciL() {
                                                 return (
                                                     // <a style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
                                                     // <a className='hovercolor' style={{ position: "relative", overflow: "visible" }}>{item}</a>
-                                                    <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
+                                                    <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)} target='_blank'>{item}</a>
                                                 )
 
                                             })}

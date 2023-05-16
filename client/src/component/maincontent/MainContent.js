@@ -542,15 +542,15 @@ const handeContentChange =(param)=>{
               
               <Link to={"/admission"}>Online Enrollment</Link>
             
-              {!visible && <a   target='blank' onClick={()=>setVisibile(true)} className='visible-class'>Internship Reference</a>}
+              {!visible && <a   target='blank' onClick={()=>setVisibile(true)} className='visible-class' >Internship Reference</a>}
              {visible && 
              <>
              <a   target='blank' onClick={()=>setVisibile(false)} className='visible-class'>Internship Reference</a>
              <ul style={{height: "16vh" , listStyle:'none' ,paddingLeft:'0' }}>
              
-      <li style={{width: '9rem'}}><a href={English} style={{fontSize: '1.8vh'}}> 1 .English </a></li>
-      <li style={{width: '9rem'}}><a href={Hindi} style={{fontSize: '1.8vh'}}> 2 .Hindi </a></li>
-      <li style={{width: '9rem'}}><a href={Marathi} style={{fontSize: '1.8vh'}}> 3 .Marathi </a></li>
+      <li style={{width: '9rem'}}><a href={English} style={{fontSize: '1.8vh'}} target='_blank'> 1 .English </a></li>
+      <li style={{width: '9rem'}}><a href={Hindi} style={{fontSize: '1.8vh'}} target='_blank'> 2 .Hindi </a></li>
+      <li style={{width: '9rem'}}><a href={Marathi} style={{fontSize: '1.8vh'}} target='_blank'> 3 .Marathi </a></li>
     </ul>
     </>
     }
@@ -562,9 +562,9 @@ const handeContentChange =(param)=>{
              <a   target='blank' onClick={()=>setProspectus(false)} className='prospects-class'>Prospectus</a>
              <ul style={{height: "17vh" , listStyle:'none' ,paddingLeft:'0' }}>
              
-      <li style={{width: '9rem'}}><a href={Brocher} style={{fontSize: '1vh'}}> AICVPS </a></li>
-      <li style={{width: '9rem'}}><a href="" style={{fontSize: '1vh'}}> Asian International University </a></li>
-      <li style={{width: '9rem'}}><a href={sikkim} style={{fontSize: '1vh'}}>Sikkim Skill University </a></li>
+      <li style={{width: '9rem'}}><a href={Brocher} style={{fontSize: '1vh'}} target="_blank"> AICVPS </a></li>
+      <li style={{width: '9rem'}}><a href="" style={{fontSize: '1vh'}} target='_blank'> Asian International University </a></li>
+      <li style={{width: '9rem'}}><a href={sikkim} style={{fontSize: '1vh'}} target='_blank'>Sikkim Skill University </a></li>
     </ul>
     </>
     }
@@ -575,9 +575,9 @@ const handeContentChange =(param)=>{
                 <a   target='blank' onClick={()=>setinternational(false)} className='offline-class'>Offline Admission Form</a>
                 <ul style={{height: "17vh" , listStyle:'none' ,paddingLeft:'0' }}>
                 
-         <li style={{width: '9rem'}}><a href={AICVPS} style={{fontSize: '1.8vh'}}> AICVPS </a></li>
-         <li style={{width: '9rem'}}><a href={Asian} style={{fontSize: '1.8vh'}}> Asian International University </a></li>
-         <li style={{width: '9rem'}}><a href={offlinesikkim} style={{fontSize: '1.8vh'}}>Sikkim Skill University </a></li>
+         <li style={{width: '9rem'}}><a href={AICVPS} style={{fontSize: '1.8vh'}} target='_blank'> AICVPS </a></li>
+         <li style={{width: '9rem'}}><a href={Asian} style={{fontSize: '1.8vh'}} target='_blank'> Asian International University </a></li>
+         <li style={{width: '9rem'}}><a href={offlinesikkim} style={{fontSize: '1.8vh'}} target='_blank'>Sikkim Skill University </a></li>
        </ul>
        </>
 }   

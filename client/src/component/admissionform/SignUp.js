@@ -100,11 +100,29 @@ const fetchCoursedata = async () => {
                 const data = await postStudentData(values)
                 // console.log(data);
                 if (data.status === 200) {
-                    toast.success("Student Registered Successfully")
+                    toast.success("Student Registered Successfully", {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        })
                     navigate("/payment")
                     
                 } else {
-                    toast.error(data.error.response.data.message.error)
+                    toast.error(data.error.response.data.message.error, {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        })
 
                 }
 
@@ -218,13 +236,12 @@ const fetchCoursedata = async () => {
                                 </FormControl>
                                 <Textfield label='Course Code' name='courseCode' type='number' />
                                 {/* <input label='Photo' style={{ display: "flex", flexDirection: "column", alignItems: "baseline", border: "2 px", fontSize: "1pc" }} name='profile' type='file' onChange={onUpload} /> */}
-                                <div style={{    height: "11.5vh" ,alignItems:"end"}} class="input-group">
-    <div class="input-group-prepend" style={{height: "calc(2.25rem + 2px)"}}>
+                                <div style={{    height: "8.5vh" ,alignItems:"end"}} class="input-group">
+    <div class="input-group-prepend" style={{height: "calc(2.25rem + 2px)" ,width:'7rem'}}>
       <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-upload"></i></span>
     </div>
     <div class="custom-file">
       <input type="file" class="custom-file-input"  name='profile' onChange={onUpload} aria-describedby="inputGroupFileAddon01"/>
-      <label class="custom-file-label"   for="imageUpload">Choose file</label>
     </div>
   </div>
 

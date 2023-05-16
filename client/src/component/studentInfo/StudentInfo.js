@@ -34,7 +34,6 @@ function StudentInfo(props) {
         link.click(); // click the link to trigger the download
       });
    }
-   console.log(data._id);
     return (
         <>
           <Dialog
@@ -71,12 +70,12 @@ function StudentInfo(props) {
                                         <tr>
                                             <th width="30%">Enrollment No</th>
                                             <td width="2%">:</td>
-                                            <td>{data?.enrollmentNo}</td>
+                                            <td>{data?.enrollmentNo || "Pending"}</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Roll No</th>
                                             <td width="2%">:</td>
-                                            <td>{data?.rollNo}</td>
+                                            <td>{data?.rollNo || "Pending"}</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Academic Year	</th>
@@ -106,17 +105,17 @@ function StudentInfo(props) {
                                         <tr>
                                             <th width="30%">SYLLABUS</th>
                                             <td width="2%">:</td>
-                                            <td><a href={data?.syllabus} target='_blank' className="btn btn-download text-info"><span className="bi bi-download"></span>Download Syllabus</a></td>
+                                            <td> {data?.syllabus ? <a href={data?.syllabus} target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Syllabus</a> : 'Not Available' }</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Result</th>
                                             <td width="2%">:</td>
-                                            <td  > <a href={data?.result}  target='_blank' className="btn btn-download text-info"><span className="bi bi-download"></span>Download Result</a></td>
+                                            <td  >{data?.result ? <a href={data?.result}  target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Result</a> : 'Not Available' }</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Identity Card</th>
                                             <td width="2%">:</td>
-                                            <td ><a href={data?.identyCard}  target='_blank' className="btn btn-download text-info"><span className="bi bi-download"></span>Download Identicard</a></td>
+                                            <td > {data?.identyCard ?<a href={data?.identyCard}  target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Identicard</a> : 'Not Available' }</td>
                                         </tr>
                                     </table>
                                 </div>
