@@ -1,6 +1,14 @@
 /* Position and sizing of burger button */
+.bm-burger-button {
+    display: none;
+}
 
 @media(max-width:450px) {
+    
+    .bm-burger-button {
+        display: block;
+    }
+
     .bm-burger-button {
         position: fixed;
         width: 36px;

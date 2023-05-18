@@ -54,7 +54,7 @@ function ContactUs() {
                         <TableRow>
                             <StyledTableCell>Director Name</StyledTableCell>
                             <StyledTableCell align="left">Email Addres</StyledTableCell>
-                            <StyledTableCell align="left">Slected City(g)</StyledTableCell>
+                            <StyledTableCell align="left">Slected City</StyledTableCell>
                             <StyledTableCell align="left">Number</StyledTableCell>
                         </TableRow>
                     </TableHead>
