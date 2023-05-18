@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Avatar, Box, Button, Typography } from "@mui/material";
+import { Avatar, Box, Button, Tab, Tabs } from "@mui/material";
 import { DataGrid, gridClasses } from "@mui/x-data-grid";
 // import moment from 'moment';
 import { grey } from "@mui/material/colors";
@@ -16,6 +16,13 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Users = () => {
   const [open, setOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabChange = (event, newValue) => {
+    console.log(newValue ,'tab');
+    console.log(activeTab,'tab');
+    setActiveTab(newValue);
+  };
 
   const token = useAuthentication((state) => state.auth.token);
   // const { data, isLoading, isError, refetch } = useQuery('my-data', async()=>{
@@ -172,6 +179,47 @@ const Users = () => {
       },
     },
   ];
+  const columnsOfCourse=[
+    {
+      field: "name",
+      headerName: "Total Fees",
+    },
+    ,
+    {
+      field: "fullName",
+      headerName: "Paid Fees",
+    },
+    {
+      field: "specialition",
+      headerName: "Roll no",
+    },
+    {
+      field: "duration",
+      headerName: "Roll no",
+    },
+     {
+      field: "fees",
+      headerName: "Roll no",
+    },
+    {
+      field: "type",
+      headerName: "Roll no",
+    },
+
+    {
+      field: "identyCard",
+      headerName: " Identity card",
+      renderCell: (params) => {
+       
+        return   <Button
+        onClick={() => deleteCourse(params.row._id)}
+        color="error"
+      >
+        delete
+      </Button>
+      },
+    }, 
+  ]
   // return isLoading && <h1>...loading</h1>
   if(isLoading){
     return (
@@ -183,65 +231,37 @@ const Users = () => {
 
   return token ? (
     <>
-      {selected ? (
-        <>
-          <button
-            type="button"
-            class="btn btn-primary"
-            style={{ margin: "3px" }}
-            onClick={() => setSelected(false)}
-          >
-            Courses
-          </button>
-          <button onClick={refreshData} className="btn btn-primary">
+   
+          <Tabs value={activeTab} onChange={handleTabChange}>
+        <Tab label="Fees" />
+        <Tab label="Identity" />
+        <Tab label="Result" />
+      </Tabs>
+       <div className="tabstrip row ">
+       {activeTab === 0 && (
+          <>
+{/* <button onClick={refreshData} className="btn btn-primary">
               <i class="bi bi-arrow-clockwise"></i>
-              </button>
-          {/* <Box
-      sx={{
-        height: "100vh",
-        width: '97%',
-        margin: "1%"
-      }}
-
-    >
-
-      <DataGrid
-        columns={columns}
-        rows={studentDAta}
-        getRowId={(row) => row._id}
-
-        // rowsPerPageOptions={[5, 10, 20]}
-        // pageSize={}
-
-        sx={{
-          [`& .${gridClasses.row}`]: {
-            bgcolor: (theme) =>
-              theme.palette.mode === 'light' ? grey[200] : grey[900],
-          },
-        }}
-      />
-    </Box> */}
+              </button> */}
+ 
           <AppDataGrid studentDAta={studentDAta} columns={columns} />
-        </>
-      ) : (
-        <>
-          <button
-            type="button"
-            class="btn btn-primary"
-            style={{ margin: "3px" }}
-            onClick={() => setSelected(true)}
-          >
-            STudent List
-          </button>
-          <div className="container mt-5">
+          </>
+        ) 
+          }
+               {activeTab === 1 && (
+          <>
+ <div className="row position-absolute  mr">
           <ToastContainer />
-            <div className="text-end">
+             <div className="text-end">
               <button onClick={() => setOpen(true)} className="btn btn-primary">
                 Add +
               </button>
              
             </div>
-            <table className="table">
+
+            <AppDataGrid maxWidth={"70%"} maxHight='70%' studentDAta={newData} columns={columnsOfCourse} />
+
+            {/* <table className="table">
               <thead>
                 <tr>
                   <th>Course Name</th>
@@ -273,11 +293,18 @@ const Users = () => {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table>  */}
           </div>
           {open && <Add refetch={fetchCoursedata} handleClose={handleClose} open={open} />}
-        </>
-      )}
+          </>
+        ) 
+          }
+
+       </div>
+       
+         
+          
+  
     </>
   ) : (
     <h1>you don't have Authorization</h1>

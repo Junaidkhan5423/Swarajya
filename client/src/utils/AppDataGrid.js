@@ -19,6 +19,7 @@ function AppDataGrid( props) {
     height="75vh"
     paddingLeft="5rem"
     paddingRight="5rem"
+    maxWidth={props.maxWidth ||'100%'}
     sx={{
       "& .MuiDataGrid-root": {
         border: "none",

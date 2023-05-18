@@ -26,9 +26,7 @@ const Form = (props :any) => {
   const [resultName, SetResultName] = useState("");
   const [activeTab, setActiveTab] = useState(0);
 
-  const handleTabClick = (tab:any) => {
-    setActiveTab(tab);
-  };
+
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
   };
