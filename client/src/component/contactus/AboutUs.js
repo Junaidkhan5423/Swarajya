@@ -4,7 +4,7 @@ function AboutUs() {
     return (
         <>
         <h1 style={{marginTop:'3rem',marginLeft:'3rem'}}>About Us</h1>
-            <div style={{marginTop:'2rem',marginLeft:'5rem',marginRight:'5rem',marginBottom:'2rem'}}>
+            <div style={{marginTop:'2rem',marginLeft:'5rem',marginRight:'5rem',marginBottom:'2rem',fontSize:'1.2rem'}}>
                 <p>
                     Welcome To Our Distance Learning Institute,
                     Where We Are Committed To Providing Accessible And High-Quality Education To Students All

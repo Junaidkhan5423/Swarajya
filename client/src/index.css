@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   /* overflow-x: hidden; */
   margin: 0;
@@ -18,11 +19,12 @@
   background: #f0f8ff;
   padding-top: 1rem;
 }
+
 marquee:hover {
   pointer-events: none;
 }
 
-.header-Img{
+.header-Img {
   /* margin-left: -0.9rem; */
   margin-top: -1rem;
   height: 78vh;
@@ -96,7 +98,7 @@ marquee:hover {
   margin-left: 0.5rem;
 }
 
-.nav-bar-list{
+.nav-bar-list {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
@@ -191,10 +193,11 @@ li.dropdown {
   background-color: black;
 }
 
-marquee h2{
+marquee h2 {
   margin-bottom: 0 !important;
 }
-marquee{
+
+marquee {
   background-color: whitesmoke;
 }
 
@@ -249,7 +252,8 @@ footer {
   background: #163169;
   margin-top: 3rem;
 }
-.welcomeTo{
+
+.welcomeTo {
   margin-bottom: 0;
 }
 
@@ -321,7 +325,7 @@ a {
   /* height: 541px; */
   position: relative;
   /* margin-top: 2%; */
-  padding: 0 !important ;
+  padding: 0 !important;
 }
 
 .main,
@@ -330,16 +334,20 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.main h2{
+
+.main h2 {
   width: 74% !important;
 }
-.quick h2{
+
+.quick h2 {
   width: 67% !important;
-  
-} 
-.policy h2{
+
+}
+
+.policy h2 {
   width: 47% !important;
 }
+
 .logo {
   text-align: center;
   width: 100%;
@@ -348,19 +356,21 @@ a {
   /* position: relative; */
   /* margin-top: 1%; */
 }
-.footerH2{
+
+.footerH2 {
   font-family: "Inter" !important;
   display: flex;
   align-items: center;
   padding-left: 3px;
 
 }
+
 .paymodes {
   width: 100%;
   /* height: 225px; */
   position: relative;
   /* margin-top: 1%; */
-  
+
 }
 
 .paymodes h2 {
@@ -372,7 +382,7 @@ a {
   font-size: 20px;
   clip-path: polygon(0 0, 87% 0, 99% 100%, 0% 100%);
   /* margin-left: 65px; */
-  
+
 }
 
 .quick {
@@ -381,18 +391,21 @@ a {
   position: relative;
   /* margin-top: 1%; */
 }
-.quick a{
-  border: none !important;
-  font-family: 'Inter';
-  letter-spacing: 2px;
-  padding: 0 !important;
-} 
-.policy a{
+
+.quick a {
   border: none !important;
   font-family: 'Inter';
   letter-spacing: 2px;
   padding: 0 !important;
 }
+
+.policy a {
+  border: none !important;
+  font-family: 'Inter';
+  letter-spacing: 2px;
+  padding: 0 !important;
+}
+
 .policy {
   /* width: 30%; */
   height: 200px;
@@ -536,7 +549,8 @@ a {
   width: 20%;
   height: 614px;
 }
-.one{
+
+.one {
   height: 571px !important;
 }
 
@@ -549,7 +563,8 @@ a {
   margin: auto;
   margin-top: 0;
 }
-.menu{
+
+.menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -559,17 +574,20 @@ a {
   display: inline-block;
   position: relative;
 }
+
 .menu li a {
   display: block;
   padding: 10px;
   text-decoration: none;
 }
+
 .submenu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
 }
+
 .menu li:hover .submenu {
   display: block;
 }
@@ -587,12 +605,14 @@ a {
 .submenu li:hover {
   background-color: #f5f5f5;
 }
-.swarajya_info{
+
+.swarajya_info {
   padding: 1rem;
 }
-.swarajya_info p{
-font-family: 'Inter'!important;
-font-weight: 600 !important;
+
+.swarajya_info p {
+  font-family: 'Inter' !important;
+  font-weight: 600 !important;
 
 }
 
@@ -624,8 +644,8 @@ font-weight: 600 !important;
   font-weight: 700;
 }
 
-.bottom-crowsel{
-border-bottom: 4px solid #4267B2 !important;
+.bottom-crowsel {
+  border-bottom: 4px solid #4267B2 !important;
 }
 
 .swarajya p {
@@ -683,12 +703,15 @@ border-bottom: 4px solid #4267B2 !important;
   height: 290px;
   background: #f0f8ff;
 }
+
 .marquee {
   position: relative;
   height: 233px;
   margin-left: 2rem;
-  overflow: hidden; /* set the initial state to running */
+  overflow: hidden;
+  /* set the initial state to running */
 }
+
 .marquee-content {
   position: absolute;
   top: 0;
@@ -697,13 +720,15 @@ border-bottom: 4px solid #4267B2 !important;
   flex-direction: column;
   white-space: nowrap;
   animation: marquee 25s linear infinite;
-  animation-play-state: running; /* set the initial state to running */
+  animation-play-state: running;
+  /* set the initial state to running */
 }
 
 @keyframes marquee {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(100%);
   }
@@ -723,7 +748,8 @@ border-bottom: 4px solid #4267B2 !important;
 }
 
 .marquee-content:hover {
-  animation-play-state: paused; /* pause the animation on hover */
+  animation-play-state: paused;
+  /* pause the animation on hover */
 }
 
 
@@ -779,14 +805,58 @@ border-bottom: 4px solid #4267B2 !important;
   margin: auto;
   height: 607px;
 }
-.visible-class:hover{
+
+.visible-class:hover {
   color: #4267B2 !important;
   cursor: pointer;
-  }
+}
 
 
-.main_contentDiv{
+.main_contentDiv {
   height: 0rem;
+}
+
+/* burgur btn css */
+.burgur {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
 }
 
 @media(max-width:500px) {
@@ -795,21 +865,25 @@ border-bottom: 4px solid #4267B2 !important;
     box-sizing: border-box;
     /* width:100%; */
   }
-  .header-Img{
+
+  .header-Img {
     /* margin-left: -0.9rem; */
     height: 28vh;
     width: 450px;
     background-image: url('./images/LAIQUEMOBILEVIEW.png');
     background-repeat: no-repeat;
   }
-  .nb{
+
+  .nb {
     width: 100%;
   }
+
   .course_slider {
     width: 100%;
     margin-left: 0;
     margin-top: 1rem;
   }
+
   .header_main {
     height: 330px;
     padding-top: 0rem;
@@ -827,7 +901,8 @@ border-bottom: 4px solid #4267B2 !important;
     width: 100%;
     height: 100%;
   }
-  .mainContentDiv{
+
+  .mainContentDiv {
     height: 10rem;
   }
 
@@ -903,7 +978,8 @@ border-bottom: 4px solid #4267B2 !important;
     height: 506px;
     /* margin-top: 42px; */
   }
-  .institution h2{
+
+  .institution h2 {
     height: 50px;
   }
 
@@ -925,5 +1001,5 @@ border-bottom: 4px solid #4267B2 !important;
     display: flex;
     /* margin-top: 270px; */
   }
- 
+
 }
