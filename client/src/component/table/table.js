@@ -233,9 +233,9 @@ const Users = () => {
     <>
    
           <Tabs value={activeTab} onChange={handleTabChange}>
-        <Tab label="Fees" />
-        <Tab label="Identity" />
-        <Tab label="Result" />
+        <Tab label="Students" />
+        <Tab label="Courses" />
+        <Tab label="Other" />
       </Tabs>
        <div className="tabstrip row ">
        {activeTab === 0 && (
@@ -259,7 +259,7 @@ const Users = () => {
              
             </div>
 
-            <AppDataGrid maxWidth={"70%"} maxHight='70%' studentDAta={newData} columns={columnsOfCourse} />
+            <AppDataGrid maxWidth={"100%"} maxHight='70%' studentDAta={newData} columns={columnsOfCourse} />
 
             {/* <table className="table">
               <thead>

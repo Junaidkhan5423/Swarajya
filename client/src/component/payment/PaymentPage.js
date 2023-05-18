@@ -1,6 +1,6 @@
 import React from 'react'
 import './payment.css'
-import Qrcode from "../../images/QRCODe.jpeg"
+import qrdcode from "../../images/Sir.png"
 
 function PaymentPage() {
   return (
@@ -14,7 +14,7 @@ function PaymentPage() {
             <div class="payment-content">
                <h1>Payment is Pending </h1>
                <p>Your addmission is pending Please pay the fees</p>
-               <img src={Qrcode}/>
+               <img src={qrdcode}/>
                {/* <a href="#">Go to Home</a> */}
             </div>
             

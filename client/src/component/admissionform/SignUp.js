@@ -239,6 +239,7 @@ const fetchCoursedata = async () => {
                                 <div style={{    height: "8.5vh" ,alignItems:"end"}} class="input-group">
     <div class="input-group-prepend" style={{height: "calc(2.25rem + 2px)" ,width:'7rem'}}>
       <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-upload"></i></span>
+     
     </div>
     <div class="custom-file">
       <input type="file" class="custom-file-input"  name='profile' onChange={onUpload} aria-describedby="inputGroupFileAddon01"/>
