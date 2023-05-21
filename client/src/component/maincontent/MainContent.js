@@ -32,6 +32,7 @@ const MainContent = () => {
   const [visible, setVisibile] = useState(false)
   const [mission, setMission] = useState(false)
   const [objective, setObjective] = useState(false)
+  const [ourscope, setOurscope]= useState(false)
   const [Prospectus, setProspectus] = useState(false)
   const [international, setinternational] = useState(false)
   const [course, setCourse] = useState(false)
@@ -47,6 +48,10 @@ const MainContent = () => {
     } else if (param === "Elearnig") {
       setMission(false)
       setObjective(false)
+    }else if(param === "ourscope"){
+      setOurscope(true)
+      setMission(false)
+      setObjective(false) 
     }
 
   }
@@ -438,7 +443,8 @@ const MainContent = () => {
               <h2>Menu</h2>
               <a className='visible-class' onClick={() => handeContentChange("mission")}> Mission & Vision</a>
               <a className='visible-class' onClick={() => handeContentChange("objective")}>Aim & Objective</a>
-              <a href="aboutUs.html">Our Scope</a>
+              <a  className='visible-class' onClick={()=> handeContentChange("ourscope")}>Our Scope</a>
+            
               {!course && <a target='blank' onClick={() => setCourse(true)}>Course Details</a>}
               {course &&
                 <>
@@ -507,8 +513,48 @@ const MainContent = () => {
                   <p>Overall, our aims and objectives are centered around providing an exceptional learning experience to our students, empowering them with the knowledge and skills necessary to succeed in their chosen fields, and fostering a culture of excellence and innovation.</p>
                 </main>
 
-                </>
-              ) : (
+                  </>
+                    ) : ourscope ? (
+                      <><main class="container mt-5">
+                        <h3>Our Scope</h3>
+                        <ol>
+                          <li>
+                            <p>Self-Learning Education Has A Vast Scope In India, Given The Country's Huge Population, Diverse Cultures, And Varied Economic 
+                                    Conditions. Here Are Some Points To Consider:</p>
+                          </li>
+                          <li>
+                            <p>Accessibility: Self-Learning Education Can Reach Millions Of People Who Might Not Have Access To Traditional 
+                               Education Due To Factors Like Distance, Time, Or Financial Constraints. With The Increasing Penetration Of The Internet 
+                              And Mobile Devices, Online Education Platforms Have Become Accessible To People In Even Remote Areas Of The Country.</p>
+                          </li>
+                          <li>
+                            <p> Customization: Self-Learning Education Allows Learners To Customize Their Learning Experience According To Their 
+                                Needs And Interests. Learners Can Choose From A Variety Of Courses And Programs That Cater To Different Learning Styles And Preferences .</p>
+                          </li>
+                          <li>
+                            <p> Cost-Effective: Self-Learning Education Can Be Cost-Effective As It Eliminates The Need For Physical Infrastructure And Reduces The Cost Of Teaching. Learners Can Access High-Quality Content At A Fraction Of The Cost Of Traditional Education.</p>
+                          </li>
+                          <li>
+                            <p>Lifelong Learning: Self-Learning Education Promotes The Concept Of Lifelong Learning, Where Individuals Can Acquire 
+                              New Skills And Knowledge At Any Stage Of Their Lives. This Is Especially Relevant In India, Where Rapid Technological 
+                              Advancements And Changing Job Markets Require Individuals To Constantly Upgrade Their Skills.</p>
+                          </li>
+                          <li>
+                            <p> Employment Opportunities: Self-Learning Education Can Provide Learners With The Skills And Knowledge Required To 
+                                    Access Better Employment Opportunities. This Is Particularly Relevant In A Country Like India, Where There Is A 
+                                Significant Skills Gap In Certain Sectors Of The Economy.</p>
+                          </li>
+                          <li>
+                            <p>Overall, Self-Learning Education Has Immense Potential In India To Provide Accessible, Cost-Effective, And Personalized 
+                            Learning Opportunities To Individuals, And To Bridge The Skills Gap In The Economy..</p>
+                          </li>
+                        </ol>
+                
+                      </main>
+      
+                      </>
+
+                      ) : (
                 <>
                   <p>Swarajya Institute of Distance Learning in India, We Provide a Platform for those Student who are on Job, and want to continue their education in various sectors like, Paramedical, Traditional, Computer Science, Business Administration, Home Science, Life Science etc.</p>
                   <p>As Paramedical education has emerged as an essential component of the healthcare industry in India. With the increasing demand for healthcare services, the scope of paramedical education has also grown significantly in recent years. Today, paramedical education in India offers
