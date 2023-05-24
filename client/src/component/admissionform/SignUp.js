@@ -236,15 +236,21 @@ const fetchCoursedata = async () => {
                                 </FormControl>
                                 <Textfield label='Course Code' name='courseCode' type='number' />
                                 {/* <input label='Photo' style={{ display: "flex", flexDirection: "column", alignItems: "baseline", border: "2 px", fontSize: "1pc" }} name='profile' type='file' onChange={onUpload} /> */}
-                                <div style={{    height: "8.5vh" ,alignItems:"end"}} class="input-group">
-    <div class="input-group-prepend" style={{height: "calc(2.25rem + 2px)" ,width:'7rem'}}>
-      <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-upload"></i></span>
+                                {/* <div style={{    height: "8.5vh" ,alignItems:"end"}} class="input-group"> */}
+    {/* <div className="input-group-prepend" style={{height: "calc(2.25rem + 2px)" ,width:'7rem'}}>
+      <span className="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-upload"></i></span>
      
-    </div>
-    <div class="custom-file">
-      <input type="file" class="custom-file-input"  name='profile' onChange={onUpload} aria-describedby="inputGroupFileAddon01"/>
-    </div>
-  </div>
+    </div> */}
+    {/* <label >Upload</label> */}
+    {/* <div> */}
+      {/* <input type="file" name='profile' onChange={onUpload} aria-describedby="inputGroupFileAddon01"/> */}
+    {/* </div> */}
+  {/* </div> */}
+  <div style={{display: "flex", flexDirection: "column", alignItems: "baseline",border:'2px' , maxWidth: "26vh",height: "8vh"}}  title='Upload Your Recent Photo (Size 50kb)'>
+            <label htmlFor={"Profile Images"} style={{fontSize:"18px",fontStyle:'10px solid'}} title='Upload Your Recent Photo (Size 50kb)'>Upload Profile Images</label>
+            <input type="file" name='profile' onChange={onUpload}  style={{width: "100%"}} />
+
+        </div>
 
                             </div>
                             {/* <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'darkgray'}}>Submit</button> */}

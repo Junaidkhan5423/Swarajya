@@ -36,8 +36,11 @@ const MainContent = () => {
   const [Prospectus, setProspectus] = useState(false)
   const [international, setinternational] = useState(false)
   const [course, setCourse] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   var myIndex = 0;
 
+
+  
   const handeContentChange = (param) => {
     if (param === 'mission') {
       setObjective(false)
@@ -55,6 +58,56 @@ const MainContent = () => {
     }
 
   }
+
+  const images = [
+    
+  
+    { src: require('../../files/01.PNG'), description: 'What is history in one worl Explanation: History is the study of the past – specifically the people, societies, events and problems of the pas' },
+    { src: require('../../files/1.PNG') },
+    { src: require('../../files/2.PNG') },
+    { src: require('../../files/3.PNG') },
+    { src: require('../../files/4.PNG') },
+    { src: require('../../files/5.PNG') },
+    { src: require('../../files/6.PNG') },
+    { src: require('../../files/7.PNG') },
+    { src: require('../../files/8.PNG') },
+    { src: require('../../files/9.PNG') },
+    { src: require('../../files/10.PNG') },
+    { src: require('../../files/11.PNG') },
+    { src: require('../../files/12.PNG') },
+    { src: require('../../files/13.PNG') },
+    { src: require('../../files/14.PNG') },
+    { src: require('../../files/15.PNG') },
+    { src: require('../../files/16.PNG') },
+    { src: require('../../files/17.PNG') },
+    { src: require('../../files/18.PNG') },
+    // { src: require('../../files/19.PNG') },
+    { src: require('../../files/20.PNG') },
+    { src: require('../../files/21.PNG') },
+    { src: require('../../files/22.PNG') },
+    { src: require('../../files/23.PNG') },
+    { src: require('../../files/24.PNG') },
+    { src: require('../../files/25.PNG') },
+    { src: require('../../files/26.PNG') },
+    { src: require('../../files/27.PNG') },
+    { src: require('../../files/28.PNG') },
+    { src: require('../../files/29.PNG') },
+    { src: require('../../files/30.PNG') },
+    { src: require('../../files/31.PNG') },
+    { src: require('../../files/32.PNG') },
+    { src: require('../../files/33.PNG') },
+    { src: require('../../files/34.PNG') },
+    { src: require('../../files/35.PNG') },
+    { src: require('../../files/36.PNG') },
+    { src: require('../../files/37.PNG') },
+    { src: require('../../files/38.PNG') },
+    { src: require('../../files/39.PNG') },
+    { src: require('../../files/40.PNG') },
+
+  ];
+
+
+
   function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
@@ -93,6 +146,26 @@ const MainContent = () => {
 
     carousel();
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => {
+      clearInterval(interval);
+    };
+
+  }, );
+
+  const currentImage = images[currentImageIndex];
+
+
+
+
+
+
+ 
   return (
     <div className='main_contentDiv'>
       <div className="content" style={{ zIndex: "-1", position: "relative" }}>
@@ -667,24 +740,69 @@ const MainContent = () => {
           <div className="course_slider">
             <h2>Courses</h2>
 
-            <div className="w3-content w3-display-container bottom-crowsel">
-              <img alt='!' className="mySlidess" src={require("../../files/4.jpeg")} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/5.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/6.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/7.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/8.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/9.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/10.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/11.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/12.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/13.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/14.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/15.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/16.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/17.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/18.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/19.jpeg')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/20.jpeg')} style={{ width: "100%" }} />
+            <div className="w3-content w3-display-container bottom-crowsel"> 
+
+           {/* <div>
+
+
+           <div style={{fontSize:'20px',     display: "flex"}}> <img alt='!' className="mySlidess" src={require('../../files/Slide4.PNG')} style={{ width: "65%" }} />Eligibility : 12th <br></br> Duration : = 1 Y & 2Y <br></br>Hurry Up..!<br></br>Limited Seats Available</div>
+
+
+           </div> */}
+           {/* { src: require('../Images/volun3-Narayan Mishra.png'), description: 'Description 48' }, */}
+           {/* <img alt='!' className="mySlidess" { src : require('../../files/Slide2 (3).PNG'),description:"lkdfkldsajflksdlkfsdlklksdajaf"} style={{ width: "100%" }} /> */}
+{/*       
+              <img alt='!' className="mySlidess" src={require('../../files/Slide5.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide6.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide7.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide8.PNG')} style={{ width: "100%" }} />  */}
+               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide9.PNG')} style={{ width: "100%" }} />  */}
+               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide10.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide11.PNG')} style={{ width: "100%" }} />  */}
+              {/* <img alt='!' className="mySlidess" src={require('../../files/Slide12.PNG')} style={{ width: "100%" }} />  */}
+               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide13.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide14.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide15.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide16.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide17.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide18.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide19.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide20.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide21.PNG')} style={{ width: "100%" }} />  */}
+               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide22.PNG')} style={{ width: "100%" }} />  */}
+               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide23.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide24.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide25.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide26.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide27 (1).PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide28.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide29.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide30.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide31 (1).PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide32.PNG')} style={{ width: "100%" }} />  */}
+               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide33.PNG')} style={{ width: "100%" }} />  */}
+              {/* <img alt='!' className="mySlidess" src={require('../../files/Slide34.PNG')} style={{ width: "100%" }} /> */}
+              {/* <img alt='!' className="mySlidess" src={require('../../files/Slide35.PNG')} style={{ width: "100%" }} />  */}
+               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide36.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide37.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide38.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide39.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide40.PNG')} style={{ width: "100%" }} />
+
+              <img alt='!' className="mySlidess" src={require('../../files/Slide41.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide42.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide43.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide44.PNG')} style={{ width: "100%" }} />
+              <img alt='!' className="mySlidess" src={require('../../files/Slide45.PNG')} style={{ width: "100%" }} /> 
+
+              <img alt='!' className="mySlidess" src={require('../../files/Slide46.PNG')} style={{ width: "100%" }} />  */}
+                   <div style={{ fontSize: '20px', display: 'flex' }}>
+                  <img alt='!' className="mySlidess" src={currentImage.src} style={{ width: '80%' }} />
+                       <p style={{ fontSize: '2vh' ,fontFamily:'sans-serif'}}>Eligibility : 12th (HSC) & Above <br></br>
+                       <br></br>
+                        Duration : Min 1 Year Max 4 Year</p>
+      </div>
+              
 
 
             </div>

@@ -92,7 +92,7 @@ export default function CounciL() {
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "246px", width: "263px" }}
+                                    <MenuList style={{ color: 'white', display: 'flex', flexDirection: 'column', overflow: 'auto', height: "246px", width: "263px" ,zIndex:"1000" }}
                                         autoFocusItem={open}
                                         id="composition-menu"
                                         aria-labelledby="composition-button"
