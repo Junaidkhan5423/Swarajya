@@ -58,7 +58,7 @@ function ContactUs() {
                             <StyledTableCell align="left">Number</StyledTableCell>
                         </TableRow>
                     </TableHead>
-                    <TableBody>
+                    <TableBody style={{fontSize:'25px'}}>
                         {rows.map((row) => (
                             <StyledTableRow key={row.name}>
                                 <StyledTableCell component="th" scope="row">
@@ -73,7 +73,7 @@ function ContactUs() {
                 </Table>    
             </TableContainer>
             <div className='condition-text'>
-                <p>
+                <p style={{fontSize:'25px'}}>
                     WHATSAPP CHAT SUPPORT  AVAILABLE ON : 8 WORKING HRS DAILY.
                     CALL SUPPORT ON SAME NUMBER WILL BE AVAILABLE ON SATURDAY EVENING 4:30 PM TO 5:30 PM ONLY
                     ALL RED HOLIDAYS IN CALANDER INCLUDING SUNDAYS WILL BE NOT AVAILABLE FOR INQUIREY
