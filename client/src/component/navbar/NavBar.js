@@ -1,22 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CourseDropDown from './dropDown/CourseDropDown';
 import CounciL from './dropDown/CounciL';
-import BurgurBatan from '../burgurbtn/BurgurBatan';
+import BurgurBatan, { BurgurButton } from '../burgurbtn/BurgurBatan';
+import { useMediaQuery } from '@mui/material';
 
 
 const NavBar = () => {
+
+    const isNonMobile = useMediaQuery("(min-width: 600px)");
 
 
     return (
         <div style={{ width: '100%' }}>
             <header className="header_main">
-                <div className='header-Img'>
-                    {/* <img src={require("../../images/LAIQUEMOBILEVIEW.png")}/> */}
-                </div>
-                <div className="App" id="outer-container">
-                    <BurgurBatan pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+                 <div > 
+                    {isNonMobile ? (
+                         <img src={require("../../images/LAIQEU.png")}/> 
+   
+                    ) : (
+                        <img src={require("../../images/LAIQUEMOBILEVIEW.png")}/> 
+                    )
 
-                </div>
+                    }
+            
+                 </div>
+                    <BurgurButton />
+
                 {/* <div className="head1">
             <h3>Affiliation Code : AI-4794</h3>
             <p>मानव संसाधन आणि विकास मंत्रालय, उच्च शिक्षण विभाग व <br/> कौशल्य विकास आणि उद्योजकता मंत्रालय भारत सरकार-नवी दिल्ल्ली मान्यता प्राप्त <br/> ऑल इंडिया कौन्सिल फॉर व्होकेशनल अँड पॅरामेडिकल सायन्स नवी दिल्ली संलग्नित <br/> ओजस बहू उद्देशीय सेवा
@@ -39,7 +48,7 @@ const NavBar = () => {
             <nav id="navbar" style={{ zIndex: "10", opacity: "1" }}>
 
                 <ul className='nav-bar-list'>
-                    <li className="active"><a href="/"><i className="bi bi-house-door"></i>Home</a></li>
+                    <li ><a href="/"><i className="bi bi-house-door"></i>Home</a></li>
 
                     <li><CourseDropDown /></li>
 

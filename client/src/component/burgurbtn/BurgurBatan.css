@@ -1,93 +1,118 @@
-/* Position and sizing of burger button */
- .bm-burger-button {
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .burger input {
     display: none;
-} 
-
- @media(max-width:450px) {
-    
-    .bm-burger-button {
-        display: block;
-    }
-
-    .bm-burger-button {
-        position: fixed;
-        width: 36px;
-        height: 30px;
-        top: 36px;
-        right: 5px;
-    } 
-
-    /* Color/shape of burger icon bars */
-     .bm-burger-bars {
-        background: #373a47;
-    } 
-
-    /* Color/shape of burger icon bars on hover*/
-     .bm-burger-bars-hover {
-        background: #0f0000;
-    } 
-
-    /* Position and sizing of clickable cross button */
-     .bm-cross-button {
-        height: 24px;
-        width: 24px;
-    } 
-
-    /* Color/shape of close button cross */
-     .bm-cross {
-        background: #bdc3c7;
-    } 
-
-    /*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-     .bm-menu-wrap {
-        position: fixed;
-        height: 50%;
-    } 
-
-    /* General sidebar styles */
-     .bm-menu {
-        background: #4a7faa;
-        padding: 2.5em 1.5em 0;
-        font-size: 1.15em;
-        height: 50%;
-    } 
-
-    /* Morph shape necessary with bubble or elastic */
-     .bm-morph-shape {
-        fill: #373a47;
-    } 
-
-    /* Wrapper for item list */
-     .bm-item-list {
-        color: #b8b7ad;
-        padding: 0.8em;
-    } 
-
-    /* Individual item */
-     .bm-item {
-        display: inline-block;
-    } 
-
-    /* Styling of overlay */
- .bm-overlay {
-        background: rgba(0, 0, 0, 0.3);
-    } 
-
-    /* Individual item */
-     .bm-item {
-        display: inline-block;
-
-        color: #d1d1d1;
-        margin-bottom: 10px;
-        text-align: left;
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    .bm-item:hover {
-        color: #ffffff;
-    } 
- } 
+  }
+  
+  .burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    /* background: black; */
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+  
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+  }
+  
+  
+  
+  
+  
+  /* The side navigation menu */
+  .sidenav {
+    height: 75%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    /* z-index: 9999; */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: whitesmoke; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 30px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: Gotham;
+    color: #51ABFF;
+    display: block;
+    transition: 0.3s
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  .burger-container{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    bottom: 6vh;
+    left: 3vh;
+  }
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }

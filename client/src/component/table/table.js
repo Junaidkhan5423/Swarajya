@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import Add from "../table/Add";
 import AppDataGrid from "../../utils/AppDataGrid";
 import PopUp from "../modal/PopUp";
-import { useQuery } from 'react-query';
 import { ToastContainer, toast } from "react-toastify";
 
 const Users = () => {
@@ -25,15 +24,7 @@ const Users = () => {
   };
 
   const token = useAuthentication((state) => state.auth.token);
-  // const { data, isLoading, isError, refetch } = useQuery('my-data', async()=>{
-  // const response = await  getUserAll(token).then((res) => {
-  //     return res.data
-  //     // setStudentData(res.data);
-  //   })
-  //   // console.log(response,'response')
-  //   return response
-  // })
-  // console.log(data);
+;
 
   const [studentDAta, setStudentData] = useState([]);
 
