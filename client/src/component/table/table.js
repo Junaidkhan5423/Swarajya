@@ -12,6 +12,7 @@ import Add from "../table/Add";
 import AppDataGrid from "../../utils/AppDataGrid";
 import PopUp from "../modal/PopUp";
 import { ToastContainer, toast } from "react-toastify";
+import AddExamDate from "./AddExamDate";
 
 const Users = () => {
   const [open, setOpen] = useState(false);
@@ -50,7 +51,7 @@ const Users = () => {
     // console.log(fetchCoursedata);
     // setIsLoading(true)
     axios
-      .get(`${process.env.REACT_APP_API_URL_DEV}/getAllCourse`)
+      .get(`${process.env.REACT_APP_API_URL_DEV}/getExamDate`)
       .then((res) => {
         // setIsLoading(false)
 
@@ -68,7 +69,7 @@ const Users = () => {
     fetchCoursedata();
     fetchData();
     // refetch()
-  }, [open]);
+  }, []);
   const handleEdit = (e) => {
     console.log(e);
   };
@@ -287,6 +288,57 @@ const Users = () => {
             </table>  */}
           </div>
           {open && <Add refetch={fetchCoursedata} handleClose={handleClose} open={open} />}
+          </>
+        ) 
+          }
+          {activeTab === 2 && (
+          <>
+ <div className="row position-absolute  mr">
+          <ToastContainer />
+             <div className="text-end">
+              <button onClick={() => setOpen(true)} className="btn btn-primary">
+                Add +
+              </button>
+             
+            </div>
+
+            <AppDataGrid maxWidth={"100%"} maxHight='70%' studentDAta={newData} columns={columnsOfCourse} />
+
+            {/* <table className="table">
+              <thead>
+                <tr>
+                  <th>Course Name</th>
+                  <th>Full Name</th>
+                  <th>specialization </th>
+                  <th>duration</th>
+                  <th>fees</th>
+                  <th>Type</th>
+                  <th>actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {newData.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.fullName}</td>
+                    <td>{item.specialition}</td>
+                    <td>{item.duration}</td>
+                    <td>{item.fees}</td>
+                    <td>{item.type}</td>
+                    <td>
+                      <Button
+                        onClick={() => deleteCourse(item._id)}
+                        color="error"
+                      >
+                        delete
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>  */}
+          </div>
+          {open && <AddExamDate refetch={fetchCoursedata} handleClose={handleClose} open={open} />}
           </>
         ) 
           }
