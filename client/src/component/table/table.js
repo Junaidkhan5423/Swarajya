@@ -64,7 +64,7 @@ const Users = () => {
         // setIsLoading(false)
 
         setNewData(res.data.data);
-        // console.log(res.data);
+        console.log(res.data);
       });
   };
 
@@ -179,7 +179,7 @@ const Users = () => {
       },
     },
   ];
-  const columnsOfCourse=[
+  const columnsOfCourse= [
     {
       field: "name",
       headerName: "Total Fees",
