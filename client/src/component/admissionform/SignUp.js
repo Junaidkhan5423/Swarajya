@@ -12,6 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import "./form.scss"
 import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
+import { Input } from '@mui/material';
 
 
 
@@ -245,8 +246,18 @@ const fetchCoursedata = async () => {
     {/* </div> */}
   {/* </div> */}
   <div style={{display: "flex", flexDirection: "column", alignItems: "baseline",border:'2px' , maxWidth: "26vh",height: "8vh"}}  title='Upload Your Recent Photo (Size 50kb)'>
-            <label htmlFor={"Profile Images"} style={{fontSize:"18px",fontStyle:'10px solid'}} title='Upload Your Recent Photo (Size 50kb)'>Upload Profile Images</label>
-            <input type="file" name='profile' onChange={onUpload}  style={{width: "100%"}} />
+  <label htmlFor="profile-image">
+        <span style={{ fontSize: "18px", fontStyle: "10px solid" }}>
+          Upload Profile Image
+        </span>
+      </label>
+      <Input
+        type="file"
+        name="profile"
+        id="profile-image"
+        onChange={onUpload}
+        style={{ width: "100%" }}
+      />
 
         </div>
 
