@@ -32,9 +32,9 @@ export default props => {
         <Link className="menu-item" to={'/Studentlogin'}>
           SingUpPage
         </Link>
-        <Link className="menu-item" to={'/Studentlogin'}>
+        {/* <Link className="menu-item" to={'/Studentlogin'}>
           SingUpPage
-        </Link>
+        </Link> */}
       </Menu>
     </>
   );
