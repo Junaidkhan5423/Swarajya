@@ -70,31 +70,12 @@ const Add = (props) => {
 
         // </div>
         <Dialog
-        fullScreen
         open={open}
         onClose={handleClose}
     >
-        <AppBar sx={{ position: 'relative' }}>
-            <Toolbar>
-
-                <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                    <button
-                        style={{ border: "none" }}
-                        edge="start"
-                        color="inherit"
-                        onClick={handleClose}
-                        aria-label="close"
-                    >
-                        <img src={img1} alt='!' style={{ marginRight: ' 0.5rem' }} />
-                    </button>
-                   Add Course
-                </Typography>
-
-            </Toolbar>
-        </AppBar>
         
          <div className='d-flex  vh-70 justify-content-center align-items-center'>
-            <div className='border bg-light p-5' style={{marginTop:"1rem",width: "25%",marginBottom:'1rem'}}>
+            <div className='border bg-light p-5'>
                 <form onSubmit={handleSubmit}>
 
                     <div  class="form-outline">
