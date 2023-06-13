@@ -15,7 +15,7 @@ const AddExamDate = (props) => {
     function handleSubmit(e){
            e.preventDefault()
 
-           axios.post('https://swarajyabackend.onrender.com/addCourse',inputData)
+           axios.post('http://localhost:9002/addExamDate',inputData)
                  .then(res=>{
                     props.refetch()
                     navigate('/table')

@@ -28,6 +28,7 @@ import DiplomaCourses from "./component/courses-table/DiplomaCourses";
 import UgCourse from "./component/courses-table/UgCourses";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
+import PressRelease from "./component/press-realease/PressRelease";
 
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
@@ -56,6 +57,7 @@ function App() {
           <Route path='/diploma' element={<DiplomaCourses/>} />
           <Route path='/ugCourse' element={<UgCourse/>} />
           <Route path='/pgCourse' element={<PgCourse/>} />
+          <Route path="/PressRelease" element={<PressRelease/>} />  
         </Route>
         <Route element={<AdminProtected />}>
           <Route path="/table" element={<Users />} />

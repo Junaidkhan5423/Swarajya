@@ -541,7 +541,7 @@ const MainContent = () => {
               <a href=" https://forms.gle/scE8iviYy8quuVdR8" target='_blank'>Apply For Online Faculty</a>
 
               <a href="!">Jobs & Advertisement </a>
-              <a href="!">Press Release</a>
+              <Link to="/PressRelease">Press Release</Link>
             </div>
 
           </div>

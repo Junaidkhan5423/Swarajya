@@ -23,7 +23,7 @@ const Footer = () => {
 
                             <h6 style={{ color: 'whitesmoke', marginTop: '0.6rem' }}>E-Mail : info@prabhavatids.com</h6>
                             <h6 style={{ color: 'whitesmoke' }}>Developers (LS,MK,jK)</h6>
-                            <h6 style={{ color: 'whitesmoke' }}>Contact : +91-9420114282</h6>
+                            <h6 style={{ color: 'whitesmoke' }}>Contact :9420114282</h6>
 
 
                         </div>
@@ -37,7 +37,7 @@ const Footer = () => {
                             <a href="mission and vision.html">Internship Vacancies</a>
 
 
-                            <a href="#">Our Prospectus</a>
+                            <a href="#">Prospectus</a>
                         </div>
                     </div>
 

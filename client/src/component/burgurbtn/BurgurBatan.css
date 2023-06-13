@@ -108,8 +108,7 @@
     display: flex;
     justify-content: end;
     position: relative;
-    bottom: 6vh;
-    left: 3vh;
+    bottom: 3vh;
   }
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {

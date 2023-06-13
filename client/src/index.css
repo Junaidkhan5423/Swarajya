@@ -317,7 +317,8 @@ a {
 }
 
 .logo_corner {
-  /* width: 30%; */
+  width: 54%;
+
   /* height: 541px; */
   position: relative;
   /* margin-left: 5%;
@@ -472,7 +473,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 9px;
-  font-size: 20px;
+  font-size: 1.6vh;
   border-bottom: 2px solid gray;
 }
 
@@ -858,7 +859,7 @@ menu {
   }
 
   .header_main {
-    height: 330px;
+    height: 420px;
     padding-top: 0rem;
   }
 

@@ -9,25 +9,13 @@ export  const  BurgurButton = ( props )=> {
   const navigation = [
     { name: 'Home', href: '#' },
     { name: 'Admission', href: 'Admission' },
-    { name: 'AboutUs', href: 'AboutUs' },
-    { name: 'DirectorDesk', href: 'DirectorDesk' },
-    { name: 'PravicyPolicy', href: 'PravicyPolisy' },
+    { name: 'About Us', href: 'AboutUs' },
+    { name: 'Director Desk', href: 'DirectorDesk' },
+    { name: 'Pravicy Policy', href: 'PravicyPolisy' },
      { name: 'ContactUs', href: 'ContactUs' },
     { name: 'Diploma ', href: 'Diploma' },
-    { name: 'Studentlogin', href: 'Studentlogin' },  
+    { name: 'Student login', href: 'Studentlogin' },  
   ];
-  // const navigation = [
-  //   { name: 'Home', href: '/' },
-  //   { name: 'Admission', href: 'Admission' },
-  //   { name: 'AboutUs', href: 'AboutUs' },
-  //   { name: 'DirectorDesk', href: 'DirectorDesk' },
-  //   { name: 'PravicyPolicy', href: 'PravicyPolicy' },
-  //    { name: 'ContactUs', href: 'ContactUs' },
-  //   { name: 'Diploma ', href: 'Diploma' },
-  //   { name: 'Studentlogin', href: 'Studentlogin' },   
-       
-
-  // ];
 
   useEffect(()=>{
     if(currentState){
@@ -41,9 +29,7 @@ export  const  BurgurButton = ( props )=> {
 
 
 }
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+
 const handleHover = (index) => {
     setCurrent(index);
     setCurrentState(false);

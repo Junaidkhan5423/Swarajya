@@ -89,7 +89,6 @@ const fetchCoursedata = async () => {
                 phoneNo: '',
                 centerName: 'Swarajya Paramedical Institute',
                 // courseName: '',
-                courseCode: 4794,
                 profile: '',
 
             }}
@@ -234,7 +233,6 @@ const fetchCoursedata = async () => {
 
                                     </Select>
                                 </FormControl>
-                                <Textfield label='Course Code' name='courseCode' type='number' />
                                 {/* <input label='Photo' style={{ display: "flex", flexDirection: "column", alignItems: "baseline", border: "2 px", fontSize: "1pc" }} name='profile' type='file' onChange={onUpload} /> */}
                                 {/* <div style={{    height: "8.5vh" ,alignItems:"end"}} class="input-group"> */}
     {/* <div className="input-group-prepend" style={{height: "calc(2.25rem + 2px)" ,width:'7rem'}}>

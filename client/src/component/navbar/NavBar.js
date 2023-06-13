@@ -15,16 +15,21 @@ const NavBar = () => {
             <header className="header_main">
                  <div > 
                     {isNonMobile ? (
-                         <img src={require("../../images/LAIQEU.png")}/> 
+                         <img src={require("../../images/LAIQEU.png")} style={{maxWidth:'100%'}} /> 
    
                     ) : (
-                        <img src={require("../../images/LAIQUEMOBILEVIEW.png")}/> 
+                        <img src={require("../../images/LAIQUEMOBILEVIEW.png")} style={{maxWidth:'100%'}}/> 
                     )
 
                     }
             
                  </div>
-                    <BurgurButton />
+                 { !isNonMobile && (
+  <BurgurButton />
+                 )
+
+                 }
+                  
 
                 {/* <div className="head1">
             <h3>Affiliation Code : AI-4794</h3>
