@@ -1,8 +1,7 @@
 import { Button, styled, Tab, Tabs, TextField } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { getEditableData, uploadResultId, uploadResultOnly } from "../services/student.service.js";
 import { useAuthentication } from "../../store/store.js";
-import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 const StyledTextField = styled(TextField)(({ theme }) => ({
   margin: "1rem",
@@ -17,7 +16,7 @@ const Form = (props :any) => {
   const [userName, setUserName] = useState(previousData.userName);
   const [city, setCity] = useState(previousData.city);
   const [result, setResult] = useState("");
-  const [newResult, setNewResult] = useState(previousData.results);
+  // const [newResult, setNewResult] = useState(previousData.results);
   const [totalFees, setTotalFees] = useState(previousData.totalFees);
   const [totalPaid, setTotalPaid] = useState(parseInt(previousData.totalPaid));
   const [addFessPaid, setAddFessPaid] = useState(0);
@@ -40,6 +39,8 @@ const Form = (props :any) => {
       identyCard:identyCard,
     };
  const resultData = await uploadResultId(token,EditabledData)
+ console.log(resultData);
+ 
  toast.success("Student Data Successfully Updated")
  props.refetch() 
   };
@@ -72,10 +73,7 @@ const Form = (props :any) => {
       name: resultName,
       link:result
     }
-
-   const uploadResult=await uploadResultOnly(token,body)
-   console.log(uploadResult);
-   
+  await uploadResultOnly(token,body)   
   }
 
   
@@ -249,7 +247,7 @@ const Form = (props :any) => {
           <div>
            <h6 className="text-center">Added Result till now</h6>
             <ul className="list-group">
-      {newResult.map((item, index) => (
+      {previousData?.results?.map((item, index) => (
         <li className="list-group-item" key={index}>
           <span className="text-primary font-weight-bold">{item.name}</span>
         </li>

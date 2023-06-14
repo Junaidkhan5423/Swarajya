@@ -1,39 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './StudentInfo.css'
-import { getUser } from '../services/student.service'
 import Dialog from '@mui/material/Dialog';
-import axios from 'axios';
 
 function StudentInfo(props) {
    const {data , open} = props
-   const downloadResult = async()=>{
-    axios({
-        url: 'https://swarajyabackend.onrender.com/result/644e91f1041954aaf7b9985b',
-        method: 'GET',
-        responseType: 'blob', // set the response type to blob to receive a binary data
-      }).then(response => {
-        const url = window.URL.createObjectURL(new Blob([response.data])); // create a URL to the file
-        const link = document.createElement('a'); // create a new link element
-        link.href = url; // set the link's href to the created URL
-        link.setAttribute('download', 'file.pdf'); // set the download attribute to trigger the download dialog
-        document.body.appendChild(link); // append the link element to the DOM
-        link.click(); // click the link to trigger the download
-      });
-   }
-   const downloadIdentyCard = async()=>{
-    axios({
-        url: `https://swarajyabackend.onrender.com/identyCard/${data._id}`,
-        method: 'GET',
-        responseType: 'blob', // set the response type to blob to receive a binary data
-      }).then(response => {
-        const url = window.URL.createObjectURL(new Blob([response.data])); // create a URL to the file
-        const link = document.createElement('a'); // create a new link element
-        link.href = url; // set the link's href to the created URL
-        link.setAttribute('download', 'file.pdf'); // set the download attribute to trigger the download dialog
-        document.body.appendChild(link); // append the link element to the DOM
-        link.click(); // click the link to trigger the download
-      });
-   }
+//    const downloadResult = async()=>{
+//     axios({
+//         url: 'https://swarajyabackend.onrender.com/result/644e91f1041954aaf7b9985b',
+//         method: 'GET',
+//         responseType: 'blob', // set the response type to blob to receive a binary data
+//       }).then(response => {
+//         const url = window.URL.createObjectURL(new Blob([response.data])); // create a URL to the file
+//         const link = document.createElement('a'); // create a new link element
+//         link.href = url; // set the link's href to the created URL
+//         link.setAttribute('download', 'file.pdf'); // set the download attribute to trigger the download dialog
+//         document.body.appendChild(link); // append the link element to the DOM
+//         link.click(); // click the link to trigger the download
+//       });
+//    }
+//    const downloadIdentyCard = async()=>{
+//     axios({
+//         url: `https://swarajyabackend.onrender.com/identyCard/${data._id}`,
+//         method: 'GET',
+//         responseType: 'blob', // set the response type to blob to receive a binary data
+//       }).then(response => {
+//         const url = window.URL.createObjectURL(new Blob([response.data])); // create a URL to the file
+//         const link = document.createElement('a'); // create a new link element
+//         link.href = url; // set the link's href to the created URL
+//         link.setAttribute('download', 'file.pdf'); // set the download attribute to trigger the download dialog
+//         document.body.appendChild(link); // append the link element to the DOM
+//         link.click(); // click the link to trigger the download
+//       });
+//    }
     return (
         <>
           <Dialog
@@ -105,7 +103,7 @@ function StudentInfo(props) {
                                         <tr>
                                             <th width="30%">SYLLABUS</th>
                                             <td width="2%">:</td>
-                                            <td> {data?.syllabus ? <a href={data?.syllabus} target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Syllabus</a> : 'Not Available' }</td>
+                                            <td> {data?.syllabus ? <a href={data?.syllabus} target='_blank' rel="noreferrer" className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Syllabus</a> : 'Not Available' }</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">Result</th>
@@ -113,7 +111,7 @@ function StudentInfo(props) {
                                             <td  >{data?.results && data?.results.map((item)=>{
                                                 console.log(item,'result');
                                                 return (
-<a href={item?.link}  target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>{item?.name}</a> 
+<a href={item?.link}  target='_blank' rel="noreferrer" className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>{item?.name}</a> 
                                                 )
                                             }) 
                                         }
@@ -122,7 +120,7 @@ function StudentInfo(props) {
                                         <tr>
                                             <th width="30%">Identity Card</th>
                                             <td width="2%">:</td>
-                                            <td > {data?.identyCard ?<a href={data?.identyCard}  target='_blank' className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Identicard</a> : 'Not Available' }</td>
+                                            <td > {data?.identyCard ?<a href={data?.identyCard}  target='_blank' rel="noreferrer" className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>Download Identicard</a> : 'Not Available' }</td>
                                         </tr>
                                     </table>
                                 </div>

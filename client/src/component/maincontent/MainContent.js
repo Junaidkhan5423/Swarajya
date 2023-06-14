@@ -27,6 +27,7 @@ import AICVPS from '../../Allpdf/AIU Admisison Form.pdf'
 import Brocher from '../../Allpdf/SWARAJYA PARAMEDICAL BROCHURE 23-24.pdf'
 import sikkim from '../../Allpdf/skmsuniv.pdf'
 import offlinesikkim from '../../Allpdf/APPLICATION FOR ADMISSION - SSU.pdf'
+import axios from 'axios';
 
 const MainContent = () => {
   const [visible, setVisibile] = useState(false)
@@ -37,6 +38,21 @@ const MainContent = () => {
   const [international, setinternational] = useState(false)
   const [course, setCourse] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [newsData,setNewsData]=useState([])
+
+ 
+  const fetchCoursedata = async () => {
+    
+    axios
+      .get(`${process.env.REACT_APP_API_URL_LOCAL}/getNewBytype?type=exam`)
+      .then((res) => {
+        setNewsData(res.data.data);
+        console.log(res.data);
+      });
+  };
+  useEffect(()=>{
+    fetchCoursedata()
+  },[])
   var myIndex = 0;
 
 
@@ -500,13 +516,20 @@ const MainContent = () => {
 
         <marquee className="marq" bgcolor="black" direction="left" loop="">
 
-          <a href="!">ENROLL NOW FOR DMLT</a>
+          {/* 
           <a href="!"> ENROLL NOW FOR CMS & ED</a>
           <a href="!">ENROLL NOW FOR SANITARY INSPECTOR</a>
           <a href="!">ENROLL NOW FOR X-RAY TECHNICIAN</a>
           <a href="!">ENROLL NOW FOR DIETICIAN</a>
           <a href="!">ENROLL NOW FOR DIPLOMA IN PHYSIOTHERAPY</a>
-          <a href="!">ENROLL NOW FOR COMMUNITY HEALTH WORKER</a>
+          <a href="!">ENROLL NOW FOR COMMUNITY HEALTH WORKER</a> */}
+          {newsData.map((item)=>{
+            return (
+<a href="!">{item.descripstion}</a>
+            )
+          })
+
+          }
 
         </marquee>
 
@@ -537,8 +560,8 @@ const MainContent = () => {
 
             <div className="institution">
               <h2>Institution</h2>
-              <a href="https://forms.gle/xJiHqhQhLcKwjxxp9" target='_blank'>Apply For From Collection Center(ACC) </a>
-              <a href=" https://forms.gle/scE8iviYy8quuVdR8" target='_blank'>Apply For Online Faculty</a>
+              <a href="https://forms.gle/xJiHqhQhLcKwjxxp9" target='_blank' rel="noreferrer">Apply For From Collection Center(ACC) </a>
+              <a href=" https://forms.gle/scE8iviYy8quuVdR8" target='_blank' rel="noreferrer">Apply For Online Faculty</a>
 
               <a href="!">Jobs & Advertisement </a>
               <Link to="/PressRelease">Press Release</Link>
@@ -667,9 +690,9 @@ const MainContent = () => {
                   <a target='blank' onClick={() => setVisibile(false)} className='visible-class'>Internship Reference</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href={English} style={{ fontSize: '1.8vh' }} target='_blank'> 1 .English </a></li>
-                    <li style={{ width: '9rem' }}><a href={Hindi} style={{ fontSize: '1.8vh' }} target='_blank'> 2 .Hindi </a></li>
-                    <li style={{ width: '9rem' }}><a href={Marathi} style={{ fontSize: '1.8vh' }} target='_blank'> 3 .Marathi </a></li>
+                    <li style={{ width: '9rem' }}><a href={English} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> 1 .English </a></li>
+                    <li style={{ width: '9rem' }}><a href={Hindi} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> 2 .Hindi </a></li>
+                    <li style={{ width: '9rem' }}><a href={Marathi} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> 3 .Marathi </a></li>
                   </ul>
                 </>
               }
@@ -681,9 +704,9 @@ const MainContent = () => {
                   <a target='blank' onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href={Brocher} style={{ fontSize: '1vh' }} target="_blank"> AICVPS </a></li>
-                    <li style={{ width: '9rem' }}><a href="" style={{ fontSize: '1vh' }} target='_blank'> Asian International University </a></li>
-                    <li style={{ width: '9rem' }}><a href={sikkim} style={{ fontSize: '1vh' }} target='_blank'>Sikkim Skill University </a></li>
+                    <li style={{ width: '9rem' }}><a href={Brocher} style={{ fontSize: '1vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
+                    <li style={{ width: '9rem' }}><a href="" style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
+                    <li style={{ width: '9rem' }}><a href={sikkim} style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
                   </ul>
                 </>
               }
@@ -694,9 +717,9 @@ const MainContent = () => {
                   <a target='blank' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href={AICVPS} style={{ fontSize: '1.8vh' }} target='_blank'> AICVPS </a></li>
-                    <li style={{ width: '9rem' }}><a href={Asian} style={{ fontSize: '1.8vh' }} target='_blank'> Asian International University </a></li>
-                    <li style={{ width: '9rem' }}><a href={offlinesikkim} style={{ fontSize: '1.8vh' }} target='_blank'>Sikkim Skill University </a></li>
+                    <li style={{ width: '9rem' }}><a href={AICVPS} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> AICVPS </a></li>
+                    <li style={{ width: '9rem' }}><a href={Asian} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
+                    <li style={{ width: '9rem' }}><a href={offlinesikkim} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
                   </ul>
                 </>
               }

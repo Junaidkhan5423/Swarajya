@@ -1,6 +1,5 @@
 import axios from "axios";
-import { parse, stringify } from "flatted";
-const baseUrl = process.env.REACT_APP_API_URL_DEV 
+const baseUrl = process.env.REACT_APP_API_URL_LOCAL 
 console.log(`${baseUrl}`,'baseUrl');
 export const postStudentData = async (values) => {
   try {
@@ -41,6 +40,17 @@ export const deleteCourseByID = async (values) => {
     return await (
       await axios.get(
         `${baseUrl}/deleteCourse?id=${values}`
+      )
+    ).data;
+  } catch (error) {
+    return { error };
+  }
+};
+export const deletenewsByID = async (values) => {
+  try {
+    return await (
+      await axios.get(
+        `${baseUrl}/deleteNews?id=${values}`
       )
     ).data;
   } catch (error) {

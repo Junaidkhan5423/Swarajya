@@ -14,7 +14,7 @@ function PaymentPage() {
             <div class="payment-content">
                <h1>Payment is Pending </h1>
                <p>Your addmission is pending Please pay the fees</p>
-               <img src={qrdcode}/>
+               <img src={qrdcode} alt='!'/>
                {/* <a href="#">Go to Home</a> */}
             </div>
             

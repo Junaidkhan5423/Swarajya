@@ -7,7 +7,6 @@ import Popper from '@mui/material/Popper';
 // import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
-import zIndex from '@mui/material/styles/zIndex';
 // import { Navigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +14,6 @@ import zIndex from '@mui/material/styles/zIndex';
 //2,5,6,9,10,
 export default function MenuListComposition() {
     // const navigate = useNavigate
-    const SyllabusItem = ["DIPLOMA COURSES ","UG-GRADUATE COURSES ","PG-POST GRADUATE COURSES"]
         
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);

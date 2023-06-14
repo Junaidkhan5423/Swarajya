@@ -15,6 +15,7 @@ export  const  BurgurButton = ( props )=> {
      { name: 'ContactUs', href: 'ContactUs' },
     { name: 'Diploma ', href: 'Diploma' },
     { name: 'Student login', href: 'Studentlogin' },  
+    { name: 'Press Realese', href: 'PressRelease' },  
   ];
 
   useEffect(()=>{

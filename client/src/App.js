@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
-import NavBar from "./component/navbar/NavBar";
 import MainContent from "./component/maincontent/MainContent";
 import {
   createBrowserRouter,
@@ -21,13 +20,12 @@ import PaymentPage from "./component/payment/PaymentPage";
 import Root from "./component/Root/Root";
 // import Admin from './component/Root/AdminProtected';
 import AdminProtected from "./component/Root/AdminProtected";
-import axios from "axios";
 import ELearnig from "./component/contactus/ELearnig";
 import PgCourse from "./component/courses-table/PgCourse";
 import DiplomaCourses from "./component/courses-table/DiplomaCourses";
 import UgCourse from "./component/courses-table/UgCourses";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { ColorModeContext, useMode } from "./theme";
+import {  useMode } from "./theme";
 import PressRelease from "./component/press-realease/PressRelease";
 
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
@@ -35,7 +33,7 @@ import PressRelease from "./component/press-realease/PressRelease";
 // import Add from './component/table/Add';
 
 function App() {
-  const [theme, colorMode] = useMode();
+  const [theme] = useMode();
 
   const router = createBrowserRouter(
     createRoutesFromElements(

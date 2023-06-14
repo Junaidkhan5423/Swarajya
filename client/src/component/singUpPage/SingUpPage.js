@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import "./SingUpPage.css";
-import * as Yup from "yup";
 import StudentInfo from "../studentInfo/StudentInfo";
 import { getUser } from "../services/student.service";
 import { ToastContainer, toast } from "react-toastify";
@@ -25,14 +24,6 @@ function SingUpPage() {
 
   const [data, setData] = useState(null);
 
-  const schema = Yup.object().shape({
-    email: Yup.string()
-      .required("Email is a required field")
-      .email("Invalid email format"),
-    userName: Yup.string()
-      .required("Password is a required field")
-      .min(8, "Password must be at least 8 characters"),
-  });
   const formik = useFormik({
     initialValues: {
       userName: "",

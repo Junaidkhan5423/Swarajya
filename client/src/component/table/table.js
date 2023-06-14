@@ -1,13 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
-import { Avatar, Box, Button, Tab, Tabs } from "@mui/material";
-import { DataGrid, gridClasses } from "@mui/x-data-grid";
+import { useEffect,  useState } from "react";
+import { Avatar,  Button, Tab, Tabs } from "@mui/material";
 // import moment from 'moment';
-import { grey } from "@mui/material/colors";
 import { useAuthentication } from "../../store/store";
-import { deleteCourseByID, getUserAll } from "../services/student.service";
+import { deleteCourseByID, deletenewsByID, getUserAll } from "../services/student.service";
 import axios from "axios";
-import { object } from "yup";
-import { Link } from "react-router-dom";
 import Add from "../table/Add";
 import AppDataGrid from "../../utils/AppDataGrid";
 import PopUp from "../modal/PopUp";
@@ -32,7 +28,7 @@ const Users = () => {
   const fetchData = async () => {
     setIsLoading(true)
 
-    const data = await getUserAll(token).then((res) => {
+ await getUserAll(token).then((res) => {
       setIsLoading(false)
       // console.log("daa", res);
       setStudentData(res.data);
@@ -40,18 +36,27 @@ const Users = () => {
   };
 
   const [newData, setNewData] = useState([]);
-  const [selected, setSelected] = useState(true);
+  const [newsData, setNewsData] = useState([]);
   const [isLoading, setIsLoading] =useState(false);
 
   const handleClose = () => {
     setOpen(false);
   };
+const fetchNewData = async () => {
+  axios
+  .get(`${process.env.REACT_APP_API_URL_LOCAL}/getAllNews`)
+  .then((res) => {
+    // setIsLoading(false)
 
+    setNewsData(res.data.data);
+    console.log(res.data ,'news data');
+  });
+}
   const fetchCoursedata = async () => {
     // console.log(fetchCoursedata);
     // setIsLoading(true)
     axios
-      .get(`${process.env.REACT_APP_API_URL_DEV}/getExamDate`)
+      .get(`${process.env.REACT_APP_API_URL_DEV}/getAllCourse`)
       .then((res) => {
         // setIsLoading(false)
 
@@ -60,28 +65,34 @@ const Users = () => {
       });
   };
 
-  const refreshData = () => {
-    fetchCoursedata();
-    fetchData();
-  }
+  // const refreshData = () => {
+  //   fetchCoursedata();
+  //   fetchData();
+  // }
 
   useEffect(() => {
     fetchCoursedata();
     fetchData();
-    // refetch()
-  }, []);
+    fetchNewData()
+  },[]);
   const handleEdit = (e) => {
     console.log(e);
   };
 
   const deleteCourse = async (id) => {
-    const data = await deleteCourseByID(id);
+ await deleteCourseByID(id);
     toast.success("Successfully Delete Course")
     fetchCoursedata();
     // console.log(data);
   };
+  const deleteNews = async (id) => {
+    await deletenewsByID(id);
+       toast.success("Successfully Delete News")
+       fetchNewData();
+       // console.log(data);
+     };
 
-  const [rowId, setRowId] = useState(null);
+  // const [rowId, setRowId] = useState(null);
 
   const columns = [
     {
@@ -92,7 +103,7 @@ const Users = () => {
         return <Avatar src={params.formattedValue} />;
       },
       sortable: false,
-      filterable: false,
+      filterable: false
     },
     { field: "firstName", headerName: "Name", width: 100 },
     { field: "email", headerName: "Email", width: 100 },
@@ -116,13 +127,11 @@ const Users = () => {
     {
       field: "nationality",
       headerName: "Nationality",
-      // type: 'actions',
     },
     {
       field: "totalFees",
       headerName: "Total Fees",
     },
-    ,
     {
       field: "totalPaid",
       headerName: "Paid Fees",
@@ -138,14 +147,14 @@ const Users = () => {
       renderCell: (params) => {
        
         return  params.row.identyCard ? <strong>Uploaded</strong> : <strong>Not Uploaded</strong>
-      },
+      }
     }, 
     {
       field: "result",
       headerName: "Result ",
       renderCell: (params) => {
         return    params.row.result ? <strong>Uploaded</strong> : <strong>Not Uploaded</strong>
-      },
+      }
     },
     
     {
@@ -159,48 +168,40 @@ const Users = () => {
       renderCell: (params) => {
         return (
           <PopUp refetch={fetchData} params={params} handleEdit={handleEdit} />
-          // <button
-          //   onClick={() => {
-          //     handleEdit(params.row._id);
-
-          //   }}
-          // >
-          //   Edit
-          // </button>
+        
         );
-      },
-    },
+      }
+    }
   ];
   const columnsOfCourse= [
     {
       field: "name",
-      headerName: "Total Fees",
+      headerName: "Name",
     },
-    ,
     {
       field: "fullName",
-      headerName: "Paid Fees",
+      headerName: "Full Name",
     },
     {
       field: "specialition",
-      headerName: "Roll no",
+      headerName: "Specialition",
     },
     {
       field: "duration",
-      headerName: "Roll no",
+      headerName: "Duration",
     },
      {
       field: "fees",
-      headerName: "Roll no",
+      headerName: "Fees",
     },
     {
       field: "type",
-      headerName: "Roll no",
+      headerName: "Types",
     },
 
     {
-      field: "identyCard",
-      headerName: " Identity card",
+      field: "Action",
+      headerName: " Action",
       renderCell: (params) => {
        
         return   <Button
@@ -212,7 +213,34 @@ const Users = () => {
       },
     }, 
   ]
-  // return isLoading && <h1>...loading</h1>
+  const columnsOfNews= [
+    {
+    field: "img",
+      headerName: "Avatar",
+      width: 100,
+      renderCell: (params) => {
+        return <Avatar src={params.formattedValue} />;
+      },
+      sortable: false,
+      filterable: false
+    },
+    { field: "name", headerName: "Name", width: 100 },
+    { field: "type", headerName: "Tpe", width: 100 },
+    { field: "descripstion", headerName: "Descripstion", width: 150 },
+    {
+      field: "Action",
+      headerName: " Action",
+      renderCell: (params) => {
+       
+        return   <Button
+        onClick={() => deleteNews(params.row._id)}
+        color="error"
+      >
+        delete
+      </Button>
+      },
+    }, 
+  ]
   if(isLoading){
     return (
       <div class="spinner-border  position-absolute top-50 start-50" style={{width: "48px", height: "48px", borderWidth: "5px"}}>
@@ -253,39 +281,6 @@ const Users = () => {
 
             <AppDataGrid maxWidth={"100%"} maxHight='70%' studentDAta={newData} columns={columnsOfCourse} />
 
-            {/* <table className="table">
-              <thead>
-                <tr>
-                  <th>Course Name</th>
-                  <th>Full Name</th>
-                  <th>specialization </th>
-                  <th>duration</th>
-                  <th>fees</th>
-                  <th>Type</th>
-                  <th>actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {newData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.fullName}</td>
-                    <td>{item.specialition}</td>
-                    <td>{item.duration}</td>
-                    <td>{item.fees}</td>
-                    <td>{item.type}</td>
-                    <td>
-                      <Button
-                        onClick={() => deleteCourse(item._id)}
-                        color="error"
-                      >
-                        delete
-                      </Button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>  */}
           </div>
           {open && <Add refetch={fetchCoursedata} handleClose={handleClose} open={open} />}
           </>
@@ -302,43 +297,11 @@ const Users = () => {
              
             </div>
 
-            <AppDataGrid maxWidth={"100%"} maxHight='70%' studentDAta={newData} columns={columnsOfCourse} />
+            <AppDataGrid maxWidth={"100%"} maxHight='70%' studentDAta={newsData} columns={columnsOfNews} />
 
-            {/* <table className="table">
-              <thead>
-                <tr>
-                  <th>Course Name</th>
-                  <th>Full Name</th>
-                  <th>specialization </th>
-                  <th>duration</th>
-                  <th>fees</th>
-                  <th>Type</th>
-                  <th>actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {newData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.fullName}</td>
-                    <td>{item.specialition}</td>
-                    <td>{item.duration}</td>
-                    <td>{item.fees}</td>
-                    <td>{item.type}</td>
-                    <td>
-                      <Button
-                        onClick={() => deleteCourse(item._id)}
-                        color="error"
-                      >
-                        delete
-                      </Button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>  */}
+        
           </div>
-          {open && <AddExamDate refetch={fetchCoursedata} handleClose={handleClose} open={open} />}
+          {open && <AddExamDate refetch={fetchNewData} handleClose={handleClose} open={open} />}
           </>
         ) 
           }

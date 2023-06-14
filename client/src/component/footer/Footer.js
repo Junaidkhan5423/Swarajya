@@ -11,9 +11,7 @@ const Footer = () => {
                 <div className="main">
                     <div className="logo_corner">
                         <div className="logo">
-                            {/* <img src={require('../../images/flogo.png')}/> */}
-                            {/* <p className='welcomeTo'>Welcome to,</p>
-                    <p>Swarajya Paramedical Institute</p> */}
+                        
                         </div>
                         <div className="paymodes">
                             <h2 className='footerH2'>Current Affairs</h2>

@@ -26,6 +26,8 @@ function SignUp() {
     const [courseName, setCourseName] = useState("")
     const [CourseType, setCourseType] = useState("")
     const [selectedCity, setSelectedCity] = useState([])
+    const [permisioon, setPermission] = useState(false)
+
 const navigate = useNavigate()
 const fetchCoursedata = async () => {
     console.log(fetchCoursedata)
@@ -69,6 +71,10 @@ const fetchCoursedata = async () => {
           setData(res.data.data.map((item)=> item.name))
         })
     }
+    const onCheck = (event) => {
+        console.log(event);
+        setPermission(event.target.checked)
+    }
 
 
 
@@ -97,10 +103,37 @@ const fetchCoursedata = async () => {
             onSubmit={async values => {
                 console.log(values);
                 values = await Object.assign(values, { profile: file || "", state: state || "", city: City || '' , courseName: courseName || "", CourseType: CourseType || "",})
-                const data = await postStudentData(values)
-                // console.log(data);
-                if (data.status === 200) {
-                    toast.success("Student Registered Successfully", {
+                if(permisioon){
+                    const data = await postStudentData(values)
+                    // console.log(data);
+                    if (data.status === 200) {
+                        toast.success("Student Registered Successfully", {
+                            position: "top-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            })
+                        navigate("/payment")
+                        
+                    } else {
+                        toast.error(data.error.response.data.message.error, {
+                            position: "top-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            })
+    
+                    }
+                }else{
+                    toast.error("Please  Check  Permission", {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -110,21 +143,8 @@ const fetchCoursedata = async () => {
                         progress: undefined,
                         theme: "light",
                         })
-                    navigate("/payment")
-                    
-                } else {
-                    toast.error(data.error.response.data.message.error, {
-                        position: "top-center",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                        })
-
                 }
+         
 
             }}
 
@@ -248,12 +268,13 @@ const fetchCoursedata = async () => {
   <div style={{display: "flex", flexDirection: "column", alignItems: "baseline",border:'2px' , maxWidth: "26vh",height: "8vh"}}  title='Upload Your Recent Photo (Size 50kb)'>
   <label htmlFor="profile-image">
         <span style={{ fontSize: "18px", fontStyle: "10px solid" }}>
-          Upload Profile Image
+           Profile
         </span>
       </label>
       <Input
         type="file"
         name="profile"
+        className="form-control"
         id="profile-image"
         onChange={onUpload}
         style={{ width: "100%" }}
@@ -262,8 +283,18 @@ const fetchCoursedata = async () => {
         </div>
 
                             </div>
-                            {/* <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'darkgray'}}>Submit</button> */}
-                            <button  className='btn btn-danger mt-3 submit_btn' type='submit'>
+
+                            <label htmlFor="checkbox">
+    <input
+      type="checkbox"
+      id="checkbox"
+      name="checkbox"
+      onChange={onCheck}
+      style={{ marginTop: "30px" }}
+    />
+    Include additional information
+  </label>                            {/* <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'darkgray'}}>Submit</button> */}
+                            <button  className='btn btn-danger mt-3 submit_btn' style={{width:'100%'}} type='submit'>
   <span>Submit</span>
   <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
     <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>

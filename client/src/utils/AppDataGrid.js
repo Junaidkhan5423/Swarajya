@@ -1,11 +1,11 @@
 
 import { useTheme } from '@emotion/react';
-import { Avatar, Box } from '@mui/material'
+import {  Box } from '@mui/material'
 import { grey } from '@mui/material/colors';
 import { DataGrid } from '@mui/x-data-grid'
 import {  gridClasses } from '@mui/x-data-grid';
 
-import React, { useMemo, useState } from 'react'
+import React from 'react'
 import { tokens } from '../theme';
 
 function AppDataGrid( props) {
@@ -51,18 +51,18 @@ function AppDataGrid( props) {
         background: colors.grey[200]
       }
     }}
-    sx={{
-      // styles for screens smaller than 600px
-      '@media (max-width: 600px)': {
-        paddingLeft: '1rem',
-        paddingRight: '1rem'
-      },
-      // styles for screens between 600px and 960px
-      '@media (min-width: 600px) and (max-width: 960px)': {
-        paddingLeft: '2rem',
-        paddingRight: '2rem'
-      }
-    }}
+    // sx={{
+    //   // styles for screens smaller than 600px
+    //   '@media (max-width: 600px)': {
+    //     paddingLeft: '1rem',
+    //     paddingRight: '1rem'
+    //   },
+    //   // styles for screens between 600px and 960px
+    //   '@media (min-width: 600px) and (max-width: 960px)': {
+    //     paddingLeft: '2rem',
+    //     paddingRight: '2rem'
+    //   }
+    // }}
   >
     <DataGrid
       columns={props?.columns}

@@ -103,7 +103,7 @@ export default function CounciL() {
                                                 return (
                                                     // <a style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)}>{item}</a>
                                                     // <a className='hovercolor' style={{ position: "relative", overflow: "visible" }}>{item}</a>
-                                                    <a className='hovercolor' style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)} target='_blank'>{item}</a>
+                                                    <a className='hovercolor' rel="noreferrer" style={{ position: "relative", overflow: "visible" }} href={require(`../../../paramedicalSyllabus/${index}.pdf`)} target='_blank'>{item}</a>
                                                 )
 
                                             })}
