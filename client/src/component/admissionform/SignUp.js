@@ -12,7 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import "./form.scss"
 import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
-import { Input } from '@mui/material';
+import { Dialog, Input } from '@mui/material';
 
 
 
@@ -75,10 +75,14 @@ const fetchCoursedata = async () => {
         console.log(event);
         setPermission(event.target.checked)
     }
+const handleClose = (event) => {
 
+    setPermission(false)
+}
 
 
     return (
+        <>
         <Formik
             initialValues={{
                 firstName: '',
@@ -254,17 +258,7 @@ const fetchCoursedata = async () => {
 
                                     </Select>
                                 </FormControl>
-                                {/* <input label='Photo' style={{ display: "flex", flexDirection: "column", alignItems: "baseline", border: "2 px", fontSize: "1pc" }} name='profile' type='file' onChange={onUpload} /> */}
-                                {/* <div style={{    height: "8.5vh" ,alignItems:"end"}} class="input-group"> */}
-    {/* <div className="input-group-prepend" style={{height: "calc(2.25rem + 2px)" ,width:'7rem'}}>
-      <span className="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-upload"></i></span>
-     
-    </div> */}
-    {/* <label >Upload</label> */}
-    {/* <div> */}
-      {/* <input type="file" name='profile' onChange={onUpload} aria-describedby="inputGroupFileAddon01"/> */}
-    {/* </div> */}
-  {/* </div> */}
+                               
   <div style={{display: "flex", flexDirection: "column", alignItems: "baseline",border:'2px' , maxWidth: "26vh",height: "8vh"}}  title='Upload Your Recent Photo (Size 50kb)'>
   <label htmlFor="profile-image">
         <span style={{ fontSize: "18px", fontStyle: "10px solid" }}>
@@ -305,6 +299,27 @@ const fetchCoursedata = async () => {
                     </div>)
             }}
         </Formik>
+
+
+        <Dialog
+        open={permisioon}
+        onClose={handleClose}
+    >
+        
+         <div className='d-flex  vh-70 justify-content-center align-items-center'>
+            <div className='border bg-light p-5'>
+              <button className='btn ' onClick={handleClose}>
+                Agree
+                </button>  
+                <button className='btn ' onClick={handleClose}>
+                Denied
+                </button>     
+                
+                    </div>
+
+        </div>
+    </Dialog>
+        </>
     )
 }
 
