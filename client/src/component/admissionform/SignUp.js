@@ -27,6 +27,7 @@ function SignUp() {
     const [CourseType, setCourseType] = useState("")
     const [selectedCity, setSelectedCity] = useState([])
     const [permisioon, setPermission] = useState(false)
+    const [open, setOpen] = useState(false);
 
 const navigate = useNavigate()
 const fetchCoursedata = async () => {
@@ -73,11 +74,17 @@ const fetchCoursedata = async () => {
     }
     const onCheck = (event) => {
         console.log(event);
-        setPermission(event.target.checked)
+        setOpen(event.target.checked)
     }
-const handleClose = (event) => {
+const handleClose = () => {
 
+    setOpen(false)
     setPermission(false)
+}
+const handleAccept = () => {
+
+    setOpen(false)
+    setPermission(true)
 }
 
 
@@ -278,15 +285,15 @@ const handleClose = (event) => {
 
                             </div>
 
-                            <label htmlFor="checkbox">
+                            <label htmlFor="checkbox"  style={{ marginTop: "40px" }}>
     <input
       type="checkbox"
       id="checkbox"
       name="checkbox"
       onChange={onCheck}
-      style={{ marginTop: "30px" }}
+     
     />
-    Include additional information
+    Include  information
   </label>                            {/* <button className='btn btn-dark mt-3' type='submit' style={{backgroundColor:'darkgray'}}>Submit</button> */}
                             <button  className='btn btn-danger mt-3 submit_btn' style={{width:'100%'}} type='submit'>
   <span>Submit</span>
@@ -302,17 +309,17 @@ const handleClose = (event) => {
 
 
         <Dialog
-        open={permisioon}
+        open={open}
         onClose={handleClose}
     >
         
          <div className='d-flex  vh-70 justify-content-center align-items-center'>
             <div className='border bg-light p-5'>
               <button className='btn ' onClick={handleClose}>
-                Agree
+              Denied
                 </button>  
-                <button className='btn ' onClick={handleClose}>
-                Denied
+                <button className='btn ' onClick={handleAccept}>
+                Agree
                 </button>     
                 
                     </div>
