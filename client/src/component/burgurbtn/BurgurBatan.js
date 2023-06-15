@@ -83,7 +83,7 @@ const handleHover = (index) => {
     <>
     {index === 6 ? (
         <div className="dropdown " >
-          <a className="dropdown-toggle" style={{border:"none",fontSize:'25px' ,color:"#001f5f"}} >
+          <a className="dropdown-toggle" href='!' style={{border:"none",fontSize:'25px' ,color:"#001f5f"}} >
             Diploma
           </a>
   

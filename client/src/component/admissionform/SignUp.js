@@ -12,7 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import "./form.scss"
 import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
-import { Dialog, Input, Typography } from '@mui/material';
+import { Dialog, Input } from '@mui/material';
 
 
 
@@ -176,7 +176,7 @@ const handleAccept = () => {
                         <div class="form-group">
 
   <div class="text-center">
-    <img src={file ||"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFrUbjn8k0GKrwRH_ibGTGlkoH3eLw9EZz6A&usqp=CAU" } id="imagePreview"  class="img-thumbnail rounded-circle" style={{maxWidth: "50px", maxHeight: "50px"}}/>
+    <img src={file ||"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFrUbjn8k0GKrwRH_ibGTGlkoH3eLw9EZz6A&usqp=CAU" } id="imagePreview"  class="img-thumbnail rounded-circle" alt='#' style={{maxWidth: "50px", maxHeight: "50px"}}/>
   </div>
 </div>
 

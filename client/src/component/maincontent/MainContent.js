@@ -44,7 +44,7 @@ const MainContent = () => {
   const fetchCoursedata = async () => {
     
     axios
-      .get(`${process.env.REACT_APP_API_URL_LOCAL}/getNewBytype?type=exam`)
+      .get(`${process.env.REACT_APP_API_URL_DEV}/getNewBytype?type=exam`)
       .then((res) => {
         setNewsData(res.data.data);
         console.log(res.data);
@@ -515,14 +515,6 @@ const MainContent = () => {
         </div>
 
         <marquee className="marq" bgcolor="black" direction="left" loop="">
-
-          {/* 
-          <a href="!"> ENROLL NOW FOR CMS & ED</a>
-          <a href="!">ENROLL NOW FOR SANITARY INSPECTOR</a>
-          <a href="!">ENROLL NOW FOR X-RAY TECHNICIAN</a>
-          <a href="!">ENROLL NOW FOR DIETICIAN</a>
-          <a href="!">ENROLL NOW FOR DIPLOMA IN PHYSIOTHERAPY</a>
-          <a href="!">ENROLL NOW FOR COMMUNITY HEALTH WORKER</a> */}
           {newsData.map((item)=>{
             return (
 <a href="!">{item.descripstion}</a>
@@ -537,18 +529,18 @@ const MainContent = () => {
           <div className="one">
             <div className="menu">
               <h2>Menu</h2>
-              <a className='visible-class' onClick={() => handeContentChange("mission")}> Mission & Vision</a>
-              <a className='visible-class' onClick={() => handeContentChange("objective")}>Aim & Objective</a>
-              <a  className='visible-class' onClick={()=> handeContentChange("ourscope")}>Our Scope</a>
+              <a className='visible-class' href='!' onClick={() => handeContentChange("mission")}> Mission & Vision</a>
+              <a className='visible-class' href='!' onClick={() => handeContentChange("objective")}>Aim & Objective</a>
+              <a  className='visible-class' href='!' onClick={()=> handeContentChange("ourscope")}>Our Scope</a>
             
               {!course && <a target='blank' onClick={() => setCourse(true)}>Course Details</a>}
               {course &&
                 <>
-                  <a target='blank' onClick={() => setCourse(false)}>Course Details</a>
+                  <a target='blank' href='!' onClick={() => setCourse(false)}>Course Details</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href="" style={{ fontSize: '1.8vh' }}> Diploma</a></li>
-                    <li style={{ width: '9rem' }}><a href="" style={{ fontSize: '1.8vh' }}> UG-graduation </a></li>
+                    <li style={{ width: '9rem' }}><a href="!" style={{ fontSize: '1.8vh' }}> Diploma</a></li>
+                    <li style={{ width: '9rem' }}><a href="!" style={{ fontSize: '1.8vh' }}> UG-graduation </a></li>
                     <li style={{ width: '9rem' }}><a href="/paytm" style={{ fontSize: '1.8vh' }}> PG-Post-graduation  </a></li>
                   </ul>
 
@@ -697,11 +689,11 @@ const MainContent = () => {
                 </>
               }
 
-              {!Prospectus && <a target='blank' onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
+              {!Prospectus && <a target='blank' href='!' onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
 
               {Prospectus &&
                 <>
-                  <a target='blank' onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
+                  <a target='blank' href='!' onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={Brocher} style={{ fontSize: '1vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
@@ -714,7 +706,7 @@ const MainContent = () => {
 
               {international &&
                 <>
-                  <a target='blank' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
+                  <a target='blank' href='!' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={AICVPS} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> AICVPS </a></li>
@@ -733,24 +725,24 @@ const MainContent = () => {
             <h2>Notice Board</h2>
             <div direction="up" className="marquee" >
               <div className="marquee-content">
-                <a href={img1}>CMS & ED GOVT. RES 1</a>
-                <a href={img2}>CMS & ED GOVT. RES 2</a>
-                <a href={img3}>CMS & ED GOVT. RES 3</a>
-                <a href={img4}>CMS & ED GOVT. RES 4</a>
-                <a href={img5}>CMS & ED GOVT. RES 5</a>
-                <a href={img6}>CMS & ED GOVT. RES 6</a>
-                <a href={img7}>CMS & ED GOVT. RES 7</a>
-                <a href={img8}>CMS & ED GOVT. RES 8</a>
-                <a href={img9}>CMS & ED GOVT. RES 9</a>
-                <a href={img10}>CMS & ED GOVT. RES 10</a>
-                <a href={img11}>CMS & ED GOVT. RES 11</a>
-                <a href={img12}>CMS & ED GOVT. RES 12</a>
-                <a href={img13}>CMS & ED GOVT. RES 13</a>
-                <a href={img14}>CMS & ED GOVT. RES 14</a>
-                <a href={img15}>CMS & ED GOVT. RES 15</a>
-                <a href={img16}>CMS & ED GOVT. RES 16</a>
-                <a href={img17}>CMS & ED GOVT. RES 17</a>
-                <a href={img18}>CMS & ED GOVT. RES 18</a>
+                <a   download="RES1-file.png" href={img1}>CMS & ED GOVT. RES 1</a>
+                <a download="GOVT-RES-file1.png" href={img2}>CMS & ED GOVT. RES 2</a>
+                <a download="GOVT-RES-file2.png" href={img3}>CMS & ED GOVT. RES 3</a>
+                <a download="GOVT-RES-file3.png" href={img4}>CMS & ED GOVT. RES 4</a>
+                <a download="GOVT-RES-file4.png" href={img5}>CMS & ED GOVT. RES 5</a>
+                <a download="GOVT-RES-file5.png" href={img6}>CMS & ED GOVT. RES 6</a>
+                <a download="GOVT-RES-file6.png" href={img7}>CMS & ED GOVT. RES 7</a>
+                <a download="GOVT-RES-file7.png" href={img8}>CMS & ED GOVT. RES 8</a>
+                <a download="GOVT-RES-file8.png" href={img9}>CMS & ED GOVT. RES 9</a>
+                <a download="GOVT-RES-file9.png" href={img10}>CMS & ED GOVT. RES 10</a>
+                <a download="GOVT-RES-file10.png" href={img11}>CMS & ED GOVT. RES 11</a>
+                <a download="GOVT-RES-file11.png" href={img12}>CMS & ED GOVT. RES 12</a>
+                <a download="GOVT-RES-file12.png" href={img13}>CMS & ED GOVT. RES 13</a>
+                <a download="GOVT-RES-file13.png" href={img14}>CMS & ED GOVT. RES 14</a>
+                <a download="GOVT-RES-file14.png" href={img15}>CMS & ED GOVT. RES 15</a>
+                <a download="GOVT-RES-file15.png" href={img16}>CMS & ED GOVT. RES 16</a>
+                <a download="GOVT-RES-file16.png" href={img17}>CMS & ED GOVT. RES 17</a>
+                <a download="GOVT-RES-file17.png" href={img18}>CMS & ED GOVT. RES 18</a>
               </div>
               <div></div>
 
@@ -765,60 +757,6 @@ const MainContent = () => {
 
             <div className="w3-content w3-display-container bottom-crowsel"> 
 
-           {/* <div>
-
-
-           <div style={{fontSize:'20px',     display: "flex"}}> <img alt='!' className="mySlidess" src={require('../../files/Slide4.PNG')} style={{ width: "65%" }} />Eligibility : 12th <br></br> Duration : = 1 Y & 2Y <br></br>Hurry Up..!<br></br>Limited Seats Available</div>
-
-
-           </div> */}
-           {/* { src: require('../Images/volun3-Narayan Mishra.png'), description: 'Description 48' }, */}
-           {/* <img alt='!' className="mySlidess" { src : require('../../files/Slide2 (3).PNG'),description:"lkdfkldsajflksdlkfsdlklksdajaf"} style={{ width: "100%" }} /> */}
-{/*       
-              <img alt='!' className="mySlidess" src={require('../../files/Slide5.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide6.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide7.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide8.PNG')} style={{ width: "100%" }} />  */}
-               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide9.PNG')} style={{ width: "100%" }} />  */}
-               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide10.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide11.PNG')} style={{ width: "100%" }} />  */}
-              {/* <img alt='!' className="mySlidess" src={require('../../files/Slide12.PNG')} style={{ width: "100%" }} />  */}
-               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide13.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide14.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide15.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide16.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide17.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide18.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide19.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide20.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide21.PNG')} style={{ width: "100%" }} />  */}
-               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide22.PNG')} style={{ width: "100%" }} />  */}
-               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide23.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide24.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide25.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide26.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide27 (1).PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide28.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide29.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide30.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide31 (1).PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide32.PNG')} style={{ width: "100%" }} />  */}
-               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide33.PNG')} style={{ width: "100%" }} />  */}
-              {/* <img alt='!' className="mySlidess" src={require('../../files/Slide34.PNG')} style={{ width: "100%" }} /> */}
-              {/* <img alt='!' className="mySlidess" src={require('../../files/Slide35.PNG')} style={{ width: "100%" }} />  */}
-               {/* <img alt='!' className="mySlidess" src={require('../../files/Slide36.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide37.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide38.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide39.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide40.PNG')} style={{ width: "100%" }} />
-
-              <img alt='!' className="mySlidess" src={require('../../files/Slide41.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide42.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide43.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide44.PNG')} style={{ width: "100%" }} />
-              <img alt='!' className="mySlidess" src={require('../../files/Slide45.PNG')} style={{ width: "100%" }} /> 
-
-              <img alt='!' className="mySlidess" src={require('../../files/Slide46.PNG')} style={{ width: "100%" }} />  */}
                    <div style={{ fontSize: '20px', display: 'flex' }}>
                   <img alt='!' className="mySlidess" src={currentImage.src} style={{ width: '80%' }} />
                        <p style={{ fontSize: '2vh' ,fontFamily:'sans-serif'}}>Eligibility : 12th (HSC) & Above <br></br>

@@ -11,7 +11,7 @@ function PressRelease() {
   const fetchCoursedata = async () => {
     
     axios
-      .get(`${process.env.REACT_APP_API_URL_LOCAL}/getNewBytype?type=news`)
+      .get(`${process.env.REACT_APP_API_URL_DEV}/getNewBytype?type=news`)
       .then((res) => {
         setNewsData(res.data.data);
         console.log(res.data);

@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../navbar/NavBar'
 
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAuthentication } from '../../store/store'

@@ -1,6 +1,7 @@
 import React from 'react'
 import pdf1 from '../../pdf/Afflation.pdf'
 import pdf2 from '../../pdf/ODLEquivalenceDegrees.pdf'
+import { Link } from 'react-router-dom'
 
 
 const Footer = () => {
@@ -17,7 +18,7 @@ const Footer = () => {
                             <h2 className='footerH2'>Current Affairs</h2>
                             <a href={pdf2} target='blank'><h6 style={{ color: 'whitesmoke', border: 'none' }}>IMP Govt. Decision(UGC)</h6></a>
                             <h6 href="mission and vision.html" style={{ color: 'whitesmoke' }}>Devloped BY</h6>
-                            <a href='https://prabhavatids.com/'> <img src={require('../../images/Prabhavati Logo FINEL PNG ORANGE.png')} style={{ height: '65px' }} /></a>
+                            <a href='https://prabhavatids.com/'> <img src={require('../../images/Prabhavati Logo FINEL PNG ORANGE.png')} alt='!' style={{ height: '65px' }} /></a>
 
                             <h6 style={{ color: 'whitesmoke', marginTop: '0.6rem' }}>E-Mail : info@prabhavatids.com</h6>
                             <h6 style={{ color: 'whitesmoke' }}>Developers (LS,MK,jK)</h6>
@@ -42,26 +43,17 @@ const Footer = () => {
                     <div className="info_main">
                         <div className="policy">
                             <h2 className='footerH2'>Policy</h2>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms & Conditions</a>
-                            <a href="mission and vision.html">Our Mission</a>
-                            <a href="aboutUs.html">About Us</a>
+                            <Link to="/PravicyPolisy">Privacy Policy</Link>
+                            <Link to="/AboutUs">Terms & Conditions</Link>
+                            <Link to="/DirectorDesk">Our Mission</Link>
+                            <Link to="/AboutUs">About Us</Link>
                         </div>
-                        {/* <div className="info">
-                    <h2>Info</h2>
-                    <a href="#">Swarajya Paramedical Institute</a>
-                    <a href="#">Address</a>
-                    <a href="#">Email</a>
-                    <a href="#">Contact No.</a>
-                         </div> */}
+                  
                     </div>
                 </div>
 
                 <div className="social">
-                    {/* <div className="cr">
-                <p>Copyright © 2022 Swarajya Paramedical Institute. All India Council For Vocational & Paramedical Science. </p><br/>
-                <p>All Rights Reserved</p>
-            </div> */}
+              
                     <div className="socio-links" >
                         <a href="#"> <i className="bi bi-facebook fb"></i></a>
                         <a href="#"> <i className="bi bi-twitter tr"></i></a>

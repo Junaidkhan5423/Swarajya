@@ -7,7 +7,6 @@ import { convertIntoBase64 } from '../profilePic/convert'
 
 const AddExamDate = (props) => {
     const { open, handleClose } = props
-    const [type, setType] = useState("")
     const [file, setFile] = useState(null)
 
 

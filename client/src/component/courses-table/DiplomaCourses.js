@@ -2,12 +2,8 @@ import React, { useEffect, useState } from 'react'
 import AppDataGrid from '../../utils/AppDataGrid'
 import axios from 'axios';
 import { Box, Typography } from '@mui/material';
-import { useTheme } from '@emotion/react';
-import { tokens } from '../../theme';
 
 function DiplomaCourses() {
-  const theme = useTheme();
-  const colors = tokens(theme.mode);
     const columns = [
         {
           field: "name",

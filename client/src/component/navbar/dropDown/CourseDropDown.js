@@ -38,11 +38,7 @@ export default function MenuListComposition() {
             setOpen(false);
         }
     }
-    // const navigateTosyllybus =(index)=>{
-    // navigate(`../../../paramedicalSyllabus/${index}.pdf`)
-    // }
-
-    // return focus to the button when we transitioned from !open -> open
+ 
     const prevOpen = React.useRef(open);
     React.useEffect(() => {
         if (prevOpen.current === true && open === false) {
@@ -54,13 +50,7 @@ export default function MenuListComposition() {
 
     return (
         <Stack direction="row" spacing={2} style={{zIndex:1}}>
-            {/* <Paper>
-        <MenuList>
-          <MenuItem>Profile</MenuItem>
-          <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
-        </MenuList>
-      </Paper> */}
+  
             <div>
                 <Button
                     style={{

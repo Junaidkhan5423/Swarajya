@@ -44,7 +44,7 @@ const Users = () => {
   };
 const fetchNewData = async () => {
   axios
-  .get(`${process.env.REACT_APP_API_URL_LOCAL}/getAllNews`)
+  .get(`${process.env.REACT_APP_API_URL_DEV}/getAllNews`)
   .then((res) => {
     // setIsLoading(false)
 
