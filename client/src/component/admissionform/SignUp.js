@@ -12,7 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import "./form.scss"
 import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
-import { Dialog, Input } from '@mui/material';
+import { Dialog, Input, Typography } from '@mui/material';
 
 
 
@@ -73,8 +73,12 @@ const fetchCoursedata = async () => {
         })
     }
     const onCheck = (event) => {
-        console.log(event);
+        console.log(event.target.checked);
         setOpen(event.target.checked)
+        if(!event.target.checked){
+            setPermission(event.target.checked)
+        }
+        
     }
 const handleClose = () => {
 
@@ -290,6 +294,7 @@ const handleAccept = () => {
       type="checkbox"
       id="checkbox"
       name="checkbox"
+      checked={permisioon}
       onChange={onCheck}
      
     />
@@ -315,10 +320,12 @@ const handleAccept = () => {
         
          <div className='d-flex  vh-70 justify-content-center align-items-center'>
             <div className='border bg-light p-5'>
-              <button className='btn ' onClick={handleClose}>
+
+                <p style={{fontSize:'2vh'}}>affirm that I have read, understood, and agree to the terms and conditions stated herein. I understand that this declaration will form a binding agreement between myself and the Distance Education Institute throughout my enrollment in the program. & Fees Once Paid Is Non Refundable in Any Circumstances.</p>
+              <button className='btn btn-secondary mr-5' onClick={handleClose}>
               Denied
                 </button>  
-                <button className='btn ' onClick={handleAccept}>
+                <button className='btn btn-primary' onClick={handleAccept}>
                 Agree
                 </button>     
                 
