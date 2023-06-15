@@ -77,9 +77,9 @@ const fetchNewData = async () => {
   },[]);
 
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(()=>{
     fetchData();
+     // eslint-disable-next-line
   },[])
   const handleEdit = (e) => {
     console.log(e);

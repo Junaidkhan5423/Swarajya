@@ -45,9 +45,10 @@ const fetchCoursedata = async () => {
         console.log(base64);
         setFile(base64)
     }
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
     useEffect(()=>{
         fetchCoursedata()
+         // eslint-disable-next-line
     },[])
     const handleChange = (event) => {
         if (event.target.value === "Mahashtra") {

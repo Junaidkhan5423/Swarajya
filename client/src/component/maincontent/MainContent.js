@@ -157,10 +157,11 @@ const MainContent = () => {
     dots[slideIndex - 1].className += "active";
     setTimeout(showSlides, 1000);
   }
- // eslint-disable-next-line
+
   useEffect(() => {
     showSlides();
     carousel();
+     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
