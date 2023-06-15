@@ -45,7 +45,7 @@ const fetchCoursedata = async () => {
         console.log(base64);
         setFile(base64)
     }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=>{
         fetchCoursedata()
     },[])

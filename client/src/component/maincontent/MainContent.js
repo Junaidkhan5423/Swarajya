@@ -157,9 +157,9 @@ const MainContent = () => {
     dots[slideIndex - 1].className += "active";
     setTimeout(showSlides, 1000);
   }
+ // eslint-disable-next-line
   useEffect(() => {
     showSlides();
-
     carousel();
   }, []);
 
@@ -173,6 +173,7 @@ const MainContent = () => {
     };
 
   }, );
+  
 
   const currentImage = images[currentImageIndex];
 
@@ -189,23 +190,7 @@ const MainContent = () => {
 
         <div className="slideshow-container" style={{ marginTop: "1rem" }}>
 
-          {/* <div className="mySlides fade">
 
-              <img alt='!' src={require('../../files/1.jpeg')} style={{ width: "100%" }} />
-
-           </div>
-
-           <div className="mySlides fade">
-
-             <img alt='!' src={require('../../files/2.jpeg')} style={{ width: "100%" }} />
-
-           </div>
-
-           <div className="mySlides  fade">
-
-             <img alt='!' src={require('../../files/3.jpeg')} style={{ width: "100%" }} />
-
-           </div> */}
           <div className="mySlides fade">
 
             <img alt='!' src={require('../../MainContainImages/3.PNG')} style={{ width: "100%" }} />
@@ -514,16 +499,20 @@ const MainContent = () => {
 
         </div>
 
-        <marquee className="marq" bgcolor="black" direction="left" loop="">
+        <div class="list-container">
+        <ul class="list">
           {newsData.map((item)=>{
             return (
-<a href="!">{item.descripstion}</a>
+<li >{item.descripstion}</li>
             )
           })
 
           }
+              <li>Item 2</li>
+    <li>Item 3</li>
+          </ul>
 
-        </marquee>
+        </div>
 
         <div className="content_main">
           <div className="one">
@@ -533,10 +522,10 @@ const MainContent = () => {
               <a className='visible-class' href='!' onClick={() => handeContentChange("objective")}>Aim & Objective</a>
               <a  className='visible-class' href='!' onClick={()=> handeContentChange("ourscope")}>Our Scope</a>
             
-              {!course && <a target='blank' onClick={() => setCourse(true)}>Course Details</a>}
+              {!course && <a target='blank' href='!' onClick={() => setCourse(true)}>Course Details</a>}
               {course &&
                 <>
-                  <a target='blank' href='!' onClick={() => setCourse(false)}>Course Details</a>
+                  <a target='blank' href='!'  onClick={() => setCourse(false)}>Course Details</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href="!" style={{ fontSize: '1.8vh' }}> Diploma</a></li>
@@ -549,12 +538,10 @@ const MainContent = () => {
 
               <Link to="/ELearning">E-Learning & Self Study Mode</Link>
             </div>
-
             <div className="institution">
               <h2>Institution</h2>
               <a href="https://forms.gle/xJiHqhQhLcKwjxxp9" target='_blank' rel="noreferrer">Apply For From Collection Center(ACC) </a>
               <a href=" https://forms.gle/scE8iviYy8quuVdR8" target='_blank' rel="noreferrer">Apply For Online Faculty</a>
-
               <a href="!">Jobs & Advertisement </a>
               <Link to="/PressRelease">Press Release</Link>
             </div>
@@ -676,10 +663,10 @@ const MainContent = () => {
 
               <Link to={"/admission"}>Online Enrollment</Link>
 
-              {!visible && <a target='blank' onClick={() => setVisibile(true)} className='visible-class' >Internship Reference</a>}
+              {!visible && <a target='blank' href='!' onClick={() => setVisibile(true)} className='visible-class' >Internship Reference</a>}
               {visible &&
                 <>
-                  <a target='blank' onClick={() => setVisibile(false)} className='visible-class'>Internship Reference</a>
+                  <a target='blank' href='!' onClick={() => setVisibile(false)} className='visible-class'>Internship Reference</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={English} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> 1 .English </a></li>
@@ -696,22 +683,22 @@ const MainContent = () => {
                   <a target='blank' href='!' onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href={Brocher} style={{ fontSize: '1vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
-                    <li style={{ width: '9rem' }}><a href="" style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
-                    <li style={{ width: '9rem' }}><a href={sikkim} style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
+                    <li style={{ width: '9rem' }}><a href={Brocher} download='AICVPS.pdf' style={{ fontSize: '1vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
+                    <li style={{ width: '9rem' }}><a href={Asian} download='Asian.pdf' style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
+                    <li style={{ width: '9rem' }}><a href={sikkim} download='Sikkim.pdf' style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
                   </ul>
                 </>
               }
-              {!international && <a target='blank' onClick={() => setinternational(true)} className='visible-class'>Offline Admission Form</a>}
+              {!international && <a target='blank' href='!' onClick={() => setinternational(true)} className='visible-class'>Offline Admission Form</a>}
 
               {international &&
                 <>
                   <a target='blank' href='!' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href={AICVPS} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> AICVPS </a></li>
-                    <li style={{ width: '9rem' }}><a href={Asian} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
-                    <li style={{ width: '9rem' }}><a href={offlinesikkim} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
+                    <li style={{ width: '9rem' }}><a href={AICVPS} download='AICVPS.pdf' style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> AICVPS </a></li>
+                    <li style={{ width: '9rem' }}><a href={Asian} download='Asian.pdf' style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
+                    <li style={{ width: '9rem' }}><a href={offlinesikkim} download='Sikkim.pdf' style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
                   </ul>
                 </>
               }

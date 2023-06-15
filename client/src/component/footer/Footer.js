@@ -36,7 +36,7 @@ const Footer = () => {
                             <a href="mission and vision.html">Internship Vacancies</a>
 
 
-                            <a href="#">Prospectus</a>
+                            <a href="1">Prospectus</a>
                         </div>
                     </div>
 
@@ -55,10 +55,10 @@ const Footer = () => {
                 <div className="social">
               
                     <div className="socio-links" >
-                        <a href="#"> <i className="bi bi-facebook fb"></i></a>
-                        <a href="#"> <i className="bi bi-twitter tr"></i></a>
-                        <a href="#" ><i className="bi bi-instagram ig"></i></a>
-                        <a href="#"> <i className="bi bi-youtube yt"></i></a>
+                        <a href="!"> <i className="bi bi-facebook fb"></i></a>
+                        <a href="!"> <i className="bi bi-twitter tr"></i></a>
+                        <a href="!" ><i className="bi bi-instagram ig"></i></a>
+                        <a href="!"> <i className="bi bi-youtube yt"></i></a>
                     </div>
                 </div>
 

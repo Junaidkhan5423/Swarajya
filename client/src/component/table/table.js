@@ -25,12 +25,11 @@ const Users = () => {
 
   const [studentDAta, setStudentData] = useState([]);
 
+// eslint-disable-next-line
   const fetchData = async () => {
     setIsLoading(true)
-
  await getUserAll(token).then((res) => {
       setIsLoading(false)
-      // console.log("daa", res);
       setStudentData(res.data);
     });
   };
@@ -70,11 +69,18 @@ const fetchNewData = async () => {
   //   fetchData();
   // }
 
+
+ // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchCoursedata();
-    fetchData();
     fetchNewData()
   },[]);
+
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(()=>{
+    fetchData();
+  },[])
   const handleEdit = (e) => {
     console.log(e);
   };
