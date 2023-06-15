@@ -57,14 +57,9 @@
     top: 28px;
     left: 5px;
   }
-  
-  
-  
-  
-  
   /* The side navigation menu */
   .sidenav {
-    height: 75%; /* 100% Full-height */
+    height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     /* z-index: 9999; */
     position: fixed; /* Stay in place */
@@ -108,7 +103,6 @@
     display: flex;
     justify-content: end;
     position: relative;
-    bottom: 3vh;
   }
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {

@@ -13,7 +13,7 @@ export  const  BurgurButton = ( props )=> {
     { name: 'Director Desk', href: 'DirectorDesk' },
     { name: 'Pravicy Policy', href: 'PravicyPolisy' },
      { name: 'ContactUs', href: 'ContactUs' },
-    { name: 'Diploma ', href: 'Diploma' },
+    { name: 'Course ', href: 'Diploma' },
     { name: 'Student login', href: 'Studentlogin' },  
     { name: 'Press Realese', href: 'PressRelease' },  
   ];
@@ -77,10 +77,47 @@ const handleHover = (index) => {
                    </label>
                 </div>
 
-                <div id="mySidenav" className="sidenav" style={{ top: "27vh"}}>
+                <div id="mySidenav" className="sidenav" >
   {/* <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a> */}
   {navigation.map((item, index) => (
+    <>
+    {index === 6 ? (
+        <div className="dropdown " >
+          <a className="dropdown-toggle" style={{border:"none",fontSize:'25px' ,color:"#001f5f"}} >
+            Diploma
+          </a>
+  
+            <div className="dropdown-content">
+            <Link
+                  to={`/diploma`}
+               
+                  key={item.name}
+                 onClick={()=> setCurrentState(false)}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                 Diploma
+                </Link>
                 <Link
+                  to={`/pgCourse`}
+                  onClick={()=> setCurrentState(false)}
+                  key={item.name}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                PG Degree
+                </Link>
+                <Link
+                  to={`/ugCourse`}
+                  key={item.name}
+                  onClick={()=> setCurrentState(false)}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                  UG Degree
+                </Link>
+            </div>
+
+        </div>
+      ): (
+        <Link
                   to={`/${item.href}`}
                   style={{
                    background: index === current && "grey",color:'#001f5f'
@@ -92,7 +129,13 @@ const handleHover = (index) => {
                 >
                   {item.name}
                 </Link>
+      )}
+                
+                
+                </>
               ))}
+
+
 
 
 

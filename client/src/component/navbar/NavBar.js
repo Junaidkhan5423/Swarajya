@@ -13,6 +13,7 @@ const NavBar = () => {
     return (
         <div style={{ width: '100%' }}>
             <header className="header_main">
+       
                  <div > 
                     {isNonMobile ? (
                          <img src={require("../../images/LAIQEU.png")} style={{maxWidth:'100%' , height:"355px"}} alt='!' /> 
@@ -24,13 +25,13 @@ const NavBar = () => {
                     }
             
                  </div>
+               
+                  
                  { !isNonMobile && (
   <BurgurButton />
                  )
 
                  }
-                  
-
 
             </header>
 

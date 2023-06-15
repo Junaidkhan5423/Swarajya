@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import AppDataGrid from '../../utils/AppDataGrid'
 import axios from 'axios';
+import { Box, Typography } from '@mui/material';
 
 function UgCourse() {
   const columns = [
     {
       field: "name",
       headerName: "Name",
-      width: 200,
+      width: 120,
     },
-    { field: "fullName", headerName: "Full Name", width: 200 },
-    { field: "specialition", headerName: "Specialition", width: 200 },
+    { field: "fullName", headerName: "Full Name", width: 120 },
+    { field: "specialition", headerName: "Specialition", width: 120 },
     {
       field: "duration",
       headerName: "Duration",
-      width: 200,
+      width: 120,
     },
     {
       field: "fees",
       headerName: "Fees",
-      width: 180,
+      width: 120,
 
     },
     {
@@ -46,7 +47,20 @@ function UgCourse() {
   };
   return (
     <div>
-
+    <Box>
+      <Typography
+        variant="h2"
+        color={"#141414"}
+        fontWeight="bold"
+        textAlign={'center'} 
+        sx={{ m: "0 0 5px 0" }}
+      >
+       UG
+      </Typography>
+      <Typography variant="h5" textAlign={'center'} color={"blue"}>
+       Course
+      </Typography>
+    </Box>
       <AppDataGrid studentDAta={studentDAta} columns={columns} />
     </div>
   )

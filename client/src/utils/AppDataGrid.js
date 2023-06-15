@@ -1,6 +1,6 @@
 
 import { useTheme } from '@emotion/react';
-import {  Box } from '@mui/material'
+import {  Box, useMediaQuery } from '@mui/material'
 import { grey } from '@mui/material/colors';
 import { DataGrid } from '@mui/x-data-grid'
 import {  gridClasses } from '@mui/x-data-grid';
@@ -9,6 +9,7 @@ import React from 'react'
 import { tokens } from '../theme';
 
 function AppDataGrid( props) {
+  const isNonMobile = useMediaQuery("(max-width: 600px)");
   const theme = useTheme();
   const colors = tokens(theme.mode);
   
@@ -17,9 +18,9 @@ function AppDataGrid( props) {
   <Box
     m="40px 0 0 0"
     height="75vh"
-    paddingLeft="5rem"
-    paddingRight="5rem"
-    maxWidth={props.maxWidth ||'100%'}
+    paddingLeft={isNonMobile ? "1rem" :"5rem"}
+    paddingRight={isNonMobile ? "1rem" :"5rem"}
+    paddingBottom={"1rem"}
     sx={{
       "& .MuiDataGrid-root": {
         border: "none",
@@ -45,7 +46,7 @@ function AppDataGrid( props) {
         color: `#b7ebde !important`,
       },
       "& .MuiDataGrid-row": {
-        background: colors.greenAccent[100]
+        background: colors.grey[900]
       },
       "& .MuiDataGrid-row:hover": {
         background: colors.grey[200]

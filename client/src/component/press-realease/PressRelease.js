@@ -5,7 +5,7 @@ function PressRelease() {
   const [newsData,setNewsData]=useState([])
 
   const myStyle = {
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
   };
 
   const fetchCoursedata = async () => {
@@ -23,7 +23,7 @@ function PressRelease() {
   return (
 
 <main class="mt-4 " >
-    <div class="container" >
+    <div class="container p-4" >
       {newsData.map((item) =>{
         return (
           <>
