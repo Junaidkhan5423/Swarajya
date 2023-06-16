@@ -27,6 +27,9 @@ import UgCourse from "./component/courses-table/UgCourses";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import {  useMode } from "./theme";
 import PressRelease from "./component/press-realease/PressRelease";
+import MissionAndVision from "./component/contactus/MissionAndVision";
+import AimsAndObjectives from "./component/contactus/AimsAndObjectives"
+import OurScope from "./component/contactus/OurScope"
 
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
@@ -56,6 +59,11 @@ function App() {
           <Route path='/ugCourse' element={<UgCourse/>} />
           <Route path='/pgCourse' element={<PgCourse/>} />
           <Route path="/PressRelease" element={<PressRelease/>} />  
+          <Route path="/MissionAndVision" element={<MissionAndVision/>} />
+          <Route path="/AimsAndObjectives" element={<AimsAndObjectives/>}/>  
+          <Route path="/OurScope" element={<OurScope/>}/>  
+
+          OurScope
         </Route>
         <Route element={<AdminProtected />}>
           <Route path="/table" element={<Users />} />

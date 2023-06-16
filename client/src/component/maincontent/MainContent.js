@@ -194,297 +194,297 @@ const MainContent = () => {
 
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/3.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/3.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/25.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/25.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/27.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/27.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/30.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/30.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/31.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/31.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/32.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/32.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/33.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/33.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/34.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/34.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/35.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/35.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/36.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/36.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/37.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/37.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/38.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/38.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/39.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/39.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/40.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/40.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/41.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/41.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/42.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/42.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/43.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/43.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/44.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/44.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/45.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/45.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/46.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/46.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/47.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/47.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/48.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/48.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/49.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/49.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/50.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/50.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/51.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/51.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/52.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/52.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/53.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/53.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/54.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/54.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/55.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/55.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/56.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/56.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/57.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/57.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/58.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/58.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/59.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/59.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/60.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/60.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/61.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/61.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/62.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/62.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide7.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide7.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide8.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide8.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide9.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide9.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide10.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide10.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide11.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide11.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide12.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide12.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide13.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide13.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide14.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide14.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide15.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide15.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide16.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide16.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide17.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide17.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide18.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide18.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/27.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/27.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide19.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide19.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide20.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide20.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide21.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide21.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide22.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide22.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide23.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide23.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide24.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide24.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide25.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide25.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide26.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide26.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide27.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide27.PNG')} style={{ width: "100%" }} />
 
           </div>
           <div className="mySlides fade">
 
-            <img alt='!' src={require('../../MainContainImages/Slide28.PNG')} style={{ width: "100%" }} />
+            <img alt='#' src={require('../../MainContainImages/Slide28.PNG')} style={{ width: "100%" }} />
 
           </div>
 
@@ -519,14 +519,14 @@ const MainContent = () => {
           <div className="one">
             <div className="menu">
               <h2>Menu</h2>
-              <a className='visible-class' href='!' onClick={() => handeContentChange("mission")}> Mission & Vision</a>
-              <a className='visible-class' href='!' onClick={() => handeContentChange("objective")}>Aim & Objective</a>
-              <a  className='visible-class' href='!' onClick={()=> handeContentChange("ourscope")}>Our Scope</a>
+              <Link className='visible-class' to={'/MissionAndVision'}> Mission & Vision</Link>
+              <Link className='visible-class' to={'/AimsAndObjectives'}>Aim & Objective</Link>
+              <Link  className='visible-class' to={'/OurScope'}>Our Scope</Link>
             
-              {!course && <a target='blank' href='!' onClick={() => setCourse(true)}>Course Details</a>}
+              {!course && <a target='blank' href='#' onClick={() => setCourse(true)}>Course Details</a>}
               {course &&
                 <>
-                  <a target='blank' href='!'  onClick={() => setCourse(false)}>Course Details</a>
+                  <a target='blank' href='#'  onClick={() => setCourse(false)}>Course Details</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href="!" style={{ fontSize: '1.8vh' }}> Diploma</a></li>
@@ -552,85 +552,6 @@ const MainContent = () => {
             <div className='swarajya_info'>
               <h2>Swarajya Institute Of Distance Learning </h2>
               <p><b>Welcome to Swarajya Paramedical Institute.</b></p>
-              {mission ? (
-                <>   <main class="container mt-5">
-                  <h3>Mission</h3>
-                  <p>Our mission at the Swarajya Institute of Distance Learning is to provide accessible and high-quality education to students from all over the world. We aim to provide a flexible learning environment that caters to the diverse needs and interests of our students, and to equip them with the skills and knowledge necessary for personal and professional growth.</p>
-
-                  <h3>Vision</h3>
-                  <p>Our vision is to become a global leader in distance education, recognized for our commitment to excellence in teaching, research, and innovation. We strive to create a community of lifelong learners who are empowered to reach their full potential, and who contribute to the betterment of society. We believe that education is a fundamental human right, and that everyone should have access to quality education, regardless of their background or circumstances.</p>
-                </main></>
-              ) : objective ? (
-                <><main class="container mt-5">
-                  <h3>Aims and Objectives</h3>
-                  <ol>
-                    <li>
-                      <p>To provide accessible and affordable education to students from all over the world, regardless of their location, background or circumstances.</p>
-                    </li>
-                    <li>
-                      <p>To offer a wide range of courses and programs that are designed to meet the diverse needs and interests of our students, and to ensure that they have the knowledge and skills necessary for personal and professional growth.</p>
-                    </li>
-                    <li>
-                      <p>To use the latest technologies and teaching methods to provide a flexible and engaging learning experience that is tailored to the needs of each individual student.</p>
-                    </li>
-                    <li>
-                      <p>To provide students with access to experienced and qualified educators who are passionate about their subjects and who are dedicated to helping them achieve their academic and career goals.</p>
-                    </li>
-                    <li>
-                      <p>To create a supportive and inclusive learning community where students can connect with one another, share ideas and experiences, and collaborate on projects.</p>
-                    </li>
-                    <li>
-                      <p>To promote lifelong learning and to provide students with the tools and resources necessary to continue learning and growing throughout their lives.</p>
-                    </li>
-                    <li>
-                      <p>To foster a culture of innovation and research, and to contribute to the advancement of knowledge in our respective fields.</p>
-                    </li>
-                  </ol>
-                  <p>Overall, our aims and objectives are centered around providing an exceptional learning experience to our students, empowering them with the knowledge and skills necessary to succeed in their chosen fields, and fostering a culture of excellence and innovation.</p>
-                </main>
-
-                  </>
-                    ) : ourscope ? (
-                      <><main class="container mt-5">
-                        <h3>Our Scope</h3>
-                        <ol>
-                          <li>
-                            <p>Self-Learning Education Has A Vast Scope In India, Given The Country's Huge Population, Diverse Cultures, And Varied Economic 
-                                    Conditions. Here Are Some Points To Consider:</p>
-                          </li>
-                          <li>
-                            <p>Accessibility: Self-Learning Education Can Reach Millions Of People Who Might Not Have Access To Traditional 
-                               Education Due To Factors Like Distance, Time, Or Financial Constraints. With The Increasing Penetration Of The Internet 
-                              And Mobile Devices, Online Education Platforms Have Become Accessible To People In Even Remote Areas Of The Country.</p>
-                          </li>
-                          <li>
-                            <p> Customization: Self-Learning Education Allows Learners To Customize Their Learning Experience According To Their 
-                                Needs And Interests. Learners Can Choose From A Variety Of Courses And Programs That Cater To Different Learning Styles And Preferences .</p>
-                          </li>
-                          <li>
-                            <p> Cost-Effective: Self-Learning Education Can Be Cost-Effective As It Eliminates The Need For Physical Infrastructure And Reduces The Cost Of Teaching. Learners Can Access High-Quality Content At A Fraction Of The Cost Of Traditional Education.</p>
-                          </li>
-                          <li>
-                            <p>Lifelong Learning: Self-Learning Education Promotes The Concept Of Lifelong Learning, Where Individuals Can Acquire 
-                              New Skills And Knowledge At Any Stage Of Their Lives. This Is Especially Relevant In India, Where Rapid Technological 
-                              Advancements And Changing Job Markets Require Individuals To Constantly Upgrade Their Skills.</p>
-                          </li>
-                          <li>
-                            <p> Employment Opportunities: Self-Learning Education Can Provide Learners With The Skills And Knowledge Required To 
-                                    Access Better Employment Opportunities. This Is Particularly Relevant In A Country Like India, Where There Is A 
-                                Significant Skills Gap In Certain Sectors Of The Economy.</p>
-                          </li>
-                          <li>
-                            <p>Overall, Self-Learning Education Has Immense Potential In India To Provide Accessible, Cost-Effective, And Personalized 
-                            Learning Opportunities To Individuals, And To Bridge The Skills Gap In The Economy..</p>
-                          </li>
-                        </ol>
-                
-                      </main>
-      
-                      </>
-
-                      ) : (
                 <>
                   <p>Swarajya Institute of Distance Learning in India, We Provide a Platform for those Student who are on Job, and want to continue their education in various sectors like, Paramedical, Traditional, Computer Science, Business Administration, Home Science, Life Science etc.</p>
                   <p>As Paramedical education has emerged as an essential component of the healthcare industry in India. With the increasing demand for healthcare services, the scope of paramedical education has also grown significantly in recent years. Today, paramedical education in India offers
@@ -651,23 +572,21 @@ const MainContent = () => {
                   <p>These courses equip students with the necessary knowledge and skills to perform a range of diagnostic, therapeutic, and supportive roles in the healthcare industry. The demand for paramedical professionals in India is expected to grow at a rapid pace in the coming years, as the healthcare industry continues to expand.</p>
                   <p>In conclusion, the scope of paramedical education in India is immense, with plenty of opportunities for students who wish to pursue a career in healthcare. With the increasing demand for healthcare services and the growing need for skilled healthcare professionals, paramedical education has become an attractive option for many students in India.</p>
                 </>
-              )
-
-              }
+         
 
             </div>
           </div>
           <div className="two">
             <div className="studentsec">
               <h2>Student</h2>
-              <Link to={"/admission"}>Student Login</Link>
+              <Link to={"/Studentlogin"}>Student Login</Link>
 
               <Link to={"/admission"}>Online Enrollment</Link>
 
-              {!visible && <a target='blank' href='!' onClick={() => setVisibile(true)} className='visible-class' >Internship Reference</a>}
+              {!visible && <a target='blank' href='#' onClick={() => setVisibile(true)} className='visible-class' >Internship Reference</a>}
               {visible &&
                 <>
-                  <a target='blank' href='!' onClick={() => setVisibile(false)} className='visible-class'>Internship Reference</a>
+                  <a target='blank' href='#' onClick={() => setVisibile(false)} className='visible-class'>Internship Reference</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={English} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> 1 .English </a></li>
@@ -677,11 +596,11 @@ const MainContent = () => {
                 </>
               }
 
-              {!Prospectus && <a target='blank' href='!' onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
+              {!Prospectus && <a target='blank' href='#' onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
 
               {Prospectus &&
                 <>
-                  <a target='blank' href='!' onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
+                  <a target='blank' href='#' onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={Brocher} download='AICVPS.pdf' style={{ fontSize: '1vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
@@ -690,11 +609,11 @@ const MainContent = () => {
                   </ul>
                 </>
               }
-              {!international && <a target='blank' href='!' onClick={() => setinternational(true)} className='visible-class'>Offline Admission Form</a>}
+              {!international && <a target='blank' href='#' onClick={() => setinternational(true)} className='visible-class'>Offline Admission Form</a>}
 
               {international &&
                 <>
-                  <a target='blank' href='!' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
+                  <a target='blank' href='#' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={AICVPS} download='AICVPS.pdf' style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> AICVPS </a></li>
@@ -703,7 +622,7 @@ const MainContent = () => {
                   </ul>
                 </>
               }
-              {/* <a href='!'>Offline Admission Form</a> */}
+              {/* <a href='#'>Offline Admission Form</a> */}
             </div>
           </div>
         </div>
@@ -746,7 +665,7 @@ const MainContent = () => {
             <div className="w3-content w3-display-container bottom-crowsel"> 
 
                    <div style={{ fontSize: '20px', display: 'flex' }}>
-                  <img alt='!' className="mySlidess" src={currentImage.src} style={{ width: '80%' }} />
+                  <img alt='#' className="mySlidess" src={currentImage.src} style={{ width: '80%' }} />
                        <p style={{ fontSize: '2vh' ,fontFamily:'sans-serif'}}>Eligibility : 12th (HSC) & Above <br></br>
                        <br></br>
                         Duration : Min 1 Year Max 4 Year</p>
