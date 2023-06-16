@@ -14,7 +14,7 @@ const Add = (props) => {
     function handleSubmit(e){
            e.preventDefault()
 
-           axios.post('https://swarajyabackend.onrender.com/addCourse',inputData)
+           axios.post(`${process.env.REACT_APP_API_URL_DEV}/addCourse`,inputData)
                  .then(res=>{
                     props.refetch()
                     navigate('/table')
