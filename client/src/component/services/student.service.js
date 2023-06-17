@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = process.env.REACT_APP_API_URL_DEV 
+const baseUrl = process.env.REACT_APP_API_URL_LOCAL 
 console.log(`${baseUrl}`,'baseUrl');
 export const postStudentData = async (values) => {
   try {
@@ -51,6 +51,17 @@ export const deletenewsByID = async (values) => {
     return await (
       await axios.get(
         `${baseUrl}/deleteNews?id=${values}`
+      )
+    ).data;
+  } catch (error) {
+    return { error };
+  }
+};
+export const deleteStudentById = async (values) => {
+  try {
+    return await (
+      await axios.get(
+        `${baseUrl}/deleteStudent?id=${values}`
       )
     ).data;
   } catch (error) {

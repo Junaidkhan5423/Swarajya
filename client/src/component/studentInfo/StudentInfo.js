@@ -131,7 +131,7 @@ function StudentInfo(props) {
                                     <h3 className="mb-0"><i className="far fa-clone pr-1"></i>Other Information</h3>
                                 </div>
                                 <div className="card-body pt-0">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href='/Payment'>Pay Fees</a> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Our Diploma, UG, & PG Programs are Based of Self Study Mode, We Wont Provide Any Source, Live Interaction or Lectures, But We Have Well Qualified Faculties, If You Need Any Help then You Can Hire Our Faculties As Per Specialization. If You Have Any Balance Fees Then You Can  <a href='/Payment'>Pay Fees</a>.</p>
                                 </div>
                             </div>
                         </div>

@@ -36,8 +36,6 @@ export default function BasicModal(props) {
         Edit
       </Button>
 
-      {console.log("This is previous data", previousData)}
-
       <Modal
         open={open}
         onClose={handleClose}

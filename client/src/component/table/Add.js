@@ -78,27 +78,27 @@ const Add = (props) => {
                 <form onSubmit={handleSubmit}>
 
                     <div  class="form-outline">
-                         <label htmlFor='name' >Name</label>
+                         <label htmlFor='name' >Course Name in Short</label>
                         <input type="text" name="name" class="form-control"  
                             onChange={e => setinputData({ ...inputData, name: e.target.value})} />
                     </div>
                     <div class="form-outline">
-                        <label htmlFor='name' >fullName</label>
+                        <label htmlFor='name' >Full Name</label>
                         <input type="text" name="fullName" class="form-control"  
                             onChange={e => setinputData({ ...inputData, fullName: e.target.value})} />
                     </div>
                     <div class="form-outline">
-                        <label htmlFor='name' >specialization</label>
+                        <label htmlFor='name' >Specialization</label>
                         <input type="text" name="specialition" class="form-control"  
                             onChange={e => setinputData({ ...inputData, specialition: e.target.value})} />
                     </div>
                     <div class="form-outline">
-                        <label htmlFor='name' >duration</label>
+                        <label htmlFor='name' >Duration</label>
                         <input type="text" name="duration" class="form-control"  
                             onChange={e => setinputData({ ...inputData, duration: e.target.value})} />
                     </div>
                     <div class="form-outline">
-                        <label htmlFor='name' >fees</label>
+                        <label htmlFor='name' >Fees</label>
                         <input type="number" name="fees" class="form-control"  
                             onChange={e => setinputData({ ...inputData, fees: e.target.value})} />
                     </div>

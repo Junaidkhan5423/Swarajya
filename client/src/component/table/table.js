@@ -2,7 +2,7 @@ import { useEffect,  useState } from "react";
 import { Avatar,  Button, Tab, Tabs } from "@mui/material";
 // import moment from 'moment';
 import { useAuthentication } from "../../store/store";
-import { deleteCourseByID, deletenewsByID, getUserAll } from "../services/student.service";
+import { deleteCourseByID, deleteStudentById, deletenewsByID, getUserAll } from "../services/student.service";
 import axios from "axios";
 import Add from "../table/Add";
 import AppDataGrid from "../../utils/AppDataGrid";
@@ -89,14 +89,22 @@ const fetchNewData = async () => {
  await deleteCourseByID(id);
     toast.success("Successfully Delete Course")
     fetchCoursedata();
-    // console.log(data);
+   
   };
   const deleteNews = async (id) => {
     await deletenewsByID(id);
        toast.success("Successfully Delete News")
        fetchNewData();
-       // console.log(data);
+  ;
      };
+
+     const deleteStudent =  async (id) => {
+      await deleteStudentById(id);
+      console.log('deleteStudent0', id);
+         toast.success("Successfully Student")
+         fetchData();
+    ;
+       };
 
   // const [rowId, setRowId] = useState(null);
 
@@ -112,7 +120,7 @@ const fetchNewData = async () => {
       filterable: false
     },
     { field: "firstName", headerName: "Name", width: 100 },
-    { field: "email", headerName: "Email", width: 100 },
+    { field: "email", headerName: "Email", width: 150 },
     {
       field: "phoneNo",
       headerName: "Phone No",
@@ -177,7 +185,20 @@ const fetchNewData = async () => {
         
         );
       }
-    }
+    },
+    {
+      field: "Delete",
+      headerName: " Delete",
+      renderCell: (params) => {
+       
+        return   <Button
+        onClick={() => deleteStudent(params.row._id)}
+        color="error"
+      >
+        delete
+      </Button>
+      },
+    }, 
   ];
   const columnsOfCourse= [
     {
