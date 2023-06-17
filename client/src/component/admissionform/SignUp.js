@@ -322,7 +322,7 @@ const handleAccept = () => {
          <div className='d-flex  vh-70 justify-content-center align-items-center'>
             <div className='border bg-light p-5'>
 
-                <p style={{fontSize:'2vh'}}>affirm that I have read, understood, and agree to the terms and conditions stated herein. I understand that this declaration will form a binding agreement between myself and the Distance Education Institute throughout my enrollment in the program. & Fees Once Paid Is Non Refundable in Any Circumstances.</p>
+                <p style={{fontSize:'2vh'}}>I affirm that I have read, understood, and agree to the terms and conditions stated herein. I understand that this declaration will form a binding agreement between myself and the Distance Education Institute throughout my enrollment in the program. & Fees Once Paid Is Non Refundable in Any Circumstances.</p>
               <button className='btn btn-secondary mr-5' onClick={handleClose}>
               Denied
                 </button>  
