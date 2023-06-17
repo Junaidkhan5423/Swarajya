@@ -31,9 +31,7 @@ import axios from 'axios';
 
 const MainContent = () => {
   const [visible, setVisibile] = useState(false)
-  const [mission, setMission] = useState(false)
-  const [objective, setObjective] = useState(false)
-  const [ourscope, setOurscope]= useState(false)
+
   const [Prospectus, setProspectus] = useState(false)
   const [international, setinternational] = useState(false)
   const [course, setCourse] = useState(false)
@@ -56,24 +54,7 @@ const MainContent = () => {
   var myIndex = 0;
 
 
-  
-  const handeContentChange = (param) => {
-    if (param === 'mission') {
-      setObjective(false)
-      setMission(true)
-    } else if (param === 'objective') {
-      setMission(false)
-      setObjective(true)
-    } else if (param === "Elearnig") {
-      setMission(false)
-      setObjective(false)
-    }else if(param === "ourscope"){
-      setOurscope(true)
-      setMission(false)
-      setObjective(false) 
-    }
-
-  }
+ 
 
   const images = [
     
@@ -523,15 +504,15 @@ const MainContent = () => {
               <Link className='visible-class' to={'/AimsAndObjectives'}>Aim & Objective</Link>
               <Link  className='visible-class' to={'/OurScope'}>Our Scope</Link>
             
-              {!course && <a target='blank' href='#' onClick={() => setCourse(true)}>Course Details</a>}
+              {!course && <a target='blank'  onClick={() => setCourse(true)}>Course Details</a>}
               {course &&
                 <>
-                  <a target='blank' href='#'  onClick={() => setCourse(false)}>Course Details</a>
+                  <a target='blank'   onClick={() => setCourse(false)}>Course Details</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href="!" style={{ fontSize: '1.8vh' }}> Diploma</a></li>
-                    <li style={{ width: '9rem' }}><a href="!" style={{ fontSize: '1.8vh' }}> UG-graduation </a></li>
-                    <li style={{ width: '9rem' }}><a href="/paytm" style={{ fontSize: '1.8vh' }}> PG-Post-graduation  </a></li>
+                    <li style={{ width: '9rem' }}><Link to='/diploma' style={{ fontSize: '1.8vh' }}> Diploma</Link></li>
+                    <li style={{ width: '9rem' }}><Link to='/ugCourse' style={{ fontSize: '1.8vh' }}> UG-graduation </Link></li>
+                    <li style={{ width: '9rem' }}><Link to="/pgCourse" style={{ fontSize: '1.8vh' }}> PG-Post-graduation  </Link></li>
                   </ul>
 
                 </>
@@ -543,7 +524,7 @@ const MainContent = () => {
               <h2>Institution</h2>
               <a href="https://forms.gle/xJiHqhQhLcKwjxxp9" target='_blank' rel="noreferrer">Apply For From Collection Center(ACC) </a>
               <a href=" https://forms.gle/scE8iviYy8quuVdR8" target='_blank' rel="noreferrer">Apply For Online Faculty</a>
-              <a href="!">Jobs & Advertisement </a>
+              <a href='*'>Jobs & Advertisement </a>
               <Link to="/PressRelease">Press Release</Link>
             </div>
 
@@ -583,10 +564,10 @@ const MainContent = () => {
 
               <Link to={"/admission"}>Online Enrollment</Link>
 
-              {!visible && <a target='blank' href='#' onClick={() => setVisibile(true)} className='visible-class' >Internship Reference</a>}
+              {!visible && <a target='blank' href='*' onClick={() => setVisibile(true)} className='visible-class' >Internship Reference</a>}
               {visible &&
                 <>
-                  <a target='blank' href='#' onClick={() => setVisibile(false)} className='visible-class'>Internship Reference</a>
+                  <a target='blank' href='*' onClick={() => setVisibile(false)} className='visible-class'>Internship Reference</a>
                   <ul style={{ height: "16vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={English} style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> 1 .English </a></li>
@@ -596,11 +577,11 @@ const MainContent = () => {
                 </>
               }
 
-              {!Prospectus && <a target='blank' href='#' onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
+              {!Prospectus && <a target='blank'  onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
 
               {Prospectus &&
                 <>
-                  <a target='blank' href='#' onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
+                  <a target='blank'  onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={Brocher} download='AICVPS.pdf' style={{ fontSize: '1vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
@@ -609,11 +590,11 @@ const MainContent = () => {
                   </ul>
                 </>
               }
-              {!international && <a target='blank' href='#' onClick={() => setinternational(true)} className='visible-class'>Offline Admission Form</a>}
+              {!international && <a target='blank' href='*' onClick={() => setinternational(true)} className='visible-class'>Offline Admission Form</a>}
 
               {international &&
                 <>
-                  <a target='blank' href='#' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
+                  <a target='blank' href='*' onClick={() => setinternational(false)} className='offline-class'>Offline Admission Form</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
                     <li style={{ width: '9rem' }}><a href={AICVPS} download='AICVPS.pdf' style={{ fontSize: '1.8vh' }} target='_blank' rel="noreferrer"> AICVPS </a></li>
@@ -622,7 +603,7 @@ const MainContent = () => {
                   </ul>
                 </>
               }
-              {/* <a href='#'>Offline Admission Form</a> */}
+              {/* <a href='*'>Offline Admission Form</a> */}
             </div>
           </div>
         </div>

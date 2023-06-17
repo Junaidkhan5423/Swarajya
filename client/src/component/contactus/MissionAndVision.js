@@ -2,13 +2,7 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 
 function MissionAndVision() {
-    const hearStyle ={
-        backGround: "#001f5f",
-    color: "whitesmoke",
-    height: "48px",
-    fontFamily: "system-ui",
-    fontWeight: 700,
-}
+
   return (
 <>
 <Typography
