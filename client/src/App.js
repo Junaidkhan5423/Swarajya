@@ -30,7 +30,7 @@ import PressRelease from "./component/press-realease/PressRelease";
 import MissionAndVision from "./component/contactus/MissionAndVision";
 import AimsAndObjectives from "./component/contactus/AimsAndObjectives"
 import OurScope from "./component/contactus/OurScope"
-
+import Condition from "./component/contactus/Condition"
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
 // import Add from './component/table/Add';
@@ -62,6 +62,7 @@ function App() {
           <Route path="/MissionAndVision" element={<MissionAndVision/>} />
           <Route path="/AimsAndObjectives" element={<AimsAndObjectives/>}/>  
           <Route path="/OurScope" element={<OurScope/>}/>  
+          <Route path="/Condition" element={<Condition/>}/>
 
           OurScope
         </Route>

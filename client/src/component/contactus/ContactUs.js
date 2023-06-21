@@ -52,10 +52,10 @@ function ContactUs() {
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <StyledTableCell>Director Name</StyledTableCell>
+                            <StyledTableCell>Co-ordinator Name</StyledTableCell>
                             <StyledTableCell align="left">Email Addres</StyledTableCell>
-                            <StyledTableCell align="left">Slected City</StyledTableCell>
-                            <StyledTableCell align="left">Number</StyledTableCell>
+                            <StyledTableCell align="left">Work Area (Region)</StyledTableCell>
+                            <StyledTableCell align="left">Mobile Number</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody style={{fontSize:'25px'}}>
@@ -74,15 +74,14 @@ function ContactUs() {
             </TableContainer>
             <div className='condition-text'>
                 <p style={{fontSize:'25px'}}>
-                    WHATSAPP CHAT SUPPORT  AVAILABLE ON : 8 WORKING HRS DAILY.
-                    CALL SUPPORT ON SAME NUMBER WILL BE AVAILABLE ON SATURDAY EVENING 4:30 PM TO 5:30 PM ONLY
-                    ALL RED HOLIDAYS IN CALANDER INCLUDING SUNDAYS WILL BE NOT AVAILABLE FOR INQUIREY
+                    WHATSAPP CHAT SUPPORT  AVAILABLE ON : 8 WORKING HRS DAILY. From Monday-Friday.
+                    CALL SUPPORT ON SAME MOBILE NUMBER WILL BE AVAILABLE ON SATURDAY EVENING 4:00 PM TO 5:45 PM ONLY.
+                    ALL RED HOLIDAYS IN ACADEMIC CALANDER INCLUDING SUNDAYS WILL BE NOT AVAILABLE FOR INQUIREY.
                 </p>
-                <h6>And We Will Get Back To You As Soon As Possible.</h6>
-            </div>
+                        </div>
             <div className='text-area'>
-                <p>1. Phone: If You Prefer To Speak With Us Over The Phone, Please Call Us At Given Contacts of Our Coordinators in Office Hours</p>
-                <p>2. Contact Form: You Can Also Fill Out Our Contact Form Our Website With Your Name, Email Address, And Message. We Will Respond To Your Message Via Email.</p>
+                <p>1. Phone: If You Prefer To Speak With Us Over The Phone, Please Call Us At Given Contacts of Respective Region's Coordinators in Office Hours.</p>
+                <p>2. Contact Form: You Can Also Fill Out Our Contact Form Given on Website With Your Name, Email Address, And Message. We Will Respond To Your Message Via Email.</p>
                 <p>3. Social Media: Follow Us On Social Media For The Latest News And Updates About Our Institute. You Can Also Send Us A Message On Social Media.</p>
             </div>
         </>

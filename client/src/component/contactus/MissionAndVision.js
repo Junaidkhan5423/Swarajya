@@ -14,7 +14,7 @@ function MissionAndVision() {
         textAlign={'center'} 
         sx={{ m: "0 0 5px 0"}}
       >
-       Welcome to Swarajya Paramedical Institute.
+       Welcome to Swarajya Institute of Distance Learning
       </Typography>
 <Box  padding={'1rem'}>
       <Typography

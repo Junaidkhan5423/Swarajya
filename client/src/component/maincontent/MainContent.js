@@ -582,9 +582,9 @@ const MainContent = () => {
                   <a target='blank'  onClick={() => setProspectus(false)} className='prospects-class'>Prospectus</a>
                   <ul style={{ height: "17vh", listStyle: 'none', paddingLeft: '0' }}>
 
-                    <li style={{ width: '9rem' }}><a href={Brocher} download='AICVPS.pdf' style={{ fontSize: '1vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
-                    <li style={{ width: '9rem' }}><a href={Asian} download='Asian.pdf' style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
-                    <li style={{ width: '9rem' }}><a href={sikkim} download='Sikkim.pdf' style={{ fontSize: '1vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
+                    <li style={{ width: '9rem' }}><a href={Brocher} download='AICVPS.pdf' style={{ fontSize: '2vh' }} target="_blank" rel="noreferrer"> AICVPS </a></li>
+                    <li style={{ width: '9rem' }}><a href={Asian} download='Asian.pdf' style={{ fontSize: '2vh' }} target='_blank' rel="noreferrer"> Asian International University </a></li>
+                    <li style={{ width: '9rem' }}><a href={sikkim} download='Sikkim.pdf' style={{ fontSize: '2vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
                   </ul>
                 </>
               }
