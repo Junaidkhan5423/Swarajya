@@ -283,7 +283,6 @@ footer {
   height: 3rem;
   width: 100%;
   position: relative;
-  background: #001f5f;
   display: flex;
 }
 
@@ -319,11 +318,11 @@ a {
 }
 
 .fb:hover {
-  color: darkslategrey;
+  color: #3b5998;
 }
 
 .ig:hover {
-  color: darkslategrey;
+  color: #E4405F;
 }
 
 .tr:hover {
@@ -331,7 +330,7 @@ a {
 }
 
 .yt:hover {
-  color: darkslategrey;
+  color: #c4302b;
 }
 
 .logo_corner {
