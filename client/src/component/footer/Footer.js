@@ -83,9 +83,8 @@ const Footer = () => {
                             <h2 className='footerH2'>Quick Links</h2>
                             <a href="courses.html">Courses</a>
                             <a href={pdf1} download='Affiliation.pdf' target='blank'>Institute Affiliation</a>
-                            <a href="mission and vision.html">Exam Date</a>
-                            <a href="mission and vision.html">Internship Vacancies</a>
-
+                            <a href="#">Exam Date</a>
+                            <Link to='/JobAndInter'>Jobs & Advertisement </Link>
 
                             <a href="1">Prospectus</a>
                         </div>

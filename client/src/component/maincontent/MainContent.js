@@ -522,7 +522,7 @@ const MainContent = () => {
               <h2>Institution</h2>
               <a href="https://forms.gle/xJiHqhQhLcKwjxxp9" target='_blank' rel="noreferrer">Apply For From Collection Center(ACC) </a>
               <a href=" https://forms.gle/scE8iviYy8quuVdR8" target='_blank' rel="noreferrer">Apply For Online Faculty</a>
-              <a href='*'>Jobs & Advertisement </a>
+              <Link to='/JobAndInter'>Jobs & Advertisement </Link>
               <Link to="/PressRelease">Press Release</Link>
             </div>
 

@@ -25,7 +25,6 @@ const AddExamDate = (props) => {
                  } ).catch(err=>console.log(err))
     }
     const handleChangeCourse = (event) => {
-        console.log(event);
         setinputData({...inputData, type: event.target.value })
        
 
@@ -56,6 +55,7 @@ const AddExamDate = (props) => {
                                     >
                                     <MenuItem value={"exam"}>Exams</MenuItem>
                                         <MenuItem value={"news"}>News</MenuItem>
+                                        <MenuItem value={"jobs"}>jobs</MenuItem>
 
                                     </Select>
                                 </FormControl>
@@ -64,7 +64,7 @@ const AddExamDate = (props) => {
  <input type="text" name="name" class="form-control"  
      onChange={e => setinputData({ ...inputData, name: e.target.value})} />
 </div>
-                                { inputData.type === "news" && (
+                                { inputData.type === "news" || inputData.type === "jobs"  ? (
                                     <>
 
 
@@ -74,7 +74,7 @@ const AddExamDate = (props) => {
      onChange={onUpload} />
 </div>
 </>
-                               ) }
+                               ) : '' }
                   
                     <div  class="form-outline">
                          <label htmlFor='name' >Descripstion</label>

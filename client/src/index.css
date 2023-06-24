@@ -402,7 +402,9 @@ a {
   width: 63% !important;
   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
   height: 35px;
-  font-size: 1.8vh;
+  font-size: 3.8vh;
+  margin-top: 5px;
+
   clip-path: polygon(0 0, 87% 0, 99% 100%, 0% 100%);
   /* margin-left: 65px; */
 
@@ -479,7 +481,9 @@ a {
   width: 70%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   height: 35px;
-  font-size: 1.8vh;
+  margin-top: 5px;
+
+  font-size: 3.8vh;
   clip-path: polygon(0 0, 87% 0, 99% 100%, 0% 100%);
 }
 
@@ -491,7 +495,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 9px;
-  font-size: 1.6vh;
+  font-size: 3vh;
   border-bottom: 2px solid gray;
 }
 
@@ -501,7 +505,9 @@ a {
   width: 50%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   height: 35px;
-  font-size: 1.8vh;
+  font-size: 3.8vh;
+  margin-top: 5px;
+
   clip-path: polygon(0 0, 87% 0, 99% 100%, 0% 100%);
 }
 
@@ -511,7 +517,9 @@ a {
   width: 30%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   height: 35px;
-  font-size: 1.8vh;
+  font-size: 3.8vh;
+  margin-top: 5px;
+
   clip-path: polygon(0 0, 87% 0, 99% 100%, 0% 100%);
 }
 

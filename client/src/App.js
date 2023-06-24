@@ -31,6 +31,7 @@ import MissionAndVision from "./component/contactus/MissionAndVision";
 import AimsAndObjectives from "./component/contactus/AimsAndObjectives"
 import OurScope from "./component/contactus/OurScope"
 import Condition from "./component/contactus/Condition"
+import JobAndInter from "./component/press-realease/JobAndInter";
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
 // import Add from './component/table/Add';
@@ -59,6 +60,7 @@ function App() {
           <Route path='/ugCourse' element={<UgCourse/>} />
           <Route path='/pgCourse' element={<PgCourse/>} />
           <Route path="/PressRelease" element={<PressRelease/>} />  
+          <Route path="/JobAndInter" element={<JobAndInter/>} />  
           <Route path="/MissionAndVision" element={<MissionAndVision/>} />
           <Route path="/AimsAndObjectives" element={<AimsAndObjectives/>}/>  
           <Route path="/OurScope" element={<OurScope/>}/>  
