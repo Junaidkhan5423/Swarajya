@@ -9,6 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Box, Typography } from '@mui/material';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -36,8 +37,8 @@ function createData(name, email, city, number) {
 }
 
 const rows = [
-    createData('Sejal', 'Sejal@SWrajyapramedix.in', 'Pune,Nashik,Nanded,Nagpur Region'),
-    createData('Miss Diwyangi', 'diwya@SWrajyapramedix.in', 'Ahmednager,Bhandra,Chandrapur,Dhule,Gadchiroli,Gondia,Jalgao,Kolhapur,Latur,Nandurbar.'),
+    createData('Miss Sejal G. Matra', 'Sejal@SWrajyapramedix.in', 'Pune,Nashik,Nanded,Nagpur Region'),
+    createData('Miss Diwyangi ', 'diwya@SWrajyapramedix.in', 'Ahmednager,Bhandra,Chandrapur,Dhule,Gadchiroli,Gondia,Jalgao,Kolhapur,Latur,Nandurbar.'),
     createData('Miss Shatakshi K.Dadke', 'shatakshi@SWrajyapramedix.in', 'Parbhani,Raigad,Ratnagiri,Sangli,Satra,Sidhudurg,Solapur,Palghar,Wardha,Washim,Yavatmal.'),
     createData('Miss Samreen A.Shaikh', 'sam@SWrajyapramedix.in', 'Aurangabad,Osmanabad,Beed,Hingoli,Mumbhai City,Mumbai Suburban,Akola,Thane,Jalna,Amravati.'),
     createData('Miss Neha Girish Matra', 'neha@SWrajyapramedix.in', `All City's Of Utter Pradesh`),
@@ -47,7 +48,19 @@ const rows = [
 function ContactUs() {
     return (
         <>
-            <h4 className='mainhading'>We Welcome Your Questions, Comments, And Feedback! Here Are The Ways You Can Get In Touch With Us:</h4>
+           
+            <Typography
+        variant="h2"
+        color={"whitesmoke"}
+        fontWeight="700"
+        bgcolor="#001f5f"
+        fontFamily="system-ui"
+        textAlign={"center"}
+        sx={{ m: "0 0 5px 0" }}
+      >
+        Welcome to Swarajya Institute of Distance Learning
+      </Typography>
+      <h6 className='mainhading'>We Welcome Your Questions, Comments, And Feedback! Here Are The Ways You Can Get In Touch With Us:</h6>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
                     <TableHead>
@@ -79,11 +92,57 @@ function ContactUs() {
                     ALL RED HOLIDAYS IN ACADEMIC CALANDER INCLUDING SUNDAYS WILL BE NOT AVAILABLE FOR INQUIREY.
                 </p>
                         </div>
-            <div className='text-area'>
+            {/* <div className='text-area'>
                 <p>1. Phone: If You Prefer To Speak With Us Over The Phone, Please Call Us At Given Contacts of Respective Region's Coordinators in Office Hours.</p>
                 <p>2. Contact Form: You Can Also Fill Out Our Contact Form Given on Website With Your Name, Email Address, And Message. We Will Respond To Your Message Via Email.</p>
                 <p>3. Social Media: Follow Us On Social Media For The Latest News And Updates About Our Institute. You Can Also Send Us A Message On Social Media.</p>
-            </div>
+            </div> */}
+            <Box
+          marginTop={"1rem"}
+          sx={{
+            "& .css-134c1l3-MuiTypography-root": {
+              border: "none",
+              margin: "0",
+              fontFamily: "Source Sans Pro,sans-serif",
+              fontSize: "16px",
+              fontWeight: 400,
+              lineHeight: 1.334,
+              color: "ffff",
+              marginLeft: "2%",
+              color: " #484848",
+              fontSize: "15px",
+              fontWeight: 600,
+              marginTop: "2%",
+            },
+          }}
+        >
+          {/* <Typography
+            variant="h3"
+            color={"#001f5f"}
+            fontWeight="700"
+            sx={{ m: "0 0 5px 0" }}
+          >
+            Retention of Personal Data
+          </Typography> */}
+          <Typography variant="h5" color={"ffff"}>
+            <span style={{ fontSize: "large", fontWeight: "bold" }}>
+            1. Phone:  
+            </span>
+            If You Prefer To Speak With Us Over The Phone, Please Call Us At Given Contacts of Respective Region's Coordinators in Office Hours.
+          </Typography>
+          <Typography variant="h5" color={"ffff"}>
+            <span style={{ fontSize: "large", fontWeight: "bold" }}>
+            2. Contact Form: 
+            </span>
+            You Can Also Fill Out Our Contact Form Given on Website With Your Name, Email Address, And Message. We Will Respond To Your Message Via Email.
+          </Typography>
+          <Typography variant="h5" color={"ffff"}>
+            <span style={{ fontSize: "large", fontWeight: "bold" }}>
+            Social Media:
+            </span>
+            Follow Us On Social Media For The Latest News And Updates About Our Institute. You Can Also Send Us A Message On Social Media.
+          </Typography>
+        </Box>
         </>
     )
 }

@@ -575,7 +575,7 @@ const MainContent = () => {
                 </>
               }
 
-              {!Prospectus && <a target='blank'  onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
+              {/* {!Prospectus && <a target='blank'  onClick={() => setProspectus(true)} className='visible-class'>Prospectus</a>}
 
               {Prospectus &&
                 <>
@@ -587,7 +587,19 @@ const MainContent = () => {
                     <li style={{ width: '9rem' }}><a href={sikkim} download='Sikkim.pdf' style={{ fontSize: '2vh' }} target='_blank' rel="noreferrer">Sikkim Skill University </a></li>
                   </ul>
                 </>
-              }
+                
+              } */}
+              <div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle propectus-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Prospectus
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item"href={Brocher} download='AICVPS.pdf'>AICVPS</a>
+    <a class="dropdown-item" href={Asian} download='Asian.pdf'>Asian International University </a>
+    <a class="dropdown-item" href={sikkim} download='Sikkim.pdf'>Sikkim Skill University</a>
+  </div>
+</div>
               {!international && <a target='blank' href='*' onClick={() => setinternational(true)} className='visible-class'>Offline Admission Form</a>}
 
               {international &&

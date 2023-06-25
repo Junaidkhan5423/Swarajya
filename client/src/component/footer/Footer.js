@@ -85,8 +85,6 @@ const Footer = () => {
                             <a href={pdf1} download='Affiliation.pdf' target='blank'>Institute Affiliation</a>
                             <a href="#">Exam Date</a>
                             <Link to='/JobAndInter'>Jobs & Advertisement </Link>
-
-                            <a href="1">Prospectus</a>
                         </div>
       </div>
     
