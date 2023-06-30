@@ -57,6 +57,17 @@ export const deletenewsByID = async (values) => {
     return { error };
   }
 };
+export const deleteAdminByID = async (values) => {
+  try {
+    return await (
+      await axios.get(
+        `${baseUrl}/deleteNews?id=${values}`
+      )
+    ).data;
+  } catch (error) {
+    return { error };
+  }
+};
 export const deleteStudentById = async (values) => {
   try {
     return await (

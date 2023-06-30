@@ -2,13 +2,14 @@ import { useEffect,  useState } from "react";
 import { Avatar,  Button, Tab, Tabs } from "@mui/material";
 // import moment from 'moment';
 import { useAuthentication } from "../../store/store";
-import { deleteCourseByID, deleteStudentById, deletenewsByID, getUserAll } from "../services/student.service";
+import { deleteAdminByID, deleteCourseByID, deleteStudentById, deletenewsByID, getUserAll } from "../services/student.service";
 import axios from "axios";
 import Add from "../table/Add";
 import AppDataGrid from "../../utils/AppDataGrid";
 import PopUp from "../modal/PopUp";
 import { ToastContainer, toast } from "react-toastify";
 import AddExamDate from "./AddExamDate";
+import AddAdmin from "./AddAdmin";
 
 const Users = () => {
   const [open, setOpen] = useState(false);
@@ -35,6 +36,7 @@ const Users = () => {
   };
 
   const [newData, setNewData] = useState([]);
+  const [newAdminData, setNewAdminData] = useState([]);
   const [newsData, setNewsData] = useState([]);
   const [isLoading, setIsLoading] =useState(false);
 
@@ -63,7 +65,18 @@ const fetchNewData = async () => {
         console.log(res.data);
       });
   };
+  const fetchAdminListdata = async () => {
+    // console.log(fetchCoursedata);
+    // setIsLoading(true)
+    axios
+      .get(`http://localhost:9002/getAdminList`)
+      .then((res) => {
+        // setIsLoading(false)
 
+        setNewAdminData(res.data.data);
+        console.log(res.data);
+      });
+  };
   // const refreshData = () => {
   //   fetchCoursedata();
   //   fetchData();
@@ -74,6 +87,7 @@ const fetchNewData = async () => {
   useEffect(() => {
     fetchCoursedata();
     fetchNewData()
+    fetchAdminListdata()
   },[]);
 
 
@@ -97,6 +111,12 @@ const fetchNewData = async () => {
        fetchNewData();
   ;
      };
+     const deleteAdmin = async (id) => {
+      await deleteAdminByID(id);
+         toast.success("Successfully Delete Admin")
+         fetchAdminListdata()
+    ;
+       };
 
      const deleteStudent =  async (id) => {
       await deleteStudentById(id);
@@ -268,6 +288,25 @@ const fetchNewData = async () => {
       },
     }, 
   ]
+  const columnsOfAdmin= [
+   
+    { field: "name", headerName: "Name", width: 100 },
+    { field: "email", headerName: "Email", width: 100 },
+    { field: "phoneNo", headerName: "Phone", width: 150 },
+    {
+      field: "Action",
+      headerName: " Action",
+      renderCell: (params) => {
+       
+        return   <Button
+        onClick={() => deleteAdmin(params.row._id)}
+        color="error"
+      >
+        delete
+      </Button>
+      },
+    }, 
+  ]
   if(isLoading){
     return (
       <div class="spinner-border  position-absolute top-50 start-50" style={{width: "48px", height: "48px", borderWidth: "5px"}}>
@@ -283,6 +322,7 @@ const fetchNewData = async () => {
         <Tab label="Students" />
         <Tab label="Courses" />
         <Tab label="Other" />
+        <Tab label="Admin Add" />
       </Tabs>
        <div className="tabstrip row ">
        {activeTab === 0 && (
@@ -331,6 +371,27 @@ const fetchNewData = async () => {
           {open && <AddExamDate refetch={fetchNewData} handleClose={handleClose} open={open} />}
           </>
         ) 
+        
+          }
+           {activeTab === 3 && (
+          <>
+ <div className="row position-absolute  mr">
+          <ToastContainer />
+             <div className="text-end">
+              <button onClick={() => setOpen(true)} className="btn btn-primary">
+                Add +
+              </button>
+             
+            </div>
+
+            <AppDataGrid maxWidth={"100%"} maxHight='70%' studentDAta={newAdminData} columns={columnsOfAdmin} />
+
+        
+          </div>
+          {open && <AddAdmin refetch={fetchAdminListdata} handleClose={handleClose} open={open} />}
+          </>
+        ) 
+        
           }
 
        </div>
