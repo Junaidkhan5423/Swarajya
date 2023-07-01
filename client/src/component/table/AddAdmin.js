@@ -29,7 +29,7 @@ console.log(selectedCity ,'selected');
     function handleSubmit(e){
            e.preventDefault()
 
-           axios.post('http://localhost:9002/adminsignup',{...inputData , cities:selectedCity  })
+           axios.post('https://swarajyabackend.onrender.com/adminsignup',{...inputData , cities:selectedCity  })
                  .then(res=>{
                     props.refetch()
                     navigate('/table')

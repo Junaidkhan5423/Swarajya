@@ -4,7 +4,10 @@ import { Navigate, Outlet } from 'react-router-dom'
 import { useAuthentication } from '../../store/store'
 
 function AdminProtected() {
-    const token = useAuthentication(state => state.auth.token)
+    // const token = useAuthentication(state => state.auth.token)
+    const retrievedData = localStorage.getItem('userData');
+  const token = JSON.parse(retrievedData);
+    console.log("token", token);
     return token ? (
         <>
         <div style={{ height: "100%", width: '' }}>

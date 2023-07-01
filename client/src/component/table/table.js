@@ -20,8 +20,9 @@ const Users = () => {
     console.log(activeTab,'tab');
     setActiveTab(newValue);
   };
+  const retrievedData = localStorage.getItem('userData');
 
-  const token = useAuthentication((state) => state.auth.token);
+  const token = JSON.parse(retrievedData);
 ;
 
   const [studentDAta, setStudentData] = useState([]);
@@ -29,7 +30,7 @@ const Users = () => {
 // eslint-disable-next-line
   const fetchData = async () => {
     setIsLoading(true)
- await getUserAll(token).then((res) => {
+ await getUserAll(token.token).then((res) => {
       setIsLoading(false)
       setStudentData(res.data);
     });
@@ -69,7 +70,7 @@ const fetchNewData = async () => {
     // console.log(fetchCoursedata);
     // setIsLoading(true)
     axios
-      .get(`http://localhost:9002/getAdminList`)
+      .get(`https://swarajyabackend.onrender.com/getAdminList`)
       .then((res) => {
         // setIsLoading(false)
 

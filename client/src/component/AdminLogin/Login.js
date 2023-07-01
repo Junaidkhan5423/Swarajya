@@ -55,6 +55,8 @@ const setAuthentication = useAuthentication(state => state.setAuthentication)
     password: data.get('password'),
   })
   setIsLoading(false)
+  const Storedata = JSON.stringify(Admin);
+  localStorage.setItem('userData', Storedata);
 
 setAuthentication({name:Admin?.name,token:Admin?.token})
   navigate("/table")

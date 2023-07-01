@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import MainContent from "./component/maincontent/MainContent";
 import {
@@ -32,11 +32,25 @@ import AimsAndObjectives from "./component/contactus/AimsAndObjectives"
 import OurScope from "./component/contactus/OurScope"
 import Condition from "./component/contactus/Condition"
 import JobAndInter from "./component/press-realease/JobAndInter";
+import { useAuthentication } from "./store/store";
 // import StripePaymentCancel from './component/payment/StripePaymentCancel';
 // import StripePaymentSuccess from './component/payment/StripePaymentSuccess';
 // import Add from './component/table/Add';
 
 function App() {
+  const setAuthentication = useAuthentication(state => state.setAuthentication)
+
+  const token = useAuthentication((state) => state.auth.token);
+console.log(token);
+  useEffect(()=>{
+if(!token){
+  const retrievedData = localStorage.getItem('userData');
+  const Admin = JSON.parse(retrievedData);
+  setAuthentication({name:Admin?.name,token:Admin?.token})
+
+  console.log(Admin ,'admin');
+}
+  },[token])
   const [theme] = useMode();
 
   const router = createBrowserRouter(
