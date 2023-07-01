@@ -311,7 +311,7 @@ const fetchNewData = async () => {
         <Tab label="Students" />
         <Tab label="Courses" />
         <Tab label="Other" />
-        <Tab label="Admin Add" />
+     {token.Admin  && <Tab label="Admin Add" />}
       </Tabs>
        <div className="tabstrip row ">
        {activeTab === 0 && (
