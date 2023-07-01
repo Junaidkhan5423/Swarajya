@@ -8,6 +8,8 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import axios from "axios";
+
 import Paper from '@mui/material/Paper';
 import { Box, Typography } from '@mui/material';
 
@@ -36,16 +38,24 @@ function createData(name, email, city, number) {
     return { name, email, city, number };
 }
 
-const rows = [
-    createData('Miss Sejal G. Matra', 'Sejal@SWrajyapramedix.in', 'Pune,Nashik,Nanded,Nagpur Region'),
-    createData('Miss Diwyangi ', 'diwya@SWrajyapramedix.in', 'Ahmednager,Bhandra,Chandrapur,Dhule,Gadchiroli,Gondia,Jalgao,Kolhapur,Latur,Nandurbar.'),
-    createData('Miss Shatakshi K.Dadke', 'shatakshi@SWrajyapramedix.in', 'Parbhani,Raigad,Ratnagiri,Sangli,Satra,Sidhudurg,Solapur,Palghar,Wardha,Washim,Yavatmal.'),
-    createData('Miss Samreen A.Shaikh', 'sam@SWrajyapramedix.in', 'Aurangabad,Osmanabad,Beed,Hingoli,Mumbhai City,Mumbai Suburban,Akola,Thane,Jalna,Amravati.'),
-    createData('Miss Neha Girish Matra', 'neha@SWrajyapramedix.in', `All City's Of Utter Pradesh`),
-];
+
 
 
 function ContactUs() {
+    const [newAdminData, setNewAdminData] = React.useState([]);
+
+    const fetchAdminListdata =  () => {
+
+        axios
+          .get(`https://swarajyabackend.onrender.com/getAdminList`)
+          .then((res) => {
+    console.log(res.data.data);
+            setNewAdminData(res.data.data);
+          });
+      };
+      React.useEffect(()=>{
+        fetchAdminListdata()
+      },[])
     return (
         <>
            
@@ -72,14 +82,14 @@ function ContactUs() {
                         </TableRow>
                     </TableHead>
                     <TableBody style={{fontSize:'25px'}}>
-                        {rows.map((row) => (
+                        {newAdminData.map((row) => (
                             <StyledTableRow key={row.name}>
                                 <StyledTableCell component="th" scope="row">
                                     {row.name}
                                 </StyledTableCell>
                                 <StyledTableCell align="left">{row.email}</StyledTableCell>
-                                <StyledTableCell align="left">{row.city}</StyledTableCell>
-                                <StyledTableCell align="left">{row.number}</StyledTableCell>
+                                <StyledTableCell align="left">{row.cities.map((item)=> <span>{item}</span>)}</StyledTableCell>
+                                <StyledTableCell align="left">{row.phoneNo}</StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
