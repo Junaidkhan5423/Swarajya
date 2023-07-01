@@ -45,7 +45,6 @@ const MainContent = () => {
       .get(`${process.env.REACT_APP_API_URL_DEV}/getNewBytype?type=exam`)
       .then((res) => {
         setNewsData(res.data.data);
-        console.log(res.data);
       });
   };
   useEffect(()=>{

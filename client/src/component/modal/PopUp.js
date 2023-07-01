@@ -28,7 +28,7 @@ export default function BasicModal(props) {
         onClick={() => {
           handleOpen();
           // console.log(props.params);
-          props.handleEdit(props.params.row._id);
+          // props.handleEdit(props.params.row._id);
           setPreviousData(props.params.row);
         }}
         color="info"

@@ -30,9 +30,7 @@ const AddExamDate = (props) => {
 
     }
     const onUpload = async (e) => {
-        console.log(e);
         const base64 = await convertIntoBase64(e.target.files[0])
-        console.log(base64);
         setFile(base64)
     }
     return (

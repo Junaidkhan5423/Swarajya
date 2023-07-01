@@ -18,7 +18,7 @@ const Form = (props :any) => {
   const [result, setResult] = useState("");
   // const [newResult, setNewResult] = useState(previousData.results);
   const [totalFees, setTotalFees] = useState(previousData.totalFees);
-  const [totalPaid, setTotalPaid] = useState(parseInt(previousData.totalPaid));
+  const [totalPaid, setTotalPaid] = useState <any>(parseInt(previousData.totalPaid));
   const [addFessPaid, setAddFessPaid] = useState(0);
   const [rollNo, setRollNo] = useState(previousData.rollNo);
   const [enrollmentNo, setEnrollmentNo] = useState(previousData.enrollmentNo);
@@ -39,7 +39,6 @@ const Form = (props :any) => {
       identyCard:identyCard,
     };
  const resultData = await uploadResultId(token,EditabledData)
- console.log(resultData);
  
  toast.success("Student Data Successfully Updated")
  props.refetch() 

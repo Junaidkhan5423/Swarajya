@@ -41,14 +41,12 @@ function App() {
   const setAuthentication = useAuthentication(state => state.setAuthentication)
 
   const token = useAuthentication((state) => state.auth.token);
-console.log(token);
   useEffect(()=>{
 if(!token){
   const retrievedData = localStorage.getItem('userData');
   const Admin = JSON.parse(retrievedData);
   setAuthentication({name:Admin?.name,token:Admin?.token})
 
-  console.log(Admin ,'admin');
 }
   },[token])
   const [theme] = useMode();

@@ -109,7 +109,6 @@ function StudentInfo(props) {
                                             <th width="30%">Result</th>
                                             <td width="2%">:</td>
                                             <td  >{data?.results && data?.results.map((item)=>{
-                                                console.log(item,'result');
                                                 return (
 <a href={item?.link}  target='_blank' rel="noreferrer" className="btn btn-download text-info" style={{marginLeft:'-0.7rem'}}><span className="bi bi-download mr-1"></span>{item?.name}</a> 
                                                 )

@@ -22,7 +22,6 @@ const AddAdmin = (props) => {
       setState(event.target.value);
   };
 
-console.log(selectedCity ,'selected');
     
      const navigate = useNavigate()
     const [inputData, setinputData] = useState({ email: '', password: 'news' ,name:""})

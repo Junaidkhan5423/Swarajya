@@ -32,12 +32,10 @@ function SingUpPage() {
     // validate:schema,
     onSubmit: (values) => {
       setIsLoading(true)
-      console.log("data is cooming", values);
       availableUser(values).then((res) => {
         if (res.status === 200) {
           setIsLoading(false)
 
-          console.log(res.data,'data');
           setData(res.data);
           toast.success("You  Successfully Login")
 

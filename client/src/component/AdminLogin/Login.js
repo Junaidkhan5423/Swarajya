@@ -43,9 +43,7 @@ export default function Login() {
 const navigate = useNavigate()
 
 const setAuthentication = useAuthentication(state => state.setAuthentication)
-// useEffect(()=>{
-// console.log(token);
-// },[token])
+
   const handleSubmit = async(event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -61,7 +59,6 @@ const setAuthentication = useAuthentication(state => state.setAuthentication)
 setAuthentication({name:Admin?.name,token:Admin?.token})
   navigate("/table")
   
-  // console.log(Admin);
   };
   
   const handleSubmitForSignUp = async(event) => {

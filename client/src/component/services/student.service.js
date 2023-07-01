@@ -1,6 +1,5 @@
 import axios from "axios";
 const baseUrl = process.env.REACT_APP_API_URL_LOCAL 
-console.log(`${baseUrl}`,'baseUrl');
 export const postStudentData = async (values) => {
   try {
     return await axios.post(
@@ -81,7 +80,6 @@ export const deleteStudentById = async (values) => {
 };
 
 export const getUser = async (values) => {
-  console.log(values);
   try {
     return await axios.post(
       `${baseUrl}/student`,
@@ -93,7 +91,6 @@ export const getUser = async (values) => {
 };
 
 export const getUserAll = async (token) => {
-  // console.log(values);
   try {
     const { data } = await axios.get(
       `${baseUrl}/admissionlist`,
@@ -101,7 +98,6 @@ export const getUserAll = async (token) => {
         headers: { Authorization: token },
       }
     );
-    console.log(data);
     return data;
   } catch (error) {
     return { error };
@@ -109,7 +105,6 @@ export const getUserAll = async (token) => {
 };
 
 export const getEditableData = async (token, editedParams) => {
-// console.log(editedParams);
 //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
   try {
    return await axios
@@ -129,7 +124,6 @@ export const getEditableData = async (token, editedParams) => {
   }
 };
 export const uploadResultId = async (token ,EditabledData) => {
-  console.log(EditabledData ,'EditabledData');
   //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
     try {
      return await axios

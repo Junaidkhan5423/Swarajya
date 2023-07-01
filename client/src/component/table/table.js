@@ -16,8 +16,6 @@ const Users = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (event, newValue) => {
-    console.log(newValue ,'tab');
-    console.log(activeTab,'tab');
     setActiveTab(newValue);
   };
   const retrievedData = localStorage.getItem('userData');
@@ -51,31 +49,24 @@ const fetchNewData = async () => {
     // setIsLoading(false)
 
     setNewsData(res.data.data);
-    console.log(res.data ,'news data');
   });
 }
   const fetchCoursedata = async () => {
-    // console.log(fetchCoursedata);
-    // setIsLoading(true)
+ 
     axios
       .get(`${process.env.REACT_APP_API_URL_DEV}/getAllCourse`)
       .then((res) => {
-        // setIsLoading(false)
 
         setNewData(res.data.data);
-        console.log(res.data);
       });
   };
   const fetchAdminListdata = async () => {
-    // console.log(fetchCoursedata);
-    // setIsLoading(true)
+
     axios
       .get(`https://swarajyabackend.onrender.com/getAdminList`)
       .then((res) => {
-        // setIsLoading(false)
 
         setNewAdminData(res.data.data);
-        console.log(res.data);
       });
   };
   // const refreshData = () => {
@@ -96,9 +87,7 @@ const fetchNewData = async () => {
     fetchData();
      // eslint-disable-next-line
   },[])
-  const handleEdit = (e) => {
-    console.log(e);
-  };
+
 
   const deleteCourse = async (id) => {
  await deleteCourseByID(id);
@@ -121,7 +110,6 @@ const fetchNewData = async () => {
 
      const deleteStudent =  async (id) => {
       await deleteStudentById(id);
-      console.log('deleteStudent0', id);
          toast.success("Successfully Student")
          fetchData();
     ;
@@ -202,7 +190,7 @@ const fetchNewData = async () => {
       headerName: "Edit",
       renderCell: (params) => {
         return (
-          <PopUp refetch={fetchData} params={params} handleEdit={handleEdit} />
+          <PopUp refetch={fetchData} params={params}  />
         
         );
       }

@@ -30,26 +30,20 @@ function SignUp() {
     const [open, setOpen] = useState(false);
 
 const navigate = useNavigate()
-const fetchCoursedata = async () => {
-    console.log(fetchCoursedata)
-   
-  }
 
 
     const MahashtraCity = ["Ahmadnagar", "Akola", "Amravati", "Aurangabad", "Bhandara", "Bid (Beed)", "Buldana (Buldhana)", "Chandrapur", "Dhule", "Gadchiroli", "Gondiya (Gondia)", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"];
     const UpCity = ["Agra", "Aligarh", "Allahabad", "Ambedkar", "Nagar", "Amroha", "Auraiya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Bara Banki", "Bareilly", "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Faizabad", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam", "Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hardoi", "Hathras (Mahamaya Nagar)", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur", "Kanpur Nagar", "Kasganj (Kanshiram Nagar)", "Kaushambi", "Kheri (Lakhimpur Kheri)", "Kushinagar", "Lalitpur", "Lucknow", "Mahoba", "Mahrajganj (Maharajganj)", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Rae Bareli", "Rampur", "Saharanpur", "Sant Kabir Nagar", "Sant Ravidas Nagar (Bhadohi)", "Shahjahanpur", "Shrawasti (Shravasti)", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"]
 
     const onUpload = async (e) => {
-        console.log(e);
         const base64 = await convertIntoBase64(e.target.files[0])
-        console.log(base64);
         setFile(base64)
     }
 
-    useEffect(()=>{
-        fetchCoursedata()
-         // eslint-disable-next-line
-    },[])
+    // useEffect(()=>{
+    //     fetchCoursedata()
+    //      // eslint-disable-next-line
+    // },[])
     const handleChange = (event) => {
         if (event.target.value === "Mahashtra") {
             setSelectedCity(MahashtraCity)
@@ -74,7 +68,6 @@ const fetchCoursedata = async () => {
         })
     }
     const onCheck = (event) => {
-        console.log(event.target.checked);
         setOpen(event.target.checked)
         if(!event.target.checked){
             setPermission(event.target.checked)
@@ -117,11 +110,9 @@ const handleAccept = () => {
             }}
             // validationSchema={validate}
             onSubmit={async values => {
-                console.log(values);
                 values = await Object.assign(values, { profile: file || "", state: state || "", city: City || '' , courseName: courseName || "", CourseType: CourseType || "",})
                 if(permisioon){
                     const data = await postStudentData(values)
-                    // console.log(data);
                     if (data.status === 200) {
                         toast.success("Student Registered Successfully", {
                             position: "top-center",

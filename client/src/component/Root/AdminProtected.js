@@ -7,7 +7,6 @@ function AdminProtected() {
     // const token = useAuthentication(state => state.auth.token)
     const retrievedData = localStorage.getItem('userData');
   const token = JSON.parse(retrievedData);
-    console.log("token", token);
     return token ? (
         <>
         <div style={{ height: "100%", width: '' }}>
