@@ -16,7 +16,7 @@ const AddExamDate = (props) => {
     function handleSubmit(e){
            e.preventDefault()
 
-           axios.post('http://localhost:9002/addnews',{...inputData , img:file  })
+           axios.post(`${process.env.REACT_APP_API_URL_DEV}/addnews`,{...inputData , img:file  })
                  .then(res=>{
                     props.refetch()
                     navigate('/table')
