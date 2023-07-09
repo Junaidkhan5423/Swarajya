@@ -14,7 +14,7 @@ function Condition() {
             textAlign={'center'} 
             sx={{ m: "0 0 5px 0"}}
           >
-           Welcome to Swarajya Institute of Distance Learning
+           Welcome to Swarajya Institute of Distance Learning (ODL Mode)
           </Typography>
     <Box  padding={'1rem'}>
           <Typography

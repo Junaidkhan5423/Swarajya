@@ -589,7 +589,7 @@ const MainContent = () => {
                 
               } */}
               <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle propectus-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a class="btn btn-secondary dropdown-toggle propectus-link text-start"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   Prospectus
   </a>
 

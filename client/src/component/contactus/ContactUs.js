@@ -68,7 +68,7 @@ function ContactUs() {
         textAlign={"center"}
         sx={{ m: "0 0 5px 0" }}
       >
-        Welcome to Swarajya Institute of Distance Learning
+        Welcome to Swarajya Institute of Distance Learning (ODL Mode)
       </Typography>
       <h6 className='mainhading'>We Welcome Your Questions, Comments, And Feedback! Here Are The Ways You Can Get In Touch With Us:</h6>
             <TableContainer component={Paper}>
