@@ -85,6 +85,9 @@ const Footer = () => {
                             <a href={pdf1} download='Affiliation.pdf' target='blank'>Institute Affiliation</a>
                             <a href="#">Exam Date</a>
                             <Link to='/JobAndInter'>Jobs & Advertisement </Link>
+                            
+                            <h6 style={{ color: 'whitesmoke', marginTop: '0.6rem' }}>E-Mail : info@swrajyaparamedix.in</h6>
+                            <h6 style={{ color: 'whitesmoke' }}>Contact :8446664282</h6>
                         </div>
       </div>
     
