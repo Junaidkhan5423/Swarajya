@@ -65,8 +65,9 @@ function UgCourse() {
        Course
       </Typography>
     </Box>
-      <AppDataGrid studentDAta={studentDAta} columns={columns} />
-    </div>
+    {studentDAta && studentDAta.length > 1 ? (
+        <AppDataGrid studentDAta={studentDAta} columns={columns} />
+      ) : null}    </div>
   )
 }
 
