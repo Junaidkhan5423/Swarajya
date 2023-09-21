@@ -233,6 +233,15 @@ const fetchNewData = async () => {
     {
       field: "type",
       headerName: "Types",
+      renderCell: (params) => {
+       console.log();
+        return   <Button
+        onClick={() => deleteCourse(params.row._id)}
+        color="error"
+      >
+        {params.row.type === "pgDegree" ? "PG Degree" : params.row.type === "UG" ? "UG Degree" : "Diploma"}
+      </Button>
+      },
     },
 
     {
