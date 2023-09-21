@@ -227,7 +227,7 @@ const Users = () => {
       renderCell: (params) => {
         console.log();
         return (
-          <Button onClick={() => deleteCourse(params.row._id)} color="error">
+          <Button onClick={() => deleteCourse(params.row._id)} color="warning">
             {params.row.type === "pgDegree"
               ? "PG Degree"
               : params.row.type === "UG"

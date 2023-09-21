@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AppDataGrid from '../../utils/AppDataGrid'
 import axios from 'axios';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 
 function DiplomaCourses() {
     const columns = [
@@ -24,12 +24,18 @@ function DiplomaCourses() {
           width: 120,
 
         },
-{
-field:"type",
-    headerName: "Type",
-          width: 120,
-
-}
+        {
+          field: "type",
+          headerName: "Types",
+          renderCell: (params) => {
+            console.log();
+            return (
+              <Button color="primary">
+                Diploma
+              </Button>
+            );
+          },
+        },
 
       ];
     const [studentDAta, setStudentData] = useState([]);

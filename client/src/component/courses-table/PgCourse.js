@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AppDataGrid from '../../utils/AppDataGrid'
 import axios from 'axios';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 
 function PgCourse() {
     const columns = [
@@ -28,12 +28,18 @@ function PgCourse() {
           width: 120,
           editable: true,
         },
-{
-field:"type",
-    headerName: "Type",
-          width: 120,
-          editable: true
-}
+        {
+          field: "type",
+          headerName: "Types",
+          renderCell: (params) => {
+            console.log();
+            return (
+              <Button color="primary">
+                PG Degree
+              </Button>
+            );
+          },
+        },
 
       ];
     const [studentDAta, setStudentData] = useState([]);
