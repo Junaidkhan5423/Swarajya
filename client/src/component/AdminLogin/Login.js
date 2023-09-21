@@ -47,17 +47,22 @@ const setAuthentication = useAuthentication(state => state.setAuthentication)
   const handleSubmit = async(event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    setIsLoading(true)
+    // setIsLoading(true)
    const Admin = await AdminLoginService({
     email: data.get('email'),
     password: data.get('password'),
   })
-  setIsLoading(false)
-  const Storedata = JSON.stringify(Admin);
-  localStorage.setItem('userData', Storedata);
-
-setAuthentication({name:Admin?.name,token:Admin?.token})
-  navigate("/table")
+    if(Admin.status === 201){
+      const Storedata = JSON.stringify(Admin.data);
+      localStorage.setItem('userData', Storedata);
+    
+    setAuthentication({name:Admin?.name,token:Admin?.token})
+      navigate("/table")
+    }else{
+      console.log();
+      alert(Admin.error.response.data.message)
+    }
+ 
   
   };
   

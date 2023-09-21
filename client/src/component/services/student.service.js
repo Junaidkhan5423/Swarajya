@@ -17,7 +17,7 @@ export const AdminLoginService = async (values) => {
         `${baseUrl}/adminlogin`,
         values
       )
-    ).data;
+    );
   } catch (error) {
     return { error };
   }
